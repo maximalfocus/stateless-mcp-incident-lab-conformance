@@ -1,14 +1,43 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "run-diagnostic-output",
-      "must": "run_diagnostic returns findings and a diagnostic_id after progress completes"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 200,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "resultType": "complete",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"diagnostic_id\":\"{{GENERATED_ID}}\",\"findings\":[{\"code\":\"DB_LATENCY\",\"service_id\":\"api\",\"summary\":\"Database dependency latency is elevated\"}]}"
+        }
+      ],
+      "structuredContent": {
+        "diagnostic_id": "{{GENERATED_ID}}",
+        "findings": [
+          {
+            "code": "DB_LATENCY",
+            "service_id": "api",
+            "summary": "Database dependency latency is elevated"
+          }
+        ]
+      },
+      "isError": false,
+      "_meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "stateless-mcp-incident-lab",
+          "version": "2026-07-28"
+        },
+        "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
+      }
+    }
+  }
 }

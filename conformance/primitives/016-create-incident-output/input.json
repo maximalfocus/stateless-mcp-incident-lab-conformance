@@ -1,9 +1,4 @@
 {
-  "scenario": "create-incident-output",
-  "contract": "create_incident validates input and returns structured data duplicated as compatibility text",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB",
+  "catalog_page_size": 50
 }

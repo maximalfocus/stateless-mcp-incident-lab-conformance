@@ -1,9 +1,4 @@
 {
-  "scenario": "tools-list-schemas",
-  "contract": "Every listed tool has JSON Schema 2020-12 input and output schemas",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB",
+  "catalog_page_size": 50
 }

@@ -1,9 +1,4 @@
 {
-  "scenario": "tools-list-order",
-  "contract": "tools/list returns the seven selected tools in deterministic name order",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB",
+  "catalog_page_size": 50
 }

@@ -1,9 +1,4 @@
 {
-  "scenario": "triage-prompt-get",
-  "contract": "prompts/get triage_incident validates incident_id and returns user-controlled investigation messages",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB",
+  "catalog_page_size": 50
 }

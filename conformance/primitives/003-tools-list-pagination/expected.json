@@ -1,14 +1,18 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "tools-list-pagination",
-      "must": "The client follows opaque tool-list cursors including an empty-string cursor until nextCursor is absent"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
-    }
-  ]
+  "requested_cursors": [
+    "<absent>",
+    "",
+    "opaque-2"
+  ],
+  "items": [
+    "create_incident",
+    "execute_remediation",
+    "get_incident",
+    "propose_remediation",
+    "query_telemetry",
+    "resolve_incident",
+    "run_diagnostic"
+  ],
+  "terminated_by": "absent_nextCursor",
+  "partial_result_returned": false
 }

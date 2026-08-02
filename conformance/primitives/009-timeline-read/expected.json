@@ -1,14 +1,35 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "timeline-read",
-      "must": "Reading a held incident timeline URI returns private cache hints and never catalogs the handle"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 200,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "resultType": "complete",
+      "contents": [
+        {
+          "uri": "incident://incidents/INCIDENT-OPEN/timeline",
+          "mimeType": "application/json",
+          "text": "{\"events\":[{\"service_id\":\"api\",\"signal\":\"latency\",\"severity\":\"high\",\"timestamp\":\"2026-08-02T00:00:00Z\"}]}"
+        }
+      ],
+      "ttlMs": 1000,
+      "cacheScope": "private",
+      "_meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "stateless-mcp-incident-lab",
+          "version": "2026-07-28"
+        },
+        "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
+      }
+    }
+  }
 }

@@ -1,14 +1,45 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "resources-list-order",
-      "must": "Resource and template catalogs have deterministic URI order"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 200,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "resultType": "complete",
+      "resources": [
+        {
+          "uri": "incident://runbooks/api",
+          "name": "API runbook",
+          "mimeType": "text/markdown"
+        },
+        {
+          "uri": "incident://runbooks/database",
+          "name": "Database runbook",
+          "mimeType": "text/markdown"
+        },
+        {
+          "uri": "incident://topology/services",
+          "name": "Service topology",
+          "mimeType": "application/json"
+        }
+      ],
+      "ttlMs": 60000,
+      "cacheScope": "public",
+      "_meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "stateless-mcp-incident-lab",
+          "version": "2026-07-28"
+        },
+        "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
+      }
+    }
+  }
 }

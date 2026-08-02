@@ -1,9 +1,25 @@
 {
-  "scenario": "domain-error-split",
-  "contract": "Tool domain failures are complete isError results while malformed protocol inputs are JSON-RPC errors",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "operation": "classify_tool_failure",
+  "cases": [
+    {
+      "name": "domain_failure",
+      "request": {
+        "method": "tools/call",
+        "params": {
+          "name": "get_incident",
+          "arguments": {"incident_id": "UNKNOWN"}
+        }
+      }
+    },
+    {
+      "name": "malformed_protocol_input",
+      "request": {
+        "method": "tools/call",
+        "params": {
+          "name": "get_incident",
+          "arguments": "not-an-object"
+        }
+      }
+    }
   ]
 }

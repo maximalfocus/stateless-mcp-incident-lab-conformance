@@ -22,7 +22,13 @@
     "raw",
     "sdk"
   ],
-  "context": "primitives",
+  "context": "protocol-platform",
   "approved_by": null,
-  "approved_at": null
+  "approved_at": null,
+  "source_deps": [
+    "src/application/catalogs.ts",
+    "src/application/tools.ts",
+    "src/application/resources.ts",
+    "src/application/prompts.ts"
+  ]
 }

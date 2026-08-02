@@ -1,9 +1,4 @@
 {
-  "scenario": "runbook-read",
-  "contract": "Reading a seeded runbook URI returns versioned markdown and public cache hints",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB",
+  "catalog_page_size": 50
 }

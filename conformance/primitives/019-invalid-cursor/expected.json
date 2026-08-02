@@ -1,14 +1,23 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "invalid-cursor",
-      "must": "Any invalid catalog cursor returns -32602"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 200,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32602,
+      "message": "Invalid params",
+      "data": {
+        "reason": "Invalid cursor"
+      }
+    }
+  }
 }

@@ -5,18 +5,18 @@
     "Accept": "application/json, text/event-stream",
     "MCP-Protocol-Version": "2026-07-28",
     "Mcp-Method": "resources/read",
-    "Mcp-Name": "{{ANY_STRING}}"
+    "Mcp-Name": "incident://runbooks/api"
   },
   "body": {
     "jsonrpc": "2.0",
     "id": 1,
     "method": "resources/read",
     "params": {
-      "scenario": "runbook-read",
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
         "io.modelcontextprotocol/clientCapabilities": {}
-      }
+      },
+      "uri": "incident://runbooks/api"
     }
   }
 }

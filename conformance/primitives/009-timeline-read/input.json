@@ -1,9 +1,4 @@
 {
-  "scenario": "timeline-read",
-  "contract": "Reading a held incident timeline URI returns private cache hints and never catalogs the handle",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB",
+  "catalog_page_size": 50
 }

@@ -1,4 +1,11 @@
 {
-  "scenario": "SEEDED-DETERMINISTIC-INCIDENT-LAB",
-  "entities": []
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB",
+  "clock": "2026-08-02T00:00:00Z",
+  "incidents": [
+    {
+      "incident_id": "INCIDENT-OPEN",
+      "status": "OPEN",
+      "expires_at": "2026-08-02T01:00:00Z"
+    }
+  ]
 }

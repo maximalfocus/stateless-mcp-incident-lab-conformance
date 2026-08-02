@@ -1,9 +1,26 @@
 {
-  "scenario": "tools-list-pagination",
-  "contract": "The client follows opaque tool-list cursors including an empty-string cursor until nextCursor is absent",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "operation": "walk_paginated_list",
+  "method": "tools/list",
+  "pages": [
+    {
+      "request_params": {},
+      "result": {
+        "tools": ["create_incident", "execute_remediation"],
+        "nextCursor": ""
+      }
+    },
+    {
+      "request_params": {"cursor": ""},
+      "result": {
+        "tools": ["get_incident", "propose_remediation"],
+        "nextCursor": "opaque-2"
+      }
+    },
+    {
+      "request_params": {"cursor": "opaque-2"},
+      "result": {
+        "tools": ["query_telemetry", "resolve_incident", "run_diagnostic"]
+      }
+    }
   ]
 }

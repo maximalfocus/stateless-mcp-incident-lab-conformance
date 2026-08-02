@@ -5,17 +5,21 @@
     "Accept": "application/json, text/event-stream",
     "MCP-Protocol-Version": "2026-07-28",
     "Mcp-Method": "prompts/get",
-    "Mcp-Name": "{{ANY_STRING}}"
+    "Mcp-Name": "review_remediation"
   },
   "body": {
     "jsonrpc": "2.0",
     "id": 1,
     "method": "prompts/get",
     "params": {
-      "scenario": "review-prompt-get",
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
         "io.modelcontextprotocol/clientCapabilities": {}
+      },
+      "name": "review_remediation",
+      "arguments": {
+        "incident_id": "INCIDENT-OPEN",
+        "remediation_id": "REMEDIATION-001"
       }
     }
   }

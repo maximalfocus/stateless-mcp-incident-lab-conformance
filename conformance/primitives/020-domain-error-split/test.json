@@ -6,7 +6,7 @@
     "when": "the primitives contract is exercised",
     "then": "tool domain failures are complete isError results while malformed protocol inputs are JSON-RPC errors"
   },
-  "boundary": "http",
+  "boundary": "function",
   "normalisation": [
     "timestamp",
     "generated_id",
@@ -22,7 +22,14 @@
     "raw",
     "sdk"
   ],
-  "context": "primitives",
+  "context": "protocol-platform",
   "approved_by": null,
-  "approved_at": null
+  "approved_at": null,
+  "source_deps": [
+    "src/application/catalogs.ts",
+    "src/application/tools.ts",
+    "src/application/resources.ts",
+    "src/application/prompts.ts"
+  ],
+  "type_contract": "classify_tool_failure"
 }

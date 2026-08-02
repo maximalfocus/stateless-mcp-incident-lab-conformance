@@ -1,14 +1,433 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "tools-list-order",
-      "must": "tools/list returns the seven selected tools in deterministic name order"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 200,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "resultType": "complete",
+      "tools": [
+        {
+          "name": "create_incident",
+          "description": "Create a synthetic incident and return its opaque handle.",
+          "inputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "severity": {
+                "type": "string",
+                "enum": [
+                  "low",
+                  "medium",
+                  "high",
+                  "critical"
+                ]
+              },
+              "suspected_services": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "title",
+              "severity",
+              "suspected_services"
+            ],
+            "additionalProperties": false
+          },
+          "outputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "incident_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "OPEN"
+                ]
+              },
+              "expires_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "incident_id",
+              "status",
+              "expires_at"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "name": "execute_remediation",
+          "description": "Elicit approval and execute one simulated remediation at most once.",
+          "inputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "incident_id": {
+                "type": "string"
+              },
+              "remediation_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "incident_id",
+              "remediation_id"
+            ],
+            "additionalProperties": false
+          },
+          "outputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "remediation_id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "EXECUTED",
+                  "DECLINED",
+                  "CANCELLED"
+                ]
+              },
+              "effect_count": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "remediation_id",
+              "status",
+              "effect_count"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "name": "get_incident",
+          "description": "Read the current synthetic incident lifecycle state.",
+          "inputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "incident_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "incident_id"
+            ],
+            "additionalProperties": false
+          },
+          "outputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "incident_id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "OPEN",
+                  "INVESTIGATING",
+                  "MITIGATED",
+                  "RESOLVED"
+                ]
+              },
+              "related_handles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "incident_id",
+              "status",
+              "related_handles"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "name": "propose_remediation",
+          "description": "Create a safe simulated remediation proposal from a finding.",
+          "inputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "incident_id": {
+                "type": "string"
+              },
+              "finding": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "incident_id",
+              "finding"
+            ],
+            "additionalProperties": false
+          },
+          "outputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "remediation_id": {
+                "type": "string"
+              },
+              "action": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "PROPOSED"
+                ]
+              },
+              "effect": {
+                "type": "string",
+                "enum": [
+                  "simulated"
+                ]
+              }
+            },
+            "required": [
+              "remediation_id",
+              "action",
+              "target",
+              "status",
+              "effect"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "name": "query_telemetry",
+          "description": "Query deterministic synthetic telemetry for one incident and service.",
+          "inputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "incident_id": {
+                "type": "string"
+              },
+              "service": {
+                "type": "string",
+                "minLength": 1,
+                "x-mcp-header": "Service"
+              },
+              "signal": {
+                "type": "string"
+              },
+              "start": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "end": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "incident_id",
+              "service",
+              "signal",
+              "start",
+              "end"
+            ],
+            "additionalProperties": false
+          },
+          "outputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "events": {
+                "type": "array",
+                "items": {
+                  "$schema": "https://json-schema.org/draft/2020-12/schema",
+                  "type": "object",
+                  "properties": {
+                    "service_id": {
+                      "type": "string"
+                    },
+                    "timestamp": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "signal": {
+                      "type": "string"
+                    },
+                    "severity": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "attributes": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "service_id",
+                    "timestamp",
+                    "signal",
+                    "severity",
+                    "message",
+                    "attributes"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "events"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "name": "resolve_incident",
+          "description": "Resolve an incident from an allowed lifecycle state.",
+          "inputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "incident_id": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              }
+            },
+            "required": [
+              "incident_id",
+              "summary"
+            ],
+            "additionalProperties": false
+          },
+          "outputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "incident_id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "RESOLVED"
+                ]
+              }
+            },
+            "required": [
+              "incident_id",
+              "status"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "name": "run_diagnostic",
+          "description": "Run a request-scoped streamed diagnostic for one service.",
+          "inputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "incident_id": {
+                "type": "string"
+              },
+              "service": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "incident_id",
+              "service"
+            ],
+            "additionalProperties": false
+          },
+          "outputSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "diagnostic_id": {
+                "type": "string"
+              },
+              "findings": {
+                "type": "array",
+                "items": {
+                  "$schema": "https://json-schema.org/draft/2020-12/schema",
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "service_id": {
+                      "type": "string"
+                    },
+                    "summary": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "service_id",
+                    "summary"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "diagnostic_id",
+              "findings"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "ttlMs": 60000,
+      "cacheScope": "public",
+      "_meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "stateless-mcp-incident-lab",
+          "version": "2026-07-28"
+        },
+        "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
+      }
+    }
+  }
 }
