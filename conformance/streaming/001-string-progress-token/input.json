@@ -1,9 +1,5 @@
 {
-  "scenario": "string-progress-token",
-  "contract": "A string progressToken produces request-scoped SSE progress carrying the same token",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "consume_sse",
+  "fault": null,
+  "close_after_event": null
 }

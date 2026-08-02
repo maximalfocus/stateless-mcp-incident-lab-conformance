@@ -1,9 +1,5 @@
 {
-  "scenario": "deadline-after-stream",
-  "contract": "A deadline after SSE begins closes the stream rather than emitting a 504 envelope",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "consume_sse",
+  "fault": "deadline_after_first_event",
+  "close_after_event": null
 }

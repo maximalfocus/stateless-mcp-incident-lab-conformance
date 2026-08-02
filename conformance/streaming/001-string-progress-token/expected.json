@@ -1,9 +1,63 @@
 {
-  "assertions": [
+  "headers": {
+    "Content-Type": "text/event-stream",
+    "X-Accel-Buffering": "no",
+    "{{ALLOW_EXTRA}}": true
+  },
+  "events": [
     {
-      "type": "contract",
-      "subject": "string-progress-token",
-      "must": "A string progressToken produces request-scoped SSE progress carrying the same token"
+      "event": "message",
+      "data": {
+        "jsonrpc": "2.0",
+        "method": "notifications/progress",
+        "params": {
+          "progressToken": "diag-1",
+          "progress": 0,
+          "total": 100
+        }
+      }
+    },
+    {
+      "event": "message",
+      "data": {
+        "jsonrpc": "2.0",
+        "method": "notifications/progress",
+        "params": {
+          "progressToken": "diag-1",
+          "progress": 50,
+          "total": 100
+        }
+      }
+    },
+    {
+      "event": "message",
+      "data": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "resultType": "complete",
+          "content": [
+            {
+              "type": "text",
+              "text": "Diagnostic complete."
+            }
+          ],
+          "structuredContent": {
+            "diagnostic_id": "{{GENERATED_ID}}"
+          },
+          "isError": false,
+          "_meta": {
+            "io.modelcontextprotocol/serverInfo": {
+              "name": "stateless-mcp-incident-lab",
+              "version": "2026-07-28"
+            },
+            "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
+          }
+        }
+      }
     }
-  ]
+  ],
+  "stream_closed": true,
+  "resource_count_after": 0,
+  "reissued_request_ids": []
 }

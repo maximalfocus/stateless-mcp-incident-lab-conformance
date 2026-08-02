@@ -1,9 +1,25 @@
 {
-  "assertions": [
+  "headers": {
+    "Content-Type": "text/event-stream",
+    "X-Accel-Buffering": "no",
+    "{{ALLOW_EXTRA}}": true
+  },
+  "events": [
     {
-      "type": "contract",
-      "subject": "deadline-after-stream",
-      "must": "A deadline after SSE begins closes the stream rather than emitting a 504 envelope"
+      "event": "message",
+      "data": {
+        "jsonrpc": "2.0",
+        "method": "notifications/progress",
+        "params": {
+          "progressToken": "diag-1",
+          "progress": 0,
+          "total": 100
+        }
+      }
     }
-  ]
+  ],
+  "stream_closed": true,
+  "resource_count_after": 0,
+  "reissued_request_ids": [],
+  "deadline_envelope_emitted": false
 }

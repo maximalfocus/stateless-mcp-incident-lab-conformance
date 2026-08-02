@@ -1,9 +1,5 @@
 {
-  "scenario": "integer-progress-token",
-  "contract": "An integer progressToken is preserved without string coercion",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "consume_sse",
+  "fault": null,
+  "close_after_event": null
 }

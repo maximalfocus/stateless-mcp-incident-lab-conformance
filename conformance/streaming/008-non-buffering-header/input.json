@@ -1,9 +1,5 @@
 {
-  "scenario": "non-buffering-header",
-  "contract": "Every SSE response sets X-Accel-Buffering no",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "consume_sse",
+  "fault": null,
+  "close_after_event": null
 }

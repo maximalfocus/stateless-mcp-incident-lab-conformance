@@ -5,17 +5,22 @@
     "Accept": "application/json, text/event-stream",
     "MCP-Protocol-Version": "2026-07-28",
     "Mcp-Method": "tools/call",
-    "Mcp-Name": "{{ANY_STRING}}"
+    "Mcp-Name": "run_diagnostic"
   },
   "body": {
     "jsonrpc": "2.0",
     "id": 1,
     "method": "tools/call",
     "params": {
-      "scenario": "disconnect-cancels",
+      "name": "run_diagnostic",
+      "arguments": {
+        "incident_id": "INCIDENT-OPEN",
+        "service": "api"
+      },
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
-        "io.modelcontextprotocol/clientCapabilities": {}
+        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
+        "io.modelcontextprotocol/clientCapabilities": {},
+        "progressToken": "diag-1"
       }
     }
   }

@@ -1,9 +1,7 @@
 {
-  "scenario": "broken-stream-reissue",
-  "contract": "A broken stream before final response is lost and reissued with a new id",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "consume_sse",
+  "fault": "break_before_final",
+  "close_after_event": null,
+  "original_request_id": 1,
+  "retry_request_id": 2
 }
