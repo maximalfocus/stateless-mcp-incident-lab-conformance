@@ -1,14 +1,41 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "client-info-optional",
-      "must": "A request without clientInfo remains valid"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 200,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "resultType": "complete",
+      "supportedVersions": [
+        "2026-07-28"
+      ],
+      "capabilities": {
+        "tools": {},
+        "resources": {},
+        "prompts": {}
+      },
+      "serverInfo": {
+        "name": "stateless-mcp-incident-lab",
+        "version": "2026-07-28"
+      },
+      "instructions": "Use discovery, catalogs, and explicit incident handles to investigate the synthetic incident lab.",
+      "ttlMs": 60000,
+      "cacheScope": "public",
+      "_meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "stateless-mcp-incident-lab",
+          "version": "2026-07-28"
+        },
+        "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
+      }
+    }
+  }
 }

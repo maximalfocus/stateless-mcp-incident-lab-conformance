@@ -1,9 +1,15 @@
 {
-  "scenario": "per-request-capabilities",
-  "contract": "Client capabilities are evaluated independently on every request",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "requests": [
+    {
+      "client_capabilities": {
+        "elicitation": {
+          "form": {}
+        }
+      }
+    },
+    {
+      "client_capabilities": {}
+    }
+  ],
+  "connection_reused": true
 }

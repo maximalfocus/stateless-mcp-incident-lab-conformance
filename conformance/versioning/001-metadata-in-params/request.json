@@ -11,7 +11,6 @@
     "id": 1,
     "method": "server/discover",
     "params": {
-      "scenario": "metadata-in-params",
       "_meta": {
         "io.modelcontextprotocol/protocolVersion": "2026-07-28",
         "io.modelcontextprotocol/clientCapabilities": {}

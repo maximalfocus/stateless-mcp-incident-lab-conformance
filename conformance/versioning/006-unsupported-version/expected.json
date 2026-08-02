@@ -1,14 +1,26 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "unsupported-version",
-      "must": "Unsupported version yields -32022 with requested and supported fields"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 400,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32022,
+      "message": "Unsupported protocol version",
+      "data": {
+        "requested": "2025-11-25",
+        "supported": [
+          "2026-07-28"
+        ]
+      }
+    }
+  }
 }

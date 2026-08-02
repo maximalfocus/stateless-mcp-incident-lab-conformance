@@ -1,9 +1,11 @@
 {
-  "scenario": "per-request-version",
-  "contract": "Protocol version is evaluated independently on every request",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "requests": [
+    {
+      "protocol_version": "2026-07-28"
+    },
+    {
+      "protocol_version": "2025-11-25"
+    }
+  ],
+  "connection_reused": true
 }

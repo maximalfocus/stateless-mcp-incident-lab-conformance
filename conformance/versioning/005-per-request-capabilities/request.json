@@ -4,17 +4,26 @@
   "headers": {
     "Accept": "application/json, text/event-stream",
     "MCP-Protocol-Version": "2026-07-28",
-    "Mcp-Method": "server/discover"
+    "Mcp-Method": "tools/call",
+    "Mcp-Name": "execute_remediation"
   },
   "body": {
     "jsonrpc": "2.0",
     "id": 1,
-    "method": "server/discover",
+    "method": "tools/call",
     "params": {
-      "scenario": "per-request-capabilities",
+      "name": "execute_remediation",
+      "arguments": {
+        "incident_id": "INCIDENT-OPEN",
+        "remediation_id": "REMEDIATION-001"
+      },
       "_meta": {
         "io.modelcontextprotocol/protocolVersion": "2026-07-28",
-        "io.modelcontextprotocol/clientCapabilities": {}
+        "io.modelcontextprotocol/clientCapabilities": {
+          "elicitation": {
+            "form": {}
+          }
+        }
       }
     }
   }

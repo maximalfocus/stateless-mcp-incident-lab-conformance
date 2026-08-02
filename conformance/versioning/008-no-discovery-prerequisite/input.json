@@ -1,9 +1,4 @@
 {
-  "scenario": "no-discovery-prerequisite",
-  "contract": "A valid RPC may be invoked before server/discover",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "fresh_process",
+  "prior_requests": []
 }

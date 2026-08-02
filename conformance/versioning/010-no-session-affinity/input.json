@@ -1,9 +1,18 @@
 {
-  "scenario": "no-session-affinity",
-  "contract": "A supplied cookie, source address, prior request, or Mcp-Session-Id cannot affect protocol behavior",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "requests": [
+    {
+      "cookie": null,
+      "source_ip": "127.0.0.1",
+      "replica": "A"
+    },
+    {
+      "cookie": "sid=attacker",
+      "source_ip": "198.51.100.7",
+      "replica": "B",
+      "headers": {
+        "Mcp-Session-Id": "invented"
+      }
+    }
+  ],
+  "compare": "normalized_response"
 }

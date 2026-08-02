@@ -1,9 +1,8 @@
 {
-  "scenario": "client-version-recovery",
-  "contract": "A client retries with a mutually supported version after UnsupportedProtocolVersionError",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "discover_with_version_recovery",
+  "offered_versions": [
+    "2025-11-25",
+    "2026-07-28"
+  ],
+  "max_attempts": 2
 }

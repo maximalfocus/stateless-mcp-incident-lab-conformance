@@ -1,14 +1,29 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "no-discovery-prerequisite",
-      "must": "A valid RPC may be invoked before server/discover"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 200,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "resultType": "complete",
+      "tools": [],
+      "ttlMs": 60000,
+      "cacheScope": "public",
+      "_meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "stateless-mcp-incident-lab",
+          "version": "2026-07-28"
+        },
+        "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
+      }
+    }
+  }
 }

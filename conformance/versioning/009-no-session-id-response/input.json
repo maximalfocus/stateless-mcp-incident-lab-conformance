@@ -1,9 +1,4 @@
 {
-  "scenario": "no-session-id-response",
-  "contract": "No response sets or returns Mcp-Session-Id",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "fresh_process",
+  "prior_requests": []
 }

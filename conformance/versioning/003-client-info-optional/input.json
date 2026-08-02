@@ -1,9 +1,4 @@
 {
-  "scenario": "client-info-optional",
-  "contract": "A request without clientInfo remains valid",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "fresh_process",
+  "prior_requests": []
 }
