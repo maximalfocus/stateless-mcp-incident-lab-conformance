@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "matrix-equivalent-observables",
+      "must": "All four combinations yield equivalent normalized domain and protocol observables"
+    }
+  ]
+}

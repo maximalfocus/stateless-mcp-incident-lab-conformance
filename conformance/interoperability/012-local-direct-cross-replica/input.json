@@ -1,0 +1,9 @@
+{
+  "scenario": "local-direct-cross-replica",
+  "contract": "Test-only direct endpoints deterministically complete an MRTR initial/retry pair on different replicas",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

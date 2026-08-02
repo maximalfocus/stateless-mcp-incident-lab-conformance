@@ -1,0 +1,9 @@
+{
+  "scenario": "allowed-metadata-difference",
+  "contract": "Only documented server identity and vendor replica metadata may differ across realizations",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

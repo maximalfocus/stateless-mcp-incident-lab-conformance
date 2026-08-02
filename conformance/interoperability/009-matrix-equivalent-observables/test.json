@@ -1,0 +1,28 @@
+{
+  "spec_id": "INT-009",
+  "description": "All four combinations yield equivalent normalized domain and protocol observables",
+  "description_bdd": {
+    "given": "the matrix equivalent observables scenario",
+    "when": "the interoperability contract is exercised",
+    "then": "all four combinations yield equivalent normalized domain and protocol observables"
+  },
+  "boundary": "contract",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Interoperability and acceptance",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "interoperability",
+  "approved_by": null,
+  "approved_at": null
+}

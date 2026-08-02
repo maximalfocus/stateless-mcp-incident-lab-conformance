@@ -1,0 +1,9 @@
+{
+  "scenario": "sdk-client-raw-server-discovery",
+  "contract": "SDK client and raw server agree on discovery and catalogs",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

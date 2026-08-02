@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "local-direct-cross-replica",
+      "must": "Test-only direct endpoints deterministically complete an MRTR initial/retry pair on different replicas"
+    }
+  ]
+}

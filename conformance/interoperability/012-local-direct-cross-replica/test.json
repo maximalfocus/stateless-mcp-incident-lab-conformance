@@ -1,0 +1,28 @@
+{
+  "spec_id": "INT-012",
+  "description": "Test-only direct endpoints deterministically complete an MRTR initial/retry pair on different replicas",
+  "description_bdd": {
+    "given": "the local direct cross replica scenario",
+    "when": "the interoperability contract is exercised",
+    "then": "test-only direct endpoints deterministically complete an MRTR initial/retry pair on different replicas"
+  },
+  "boundary": "contract",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Interoperability and acceptance",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "interoperability",
+  "approved_by": null,
+  "approved_at": null
+}

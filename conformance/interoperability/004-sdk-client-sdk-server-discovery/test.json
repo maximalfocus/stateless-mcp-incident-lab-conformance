@@ -1,0 +1,28 @@
+{
+  "spec_id": "INT-004",
+  "description": "SDK client and SDK server agree on discovery and catalogs",
+  "description_bdd": {
+    "given": "the sdk client sdk server discovery scenario",
+    "when": "the interoperability contract is exercised",
+    "then": "sDK client and SDK server agree on discovery and catalogs"
+  },
+  "boundary": "contract",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Interoperability and acceptance",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "interoperability",
+  "approved_by": null,
+  "approved_at": null
+}

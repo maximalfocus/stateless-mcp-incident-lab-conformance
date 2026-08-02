@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "sdk-client-sdk-server-workflow",
+      "must": "SDK to SDK completes incident, MRTR, streaming, cache, and recovery workflow"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "spec_id": "INT-011",
+  "description": "The public Nginx endpoint distributes requests across at least two replicas per implementation",
+  "description_bdd": {
+    "given": "the local public distribution scenario",
+    "when": "the interoperability contract is exercised",
+    "then": "the public Nginx endpoint distributes requests across at least two replicas per implementation"
+  },
+  "boundary": "contract",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Interoperability and acceptance",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "interoperability",
+  "approved_by": null,
+  "approved_at": null
+}

@@ -1,0 +1,28 @@
+{
+  "spec_id": "INT-001",
+  "description": "Raw client and raw server agree on discovery and catalogs",
+  "description_bdd": {
+    "given": "the raw client raw server discovery scenario",
+    "when": "the interoperability contract is exercised",
+    "then": "raw client and raw server agree on discovery and catalogs"
+  },
+  "boundary": "contract",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Interoperability and acceptance",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "interoperability",
+  "approved_by": null,
+  "approved_at": null
+}

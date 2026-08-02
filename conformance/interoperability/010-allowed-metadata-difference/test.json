@@ -1,0 +1,28 @@
+{
+  "spec_id": "INT-010",
+  "description": "Only documented server identity and vendor replica metadata may differ across realizations",
+  "description_bdd": {
+    "given": "the allowed metadata difference scenario",
+    "when": "the interoperability contract is exercised",
+    "then": "only documented server identity and vendor replica metadata may differ across realizations"
+  },
+  "boundary": "contract",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Interoperability and acceptance",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "interoperability",
+  "approved_by": null,
+  "approved_at": null
+}

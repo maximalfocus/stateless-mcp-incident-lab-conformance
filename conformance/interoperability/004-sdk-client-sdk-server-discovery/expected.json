@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "sdk-client-sdk-server-discovery",
+      "must": "SDK client and SDK server agree on discovery and catalogs"
+    }
+  ]
+}

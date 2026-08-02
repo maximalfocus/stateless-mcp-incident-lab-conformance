@@ -1,0 +1,28 @@
+{
+  "spec_id": "INT-005",
+  "description": "Raw to raw completes incident, MRTR, streaming, cache, and recovery workflow",
+  "description_bdd": {
+    "given": "the raw client raw server workflow scenario",
+    "when": "the interoperability contract is exercised",
+    "then": "raw to raw completes incident, MRTR, streaming, cache, and recovery workflow"
+  },
+  "boundary": "contract",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Interoperability and acceptance",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "interoperability",
+  "approved_by": null,
+  "approved_at": null
+}

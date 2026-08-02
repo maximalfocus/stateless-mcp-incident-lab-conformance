@@ -1,0 +1,9 @@
+{
+  "scenario": "raw-client-sdk-server-workflow",
+  "contract": "Raw to SDK completes incident, MRTR, streaming, cache, and recovery workflow",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}
