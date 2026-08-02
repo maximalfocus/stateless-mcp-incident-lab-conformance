@@ -187,7 +187,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/adapters/inbound/sse.ts, src/client/sse.ts`
   - Depends on: WI-034
 
-- [ ] **WI-036** raw cache contracts 1–3 (3 tests)
+- [~] **WI-036** raw cache contracts 1–3 (3 tests)
   - Tests: `conformance/cache/001-exact-six-cacheable`, `conformance/cache/002-nonnegative-ttl`, `conformance/cache/003-scope-by-resource`
   - Scope: `src/client/cache.ts`
   - Depends on: WI-035
