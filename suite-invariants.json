@@ -45,5 +45,12 @@
     "{{JWT_TOKEN}}",
     "{{ANY_STRING}}",
     "{{ALLOW_EXTRA}}"
-  ]
+  ],
+  "runner": {
+    "contract": "RUNNER-CONTRACT.md",
+    "unknown_assertion_types_fail": true,
+    "missing_observations_fail": true,
+    "empty_architecture_globs_fail": true,
+    "golden_auto_update_forbidden": true
+  }
 }
