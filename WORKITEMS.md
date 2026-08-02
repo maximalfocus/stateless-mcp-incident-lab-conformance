@@ -177,7 +177,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/adapters/inbound/sse.ts, src/client/sse.ts`
   - Depends on: WI-032
 
-- [~] **WI-034** raw streaming contracts 4–6 (3 tests)
+- [x] **WI-034** raw streaming contracts 4–6 (3 tests)
   - Tests: `conformance/streaming/004-progress-before-final`, `conformance/streaming/005-no-progress-after-final`, `conformance/streaming/006-disconnect-cancels`
   - Scope: `src/adapters/inbound/sse.ts, src/client/sse.ts, test/conformance/runner.ts, test/conformance/runner.test.ts`
   - Depends on: WI-033
