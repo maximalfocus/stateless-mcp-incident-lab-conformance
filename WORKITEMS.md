@@ -42,7 +42,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/version.ts, src/client/version.ts`
   - Depends on: WI-005
 
-- [ ] **WI-007** raw versioning contracts 4–6 (3 tests)
+- [~] **WI-007** raw versioning contracts 4–6 (3 tests)
   - Tests: `conformance/versioning/004-per-request-version`, `conformance/versioning/005-per-request-capabilities`, `conformance/versioning/006-unsupported-version`
   - Scope: `src/protocol/version.ts, src/client/version.ts`
   - Depends on: WI-006
