@@ -61,7 +61,7 @@ doc_ids=re.findall(r'`([A-Z]+-[0-9]{3})`',coverage)
 if len(doc_ids)!=len(set(doc_ids)): errors.append('coverage-tracking.md contains duplicate spec IDs')
 if set(doc_ids)!=set(ids):
   errors.append(f'coverage bijection mismatch: disk-only={sorted(set(ids)-set(doc_ids))}, doc-only={sorted(set(doc_ids)-set(ids))}')
-if '197/197 planned golden contracts authored (100%)' not in coverage: errors.append('coverage summary count is stale')
+if '197/197 planned test directories structurally present' not in coverage: errors.append('coverage summary count is stale')
 # WORKITEM closure, sizing, and ordered acyclic DAG.
 wi=(root/'WORKITEMS.md').read_text()
 wi_ids=re.findall(r'\*\*(WI-[0-9]{3})\*\*',wi)
@@ -87,6 +87,9 @@ for p in tests:
   e=json.loads(expected_path.read_text())
   if t.get('boundary')!='property':
     assertions=e.get('assertions',[])
+    known_assertions={'no_import','no_deep_import','strict_http_shape','contract'}
+    unknown=[a.get('type') for a in assertions if a.get('type') not in known_assertions]
+    if unknown: errors.append(f"{t['spec_id']}: unknown assertion types {unknown}")
     contracts=[a for a in assertions if a.get('type')=='contract']
     if contracts: errors.append(f"{t['spec_id']}: prose-only contract assertion is not executable")
     if any(a.get('type')=='strict_http_shape' for a in assertions) and not {'status','headers','body'} <= e.keys(): errors.append(f"{t['spec_id']}: strict_http_shape has no complete status/headers/body expectation")

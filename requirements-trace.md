@@ -1,5 +1,7 @@
 # PRD line-by-line trace
 
+> **Peer-review status:** This document proves planned ID/topic allocation only. It does not prove executable behavioral coverage. The degraded fallback found 17 categories built from runner-hardcoded `params.scenario` plus prose-only expected assertions; their `COVERED` rows below are suspended until those fixtures are rewritten and independently reviewed.
+
 Mechanical first pass: `node ~/personal/cdd-skills/tools/coverage-review.ts ../stateless-mcp-incident-lab-prd/PRD.md conformance`. It discovers 191 top-level tests because the tool does not recurse through mandatory `architecture/{dependencies,boundaries}/`; the recursive suite validator confirms all 197. Findings below are the required judgment pass.
 
 | PRD section | Status | Golden coverage / disposition |

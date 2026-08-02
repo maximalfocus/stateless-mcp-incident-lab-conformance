@@ -1,9 +1,13 @@
-# Author self-review
+# Author self-review — invalidated by peer review
 
-- [x] 8a — all expected files recursively audited against convention-reference and suite-invariants.
-- [x] 8b — recursive structural validator and shared golden-lint passed.
-- [x] 8c — HTTP fixtures use deterministic empty seed where no domain seed is needed; logical fixture scenario is declared consistently.
-- [x] 8d — placeholders restricted to declared values; generated IDs/timestamps are normalized, never hard-coded.
-- [x] 8e — every BDD then clause is generated from and equal in meaning to the authoritative description.
-- [x] 8f — not applicable: greenfield suite; source citations point to PRD/PLAN and captured normative specification rather than implementation code.
-- [x] 8g — transport/protocol/domain/MRTR/security negative conditions include 400/403/404/405/409-equivalent domain conflict, 413/504, capability-disabled, tamper, expiry, decline, and cancellation paths.
+The original authoring pass marked every item complete, but the degraded peer-review fallback disproved that claim. Only `architecture/` and the rewritten `protocol/` category currently carry replayable machine-checkable expectations.
+
+- [ ] 8a — complete expected-shape consistency cannot be audited while 184 prose-only assertions remain.
+- [ ] 8b — structural lint passes, but `scripts/validate-suite.py` correctly fails on non-replayable contracts.
+- [ ] 8c — generic empty seeds and `params.scenario` do not establish request/seed coherence.
+- [ ] 8d — placeholders must be re-audited after concrete outputs replace prose assertions.
+- [ ] 8e — BDD descriptions must be checked against concrete expected values during each category rewrite.
+- [ ] 8f — greenfield source citations must be narrowed to exact normative sections during rewrite.
+- [ ] 8g — named negative cases exist as directory labels, but most do not yet carry decisive malformed inputs and exact outputs.
+
+Implementation is blocked until these are completed and cross-vendor `/peerreview` converges.
