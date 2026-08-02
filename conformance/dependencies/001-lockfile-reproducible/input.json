@@ -1,9 +1,11 @@
 {
-  "scenario": "lockfile-reproducible",
-  "contract": "Each implementation commits one lockfile and frozen install reproduces dependency resolution",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "subject": "dependency_install",
+  "files": [
+    "package.json",
+    "package-lock.json"
+  ],
+  "commands": [
+    "npm ci",
+    "npm ls --json"
   ]
 }

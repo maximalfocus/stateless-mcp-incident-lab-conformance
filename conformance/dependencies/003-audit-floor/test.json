@@ -22,8 +22,12 @@
     "raw",
     "sdk"
   ],
-  "context": "dependencies",
+  "context": "assurance",
   "approved_by": null,
   "approved_at": null,
-  "type_contract": "audit_floor_contract"
+  "type_contract": "audit_floor_contract",
+  "source_deps": [
+    "package.json",
+    "package-lock.json"
+  ]
 }

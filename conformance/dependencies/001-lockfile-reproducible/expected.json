@@ -1,9 +1,7 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "lockfile-reproducible",
-      "must": "Each implementation commits one lockfile and frozen install reproduces dependency resolution"
-    }
-  ]
+  "violations": [],
+  "lockfiles": [
+    "package-lock.json"
+  ],
+  "resolution_reproducible": true
 }

@@ -1,9 +1,4 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "audit-floor",
-      "must": "npm audit reports no unsuppressed high or critical vulnerability"
-    }
-  ]
+  "violations": [],
+  "unsuppressed": []
 }

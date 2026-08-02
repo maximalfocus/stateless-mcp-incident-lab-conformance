@@ -1,9 +1,11 @@
 {
-  "scenario": "approved-licenses",
-  "contract": "Runtime dependency licenses are from the approved allowlist or carry an explicit reviewed exception",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "subject": "runtime_licenses",
+  "allow": [
+    "MIT",
+    "Apache-2.0",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC"
+  ],
+  "exceptions_file": "dependency-exceptions.json"
 }
