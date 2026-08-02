@@ -82,7 +82,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/adapters/inbound/http.ts, src/client/http.ts`
   - Depends on: WI-013
 
-- [~] **WI-015** raw discovery contracts 1–3 (3 tests)
+- [x] **WI-015** raw discovery contracts 1–3 (3 tests)
   - Tests: `conformance/discovery/001-supported-version`, `conformance/discovery/002-exact-capabilities`, `conformance/discovery/003-no-list-changed`
   - Scope: `src/application/discover.ts`
   - Depends on: WI-014
