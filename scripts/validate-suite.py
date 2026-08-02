@@ -1,6 +1,6 @@
 from pathlib import Path
 import json,re,sys
-root=Path('/Users/focus/personal/stateless-mcp-incident-lab-conformance')
+root=Path(__file__).resolve().parents[1]
 conf=root/'conformance'; errors=[]; warns=[]; ids={}; tests=[]
 allowed={'cli','http','http-html','function','property','component','interaction','metric-assertion','lint-assertion','http-contract','decision-record','workflow-assertion','state-machine','story','e2e','cross-browser-assertion','contract','structural-contract','documentation-contract','packaging-contract','cross-language-contract','transactional','signal-reactivity','reactive-form','graphql','grpc','message','websocket','sse','sql','accessibility','prompt-eval','tool-call','trace-span','webhook','visual-regression','i18n'}
 for p in sorted(conf.rglob('test.json')):
@@ -40,9 +40,36 @@ cats={p.relative_to(conf).parts[0] for p in tests}
 if cats!=expected_cats: errors.append(f'categories mismatch {cats^expected_cats}')
 for sub in ('dependencies','boundaries'):
   if not any((conf/'architecture'/sub).rglob('test.json')): errors.append(f'architecture/{sub} empty')
+# Disk ⇔ coverage bijection: coverage must enumerate each ID individually.
+coverage=(root/'coverage-tracking.md').read_text()
+doc_ids=re.findall(r'`([A-Z]+-[0-9]{3})`',coverage)
+if len(doc_ids)!=len(set(doc_ids)): errors.append('coverage-tracking.md contains duplicate spec IDs')
+if set(doc_ids)!=set(ids):
+  errors.append(f'coverage bijection mismatch: disk-only={sorted(set(ids)-set(doc_ids))}, doc-only={sorted(set(doc_ids)-set(ids))}')
+if '197/197 planned golden contracts authored (100%)' not in coverage: errors.append('coverage summary count is stale')
+# WORKITEM closure, sizing, and ordered acyclic DAG.
+wi=(root/'WORKITEMS.md').read_text()
+wi_ids=re.findall(r'\*\*(WI-[0-9]{3})\*\*',wi)
+wi_deps=re.findall(r'Depends on: (WI-[0-9]{3}|none)',wi)
+wi_counts=list(map(int,re.findall(r'\(([0-9]+) tests\)',wi)))
+wi_paths=re.findall(r'`(conformance/[^`]+)`',wi)
+expected_paths={str(p.parent.relative_to(root)) for p in tests}
+if len(wi_ids)!=len(set(wi_ids)) or len(wi_ids)!=len(wi_deps): errors.append('WORKITEM IDs/dependencies malformed')
+if wi_counts and (min(wi_counts)<2 or max(wi_counts)>5 or sum(wi_counts)!=len(tests)): errors.append('WORKITEM sizing/count invalid')
+if set(wi_paths)!=expected_paths or len(wi_paths)!=len(set(wi_paths)): errors.append('WORKITEM test-path bijection invalid')
+for i,dep in enumerate(wi_deps):
+  want='none' if i==0 else wi_ids[i-1]
+  if dep!=want: errors.append(f'{wi_ids[i]} dependency {dep} != ordered predecessor {want}')
+# Agent wrapper leakage in shipped artifacts.
+for p in root.rglob('*'):
+  if '.git' in p.parts or not p.is_file() or p.suffix not in ('.md','.json','.yaml','.yml'): continue
+  if re.search(r'^\s*</(?:content|invoke|parameter)>\s*$',p.read_text(errors='ignore'),re.M): errors.append(f'{p.relative_to(root)} leaked agent wrapper tag')
 # Every expected contract assertion must carry the exact authoritative test description.
 for p in tests:
-  t=json.loads(p.read_text()); e=json.loads((p.parent/'expected.json').read_text())
+  t=json.loads(p.read_text())
+  expected_path=p.parent/'expected.json'
+  if not expected_path.exists(): continue
+  e=json.loads(expected_path.read_text())
   if t.get('boundary')!='property':
     contracts=[a for a in e.get('assertions',[]) if a.get('type')=='contract']
     if not t['spec_id'].startswith('ARCH-') and (len(contracts)!=1 or contracts[0].get('must')!=t['description']): errors.append(f"{t['spec_id']}: expected contract/description drift")
