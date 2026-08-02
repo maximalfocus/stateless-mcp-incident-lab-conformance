@@ -62,7 +62,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/adapters/inbound/http.ts, src/client/http.ts`
   - Depends on: WI-009
 
-- [ ] **WI-011** raw transport contracts 7–9 (3 tests)
+- [~] **WI-011** raw transport contracts 7–9 (3 tests)
   - Tests: `conformance/transport/007-invalid-origin-first`, `conformance/transport/008-ignore-last-event-id`, `conformance/transport/009-required-version-header`
   - Scope: `src/adapters/inbound/http.ts, src/client/http.ts`
   - Depends on: WI-010
