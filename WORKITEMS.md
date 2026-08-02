@@ -202,7 +202,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/client/cache.ts`
   - Depends on: WI-037
 
-- [ ] **WI-039** raw cli contracts 1–3 (3 tests)
+- [~] **WI-039** raw cli contracts 1–3 (3 tests)
   - Tests: `conformance/cli/001-discover-command`, `conformance/cli/002-tools-list-command`, `conformance/cli/003-tools-inspect-command`
   - Scope: `src/adapters/inbound/cli.ts`
   - Depends on: WI-038
