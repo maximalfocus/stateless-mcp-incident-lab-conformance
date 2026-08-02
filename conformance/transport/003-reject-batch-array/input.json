@@ -1,9 +1,3 @@
 {
-  "scenario": "reject-batch-array",
-  "contract": "A batch array is malformed shape and yields -32600",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "fresh_process"
 }

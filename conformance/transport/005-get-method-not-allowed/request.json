@@ -1,5 +1,5 @@
 {
-  "method": "POST",
+  "method": "GET",
   "path": "/raw/mcp",
   "headers": {
     "Accept": "application/json, text/event-stream",
@@ -10,12 +10,6 @@
     "jsonrpc": "2.0",
     "id": 1,
     "method": "server/discover",
-    "params": {
-      "scenario": "get-method-not-allowed",
-      "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
-        "io.modelcontextprotocol/clientCapabilities": {}
-      }
-    }
+    "params": {}
   }
 }

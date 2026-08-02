@@ -22,7 +22,11 @@
     "raw",
     "sdk"
   ],
-  "context": "transport",
+  "context": "protocol-platform",
   "approved_by": null,
-  "approved_at": null
+  "approved_at": null,
+  "source_deps": [
+    "src/adapters/inbound/http.ts",
+    "src/client/http.ts"
+  ]
 }

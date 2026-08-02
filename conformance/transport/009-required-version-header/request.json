@@ -3,7 +3,6 @@
   "path": "/raw/mcp",
   "headers": {
     "Accept": "application/json, text/event-stream",
-    "MCP-Protocol-Version": "2026-07-28",
     "Mcp-Method": "server/discover"
   },
   "body": {
@@ -11,9 +10,8 @@
     "id": 1,
     "method": "server/discover",
     "params": {
-      "scenario": "required-version-header",
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
         "io.modelcontextprotocol/clientCapabilities": {}
       }
     }

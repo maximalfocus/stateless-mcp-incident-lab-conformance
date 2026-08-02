@@ -1,14 +1,19 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "reject-batch-array",
-      "must": "A batch array is malformed shape and yields -32600"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 400,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "error": {
+      "code": -32600,
+      "message": "Invalid Request"
+    }
+  }
 }

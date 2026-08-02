@@ -1,14 +1,13 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "get-method-not-allowed",
-      "must": "GET on an MCP endpoint returns bodiless 405 with Allow POST"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 405,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Allow": "POST"
+  },
+  "body": null
 }

@@ -1,9 +1,6 @@
 {
-  "scenario": "payload-too-large",
-  "contract": "An oversized body yields HTTP 413, JSON content type, code -31999, no id, and no partial effect",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "body_bytes": 1048577,
+  "configured_limit_bytes": 1048576,
+  "effect_count_before": 0,
+  "intentional_request_violation": true
 }

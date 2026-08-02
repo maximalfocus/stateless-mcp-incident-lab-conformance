@@ -6,16 +6,17 @@
     "MCP-Protocol-Version": "2026-07-28",
     "Mcp-Method": "server/discover"
   },
-  "body": {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "server/discover",
-    "params": {
-      "scenario": "reject-batch-array",
-      "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
-        "io.modelcontextprotocol/clientCapabilities": {}
+  "body": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "server/discover",
+      "params": {
+        "_meta": {
+          "io.modelcontextprotocol/protocolVersion": "2025-11-25",
+          "io.modelcontextprotocol/clientCapabilities": {}
+        }
       }
     }
-  }
+  ]
 }

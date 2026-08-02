@@ -1,9 +1,3 @@
 {
-  "scenario": "post-json-response",
-  "contract": "A simple POST request can return application/json with an exact JSON-RPC response",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "fresh_process"
 }

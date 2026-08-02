@@ -1,9 +1,4 @@
 {
-  "scenario": "reject-client-response",
-  "contract": "A client-sent JSON-RPC response is malformed shape and yields -32600",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "fresh_process",
+  "intentional_request_violation": true
 }

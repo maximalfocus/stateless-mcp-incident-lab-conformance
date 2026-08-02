@@ -2,18 +2,17 @@
   "method": "POST",
   "path": "/raw/mcp",
   "headers": {
-    "Accept": "application/json, text/event-stream",
-    "MCP-Protocol-Version": "2026-07-28",
-    "Mcp-Method": "server/discover"
+    "accept": "application/json, text/event-stream",
+    "mcp-protocol-version": "2026-07-28",
+    "mcp-method": "server/discover"
   },
   "body": {
     "jsonrpc": "2.0",
     "id": 1,
     "method": "server/discover",
     "params": {
-      "scenario": "header-names-case-insensitive",
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
         "io.modelcontextprotocol/clientCapabilities": {}
       }
     }

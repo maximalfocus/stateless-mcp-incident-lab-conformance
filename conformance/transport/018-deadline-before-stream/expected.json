@@ -1,14 +1,23 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "deadline-before-stream",
-      "must": "A pre-stream deadline yields HTTP 504, JSON content type, code -31998, echoes a valid id, and leaves no partial effect"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 504,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -31998,
+      "message": "Request deadline exceeded",
+      "data": {
+        "deadlineMs": 1000
+      }
+    }
+  }
 }

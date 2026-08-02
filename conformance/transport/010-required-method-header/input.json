@@ -1,9 +1,4 @@
 {
-  "scenario": "required-method-header",
-  "contract": "A missing Mcp-Method yields HTTP 400 and -32020",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "fresh_process",
+  "intentional_request_violation": true
 }

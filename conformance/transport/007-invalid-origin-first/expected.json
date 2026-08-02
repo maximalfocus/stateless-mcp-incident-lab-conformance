@@ -1,14 +1,12 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "invalid-origin-first",
-      "must": "Invalid Origin returns bodiless 403 before all other request validation"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 403,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true
+  },
+  "body": null
 }

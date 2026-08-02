@@ -1,9 +1,4 @@
 {
-  "scenario": "base64-sentinel-roundtrip",
-  "contract": "Non-header-safe mirrored values use the specified Base64 sentinel and decode exactly",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "header_codec_round_trip",
+  "value": "\u670d\u52a1/\u652f\u4ed8"
 }

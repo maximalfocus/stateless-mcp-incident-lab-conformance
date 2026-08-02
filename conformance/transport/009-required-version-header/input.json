@@ -1,9 +1,3 @@
 {
-  "scenario": "required-version-header",
-  "contract": "A missing MCP-Protocol-Version yields HTTP 400 and -32020",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "fresh_process"
 }

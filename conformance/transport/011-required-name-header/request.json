@@ -4,16 +4,19 @@
   "headers": {
     "Accept": "application/json, text/event-stream",
     "MCP-Protocol-Version": "2026-07-28",
-    "Mcp-Method": "server/discover"
+    "Mcp-Method": "tools/call"
   },
   "body": {
     "jsonrpc": "2.0",
     "id": 1,
-    "method": "server/discover",
+    "method": "tools/call",
     "params": {
-      "scenario": "required-name-header",
+      "name": "get_incident",
+      "arguments": {
+        "incident_id": "INCIDENT-OPEN"
+      },
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
         "io.modelcontextprotocol/clientCapabilities": {}
       }
     }

@@ -1,14 +1,25 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "header-body-value-match",
-      "must": "Mirrored header values must case-sensitively equal their body source"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 400,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32020,
+      "message": "Header metadata mismatch",
+      "data": {
+        "header": "Mcp-Method",
+        "expected": "server/discover",
+        "actual": "tools/list"
+      }
+    }
+  }
 }

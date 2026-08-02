@@ -1,9 +1,4 @@
 {
-  "scenario": "header-names-case-insensitive",
-  "contract": "Mirrored HTTP header names are matched case-insensitively",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "fresh_process",
+  "intentional_request_violation": true
 }

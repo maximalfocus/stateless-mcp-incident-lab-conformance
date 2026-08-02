@@ -9,13 +9,6 @@
   "body": {
     "jsonrpc": "2.0",
     "id": 1,
-    "method": "server/discover",
-    "params": {
-      "scenario": "reject-client-response",
-      "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
-        "io.modelcontextprotocol/clientCapabilities": {}
-      }
-    }
+    "result": {}
   }
 }

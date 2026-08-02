@@ -1,9 +1,14 @@
 {
-  "scenario": "invalid-header-annotation-hidden",
-  "contract": "A tool with an invalid x-mcp-header annotation is excluded from tools/list",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "tools": [
+    {
+      "name": "unsafe_tool",
+      "x-mcp-header": {
+        "argument": "x",
+        "header": "Bad Header"
+      }
+    },
+    {
+      "name": "create_incident"
+    }
   ]
 }

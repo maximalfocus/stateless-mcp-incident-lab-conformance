@@ -1,9 +1,4 @@
 {
-  "scenario": "notification-accepted",
-  "contract": "A valid notification POST returns HTTP 202 with no body and no side effect",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "fresh_process",
+  "assert_side_effect_count": 0
 }

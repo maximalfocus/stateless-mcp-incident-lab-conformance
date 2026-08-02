@@ -1,9 +1,4 @@
 {
-  "scenario": "header-body-value-match",
-  "contract": "Mirrored header values must case-sensitively equal their body source",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "fresh_process",
+  "intentional_request_violation": true
 }

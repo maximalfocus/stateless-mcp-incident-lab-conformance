@@ -1,14 +1,24 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "required-version-header",
-      "must": "A missing MCP-Protocol-Version yields HTTP 400 and -32020"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 400,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32020,
+      "message": "Header metadata mismatch",
+      "data": {
+        "header": "MCP-Protocol-Version",
+        "reason": "required"
+      }
+    }
+  }
 }
