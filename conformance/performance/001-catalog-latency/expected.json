@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "catalog-latency",
+      "must": "After warm-up at 10 requests per second, catalog p95 is at most 750 ms and error rate is below 1 percent locally and in AWS"
+    }
+  ]
+}

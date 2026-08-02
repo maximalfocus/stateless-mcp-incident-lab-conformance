@@ -1,0 +1,28 @@
+{
+  "spec_id": "PERF-003",
+  "description": "Twenty concurrent accepted retries of one MRTR state produce exactly one simulated remediation effect",
+  "description_bdd": {
+    "given": "the concurrent idempotency scenario",
+    "when": "the performance contract is exercised",
+    "then": "twenty concurrent accepted retries of one MRTR state produce exactly one simulated remediation effect"
+  },
+  "boundary": "metric-assertion",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Non-functional requirements / Performance and Statelessness",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "performance",
+  "approved_by": null,
+  "approved_at": null
+}

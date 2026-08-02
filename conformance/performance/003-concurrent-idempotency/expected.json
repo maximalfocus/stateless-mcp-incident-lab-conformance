@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "concurrent-idempotency",
+      "must": "Twenty concurrent accepted retries of one MRTR state produce exactly one simulated remediation effect"
+    }
+  ]
+}

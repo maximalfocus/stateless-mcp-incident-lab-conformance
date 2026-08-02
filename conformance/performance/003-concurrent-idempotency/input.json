@@ -1,0 +1,9 @@
+{
+  "scenario": "concurrent-idempotency",
+  "contract": "Twenty concurrent accepted retries of one MRTR state produce exactly one simulated remediation effect",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

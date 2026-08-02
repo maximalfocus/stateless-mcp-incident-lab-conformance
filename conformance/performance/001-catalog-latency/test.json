@@ -1,0 +1,28 @@
+{
+  "spec_id": "PERF-001",
+  "description": "After warm-up at 10 requests per second, catalog p95 is at most 750 ms and error rate is below 1 percent locally and in AWS",
+  "description_bdd": {
+    "given": "the catalog latency scenario",
+    "when": "the performance contract is exercised",
+    "then": "after warm-up at 10 requests per second, catalog p95 is at most 750 ms and error rate is below 1 percent locally and in AWS"
+  },
+  "boundary": "metric-assertion",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Non-functional requirements / Performance and Statelessness",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "performance",
+  "approved_by": null,
+  "approved_at": null
+}

@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "replica-distribution",
+      "must": "At least 100 sequential public requests reach at least two healthy replicas with equivalent normalized results"
+    }
+  ]
+}

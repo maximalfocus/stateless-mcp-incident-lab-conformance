@@ -1,0 +1,28 @@
+{
+  "spec_id": "PERF-002",
+  "description": "At least 100 sequential public requests reach at least two healthy replicas with equivalent normalized results",
+  "description_bdd": {
+    "given": "the replica distribution scenario",
+    "when": "the performance contract is exercised",
+    "then": "at least 100 sequential public requests reach at least two healthy replicas with equivalent normalized results"
+  },
+  "boundary": "metric-assertion",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Non-functional requirements / Performance and Statelessness",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "performance",
+  "approved_by": null,
+  "approved_at": null
+}

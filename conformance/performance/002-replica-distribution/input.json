@@ -1,0 +1,9 @@
+{
+  "scenario": "replica-distribution",
+  "contract": "At least 100 sequential public requests reach at least two healthy replicas with equivalent normalized results",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}
