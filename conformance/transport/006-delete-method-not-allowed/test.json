@@ -1,0 +1,28 @@
+{
+  "spec_id": "TRANS-006",
+  "description": "DELETE on an MCP endpoint returns bodiless 405 with Allow POST",
+  "description_bdd": {
+    "given": "the delete method not allowed scenario",
+    "when": "the transport contract is exercised",
+    "then": "dELETE on an MCP endpoint returns bodiless 405 with Allow POST"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__transports__streamable-http.md + PRD.md § Business rules 6-16",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "transport",
+  "approved_by": null,
+  "approved_at": null
+}

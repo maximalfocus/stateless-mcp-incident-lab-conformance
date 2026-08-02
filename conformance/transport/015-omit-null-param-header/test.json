@@ -1,0 +1,28 @@
+{
+  "spec_id": "TRANS-015",
+  "description": "An absent or null annotated argument emits and requires no Mcp-Param header",
+  "description_bdd": {
+    "given": "the omit null param header scenario",
+    "when": "the transport contract is exercised",
+    "then": "an absent or null annotated argument emits and requires no Mcp-Param header"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__transports__streamable-http.md + PRD.md § Business rules 6-16",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "transport",
+  "approved_by": null,
+  "approved_at": null
+}

@@ -1,0 +1,9 @@
+{
+  "scenario": "deadline-before-stream",
+  "contract": "A pre-stream deadline yields HTTP 504, JSON content type, code -31998, echoes a valid id, and leaves no partial effect",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

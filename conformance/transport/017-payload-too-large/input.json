@@ -1,0 +1,9 @@
+{
+  "scenario": "payload-too-large",
+  "contract": "An oversized body yields HTTP 413, JSON content type, code -31999, no id, and no partial effect",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

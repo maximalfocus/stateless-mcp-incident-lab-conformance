@@ -1,0 +1,28 @@
+{
+  "spec_id": "TRANS-007",
+  "description": "Invalid Origin returns bodiless 403 before all other request validation",
+  "description_bdd": {
+    "given": "the invalid origin first scenario",
+    "when": "the transport contract is exercised",
+    "then": "invalid Origin returns bodiless 403 before all other request validation"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__transports__streamable-http.md + PRD.md § Business rules 6-16",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "transport",
+  "approved_by": null,
+  "approved_at": null
+}

@@ -1,0 +1,9 @@
+{
+  "scenario": "base64-sentinel-roundtrip",
+  "contract": "Non-header-safe mirrored values use the specified Base64 sentinel and decode exactly",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

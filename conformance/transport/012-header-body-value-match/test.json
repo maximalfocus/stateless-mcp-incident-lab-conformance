@@ -1,0 +1,28 @@
+{
+  "spec_id": "TRANS-012",
+  "description": "Mirrored header values must case-sensitively equal their body source",
+  "description_bdd": {
+    "given": "the header body value match scenario",
+    "when": "the transport contract is exercised",
+    "then": "mirrored header values must case-sensitively equal their body source"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__transports__streamable-http.md + PRD.md § Business rules 6-16",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "transport",
+  "approved_by": null,
+  "approved_at": null
+}

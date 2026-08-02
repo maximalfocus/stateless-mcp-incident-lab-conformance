@@ -1,0 +1,28 @@
+{
+  "spec_id": "TRANS-008",
+  "description": "Last-Event-ID is ignored and does not enable resumability",
+  "description_bdd": {
+    "given": "the ignore last event id scenario",
+    "when": "the transport contract is exercised",
+    "then": "last-Event-ID is ignored and does not enable resumability"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__transports__streamable-http.md + PRD.md § Business rules 6-16",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "transport",
+  "approved_by": null,
+  "approved_at": null
+}

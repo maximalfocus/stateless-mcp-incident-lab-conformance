@@ -1,0 +1,28 @@
+{
+  "spec_id": "TRANS-017",
+  "description": "An oversized body yields HTTP 413, JSON content type, code -31999, no id, and no partial effect",
+  "description_bdd": {
+    "given": "the payload too large scenario",
+    "when": "the transport contract is exercised",
+    "then": "an oversized body yields HTTP 413, JSON content type, code -31999, no id, and no partial effect"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__transports__streamable-http.md + PRD.md § Business rules 6-16",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "transport",
+  "approved_by": null,
+  "approved_at": null
+}

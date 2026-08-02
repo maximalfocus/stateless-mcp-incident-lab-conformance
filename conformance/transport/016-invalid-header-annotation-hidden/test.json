@@ -1,0 +1,28 @@
+{
+  "spec_id": "TRANS-016",
+  "description": "A tool with an invalid x-mcp-header annotation is excluded from tools/list",
+  "description_bdd": {
+    "given": "the invalid header annotation hidden scenario",
+    "when": "the transport contract is exercised",
+    "then": "a tool with an invalid x-mcp-header annotation is excluded from tools/list"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__transports__streamable-http.md + PRD.md § Business rules 6-16",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "transport",
+  "approved_by": null,
+  "approved_at": null
+}

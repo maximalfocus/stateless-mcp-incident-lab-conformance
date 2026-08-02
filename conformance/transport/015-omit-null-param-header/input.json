@@ -1,0 +1,9 @@
+{
+  "scenario": "omit-null-param-header",
+  "contract": "An absent or null annotated argument emits and requires no Mcp-Param header",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

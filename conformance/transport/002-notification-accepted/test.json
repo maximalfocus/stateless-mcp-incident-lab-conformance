@@ -1,0 +1,28 @@
+{
+  "spec_id": "TRANS-002",
+  "description": "A valid notification POST returns HTTP 202 with no body and no side effect",
+  "description_bdd": {
+    "given": "the notification accepted scenario",
+    "when": "the transport contract is exercised",
+    "then": "a valid notification POST returns HTTP 202 with no body and no side effect"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__transports__streamable-http.md + PRD.md § Business rules 6-16",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "transport",
+  "approved_by": null,
+  "approved_at": null
+}

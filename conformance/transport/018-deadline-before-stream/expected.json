@@ -1,0 +1,14 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "deadline-before-stream",
+      "must": "A pre-stream deadline yields HTTP 504, JSON content type, code -31998, echoes a valid id, and leaves no partial effect"
+    },
+    {
+      "type": "strict_http_shape",
+      "undeclared_body_fields": "fail",
+      "undeclared_headers": "allowed_only_by_marker"
+    }
+  ]
+}

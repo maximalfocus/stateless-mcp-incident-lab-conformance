@@ -1,0 +1,9 @@
+{
+  "scenario": "delete-method-not-allowed",
+  "contract": "DELETE on an MCP endpoint returns bodiless 405 with Allow POST",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

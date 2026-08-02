@@ -1,0 +1,9 @@
+{
+  "scenario": "get-method-not-allowed",
+  "contract": "GET on an MCP endpoint returns bodiless 405 with Allow POST",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

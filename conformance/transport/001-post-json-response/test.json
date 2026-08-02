@@ -1,0 +1,28 @@
+{
+  "spec_id": "TRANS-001",
+  "description": "A simple POST request can return application/json with an exact JSON-RPC response",
+  "description_bdd": {
+    "given": "the post json response scenario",
+    "when": "the transport contract is exercised",
+    "then": "a simple POST request can return application/json with an exact JSON-RPC response"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__transports__streamable-http.md + PRD.md § Business rules 6-16",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "transport",
+  "approved_by": null,
+  "approved_at": null
+}
