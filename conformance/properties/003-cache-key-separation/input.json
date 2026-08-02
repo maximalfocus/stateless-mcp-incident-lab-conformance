@@ -1,0 +1,9 @@
+{
+  "scenario": "cache-key-separation",
+  "contract": "Any result-affecting method, parameter, or cursor difference produces a distinct cache key",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

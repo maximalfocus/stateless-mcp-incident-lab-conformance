@@ -1,0 +1,9 @@
+{
+  "scenario": "cache-key-stability",
+  "contract": "Equivalent canonical method and parameter values always produce the same cache key",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

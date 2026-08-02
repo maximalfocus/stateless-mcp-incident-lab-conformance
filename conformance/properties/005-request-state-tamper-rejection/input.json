@@ -1,0 +1,9 @@
+{
+  "scenario": "request-state-tamper-rejection",
+  "contract": "Every one-bit mutation of a valid requestState is rejected without effect",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

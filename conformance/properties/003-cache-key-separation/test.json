@@ -1,0 +1,42 @@
+{
+  "spec_id": "PROP-003",
+  "description": "Any result-affecting method, parameter, or cursor difference produces a distinct cache key",
+  "description_bdd": {
+    "given": "the cache key separation scenario",
+    "when": "the properties contract is exercised",
+    "then": "any result-affecting method, parameter, or cursor difference produces a distinct cache key"
+  },
+  "boundary": "property",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PLAN-001-stateless-core.md § Categories / properties",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "properties",
+  "approved_by": null,
+  "approved_at": null,
+  "property": {
+    "kind": "metamorphic",
+    "target": "canonical_cache_key",
+    "domain": {
+      "generator": "protocol-valid-values-and-pinned-adversarial-cases"
+    },
+    "iterations": 1000,
+    "examples": [
+      "cache-key-separation",
+      "empty",
+      "unicode",
+      "boundary"
+    ]
+  }
+}

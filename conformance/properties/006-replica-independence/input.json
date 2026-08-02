@@ -1,0 +1,9 @@
+{
+  "scenario": "replica-independence",
+  "contract": "For every valid self-contained request, changing only the serving replica preserves normalized behavior",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "spec_id": "PROP-004",
+  "description": "For every unchanged catalog set, repeated listings have identical deterministic order",
+  "description_bdd": {
+    "given": "the deterministic catalog order scenario",
+    "when": "the properties contract is exercised",
+    "then": "for every unchanged catalog set, repeated listings have identical deterministic order"
+  },
+  "boundary": "property",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PLAN-001-stateless-core.md § Categories / properties",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "properties",
+  "approved_by": null,
+  "approved_at": null,
+  "property": {
+    "kind": "ordering",
+    "target": "sort_catalog",
+    "key": "uri_or_name",
+    "domain": {
+      "generator": "protocol-valid-values-and-pinned-adversarial-cases"
+    },
+    "iterations": 1000,
+    "examples": [
+      "deterministic-catalog-order",
+      "empty",
+      "unicode",
+      "boundary"
+    ]
+  }
+}
