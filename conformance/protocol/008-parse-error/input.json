@@ -1,9 +1,4 @@
 {
-  "scenario": "parse-error",
-  "contract": "Unparseable JSON yields -32700, HTTP 400, and no id member",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "decode_jsonrpc",
+  "utf8": "{\"jsonrpc\":\"2.0\",\"id\":1,"
 }

@@ -1,9 +1,14 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "unknown-tool-is-invalid-params",
-      "must": "An unknown tool name yields -32602 rather than the method-not-found code"
+  "http_status": 400,
+  "response": {
+    "jsonrpc": "2.0",
+    "id": "unknown-tool",
+    "error": {
+      "code": -32602,
+      "message": "Invalid params",
+      "data": {
+        "name": "does_not_exist"
+      }
     }
-  ]
+  }
 }

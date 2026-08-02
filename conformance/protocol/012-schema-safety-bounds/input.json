@@ -1,9 +1,40 @@
 {
-  "scenario": "schema-safety-bounds",
-  "contract": "JSON Schema 2020-12 validation refuses network refs and rejects schemas beyond configured depth or subschema bounds",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "operation": "validate_json_schema",
+  "policy": {
+    "default_dialect": "https://json-schema.org/draft/2020-12/schema",
+    "max_depth": 32,
+    "max_subschemas": 256,
+    "network_ref_fetch": false
+  },
+  "cases": [
+    {
+      "name": "default-2020-12",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "network-ref",
+      "schema": {
+        "$ref": "https://attacker.invalid/schema.json"
+      }
+    },
+    {
+      "name": "depth-over-limit",
+      "generated": {
+        "nested_object_depth": 33
+      }
+    },
+    {
+      "name": "subschemas-over-limit",
+      "generated": {
+        "any_of_count": 257
+      }
+    }
   ]
 }

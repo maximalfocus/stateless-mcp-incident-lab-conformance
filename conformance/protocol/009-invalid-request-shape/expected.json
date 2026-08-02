@@ -1,9 +1,46 @@
 {
-  "assertions": [
+  "valid": [
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "errors": [
     {
-      "type": "contract",
-      "subject": "invalid-request-shape",
-      "must": "A non-request JSON value yields -32600, HTTP 400, and no id member"
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32600,
+        "message": "Invalid Request"
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32600,
+        "message": "Invalid Request"
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32600,
+        "message": "Invalid Request"
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32600,
+        "message": "Invalid Request"
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32600,
+        "message": "Invalid Request"
+      }
     }
   ]
 }

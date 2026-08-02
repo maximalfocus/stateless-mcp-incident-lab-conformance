@@ -1,9 +1,5 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "complete-result-shape",
-      "must": "A successful final result has resultType complete and required serverInfo and vendor replica metadata"
-    }
-  ]
+  "valid": true,
+  "id": "req-5",
+  "result_type": "complete"
 }

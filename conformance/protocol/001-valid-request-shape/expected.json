@@ -1,9 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "valid-request-shape",
-      "must": "A JSON-RPC request has jsonrpc 2.0, a string or integer id, a method, and object params"
-    }
+  "valid": [
+    true,
+    true
   ]
 }

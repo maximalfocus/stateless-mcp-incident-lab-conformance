@@ -1,9 +1,22 @@
 {
-  "assertions": [
+  "valid": [
+    false,
+    false
+  ],
+  "errors": [
     {
-      "type": "contract",
-      "subject": "reject-nonscalar-request-id",
-      "must": "An object or array request id is rejected with -32600 and the error omits id"
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32600,
+        "message": "Invalid Request"
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32600,
+        "message": "Invalid Request"
+      }
     }
   ]
 }

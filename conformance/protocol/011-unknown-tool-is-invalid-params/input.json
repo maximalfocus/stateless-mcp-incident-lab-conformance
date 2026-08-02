@@ -1,9 +1,16 @@
 {
-  "scenario": "unknown-tool-is-invalid-params",
-  "contract": "An unknown tool name yields -32602 rather than the method-not-found code",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "dispatch_method",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": "unknown-tool",
+    "method": "tools/call",
+    "params": {
+      "name": "does_not_exist",
+      "arguments": {},
+      "_meta": {
+        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/clientCapabilities": {}
+      }
+    }
+  }
 }

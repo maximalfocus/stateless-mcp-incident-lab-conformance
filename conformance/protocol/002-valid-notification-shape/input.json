@@ -1,9 +1,10 @@
 {
-  "scenario": "valid-notification-shape",
-  "contract": "A notification omits id and is distinguishable from a request",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "validate_notification",
+  "value": {
+    "jsonrpc": "2.0",
+    "method": "notifications/test",
+    "params": {
+      "value": 1
+    }
+  }
 }

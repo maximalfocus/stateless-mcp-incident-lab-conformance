@@ -1,9 +1,38 @@
 {
-  "scenario": "input-required-result-shape",
-  "contract": "An interim MRTR result has resultType input_required and required serverInfo and vendor replica metadata",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "validate_result_response",
+  "value": {
+    "jsonrpc": "2.0",
+    "id": 6,
+    "result": {
+      "resultType": "input_required",
+      "requestState": "opaque.signed.state",
+      "elicitation": {
+        "mode": "form",
+        "message": "Approve simulated remediation?",
+        "requestedSchema": {
+          "type": "object",
+          "properties": {
+            "decision": {
+              "type": "string",
+              "enum": [
+                "accept",
+                "decline",
+                "cancel"
+              ]
+            }
+          },
+          "required": [
+            "decision"
+          ]
+        }
+      },
+      "_meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "incident-lab",
+          "version": "1.0.0"
+        },
+        "io.maximalfocus.stateless-incident-lab/replicaId": "sdk-2"
+      }
+    }
+  }
 }

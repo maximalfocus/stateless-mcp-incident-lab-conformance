@@ -1,9 +1,14 @@
 {
-  "scenario": "reject-null-request-id",
-  "contract": "A request id of null is rejected with -32600 and the error omits id",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "validate_request",
+  "value": {
+    "jsonrpc": "2.0",
+    "id": null,
+    "method": "server/discover",
+    "params": {
+      "_meta": {
+        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/clientCapabilities": {}
+      }
+    }
+  }
 }

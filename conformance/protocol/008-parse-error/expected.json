@@ -1,9 +1,10 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "parse-error",
-      "must": "Unparseable JSON yields -32700, HTTP 400, and no id member"
+  "ok": false,
+  "error": {
+    "jsonrpc": "2.0",
+    "error": {
+      "code": -32700,
+      "message": "Parse error"
     }
-  ]
+  }
 }

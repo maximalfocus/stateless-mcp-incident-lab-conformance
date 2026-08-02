@@ -1,9 +1,7 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "error-shape-no-result-meta",
-      "must": "A JSON-RPC error has an exact error envelope and no result or result metadata"
-    }
-  ]
+  "valid": true,
+  "id": 7,
+  "code": -32602,
+  "has_result": false,
+  "has_result_meta": false
 }

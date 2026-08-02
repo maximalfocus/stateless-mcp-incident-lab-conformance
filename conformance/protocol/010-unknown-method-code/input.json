@@ -1,9 +1,14 @@
 {
-  "scenario": "unknown-method-code",
-  "contract": "An unimplemented RPC method yields -32601 and HTTP 404",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "dispatch_method",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": "unknown-rpc",
+    "method": "unknown/method",
+    "params": {
+      "_meta": {
+        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/clientCapabilities": {}
+      }
+    }
+  }
 }

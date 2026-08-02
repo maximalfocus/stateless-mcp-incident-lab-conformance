@@ -1,9 +1,17 @@
 {
-  "scenario": "complete-result-shape",
-  "contract": "A successful final result has resultType complete and required serverInfo and vendor replica metadata",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "validate_result_response",
+  "value": {
+    "jsonrpc": "2.0",
+    "id": "req-5",
+    "result": {
+      "resultType": "complete",
+      "_meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "incident-lab",
+          "version": "1.0.0"
+        },
+        "io.maximalfocus.stateless-incident-lab/replicaId": "raw-1"
+      }
+    }
+  }
 }

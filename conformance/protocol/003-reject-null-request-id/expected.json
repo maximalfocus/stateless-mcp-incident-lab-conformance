@@ -1,9 +1,10 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "reject-null-request-id",
-      "must": "A request id of null is rejected with -32600 and the error omits id"
+  "valid": false,
+  "error": {
+    "jsonrpc": "2.0",
+    "error": {
+      "code": -32600,
+      "message": "Invalid Request"
     }
-  ]
+  }
 }

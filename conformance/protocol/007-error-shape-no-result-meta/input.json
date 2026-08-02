@@ -1,9 +1,14 @@
 {
-  "scenario": "error-shape-no-result-meta",
-  "contract": "A JSON-RPC error has an exact error envelope and no result or result metadata",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "validate_error_response",
+  "value": {
+    "jsonrpc": "2.0",
+    "id": 7,
+    "error": {
+      "code": -32602,
+      "message": "Invalid params",
+      "data": {
+        "field": "name"
+      }
+    }
+  }
 }

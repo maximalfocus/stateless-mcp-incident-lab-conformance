@@ -1,9 +1,11 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "unknown-method-code",
-      "must": "An unimplemented RPC method yields -32601 and HTTP 404"
+  "http_status": 404,
+  "response": {
+    "jsonrpc": "2.0",
+    "id": "unknown-rpc",
+    "error": {
+      "code": -32601,
+      "message": "Method not found"
     }
-  ]
+  }
 }
