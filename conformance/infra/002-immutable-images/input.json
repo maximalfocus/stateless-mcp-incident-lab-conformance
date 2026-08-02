@@ -1,9 +1,8 @@
 {
-  "scenario": "immutable-images",
-  "contract": "ECR and ECS consume immutable raw and SDK image digests and repositories empty on destroy",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "subject": "cdk_synth",
+  "template_glob": "cdk.out/*.template.json",
+  "rules": [
+    "ecr.empty_on_delete=true",
+    "ecs.images=immutable_digest"
   ]
 }

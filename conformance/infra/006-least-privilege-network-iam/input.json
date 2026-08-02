@@ -1,9 +1,8 @@
 {
-  "scenario": "least-privilege-network-iam",
-  "contract": "Security groups and IAM permit only required paths and DynamoDB, logs, metrics, and secret actions",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "subject": "cdk_synth",
+  "template_glob": "cdk.out/*.template.json",
+  "rules": [
+    "security_groups=least_privilege",
+    "iam.actions_subset=dynamodb,logs,cloudwatch,secretsmanager"
   ]
 }

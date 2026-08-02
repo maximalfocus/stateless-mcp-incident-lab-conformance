@@ -1,9 +1,3 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "secret-manager-state-key",
-      "must": "MRTR HMAC material comes from Secrets Manager and is absent from plaintext task definitions"
-    }
-  ]
+  "violations": []
 }

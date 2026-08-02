@@ -1,9 +1,3 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "waf-rate-rule",
-      "must": "AWS WAF attaches a bounded rate-based protection rule"
-    }
-  ]
+  "violations": []
 }

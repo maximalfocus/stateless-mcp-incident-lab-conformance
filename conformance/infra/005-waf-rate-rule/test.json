@@ -22,8 +22,12 @@
     "raw",
     "sdk"
   ],
-  "context": "infra",
+  "context": "delivery",
   "approved_by": null,
   "approved_at": null,
-  "type_contract": "waf_rate_rule_contract"
+  "type_contract": "waf_rate_rule_contract",
+  "source_deps": [
+    "infra/lib/stateless-mcp-stack.ts",
+    "demo/matrix.compose.yaml"
+  ]
 }

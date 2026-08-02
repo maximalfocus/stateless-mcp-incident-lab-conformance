@@ -1,9 +1,3 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "https-only-alb",
-      "must": "The internet-facing ALB has mandatory HTTPS and no public plaintext listener"
-    }
-  ]
+  "violations": []
 }

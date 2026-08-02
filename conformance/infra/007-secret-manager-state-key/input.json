@@ -1,9 +1,8 @@
 {
-  "scenario": "secret-manager-state-key",
-  "contract": "MRTR HMAC material comes from Secrets Manager and is absent from plaintext task definitions",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "subject": "cdk_synth",
+  "template_glob": "cdk.out/*.template.json",
+  "rules": [
+    "mrtr_secret.source=secretsmanager",
+    "task_plaintext_secret=false"
   ]
 }

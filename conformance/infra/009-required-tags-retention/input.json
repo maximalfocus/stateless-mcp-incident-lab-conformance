@@ -1,9 +1,8 @@
 {
-  "scenario": "required-tags-retention",
-  "contract": "All resources carry project, environment, and owner tags and logs retain at most seven days",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "subject": "cdk_synth",
+  "template_glob": "cdk.out/*.template.json",
+  "rules": [
+    "tags=project,environment,owner",
+    "log_retention_days<=7"
   ]
 }

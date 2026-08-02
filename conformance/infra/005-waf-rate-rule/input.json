@@ -1,9 +1,7 @@
 {
-  "scenario": "waf-rate-rule",
-  "contract": "AWS WAF attaches a bounded rate-based protection rule",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "subject": "cdk_synth",
+  "template_glob": "cdk.out/*.template.json",
+  "rules": [
+    "waf.rate_rule.limit>0"
   ]
 }

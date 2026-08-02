@@ -1,9 +1,8 @@
 {
-  "scenario": "deploy-verify-destroy",
-  "contract": "Automation orders deploy then verify then destroy and post-destroy inventory is empty",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "subject": "cdk_synth",
+  "template_glob": "cdk.out/*.template.json",
+  "rules": [
+    "lifecycle=deploy,verify,destroy,inventory",
+    "inventory_after_destroy=[]"
   ]
 }

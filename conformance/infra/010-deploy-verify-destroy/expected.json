@@ -1,9 +1,3 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "deploy-verify-destroy",
-      "must": "Automation orders deploy then verify then destroy and post-destroy inventory is empty"
-    }
-  ]
+  "violations": []
 }

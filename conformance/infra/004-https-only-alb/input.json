@@ -1,9 +1,9 @@
 {
-  "scenario": "https-only-alb",
-  "contract": "The internet-facing ALB has mandatory HTTPS and no public plaintext listener",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "subject": "cdk_synth",
+  "template_glob": "cdk.out/*.template.json",
+  "rules": [
+    "alb.internet_facing=true",
+    "listeners=https:443",
+    "listeners_not=http:80"
   ]
 }

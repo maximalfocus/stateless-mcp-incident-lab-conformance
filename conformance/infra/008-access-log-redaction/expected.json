@@ -1,9 +1,3 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "access-log-redaction",
-      "must": "Nginx and ALB/WAF access logging omit or redact Mcp-Name and request body bearer values"
-    }
-  ]
+  "violations": []
 }

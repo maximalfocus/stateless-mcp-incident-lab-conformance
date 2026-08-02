@@ -22,8 +22,12 @@
     "raw",
     "sdk"
   ],
-  "context": "infra",
+  "context": "delivery",
   "approved_by": null,
   "approved_at": null,
-  "type_contract": "dynamodb_policy_contract"
+  "type_contract": "dynamodb_policy_contract",
+  "source_deps": [
+    "infra/lib/stateless-mcp-stack.ts",
+    "demo/matrix.compose.yaml"
+  ]
 }
