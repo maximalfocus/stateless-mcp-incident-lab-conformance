@@ -1,0 +1,9 @@
+{
+  "scenario": "form-capability-required",
+  "contract": "Missing elicitation capability returns -32021 with a ClientCapabilities object",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

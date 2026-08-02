@@ -1,0 +1,28 @@
+{
+  "spec_id": "MRTR-010",
+  "description": "A cancelled elicitation completes without applying an effect",
+  "description_bdd": {
+    "given": "the cancel no effect scenario",
+    "when": "the mrtr contract is exercised",
+    "then": "a cancelled elicitation completes without applying an effect"
+  },
+  "boundary": "tool-call",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__patterns__mrtr.md and client__elicitation.md + PRD.md § MRTR elicitation",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "mrtr",
+  "approved_by": null,
+  "approved_at": null
+}

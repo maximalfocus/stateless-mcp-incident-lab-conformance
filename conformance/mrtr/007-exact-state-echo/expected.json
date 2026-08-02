@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "exact-state-echo",
+      "must": "The client returns requestState byte-for-byte without interpreting it"
+    }
+  ]
+}

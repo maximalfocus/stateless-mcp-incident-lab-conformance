@@ -1,0 +1,28 @@
+{
+  "spec_id": "MRTR-003",
+  "description": "URL-only elicitation capability returns -32021 and never receives a form",
+  "description_bdd": {
+    "given": "the url only capability rejected scenario",
+    "when": "the mrtr contract is exercised",
+    "then": "uRL-only elicitation capability returns -32021 and never receives a form"
+  },
+  "boundary": "tool-call",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__patterns__mrtr.md and client__elicitation.md + PRD.md § MRTR elicitation",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "mrtr",
+  "approved_by": null,
+  "approved_at": null
+}

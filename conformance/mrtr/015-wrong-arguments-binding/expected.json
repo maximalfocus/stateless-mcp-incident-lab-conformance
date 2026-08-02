@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "wrong-arguments-binding",
+      "must": "RequestState reused with changed salient arguments is rejected"
+    }
+  ]
+}

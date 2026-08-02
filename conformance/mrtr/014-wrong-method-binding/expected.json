@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "wrong-method-binding",
+      "must": "RequestState reused with another method is rejected"
+    }
+  ]
+}

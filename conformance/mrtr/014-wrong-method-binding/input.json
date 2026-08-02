@@ -1,0 +1,9 @@
+{
+  "scenario": "wrong-method-binding",
+  "contract": "RequestState reused with another method is rejected",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "spec_id": "MRTR-007",
+  "description": "The client returns requestState byte-for-byte without interpreting it",
+  "description_bdd": {
+    "given": "the exact state echo scenario",
+    "when": "the mrtr contract is exercised",
+    "then": "the client returns requestState byte-for-byte without interpreting it"
+  },
+  "boundary": "tool-call",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__patterns__mrtr.md and client__elicitation.md + PRD.md § MRTR elicitation",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "mrtr",
+  "approved_by": null,
+  "approved_at": null
+}

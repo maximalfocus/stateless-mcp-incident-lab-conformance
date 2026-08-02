@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "cross-replica-retry",
+      "must": "A state created by one replica is verifiable and executable by another replica"
+    }
+  ]
+}

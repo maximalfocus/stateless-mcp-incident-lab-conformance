@@ -1,0 +1,9 @@
+{
+  "scenario": "new-retry-id",
+  "contract": "The retry of the original call uses a new JSON-RPC id",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

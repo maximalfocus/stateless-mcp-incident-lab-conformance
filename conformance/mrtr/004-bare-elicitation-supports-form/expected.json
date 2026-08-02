@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "bare-elicitation-supports-form",
+      "must": "A bare elicitation object is accepted as form-mode-only support"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "incomplete-reelicits",
+      "must": "Incomplete inputResponses returns another input_required for missing fields and no effect"
+    }
+  ]
+}

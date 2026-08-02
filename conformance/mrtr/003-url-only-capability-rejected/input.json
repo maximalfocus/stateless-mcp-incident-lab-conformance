@@ -1,0 +1,9 @@
+{
+  "scenario": "url-only-capability-rejected",
+  "contract": "URL-only elicitation capability returns -32021 and never receives a form",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

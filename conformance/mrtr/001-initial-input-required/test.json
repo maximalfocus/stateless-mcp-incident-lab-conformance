@@ -1,0 +1,28 @@
+{
+  "spec_id": "MRTR-001",
+  "description": "An initial execute_remediation returns input_required with a form elicitation and signed requestState",
+  "description_bdd": {
+    "given": "the initial input required scenario",
+    "when": "the mrtr contract is exercised",
+    "then": "an initial execute_remediation returns input_required with a form elicitation and signed requestState"
+  },
+  "boundary": "tool-call",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__patterns__mrtr.md and client__elicitation.md + PRD.md § MRTR elicitation",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "mrtr",
+  "approved_by": null,
+  "approved_at": null
+}

@@ -1,0 +1,22 @@
+{
+  "method": "POST",
+  "path": "/raw/mcp",
+  "headers": {
+    "Accept": "application/json, text/event-stream",
+    "MCP-Protocol-Version": "2026-07-28",
+    "Mcp-Method": "tools/call",
+    "Mcp-Name": "{{ANY_STRING}}"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "tools/call",
+    "params": {
+      "scenario": "wrong-arguments-binding",
+      "_meta": {
+        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/clientCapabilities": {}
+      }
+    }
+  }
+}

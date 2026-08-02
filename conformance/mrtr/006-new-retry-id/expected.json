@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "new-retry-id",
+      "must": "The retry of the original call uses a new JSON-RPC id"
+    }
+  ]
+}

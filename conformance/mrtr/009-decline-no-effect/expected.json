@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "decline-no-effect",
+      "must": "A declined elicitation completes without applying an effect"
+    }
+  ]
+}

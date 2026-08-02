@@ -1,0 +1,9 @@
+{
+  "scenario": "bare-elicitation-supports-form",
+  "contract": "A bare elicitation object is accepted as form-mode-only support",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

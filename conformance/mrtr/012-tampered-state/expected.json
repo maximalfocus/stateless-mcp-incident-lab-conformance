@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "tampered-state",
+      "must": "Tampered requestState is rejected and applies no effect"
+    }
+  ]
+}

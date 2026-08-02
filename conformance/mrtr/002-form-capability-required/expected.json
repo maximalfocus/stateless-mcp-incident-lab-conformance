@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "form-capability-required",
+      "must": "Missing elicitation capability returns -32021 with a ClientCapabilities object"
+    }
+  ]
+}

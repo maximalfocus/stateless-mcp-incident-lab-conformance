@@ -1,0 +1,28 @@
+{
+  "spec_id": "MRTR-006",
+  "description": "The retry of the original call uses a new JSON-RPC id",
+  "description_bdd": {
+    "given": "the new retry id scenario",
+    "when": "the mrtr contract is exercised",
+    "then": "the retry of the original call uses a new JSON-RPC id"
+  },
+  "boundary": "tool-call",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__patterns__mrtr.md and client__elicitation.md + PRD.md § MRTR elicitation",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "mrtr",
+  "approved_by": null,
+  "approved_at": null
+}

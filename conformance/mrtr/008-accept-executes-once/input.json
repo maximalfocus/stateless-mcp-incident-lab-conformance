@@ -1,0 +1,9 @@
+{
+  "scenario": "accept-executes-once",
+  "contract": "A complete accepted form executes the simulated remediation exactly once",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

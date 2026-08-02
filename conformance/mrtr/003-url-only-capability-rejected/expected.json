@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "url-only-capability-rejected",
+      "must": "URL-only elicitation capability returns -32021 and never receives a form"
+    }
+  ]
+}

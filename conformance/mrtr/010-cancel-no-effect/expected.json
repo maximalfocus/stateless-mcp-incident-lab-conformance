@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "cancel-no-effect",
+      "must": "A cancelled elicitation completes without applying an effect"
+    }
+  ]
+}

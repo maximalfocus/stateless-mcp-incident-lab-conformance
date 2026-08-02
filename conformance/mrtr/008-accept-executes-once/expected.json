@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "accept-executes-once",
+      "must": "A complete accepted form executes the simulated remediation exactly once"
+    }
+  ]
+}

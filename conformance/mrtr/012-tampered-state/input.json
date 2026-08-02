@@ -1,0 +1,9 @@
+{
+  "scenario": "tampered-state",
+  "contract": "Tampered requestState is rejected and applies no effect",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

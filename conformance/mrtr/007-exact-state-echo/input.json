@@ -1,0 +1,9 @@
+{
+  "scenario": "exact-state-echo",
+  "contract": "The client returns requestState byte-for-byte without interpreting it",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

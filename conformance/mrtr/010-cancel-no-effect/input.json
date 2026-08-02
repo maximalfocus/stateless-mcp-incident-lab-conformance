@@ -1,0 +1,9 @@
+{
+  "scenario": "cancel-no-effect",
+  "contract": "A cancelled elicitation completes without applying an effect",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

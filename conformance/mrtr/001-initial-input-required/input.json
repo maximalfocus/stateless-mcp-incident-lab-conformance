@@ -1,0 +1,9 @@
+{
+  "scenario": "initial-input-required",
+  "contract": "An initial execute_remediation returns input_required with a form elicitation and signed requestState",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

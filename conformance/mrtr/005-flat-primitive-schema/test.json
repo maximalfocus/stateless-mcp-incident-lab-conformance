@@ -1,0 +1,28 @@
+{
+  "spec_id": "MRTR-005",
+  "description": "The elicitation requestedSchema is a flat object containing primitive properties only",
+  "description_bdd": {
+    "given": "the flat primitive schema scenario",
+    "when": "the mrtr contract is exercised",
+    "then": "the elicitation requestedSchema is a flat object containing primitive properties only"
+  },
+  "boundary": "tool-call",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__patterns__mrtr.md and client__elicitation.md + PRD.md § MRTR elicitation",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "mrtr",
+  "approved_by": null,
+  "approved_at": null
+}
