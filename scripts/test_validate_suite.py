@@ -141,6 +141,15 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("lane integration has no concrete owning repository", result.stdout)
 
+    def test_owner_name_in_scope_does_not_mask_missing_target_owner(self):
+        path = self.tmp / "WORKITEMS.md"
+        path.write_text(path.read_text().replace(
+            "Target: explicit infrastructure invocation → `stateless-mcp-incident-lab-infrastructure`.",
+            "Target: explicit infrastructure invocation with unspecified repository.", 1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("lane infrastructure has no concrete owning repository", result.stdout)
+
     def test_consumer_metadata_workitem_lane_drift_goes_red(self):
         path = self.tmp / "conformance/observability/001-raw-health-ready/test.json"
         path.write_text(path.read_text().replace('"typescript-raw"', '"typescript-raw", "typescript-sdk"', 1))
