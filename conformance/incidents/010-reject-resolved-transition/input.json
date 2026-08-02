@@ -1,9 +1,10 @@
 {
-  "scenario": "reject-resolved-transition",
-  "contract": "Any transition out of RESOLVED returns an actionable isError tool result",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "run_incident_scenario",
+  "initial_state": "OPEN",
+  "actions": [
+    "resolve_incident",
+    "run_diagnostic"
+  ],
+  "incident_id": "INCIDENT-OPEN",
+  "clock": "2026-08-02T00:00:00Z"
 }

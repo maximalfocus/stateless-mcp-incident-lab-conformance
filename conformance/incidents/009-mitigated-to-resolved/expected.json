@@ -1,9 +1,39 @@
 {
-  "assertions": [
+  "states": [
+    "OPEN",
+    "INVESTIGATING",
+    "MITIGATED",
+    "RESOLVED"
+  ],
+  "transitions": [
     {
-      "type": "contract",
-      "subject": "mitigated-to-resolved",
-      "must": "resolve_incident transitions MITIGATED to RESOLVED"
+      "from": "OPEN",
+      "to": "INVESTIGATING",
+      "trigger": "run_diagnostic"
+    },
+    {
+      "from": "INVESTIGATING",
+      "to": "MITIGATED",
+      "trigger": "execute_remediation"
+    },
+    {
+      "from": "OPEN",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
+    },
+    {
+      "from": "INVESTIGATING",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
+    },
+    {
+      "from": "MITIGATED",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
     }
-  ]
+  ],
+  "observations": {
+    "final_state": "RESOLVED",
+    "effect_count": 1
+  }
 }

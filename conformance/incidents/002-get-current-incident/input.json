@@ -1,9 +1,9 @@
 {
-  "scenario": "get-current-incident",
-  "contract": "get_incident returns current lifecycle state and related opaque handles",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "run_incident_scenario",
+  "initial_state": "OPEN",
+  "actions": [
+    "get_incident"
+  ],
+  "incident_id": "INCIDENT-OPEN",
+  "clock": "2026-08-02T00:00:00Z"
 }

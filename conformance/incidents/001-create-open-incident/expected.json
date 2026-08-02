@@ -1,9 +1,42 @@
 {
-  "assertions": [
+  "states": [
+    "OPEN",
+    "INVESTIGATING",
+    "MITIGATED",
+    "RESOLVED"
+  ],
+  "transitions": [
     {
-      "type": "contract",
-      "subject": "create-open-incident",
-      "must": "create_incident creates an OPEN incident with opaque high-entropy id and bounded expiry"
+      "from": "OPEN",
+      "to": "INVESTIGATING",
+      "trigger": "run_diagnostic"
+    },
+    {
+      "from": "INVESTIGATING",
+      "to": "MITIGATED",
+      "trigger": "execute_remediation"
+    },
+    {
+      "from": "OPEN",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
+    },
+    {
+      "from": "INVESTIGATING",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
+    },
+    {
+      "from": "MITIGATED",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
     }
-  ]
+  ],
+  "observations": {
+    "final_state": "OPEN",
+    "effect_count": 0,
+    "incident_id": "{{GENERATED_ID}}",
+    "expires_at": "{{TIMESTAMP}}",
+    "id_strength": "uuid-v4-or-stronger"
+  }
 }

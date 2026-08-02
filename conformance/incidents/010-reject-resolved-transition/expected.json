@@ -1,9 +1,41 @@
 {
-  "assertions": [
+  "states": [
+    "OPEN",
+    "INVESTIGATING",
+    "MITIGATED",
+    "RESOLVED"
+  ],
+  "transitions": [
     {
-      "type": "contract",
-      "subject": "reject-resolved-transition",
-      "must": "Any transition out of RESOLVED returns an actionable isError tool result"
+      "from": "OPEN",
+      "to": "INVESTIGATING",
+      "trigger": "run_diagnostic"
+    },
+    {
+      "from": "INVESTIGATING",
+      "to": "MITIGATED",
+      "trigger": "execute_remediation"
+    },
+    {
+      "from": "OPEN",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
+    },
+    {
+      "from": "INVESTIGATING",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
+    },
+    {
+      "from": "MITIGATED",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
     }
-  ]
+  ],
+  "observations": {
+    "final_state": "RESOLVED",
+    "effect_count": 0,
+    "isError": true,
+    "message": "Incident is resolved; no further transitions are allowed."
+  }
 }

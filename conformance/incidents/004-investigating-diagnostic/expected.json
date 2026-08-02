@@ -1,9 +1,41 @@
 {
-  "assertions": [
+  "states": [
+    "OPEN",
+    "INVESTIGATING",
+    "MITIGATED",
+    "RESOLVED"
+  ],
+  "transitions": [
     {
-      "type": "contract",
-      "subject": "investigating-diagnostic",
-      "must": "A further diagnostic in INVESTIGATING records a completed DiagnosticRun without invalid transition"
+      "from": "OPEN",
+      "to": "INVESTIGATING",
+      "trigger": "run_diagnostic"
+    },
+    {
+      "from": "INVESTIGATING",
+      "to": "MITIGATED",
+      "trigger": "execute_remediation"
+    },
+    {
+      "from": "OPEN",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
+    },
+    {
+      "from": "INVESTIGATING",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
+    },
+    {
+      "from": "MITIGATED",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
     }
-  ]
+  ],
+  "observations": {
+    "final_state": "INVESTIGATING",
+    "effect_count": 0,
+    "diagnostic_runs": 2,
+    "last_diagnostic_status": "COMPLETED"
+  }
 }

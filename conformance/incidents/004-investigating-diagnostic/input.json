@@ -1,9 +1,10 @@
 {
-  "scenario": "investigating-diagnostic",
-  "contract": "A further diagnostic in INVESTIGATING records a completed DiagnosticRun without invalid transition",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "run_incident_scenario",
+  "initial_state": "OPEN",
+  "actions": [
+    "run_diagnostic",
+    "run_diagnostic"
+  ],
+  "incident_id": "INCIDENT-OPEN",
+  "clock": "2026-08-02T00:00:00Z"
 }

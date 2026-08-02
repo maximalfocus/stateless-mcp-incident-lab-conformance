@@ -1,9 +1,10 @@
 {
-  "scenario": "investigating-to-resolved",
-  "contract": "resolve_incident transitions INVESTIGATING to RESOLVED",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "run_incident_scenario",
+  "initial_state": "OPEN",
+  "actions": [
+    "run_diagnostic",
+    "resolve_incident"
+  ],
+  "incident_id": "INCIDENT-OPEN",
+  "clock": "2026-08-02T00:00:00Z"
 }

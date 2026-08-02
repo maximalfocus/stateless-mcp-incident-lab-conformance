@@ -1,9 +1,9 @@
 {
-  "scenario": "create-open-incident",
-  "contract": "create_incident creates an OPEN incident with opaque high-entropy id and bounded expiry",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "run_incident_scenario",
+  "initial_state": null,
+  "actions": [
+    "create_incident"
+  ],
+  "incident_id": "INCIDENT-OPEN",
+  "clock": "2026-08-02T00:00:00Z"
 }

@@ -1,9 +1,42 @@
 {
-  "assertions": [
+  "states": [
+    "OPEN",
+    "INVESTIGATING",
+    "MITIGATED",
+    "RESOLVED"
+  ],
+  "transitions": [
     {
-      "type": "contract",
-      "subject": "unknown-handle-recovery",
-      "must": "An unknown incident handle returns a recoverable isError result telling the caller to create another incident"
+      "from": "OPEN",
+      "to": "INVESTIGATING",
+      "trigger": "run_diagnostic"
+    },
+    {
+      "from": "INVESTIGATING",
+      "to": "MITIGATED",
+      "trigger": "execute_remediation"
+    },
+    {
+      "from": "OPEN",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
+    },
+    {
+      "from": "INVESTIGATING",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
+    },
+    {
+      "from": "MITIGATED",
+      "to": "RESOLVED",
+      "trigger": "resolve_incident"
     }
-  ]
+  ],
+  "observations": {
+    "effect_count": 0,
+    "isError": true,
+    "message": "Unknown or expired incident; create another incident.",
+    "enumerated": false,
+    "incident_present": false
+  }
 }
