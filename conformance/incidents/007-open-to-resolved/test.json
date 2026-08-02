@@ -1,0 +1,28 @@
+{
+  "spec_id": "INC-007",
+  "description": "resolve_incident transitions OPEN directly to RESOLVED",
+  "description_bdd": {
+    "given": "the open to resolved scenario",
+    "when": "the incidents contract is exercised",
+    "then": "resolve_incident transitions OPEN directly to RESOLVED"
+  },
+  "boundary": "state-machine",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Domain and data model / Incident lifecycle",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "incidents",
+  "approved_by": null,
+  "approved_at": null
+}

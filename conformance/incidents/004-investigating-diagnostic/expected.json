@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "investigating-diagnostic",
+      "must": "A further diagnostic in INVESTIGATING records a completed DiagnosticRun without invalid transition"
+    }
+  ]
+}

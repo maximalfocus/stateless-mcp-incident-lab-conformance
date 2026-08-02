@@ -1,0 +1,28 @@
+{
+  "spec_id": "INC-011",
+  "description": "An unknown incident handle returns a recoverable isError result telling the caller to create another incident",
+  "description_bdd": {
+    "given": "the unknown handle recovery scenario",
+    "when": "the incidents contract is exercised",
+    "then": "an unknown incident handle returns a recoverable isError result telling the caller to create another incident"
+  },
+  "boundary": "state-machine",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Domain and data model / Incident lifecycle",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "incidents",
+  "approved_by": null,
+  "approved_at": null
+}

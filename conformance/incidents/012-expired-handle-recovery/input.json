@@ -1,0 +1,9 @@
+{
+  "scenario": "expired-handle-recovery",
+  "contract": "An expired incident handle behaves as unknown and cannot be recovered or enumerated",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

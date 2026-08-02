@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "create-open-incident",
+      "must": "create_incident creates an OPEN incident with opaque high-entropy id and bounded expiry"
+    }
+  ]
+}

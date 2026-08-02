@@ -1,0 +1,28 @@
+{
+  "spec_id": "INC-006",
+  "description": "Accepted execution transitions INVESTIGATING to MITIGATED",
+  "description_bdd": {
+    "given": "the accepted to mitigated scenario",
+    "when": "the incidents contract is exercised",
+    "then": "accepted execution transitions INVESTIGATING to MITIGATED"
+  },
+  "boundary": "state-machine",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Domain and data model / Incident lifecycle",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "incidents",
+  "approved_by": null,
+  "approved_at": null
+}

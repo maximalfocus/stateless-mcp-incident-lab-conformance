@@ -1,0 +1,28 @@
+{
+  "spec_id": "INC-005",
+  "description": "A finding can produce one safe simulated remediation proposal",
+  "description_bdd": {
+    "given": "the propose remediation scenario",
+    "when": "the incidents contract is exercised",
+    "then": "a finding can produce one safe simulated remediation proposal"
+  },
+  "boundary": "state-machine",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Domain and data model / Incident lifecycle",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "incidents",
+  "approved_by": null,
+  "approved_at": null
+}

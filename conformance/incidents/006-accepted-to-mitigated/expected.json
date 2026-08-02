@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "accepted-to-mitigated",
+      "must": "Accepted execution transitions INVESTIGATING to MITIGATED"
+    }
+  ]
+}

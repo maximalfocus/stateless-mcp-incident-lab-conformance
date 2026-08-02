@@ -1,0 +1,28 @@
+{
+  "spec_id": "INC-003",
+  "description": "run_diagnostic transitions OPEN to INVESTIGATING",
+  "description_bdd": {
+    "given": "the open to investigating scenario",
+    "when": "the incidents contract is exercised",
+    "then": "run_diagnostic transitions OPEN to INVESTIGATING"
+  },
+  "boundary": "state-machine",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Domain and data model / Incident lifecycle",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "incidents",
+  "approved_by": null,
+  "approved_at": null
+}

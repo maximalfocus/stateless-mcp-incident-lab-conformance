@@ -1,0 +1,9 @@
+{
+  "scenario": "reject-resolved-transition",
+  "contract": "Any transition out of RESOLVED returns an actionable isError tool result",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

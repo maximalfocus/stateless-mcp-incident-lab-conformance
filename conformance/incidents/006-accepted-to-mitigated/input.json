@@ -1,0 +1,9 @@
+{
+  "scenario": "accepted-to-mitigated",
+  "contract": "Accepted execution transitions INVESTIGATING to MITIGATED",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

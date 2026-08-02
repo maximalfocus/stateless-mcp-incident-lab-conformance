@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "unknown-handle-recovery",
+      "must": "An unknown incident handle returns a recoverable isError result telling the caller to create another incident"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "spec_id": "INC-012",
+  "description": "An expired incident handle behaves as unknown and cannot be recovered or enumerated",
+  "description_bdd": {
+    "given": "the expired handle recovery scenario",
+    "when": "the incidents contract is exercised",
+    "then": "an expired incident handle behaves as unknown and cannot be recovered or enumerated"
+  },
+  "boundary": "state-machine",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Domain and data model / Incident lifecycle",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "incidents",
+  "approved_by": null,
+  "approved_at": null
+}

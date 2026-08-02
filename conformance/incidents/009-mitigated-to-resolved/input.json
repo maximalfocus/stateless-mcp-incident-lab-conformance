@@ -1,0 +1,9 @@
+{
+  "scenario": "mitigated-to-resolved",
+  "contract": "resolve_incident transitions MITIGATED to RESOLVED",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

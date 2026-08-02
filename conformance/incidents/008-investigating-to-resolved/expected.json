@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "investigating-to-resolved",
+      "must": "resolve_incident transitions INVESTIGATING to RESOLVED"
+    }
+  ]
+}

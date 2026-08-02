@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "open-to-investigating",
+      "must": "run_diagnostic transitions OPEN to INVESTIGATING"
+    }
+  ]
+}

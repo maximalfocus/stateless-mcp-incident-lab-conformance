@@ -1,0 +1,9 @@
+{
+  "scenario": "investigating-to-resolved",
+  "contract": "resolve_incident transitions INVESTIGATING to RESOLVED",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

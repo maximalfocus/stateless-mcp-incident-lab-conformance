@@ -1,0 +1,9 @@
+{
+  "scenario": "unknown-handle-recovery",
+  "contract": "An unknown incident handle returns a recoverable isError result telling the caller to create another incident",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

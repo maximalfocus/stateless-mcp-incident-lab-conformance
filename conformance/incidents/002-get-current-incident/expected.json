@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "get-current-incident",
+      "must": "get_incident returns current lifecycle state and related opaque handles"
+    }
+  ]
+}

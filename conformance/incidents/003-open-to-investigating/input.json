@@ -1,0 +1,9 @@
+{
+  "scenario": "open-to-investigating",
+  "contract": "run_diagnostic transitions OPEN to INVESTIGATING",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

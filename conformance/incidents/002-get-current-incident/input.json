@@ -1,0 +1,9 @@
+{
+  "scenario": "get-current-incident",
+  "contract": "get_incident returns current lifecycle state and related opaque handles",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "reject-resolved-transition",
+      "must": "Any transition out of RESOLVED returns an actionable isError tool result"
+    }
+  ]
+}

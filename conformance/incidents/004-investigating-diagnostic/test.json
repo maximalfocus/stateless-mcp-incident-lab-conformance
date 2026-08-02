@@ -1,0 +1,28 @@
+{
+  "spec_id": "INC-004",
+  "description": "A further diagnostic in INVESTIGATING records a completed DiagnosticRun without invalid transition",
+  "description_bdd": {
+    "given": "the investigating diagnostic scenario",
+    "when": "the incidents contract is exercised",
+    "then": "a further diagnostic in INVESTIGATING records a completed DiagnosticRun without invalid transition"
+  },
+  "boundary": "state-machine",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Domain and data model / Incident lifecycle",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "incidents",
+  "approved_by": null,
+  "approved_at": null
+}

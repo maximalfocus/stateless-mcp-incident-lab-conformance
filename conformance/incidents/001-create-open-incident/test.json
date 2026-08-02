@@ -1,0 +1,28 @@
+{
+  "spec_id": "INC-001",
+  "description": "create_incident creates an OPEN incident with opaque high-entropy id and bounded expiry",
+  "description_bdd": {
+    "given": "the create open incident scenario",
+    "when": "the incidents contract is exercised",
+    "then": "create_incident creates an OPEN incident with opaque high-entropy id and bounded expiry"
+  },
+  "boundary": "state-machine",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Domain and data model / Incident lifecycle",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "incidents",
+  "approved_by": null,
+  "approved_at": null
+}

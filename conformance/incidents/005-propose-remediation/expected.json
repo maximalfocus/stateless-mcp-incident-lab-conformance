@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "propose-remediation",
+      "must": "A finding can produce one safe simulated remediation proposal"
+    }
+  ]
+}

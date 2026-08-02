@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "open-to-resolved",
+      "must": "resolve_incident transitions OPEN directly to RESOLVED"
+    }
+  ]
+}

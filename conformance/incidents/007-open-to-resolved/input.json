@@ -1,0 +1,9 @@
+{
+  "scenario": "open-to-resolved",
+  "contract": "resolve_incident transitions OPEN directly to RESOLVED",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}
