@@ -1,0 +1,28 @@
+{
+  "spec_id": "SEC-002",
+  "description": "CR, LF, NUL, and invalid sentinel input cannot enter mirrored headers",
+  "description_bdd": {
+    "given": "the header injection rejected scenario",
+    "when": "the security contract is exercised",
+    "then": "cR, LF, NUL, and invalid sentinel input cannot enter mirrored headers"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Security posture and Business rules",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "security",
+  "approved_by": null,
+  "approved_at": null
+}

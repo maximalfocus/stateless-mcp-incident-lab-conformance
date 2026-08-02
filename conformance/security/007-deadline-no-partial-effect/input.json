@@ -1,0 +1,9 @@
+{
+  "scenario": "deadline-no-partial-effect",
+  "contract": "Deadline cancellation leaves no partially committed domain effect",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

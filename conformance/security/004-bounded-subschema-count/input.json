@@ -1,0 +1,9 @@
+{
+  "scenario": "bounded-subschema-count",
+  "contract": "Schema validation rejects composition count beyond the configured bound",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

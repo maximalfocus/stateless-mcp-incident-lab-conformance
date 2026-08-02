@@ -1,0 +1,9 @@
+{
+  "scenario": "network-ref-refused",
+  "contract": "Validators never dereference a ref resolving to a network URI",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "header-injection-rejected",
+      "must": "CR, LF, NUL, and invalid sentinel input cannot enter mirrored headers"
+    },
+    {
+      "type": "strict_http_shape",
+      "undeclared_body_fields": "fail",
+      "undeclared_headers": "allowed_only_by_marker"
+    }
+  ]
+}

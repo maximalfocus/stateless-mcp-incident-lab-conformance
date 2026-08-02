@@ -1,0 +1,14 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "bounded-subschema-count",
+      "must": "Schema validation rejects composition count beyond the configured bound"
+    },
+    {
+      "type": "strict_http_shape",
+      "undeclared_body_fields": "fail",
+      "undeclared_headers": "allowed_only_by_marker"
+    }
+  ]
+}

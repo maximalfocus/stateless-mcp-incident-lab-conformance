@@ -1,0 +1,28 @@
+{
+  "spec_id": "SEC-008",
+  "description": "Learner-created bearer handles are UUIDv4 or stronger, opaque, unguessable, and TTL-bounded",
+  "description_bdd": {
+    "given": "the handle entropy and ttl scenario",
+    "when": "the security contract is exercised",
+    "then": "learner-created bearer handles are UUIDv4 or stronger, opaque, unguessable, and TTL-bounded"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Security posture and Business rules",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "security",
+  "approved_by": null,
+  "approved_at": null
+}

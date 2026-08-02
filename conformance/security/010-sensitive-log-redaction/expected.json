@@ -1,0 +1,14 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "sensitive-log-redaction",
+      "must": "Logs redact incident handles, requestState, elicitation content, mirrored bearer headers, and corresponding body fields"
+    },
+    {
+      "type": "strict_http_shape",
+      "undeclared_body_fields": "fail",
+      "undeclared_headers": "allowed_only_by_marker"
+    }
+  ]
+}

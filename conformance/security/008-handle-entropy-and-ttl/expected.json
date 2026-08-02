@@ -1,0 +1,14 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "handle-entropy-and-ttl",
+      "must": "Learner-created bearer handles are UUIDv4 or stronger, opaque, unguessable, and TTL-bounded"
+    },
+    {
+      "type": "strict_http_shape",
+      "undeclared_body_fields": "fail",
+      "undeclared_headers": "allowed_only_by_marker"
+    }
+  ]
+}

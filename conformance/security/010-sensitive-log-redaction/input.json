@@ -1,0 +1,9 @@
+{
+  "scenario": "sensitive-log-redaction",
+  "contract": "Logs redact incident handles, requestState, elicitation content, mirrored bearer headers, and corresponding body fields",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

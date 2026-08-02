@@ -1,0 +1,28 @@
+{
+  "spec_id": "SEC-007",
+  "description": "Deadline cancellation leaves no partially committed domain effect",
+  "description_bdd": {
+    "given": "the deadline no partial effect scenario",
+    "when": "the security contract is exercised",
+    "then": "deadline cancellation leaves no partially committed domain effect"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Security posture and Business rules",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "security",
+  "approved_by": null,
+  "approved_at": null
+}

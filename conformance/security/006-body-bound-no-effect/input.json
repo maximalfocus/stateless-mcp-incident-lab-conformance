@@ -1,0 +1,9 @@
+{
+  "scenario": "body-bound-no-effect",
+  "contract": "Oversized bodies are counted and discarded without parsing or partial effects",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

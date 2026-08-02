@@ -1,0 +1,9 @@
+{
+  "scenario": "bounded-schema-depth",
+  "contract": "Schema validation rejects depth beyond the configured bound before evaluation",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

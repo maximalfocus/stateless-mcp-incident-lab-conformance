@@ -1,0 +1,28 @@
+{
+  "spec_id": "SEC-010",
+  "description": "Logs redact incident handles, requestState, elicitation content, mirrored bearer headers, and corresponding body fields",
+  "description_bdd": {
+    "given": "the sensitive log redaction scenario",
+    "when": "the security contract is exercised",
+    "then": "logs redact incident handles, requestState, elicitation content, mirrored bearer headers, and corresponding body fields"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Security posture and Business rules",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "security",
+  "approved_by": null,
+  "approved_at": null
+}

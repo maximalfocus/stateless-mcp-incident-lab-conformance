@@ -1,0 +1,28 @@
+{
+  "spec_id": "SEC-012",
+  "description": "No unsuppressed high or critical dependency finding is accepted",
+  "description_bdd": {
+    "given": "the dependency severity floor scenario",
+    "when": "the security contract is exercised",
+    "then": "no unsuppressed high or critical dependency finding is accepted"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Security posture and Business rules",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "security",
+  "approved_by": null,
+  "approved_at": null
+}

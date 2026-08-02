@@ -1,0 +1,9 @@
+{
+  "scenario": "simulated-actions-only",
+  "contract": "No code path imports or invokes real remediation, shell, host, or cloud-control capabilities",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

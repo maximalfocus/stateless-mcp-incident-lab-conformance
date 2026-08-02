@@ -1,0 +1,28 @@
+{
+  "spec_id": "SEC-011",
+  "description": "No code path imports or invokes real remediation, shell, host, or cloud-control capabilities",
+  "description_bdd": {
+    "given": "the simulated actions only scenario",
+    "when": "the security contract is exercised",
+    "then": "no code path imports or invokes real remediation, shell, host, or cloud-control capabilities"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Security posture and Business rules",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "security",
+  "approved_by": null,
+  "approved_at": null
+}

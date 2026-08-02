@@ -1,0 +1,28 @@
+{
+  "spec_id": "SEC-009",
+  "description": "No catalog result contains a concrete incident URI or learner-created bearer handle",
+  "description_bdd": {
+    "given": "the catalog handle non enumeration scenario",
+    "when": "the security contract is exercised",
+    "then": "no catalog result contains a concrete incident URI or learner-created bearer handle"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Security posture and Business rules",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "security",
+  "approved_by": null,
+  "approved_at": null
+}
