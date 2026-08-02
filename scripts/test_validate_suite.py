@@ -141,6 +141,13 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("lane integration has no concrete owning repository", result.stdout)
 
+    def test_consumer_metadata_workitem_lane_drift_goes_red(self):
+        path = self.tmp / "conformance/observability/001-raw-health-ready/test.json"
+        path.write_text(path.read_text().replace('"typescript-raw"', '"typescript-raw", "typescript-sdk"', 1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("WORKITEM lane sdk assignment mismatch", result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

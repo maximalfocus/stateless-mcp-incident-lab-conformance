@@ -15,18 +15,15 @@
   ],
   "source": "PRD.md § Non-functional requirements / Observability and Deployment / Local",
   "consumers": [
-    "typescript-raw",
-    "typescript-sdk"
+    "typescript-raw"
   ],
   "providers": [
-    "raw",
-    "sdk"
+    "raw"
   ],
   "context": "assurance",
   "approved_by": null,
   "approved_at": null,
   "source_deps": [
-    "src/observability/logging.ts",
-    "src/observability/tracing.ts"
+    "src/adapters/inbound/health.ts"
   ]
 }

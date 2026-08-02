@@ -15,12 +15,10 @@
   ],
   "source": "PRD.md § Non-functional requirements / Security and PLAN-001-stateless-core.md § Categories / dependencies",
   "consumers": [
-    "typescript-raw",
-    "typescript-sdk"
+    "typescript-raw"
   ],
   "providers": [
-    "raw",
-    "sdk"
+    "raw"
   ],
   "context": "assurance",
   "approved_by": null,

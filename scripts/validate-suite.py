@@ -22,6 +22,10 @@ for p in sorted(conf.rglob('test.json')):
     if k not in t: errors.append(f'{sid}: missing {k}')
   if t.get('boundary') not in allowed: errors.append(f'{sid}: invalid boundary')
   if t.get('context') not in valid_contexts: errors.append(f"{sid}: context {t.get('context')!r} absent from context-map.json")
+  consumers=t.get('consumers'); providers=t.get('providers')
+  consumer_provider={'typescript-raw':'raw','typescript-sdk':'sdk'}
+  if not isinstance(consumers,list) or not consumers or set(consumers)-set(consumer_provider): errors.append(f'{sid}: invalid consumers')
+  elif providers!=[consumer_provider[x] for x in consumers]: errors.append(f'{sid}: providers must exactly mirror consumers in order')
   if not isinstance(t.get('source_deps'),list) or not t.get('source_deps'): errors.append(f'{sid}: source_deps must be a non-empty list')
   for f in p.parent.glob('*.json'):
     try: json.loads(f.read_text())
@@ -148,11 +152,11 @@ for entry in seen_wi:
   known.add(entry['id'])
 all_paths={str(p.parent.relative_to(root)) for p in tests}
 def paths_for(*categories): return {p for p in all_paths if p.split('/')[1] in categories}
-arch_raw={p for p in paths_for('architecture') if any(x in p for x in ('005-raw-public','001-raw-layer','002-raw-adapter'))}
-arch_sdk=paths_for('architecture')-arch_raw
-ordinary=paths_for('protocol','versioning','transport','discovery','primitives','incidents','mrtr','streaming','cache','cli','properties','security','dependencies','observability')
-raw_expected=(ordinary|arch_raw)-{p for p in ordinary if '/observability/002-' in p}
-sdk_expected=(ordinary|arch_sdk)-{p for p in ordinary if '/observability/001-' in p or '/dependencies/005-' in p}
+implementation_categories={'architecture','protocol','versioning','transport','discovery','primitives','incidents','mrtr','streaming','cache','cli','properties','security','dependencies','observability'}
+implementation_paths=paths_for(*implementation_categories)
+metadata={p:json.loads((root/p/'test.json').read_text()) for p in implementation_paths}
+raw_expected={p for p,t in metadata.items() if 'typescript-raw' in t.get('consumers',[])}
+sdk_expected={p for p,t in metadata.items() if 'typescript-sdk' in t.get('consumers',[])}
 lane_expected={'raw':raw_expected,'sdk':sdk_expected,'integration':paths_for('interoperability','performance'),'infrastructure':paths_for('infra'),'cicd':paths_for('cicd')}
 for lane,expected in lane_expected.items():
   assigned=[p for entry in lanes.get(lane,[]) for p in entry['paths']]
