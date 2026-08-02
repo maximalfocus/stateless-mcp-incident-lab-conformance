@@ -232,7 +232,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/headers.ts, src/client/cache-key.ts, src/client/http.ts, src/properties.ts`
   - Depends on: WI-043
 
-- [~] **WI-045** raw properties contracts 4–7 (4 tests)
+- [x] **WI-045** raw properties contracts 4–7 (4 tests)
   - Tests: `conformance/properties/004-deterministic-catalog-order`, `conformance/properties/005-request-state-tamper-rejection`, `conformance/properties/006-replica-independence`, `conformance/properties/007-remediation-at-most-once`
   - Scope: `src/protocol/headers.ts, src/client/cache-key.ts, src/properties.ts`
   - Depends on: WI-044
