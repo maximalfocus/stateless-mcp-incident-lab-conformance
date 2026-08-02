@@ -1,0 +1,9 @@
+{
+  "scenario": "metadata-in-params",
+  "contract": "Protocol version and client capabilities are read only from params._meta",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

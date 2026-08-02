@@ -1,0 +1,9 @@
+{
+  "scenario": "unsupported-version",
+  "contract": "Unsupported version yields -32022 with requested and supported fields",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

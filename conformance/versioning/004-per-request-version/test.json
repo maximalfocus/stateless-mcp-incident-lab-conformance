@@ -1,0 +1,28 @@
+{
+  "spec_id": "VER-004",
+  "description": "Protocol version is evaluated independently on every request",
+  "description_bdd": {
+    "given": "the per request version scenario",
+    "when": "the versioning contract is exercised",
+    "then": "protocol version is evaluated independently on every request"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__versioning.md + PRD.md § Required request metadata",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "versioning",
+  "approved_by": null,
+  "approved_at": null
+}

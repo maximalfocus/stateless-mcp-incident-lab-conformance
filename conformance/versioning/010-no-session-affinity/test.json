@@ -1,0 +1,28 @@
+{
+  "spec_id": "VER-010",
+  "description": "A supplied cookie, source address, prior request, or Mcp-Session-Id cannot affect protocol behavior",
+  "description_bdd": {
+    "given": "the no session affinity scenario",
+    "when": "the versioning contract is exercised",
+    "then": "a supplied cookie, source address, prior request, or Mcp-Session-Id cannot affect protocol behavior"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__versioning.md + PRD.md § Required request metadata",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "versioning",
+  "approved_by": null,
+  "approved_at": null
+}

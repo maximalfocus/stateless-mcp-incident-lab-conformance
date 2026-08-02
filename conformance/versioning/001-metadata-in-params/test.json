@@ -1,0 +1,28 @@
+{
+  "spec_id": "VER-001",
+  "description": "Protocol version and client capabilities are read only from params._meta",
+  "description_bdd": {
+    "given": "the metadata in params scenario",
+    "when": "the versioning contract is exercised",
+    "then": "protocol version and client capabilities are read only from params._meta"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__versioning.md + PRD.md § Required request metadata",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "versioning",
+  "approved_by": null,
+  "approved_at": null
+}

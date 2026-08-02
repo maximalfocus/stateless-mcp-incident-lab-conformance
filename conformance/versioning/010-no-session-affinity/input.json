@@ -1,0 +1,9 @@
+{
+  "scenario": "no-session-affinity",
+  "contract": "A supplied cookie, source address, prior request, or Mcp-Session-Id cannot affect protocol behavior",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

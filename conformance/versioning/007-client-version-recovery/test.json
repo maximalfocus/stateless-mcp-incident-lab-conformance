@@ -1,0 +1,28 @@
+{
+  "spec_id": "VER-007",
+  "description": "A client retries with a mutually supported version after UnsupportedProtocolVersionError",
+  "description_bdd": {
+    "given": "the client version recovery scenario",
+    "when": "the versioning contract is exercised",
+    "then": "a client retries with a mutually supported version after UnsupportedProtocolVersionError"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__versioning.md + PRD.md § Required request metadata",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "versioning",
+  "approved_by": null,
+  "approved_at": null
+}
