@@ -267,7 +267,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `package.json, package-lock.json, src/dependencies/index.ts`
   - Depends on: WI-050
 
-- [ ] **WI-052** raw health readiness contracts (2 tests)
+- [~] **WI-052** raw health readiness contracts (2 tests)
   - Tests: `conformance/observability/001-raw-health-ready`, `conformance/observability/003-health-unavailable`
   - Scope: `src/adapters/outbound/telemetry.ts, src/adapters/inbound/health.ts`
   - Depends on: WI-051
