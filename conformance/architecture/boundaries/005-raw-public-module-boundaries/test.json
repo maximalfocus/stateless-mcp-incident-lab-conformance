@@ -10,16 +10,19 @@
   "normalisation": [
     "file_path"
   ],
-  "source": "stateless-mcp-incident-lab-architecture/rules/typescript-raw-boundaries.yaml + PLAN-001-stateless-core.md § Approach",
+  "source": "stateless-mcp-incident-lab-architecture/rules/typescript-raw-boundaries.yaml + PLAN-001-stateless-core.md \u00a7 Approach",
   "consumers": [
     "typescript-raw"
   ],
   "providers": [
     "raw"
   ],
-  "context": "architecture",
+  "context": "assurance",
   "adr": "ADR-0001",
   "adr_repo": "maximalfocus/stateless-mcp-incident-lab-architecture",
   "approved_by": null,
-  "approved_at": null
+  "approved_at": null,
+  "source_deps": [
+    "src/**"
+  ]
 }
