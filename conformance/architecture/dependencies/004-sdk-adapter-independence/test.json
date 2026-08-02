@@ -1,0 +1,25 @@
+{
+  "spec_id": "ARCH-004",
+  "description": "SDK inbound and outbound adapters do not import each other",
+  "description_bdd": {
+    "given": "the sdk TypeScript source tree",
+    "when": "architecture imports are scanned using the accepted matching contract",
+    "then": "sDK inbound and outbound adapters do not import each other"
+  },
+  "boundary": "lint-assertion",
+  "normalisation": [
+    "file_path"
+  ],
+  "source": "stateless-mcp-incident-lab-architecture/rules/typescript-sdk-boundaries.yaml + PLAN-001-stateless-core.md § Approach",
+  "consumers": [
+    "typescript-sdk"
+  ],
+  "providers": [
+    "sdk"
+  ],
+  "context": "architecture",
+  "adr": "ADR-0001",
+  "adr_repo": "maximalfocus/stateless-mcp-incident-lab-architecture",
+  "approved_by": null,
+  "approved_at": null
+}

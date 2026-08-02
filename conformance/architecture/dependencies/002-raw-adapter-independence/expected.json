@@ -1,0 +1,19 @@
+{
+  "assertions": [
+    {
+      "type": "no_import",
+      "from_glob": "src/adapters/inbound/**",
+      "import_pattern": "^src/adapters/outbound(?:/|$)"
+    },
+    {
+      "type": "no_import",
+      "from_glob": "src/adapters/outbound/**",
+      "import_pattern": "^src/adapters/inbound(?:/|$)"
+    },
+    {
+      "type": "no_import",
+      "from_glob": "src/**",
+      "import_pattern": "^@modelcontextprotocol/sdk(?:/|$)"
+    }
+  ]
+}

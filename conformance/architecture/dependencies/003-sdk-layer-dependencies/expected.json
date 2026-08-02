@@ -1,0 +1,29 @@
+{
+  "assertions": [
+    {
+      "type": "no_import",
+      "from_glob": "src/domain/**",
+      "import_pattern": "^src/application(?:/|$)"
+    },
+    {
+      "type": "no_import",
+      "from_glob": "src/domain/**",
+      "import_pattern": "^src/adapters(?:/|$)"
+    },
+    {
+      "type": "no_import",
+      "from_glob": "src/domain/**",
+      "import_pattern": "^(@modelcontextprotocol/sdk(?:/|$)|node:(?:http|https|http2|net|tls)$|(?:http|https)$|@aws-sdk/|aws-sdk(?:/|$)|undici(?:/|$)|express(?:/|$)|fastify(?:/|$))"
+    },
+    {
+      "type": "no_import",
+      "from_glob": "src/application/**",
+      "import_pattern": "^src/adapters(?:/|$)"
+    },
+    {
+      "type": "no_import",
+      "from_glob": "src/application/**",
+      "import_pattern": "^(@modelcontextprotocol/sdk(?:/|$)|node:(?:http|https|http2|net|tls)$|(?:http|https)$|@aws-sdk/|aws-sdk(?:/|$)|undici(?:/|$)|express(?:/|$)|fastify(?:/|$))"
+    }
+  ]
+}

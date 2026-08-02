@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "type": "no_deep_import",
+      "from_glob": "src/**",
+      "module_pattern": "src/domain/*/",
+      "allowed_entry": "index.ts",
+      "same_module": "allow"
+    },
+    {
+      "type": "no_deep_import",
+      "from_glob": "src/**",
+      "module_pattern": "src/application/*/",
+      "allowed_entry": "index.ts",
+      "same_module": "allow"
+    },
+    {
+      "type": "no_deep_import",
+      "from_glob": "src/**",
+      "module_pattern": "src/adapters/inbound/*/",
+      "allowed_entry": "index.ts",
+      "same_module": "allow"
+    },
+    {
+      "type": "no_deep_import",
+      "from_glob": "src/**",
+      "module_pattern": "src/adapters/outbound/*/",
+      "allowed_entry": "index.ts",
+      "same_module": "allow"
+    }
+  ]
+}

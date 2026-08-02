@@ -1,0 +1,9 @@
+{
+  "source_directory": "src/",
+  "provider": "sdk",
+  "matching": {
+    "from_glob": "contract-prefix-globstar-subset-over-source-path",
+    "import_pattern": "portable-ecmascript-python-regex-search-over-canonical-import",
+    "canonical_import": "bare packages unchanged; relative and aliased imports resolve to workspace-root TypeScript source paths"
+  }
+}

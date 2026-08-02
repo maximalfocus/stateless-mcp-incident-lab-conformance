@@ -1,0 +1,25 @@
+{
+  "spec_id": "ARCH-002",
+  "description": "Raw inbound and outbound adapters do not import each other and the raw realization never imports the MCP SDK",
+  "description_bdd": {
+    "given": "the raw TypeScript source tree",
+    "when": "architecture imports are scanned using the accepted matching contract",
+    "then": "raw inbound and outbound adapters do not import each other and the raw realization never imports the MCP SDK"
+  },
+  "boundary": "lint-assertion",
+  "normalisation": [
+    "file_path"
+  ],
+  "source": "stateless-mcp-incident-lab-architecture/rules/typescript-raw-boundaries.yaml + PLAN-001-stateless-core.md § Approach",
+  "consumers": [
+    "typescript-raw"
+  ],
+  "providers": [
+    "raw"
+  ],
+  "context": "architecture",
+  "adr": "ADR-0001",
+  "adr_repo": "maximalfocus/stateless-mcp-incident-lab-architecture",
+  "approved_by": null,
+  "approved_at": null
+}

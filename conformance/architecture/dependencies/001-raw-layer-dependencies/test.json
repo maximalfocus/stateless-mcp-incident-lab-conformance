@@ -1,0 +1,25 @@
+{
+  "spec_id": "ARCH-001",
+  "description": "Raw domain/application/adapters preserve inward dependency direction and domain/application remain framework-free",
+  "description_bdd": {
+    "given": "the raw TypeScript source tree",
+    "when": "architecture imports are scanned using the accepted matching contract",
+    "then": "raw domain/application/adapters preserve inward dependency direction and domain/application remain framework-free"
+  },
+  "boundary": "lint-assertion",
+  "normalisation": [
+    "file_path"
+  ],
+  "source": "stateless-mcp-incident-lab-architecture/rules/typescript-raw-boundaries.yaml + PLAN-001-stateless-core.md § Approach",
+  "consumers": [
+    "typescript-raw"
+  ],
+  "providers": [
+    "raw"
+  ],
+  "context": "architecture",
+  "adr": "ADR-0001",
+  "adr_repo": "maximalfocus/stateless-mcp-incident-lab-architecture",
+  "approved_by": null,
+  "approved_at": null
+}
