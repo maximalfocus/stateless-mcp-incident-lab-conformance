@@ -147,7 +147,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/domain/incident.ts, src/application/incidents.ts`
   - Depends on: WI-026
 
-- [~] **WI-028** raw mrtr contracts 1–3 (3 tests)
+- [x] **WI-028** raw mrtr contracts 1–3 (3 tests)
   - Tests: `conformance/mrtr/001-initial-input-required`, `conformance/mrtr/002-form-capability-required`, `conformance/mrtr/003-url-only-capability-rejected`
   - Scope: `src/application/mrtr.ts, src/adapters/outbound/request-state.ts, src/adapters/inbound/http.ts`
   - Depends on: WI-027
