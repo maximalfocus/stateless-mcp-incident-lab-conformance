@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "structured-log-fields",
+      "must": "One JSON log record includes method, redacted name, request id, replica, latency, result type, and trace id"
+    }
+  ]
+}

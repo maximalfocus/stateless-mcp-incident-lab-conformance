@@ -1,0 +1,21 @@
+{
+  "method": "GET",
+  "path": "/sdk/healthz",
+  "headers": {
+    "Accept": "application/json, text/event-stream",
+    "MCP-Protocol-Version": "2026-07-28",
+    "Mcp-Method": "healthz"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "healthz",
+    "params": {
+      "scenario": "health-unavailable",
+      "_meta": {
+        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/clientCapabilities": {}
+      }
+    }
+  }
+}

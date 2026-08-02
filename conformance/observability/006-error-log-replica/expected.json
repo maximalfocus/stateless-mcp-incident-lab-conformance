@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "error-log-replica",
+      "must": "A JSON-RPC error has no result metadata but its serving replica remains observable in structured logs"
+    }
+  ]
+}

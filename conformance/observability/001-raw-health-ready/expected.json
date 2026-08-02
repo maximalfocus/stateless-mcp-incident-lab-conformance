@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "raw-health-ready",
+      "must": "GET /raw/healthz returns exact 200 JSON ok only after raw server and DynamoDB adapter are ready"
+    }
+  ]
+}

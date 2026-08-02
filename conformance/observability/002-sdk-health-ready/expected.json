@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "sdk-health-ready",
+      "must": "GET /sdk/healthz returns exact 200 JSON ok only after SDK server and DynamoDB adapter are ready"
+    }
+  ]
+}

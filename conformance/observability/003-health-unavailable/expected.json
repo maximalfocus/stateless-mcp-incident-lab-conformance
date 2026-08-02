@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "health-unavailable",
+      "must": "Either health endpoint returns exact 503 JSON unavailable before dependencies are ready"
+    }
+  ]
+}

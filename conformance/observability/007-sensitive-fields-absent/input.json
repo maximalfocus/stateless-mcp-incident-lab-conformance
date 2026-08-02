@@ -1,0 +1,9 @@
+{
+  "scenario": "sensitive-fields-absent",
+  "contract": "Captured logs and traces contain no unredacted incident handle, requestState, or elicitation content",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

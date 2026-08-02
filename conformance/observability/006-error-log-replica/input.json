@@ -1,0 +1,9 @@
+{
+  "scenario": "error-log-replica",
+  "contract": "A JSON-RPC error has no result metadata but its serving replica remains observable in structured logs",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

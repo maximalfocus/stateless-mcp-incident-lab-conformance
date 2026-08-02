@@ -1,0 +1,28 @@
+{
+  "spec_id": "OBS-002",
+  "description": "GET /sdk/healthz returns exact 200 JSON ok only after SDK server and DynamoDB adapter are ready",
+  "description_bdd": {
+    "given": "the sdk health ready scenario",
+    "when": "the observability contract is exercised",
+    "then": "gET /sdk/healthz returns exact 200 JSON ok only after SDK server and DynamoDB adapter are ready"
+  },
+  "boundary": "trace-span",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Non-functional requirements / Observability and Deployment / Local",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "observability",
+  "approved_by": null,
+  "approved_at": null
+}

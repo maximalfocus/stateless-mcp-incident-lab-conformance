@@ -1,0 +1,28 @@
+{
+  "spec_id": "OBS-006",
+  "description": "A JSON-RPC error has no result metadata but its serving replica remains observable in structured logs",
+  "description_bdd": {
+    "given": "the error log replica scenario",
+    "when": "the observability contract is exercised",
+    "then": "a JSON-RPC error has no result metadata but its serving replica remains observable in structured logs"
+  },
+  "boundary": "trace-span",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Non-functional requirements / Observability and Deployment / Local",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "observability",
+  "approved_by": null,
+  "approved_at": null
+}

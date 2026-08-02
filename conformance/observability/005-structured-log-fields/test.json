@@ -1,0 +1,28 @@
+{
+  "spec_id": "OBS-005",
+  "description": "One JSON log record includes method, redacted name, request id, replica, latency, result type, and trace id",
+  "description_bdd": {
+    "given": "the structured log fields scenario",
+    "when": "the observability contract is exercised",
+    "then": "one JSON log record includes method, redacted name, request id, replica, latency, result type, and trace id"
+  },
+  "boundary": "trace-span",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Non-functional requirements / Observability and Deployment / Local",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "observability",
+  "approved_by": null,
+  "approved_at": null
+}

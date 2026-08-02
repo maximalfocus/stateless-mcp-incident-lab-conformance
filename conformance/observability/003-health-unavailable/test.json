@@ -1,0 +1,28 @@
+{
+  "spec_id": "OBS-003",
+  "description": "Either health endpoint returns exact 503 JSON unavailable before dependencies are ready",
+  "description_bdd": {
+    "given": "the health unavailable scenario",
+    "when": "the observability contract is exercised",
+    "then": "either health endpoint returns exact 503 JSON unavailable before dependencies are ready"
+  },
+  "boundary": "trace-span",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Non-functional requirements / Observability and Deployment / Local",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "observability",
+  "approved_by": null,
+  "approved_at": null
+}
