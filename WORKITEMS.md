@@ -52,7 +52,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/version.ts, src/client/version.ts`
   - Depends on: WI-007
 
-- [ ] **WI-009** raw transport contracts 1–3 (3 tests)
+- [~] **WI-009** raw transport contracts 1–3 (3 tests)
   - Tests: `conformance/transport/001-post-json-response`, `conformance/transport/002-notification-accepted`, `conformance/transport/003-reject-batch-array`
   - Scope: `src/adapters/inbound/http.ts, src/client/http.ts`
   - Depends on: WI-008
