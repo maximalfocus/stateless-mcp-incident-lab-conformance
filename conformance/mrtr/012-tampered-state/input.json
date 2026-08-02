@@ -1,9 +1,6 @@
 {
-  "scenario": "tampered-state",
-  "contract": "Tampered requestState is rejected and applies no effect",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "accepted-remediation",
+  "clock": "2026-08-02T00:00:00Z",
+  "effect_count_before": 0,
+  "state_fault": "tampered"
 }

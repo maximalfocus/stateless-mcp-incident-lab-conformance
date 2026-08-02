@@ -1,9 +1,7 @@
 {
-  "scenario": "cross-replica-retry",
-  "contract": "A state created by one replica is verifiable and executable by another replica",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "accepted-remediation",
+  "clock": "2026-08-02T00:00:00Z",
+  "effect_count_before": 0,
+  "initial_replica": "raw-1",
+  "retry_replica": "raw-2"
 }

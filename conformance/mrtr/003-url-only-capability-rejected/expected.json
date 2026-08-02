@@ -1,9 +1,32 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "url-only-capability-rejected",
-      "must": "URL-only elicitation capability returns -32021 and never receives a form"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 200,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32021,
+      "message": "Missing required client capability",
+      "data": {
+        "requiredCapabilities": {
+          "inputRequests": {
+            "approval": {
+              "method": "elicitation/create",
+              "params": {
+                "form": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

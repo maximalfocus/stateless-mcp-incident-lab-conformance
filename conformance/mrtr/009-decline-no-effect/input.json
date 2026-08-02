@@ -1,9 +1,5 @@
 {
-  "scenario": "decline-no-effect",
-  "contract": "A declined elicitation completes without applying an effect",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "accepted-remediation",
+  "clock": "2026-08-02T00:00:00Z",
+  "effect_count_before": 0
 }

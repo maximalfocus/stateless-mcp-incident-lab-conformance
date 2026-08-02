@@ -1,9 +1,24 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "expired-state",
-      "must": "RequestState older than five minutes is rejected and applies no effect"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 200,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "error": {
+      "code": -32602,
+      "message": "Invalid params",
+      "data": {
+        "reason": "expired",
+        "effect_count": 0
+      }
+    }
+  }
 }

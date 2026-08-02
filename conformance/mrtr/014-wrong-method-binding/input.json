@@ -1,9 +1,6 @@
 {
-  "scenario": "wrong-method-binding",
-  "contract": "RequestState reused with another method is rejected",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "accepted-remediation",
+  "clock": "2026-08-02T00:00:00Z",
+  "effect_count_before": 0,
+  "state_fault": "method_mismatch"
 }

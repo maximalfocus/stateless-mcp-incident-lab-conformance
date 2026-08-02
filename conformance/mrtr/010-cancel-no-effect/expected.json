@@ -1,9 +1,38 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "cancel-no-effect",
-      "must": "A cancelled elicitation completes without applying an effect"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 200,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "result": {
+      "resultType": "complete",
+      "content": [
+        {
+          "type": "text",
+          "text": "Remediation not executed."
+        }
+      ],
+      "structuredContent": {
+        "remediation_id": "REMEDIATION-001",
+        "status": "CANCEL",
+        "effect_count": 0
+      },
+      "isError": false,
+      "_meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "stateless-mcp-incident-lab",
+          "version": "2026-07-28"
+        },
+        "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
+      }
+    }
+  }
 }

@@ -1,9 +1,5 @@
 {
-  "scenario": "incomplete-reelicits",
-  "contract": "Incomplete inputResponses returns another input_required for missing fields and no effect",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "accepted-remediation",
+  "clock": "2026-08-02T00:00:00Z",
+  "effect_count_before": 0
 }

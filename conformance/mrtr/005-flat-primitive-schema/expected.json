@@ -1,9 +1,55 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "flat-primitive-schema",
-      "must": "The elicitation requestedSchema is a flat object containing primitive properties only"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 200,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "resultType": "input_required",
+      "requestState": "{{ANY_STRING}}",
+      "_meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "stateless-mcp-incident-lab",
+          "version": "2026-07-28"
+        },
+        "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
+      },
+      "inputRequests": {
+        "approval": {
+          "method": "elicitation/create",
+          "params": {
+            "mode": "form",
+            "message": "Approve simulated remediation?",
+            "requestedSchema": {
+              "type": "object",
+              "properties": {
+                "decision": {
+                  "type": "string",
+                  "enum": [
+                    "accept",
+                    "decline"
+                  ]
+                },
+                "confirmation": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "decision",
+                "confirmation"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,9 +1,6 @@
 {
-  "scenario": "exact-state-echo",
-  "contract": "The client returns requestState byte-for-byte without interpreting it",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "accepted-remediation",
+  "clock": "2026-08-02T00:00:00Z",
+  "effect_count_before": 0,
+  "requestState_bytes": "U0lHTkVELVNUQVRF"
 }

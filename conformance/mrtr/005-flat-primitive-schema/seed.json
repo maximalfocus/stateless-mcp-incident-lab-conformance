@@ -1,4 +1,16 @@
 {
-  "scenario": "SEEDED-DETERMINISTIC-INCIDENT-LAB",
-  "entities": []
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB",
+  "clock": "2026-08-02T00:00:00Z",
+  "incidents": [
+    {
+      "incident_id": "INCIDENT-INVESTIGATING",
+      "status": "INVESTIGATING"
+    }
+  ],
+  "remediations": [
+    {
+      "remediation_id": "REMEDIATION-001",
+      "status": "PROPOSED"
+    }
+  ]
 }

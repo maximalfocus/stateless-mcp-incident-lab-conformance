@@ -22,7 +22,11 @@
     "raw",
     "sdk"
   ],
-  "context": "mrtr",
+  "context": "protocol-platform",
   "approved_by": null,
-  "approved_at": null
+  "approved_at": null,
+  "source_deps": [
+    "src/application/remediation.ts",
+    "src/protocol/request-state.ts"
+  ]
 }

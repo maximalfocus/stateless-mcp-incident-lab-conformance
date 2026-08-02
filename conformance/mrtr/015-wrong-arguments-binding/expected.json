@@ -1,9 +1,24 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "wrong-arguments-binding",
-      "must": "RequestState reused with changed salient arguments is rejected"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 200,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "error": {
+      "code": -32602,
+      "message": "Invalid params",
+      "data": {
+        "reason": "arguments_mismatch",
+        "effect_count": 0
+      }
+    }
+  }
 }
