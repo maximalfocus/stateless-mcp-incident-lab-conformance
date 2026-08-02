@@ -1,9 +1,13 @@
 {
-  "scenario": "fresh-hit",
-  "contract": "A fresh hinted entry is served without network refresh",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "read",
+  "now_ms": 500,
+  "entry": {
+    "stored_at_ms": 0,
+    "ttlMs": 1000,
+    "value": {
+      "tools": [
+        "a"
+      ]
+    }
+  }
 }

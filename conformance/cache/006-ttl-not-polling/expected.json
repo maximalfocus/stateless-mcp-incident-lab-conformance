@@ -1,9 +1,5 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "ttl-not-polling",
-      "must": "TTL expiry triggers refresh only on demand and is never used as a polling interval"
-    }
-  ]
+  "background_refreshes": 0,
+  "network_calls": 1,
+  "read_source": "network"
 }

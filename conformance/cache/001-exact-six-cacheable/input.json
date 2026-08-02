@@ -1,9 +1,13 @@
 {
-  "scenario": "exact-six-cacheable",
-  "contract": "Only discover, four list operations, and resources/read may carry cache hints",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "operation": "classify_cacheability",
+  "methods": [
+    "server/discover",
+    "tools/list",
+    "prompts/list",
+    "resources/list",
+    "resources/templates/list",
+    "resources/read",
+    "tools/call",
+    "prompts/get"
   ]
 }

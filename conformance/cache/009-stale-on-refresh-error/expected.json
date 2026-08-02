@@ -1,9 +1,11 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "stale-on-refresh-error",
-      "must": "Stale data may be served only after failed refresh and with a visible warning"
-    }
+  "value": {
+    "tools": [
+      "a"
+    ]
+  },
+  "source": "stale-cache",
+  "warnings": [
+    "Refresh failed; serving stale cached data."
   ]
 }

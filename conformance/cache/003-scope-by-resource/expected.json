@@ -1,9 +1,7 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "scope-by-resource",
-      "must": "The six operations are public except incident-scoped resources/read which is private"
-    }
+  "scopes": [
+    "public",
+    "public",
+    "private"
   ]
 }

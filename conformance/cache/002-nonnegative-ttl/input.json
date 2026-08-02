@@ -1,9 +1,41 @@
 {
-  "scenario": "nonnegative-ttl",
-  "contract": "Every cacheable complete result carries ttlMs greater than or equal to zero",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "operation": "validate_hints",
+  "results": [
+    {
+      "method": "server/discover",
+      "resultType": "complete",
+      "ttlMs": 0,
+      "cacheScope": "public"
+    },
+    {
+      "method": "tools/list",
+      "resultType": "complete",
+      "ttlMs": 0,
+      "cacheScope": "public"
+    },
+    {
+      "method": "prompts/list",
+      "resultType": "complete",
+      "ttlMs": 0,
+      "cacheScope": "public"
+    },
+    {
+      "method": "resources/list",
+      "resultType": "complete",
+      "ttlMs": 0,
+      "cacheScope": "public"
+    },
+    {
+      "method": "resources/templates/list",
+      "resultType": "complete",
+      "ttlMs": 0,
+      "cacheScope": "public"
+    },
+    {
+      "method": "resources/read",
+      "resultType": "complete",
+      "ttlMs": 0,
+      "cacheScope": "public"
+    }
   ]
 }

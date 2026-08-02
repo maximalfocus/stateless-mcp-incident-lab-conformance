@@ -1,9 +1,13 @@
 {
-  "scenario": "no-mrtr-cache",
-  "contract": "input_required results and MRTR retries are never cached",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "operation": "store_candidates",
+  "results": [
+    {
+      "resultType": "input_required",
+      "requestState": "opaque"
+    },
+    {
+      "resultType": "complete",
+      "mrtr_retry": true
+    }
   ]
 }

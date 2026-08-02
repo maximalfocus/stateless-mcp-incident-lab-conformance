@@ -1,9 +1,14 @@
 {
-  "scenario": "stale-on-refresh-error",
-  "contract": "Stale data may be served only after failed refresh and with a visible warning",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "refresh_stale",
+  "entry": {
+    "value": {
+      "tools": [
+        "a"
+      ]
+    },
+    "stale": true
+  },
+  "refresh": {
+    "error": "ECONNRESET"
+  }
 }

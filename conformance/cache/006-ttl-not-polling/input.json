@@ -1,9 +1,14 @@
 {
-  "scenario": "ttl-not-polling",
-  "contract": "TTL expiry triggers refresh only on demand and is never used as a polling interval",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "operation": "advance_and_read",
+  "entry": {
+    "stored_at_ms": 0,
+    "ttlMs": 1000
+  },
+  "clock_steps_ms": [
+    999,
+    1001
+  ],
+  "reads_at_steps": [
+    1
   ]
 }

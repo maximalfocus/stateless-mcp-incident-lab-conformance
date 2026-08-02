@@ -1,9 +1,10 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "nonnegative-ttl",
-      "must": "Every cacheable complete result carries ttlMs greater than or equal to zero"
-    }
+  "valid": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
   ]
 }

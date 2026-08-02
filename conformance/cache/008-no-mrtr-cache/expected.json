@@ -1,9 +1,7 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "no-mrtr-cache",
-      "must": "input_required results and MRTR retries are never cached"
-    }
-  ]
+  "stored": [
+    false,
+    false
+  ],
+  "cache_entries": 0
 }

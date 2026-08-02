@@ -22,8 +22,11 @@
     "raw",
     "sdk"
   ],
-  "context": "cache",
+  "context": "protocol-platform",
   "approved_by": null,
   "approved_at": null,
-  "type_contract": "full_list_rewalk_contract"
+  "type_contract": "full_list_rewalk_contract",
+  "source_deps": [
+    "src/client/cache.ts"
+  ]
 }

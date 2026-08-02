@@ -1,9 +1,4 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "no-hints-no-cache",
-      "must": "A result without cache hints is never cached"
-    }
-  ]
+  "stored": false,
+  "network_calls": 2
 }

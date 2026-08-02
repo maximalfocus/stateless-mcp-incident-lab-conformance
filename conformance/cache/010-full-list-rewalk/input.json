@@ -1,9 +1,35 @@
 {
-  "scenario": "full-list-rewalk",
-  "contract": "Any stale page or rejected mid-walk cursor discards the entire cached list generation and rewalks from page one",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "operation": "walk_list",
+  "cached_pages": [
+    {
+      "cursor": null,
+      "items": [
+        "a"
+      ],
+      "fresh": true,
+      "nextCursor": "c1"
+    },
+    {
+      "cursor": "c1",
+      "items": [
+        "old"
+      ],
+      "fresh": false
+    }
+  ],
+  "network_pages": [
+    {
+      "cursor": null,
+      "items": [
+        "a"
+      ],
+      "nextCursor": "n1"
+    },
+    {
+      "cursor": "n1",
+      "items": [
+        "b"
+      ]
+    }
   ]
 }

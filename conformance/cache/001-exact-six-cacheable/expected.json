@@ -1,9 +1,14 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "exact-six-cacheable",
-      "must": "Only discover, four list operations, and resources/read may carry cache hints"
-    }
+  "cacheable": [
+    "server/discover",
+    "tools/list",
+    "prompts/list",
+    "resources/list",
+    "resources/templates/list",
+    "resources/read"
+  ],
+  "not_cacheable": [
+    "tools/call",
+    "prompts/get"
   ]
 }

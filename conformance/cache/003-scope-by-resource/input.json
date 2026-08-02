@@ -1,9 +1,8 @@
 {
-  "scenario": "scope-by-resource",
-  "contract": "The six operations are public except incident-scoped resources/read which is private",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "operation": "classify_scope",
+  "reads": [
+    "incident://topology/services",
+    "incident://runbooks/api",
+    "incident://incidents/INCIDENT-OPEN/timeline"
   ]
 }

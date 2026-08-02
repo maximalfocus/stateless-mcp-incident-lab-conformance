@@ -1,9 +1,12 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "full-list-rewalk",
-      "must": "Any stale page or rejected mid-walk cursor discards the entire cached list generation and rewalks from page one"
-    }
-  ]
+  "items": [
+    "a",
+    "b"
+  ],
+  "discarded_cached_pages": 2,
+  "network_cursors": [
+    null,
+    "n1"
+  ],
+  "partial_result_returned": false
 }

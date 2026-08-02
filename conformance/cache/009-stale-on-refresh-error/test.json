@@ -22,8 +22,11 @@
     "raw",
     "sdk"
   ],
-  "context": "cache",
+  "context": "protocol-platform",
   "approved_by": null,
   "approved_at": null,
-  "type_contract": "stale_on_refresh_error_contract"
+  "type_contract": "stale_on_refresh_error_contract",
+  "source_deps": [
+    "src/client/cache.ts"
+  ]
 }
