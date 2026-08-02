@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "scale_level": 1,
+  "rationale": "The suite coordinates two clients, two servers, MCP transport, explicit incident state, caching, streaming, observability, and deployment across 197 contracts.",
+  "contexts": [
+    {
+      "name": "protocol-platform",
+      "classification": "core",
+      "categories": ["protocol", "versioning", "transport", "discovery", "primitives", "mrtr", "streaming", "cache"],
+      "modules": ["src/protocol/**", "src/client/**", "src/adapters/inbound/**"],
+      "migration_order": 1
+    },
+    {
+      "name": "incident-domain",
+      "classification": "core",
+      "categories": ["incidents"],
+      "modules": ["src/domain/**", "src/application/**", "src/adapters/outbound/**"],
+      "migration_order": 2
+    },
+    {
+      "name": "operator-client",
+      "classification": "supporting",
+      "categories": ["cli"],
+      "modules": ["src/cli/**"],
+      "migration_order": 3
+    },
+    {
+      "name": "assurance",
+      "classification": "cross-cutting",
+      "categories": ["architecture", "properties", "security", "dependencies", "observability", "performance"],
+      "modules": ["scripts/**", "test/**", "src/observability/**"],
+      "migration_order": 4
+    },
+    {
+      "name": "delivery",
+      "classification": "integration",
+      "categories": ["interoperability", "infra", "cicd"],
+      "modules": ["demo/**", "infra/**", ".github/workflows/**"],
+      "migration_order": 5
+    }
+  ],
+  "relationships": [
+    {
+      "upstream": "protocol-platform",
+      "downstream": "incident-domain",
+      "type": "published-language",
+      "contract": "conformance/primitives/"
+    },
+    {
+      "upstream": "protocol-platform",
+      "downstream": "operator-client",
+      "type": "customer-supplier",
+      "contract": "conformance/cli/"
+    },
+    {
+      "upstream": "incident-domain",
+      "downstream": "operator-client",
+      "type": "open-host-service",
+      "contract": "conformance/incidents/"
+    },
+    {
+      "upstream": "protocol-platform",
+      "downstream": "delivery",
+      "type": "conformist",
+      "contract": "conformance/interoperability/"
+    },
+    {
+      "upstream": "assurance",
+      "downstream": "delivery",
+      "type": "policy",
+      "contract": "conformance/security/"
+    }
+  ],
+  "cross_cutting_concerns": [
+    {
+      "name": "per-request-capabilities",
+      "policy_contract": "conformance/versioning/",
+      "consumers": ["protocol-platform", "operator-client"]
+    },
+    {
+      "name": "cache-consistency",
+      "policy_contract": "conformance/cache/",
+      "consumers": ["protocol-platform", "operator-client"]
+    },
+    {
+      "name": "sensitive-data-redaction",
+      "policy_contract": "conformance/security/",
+      "consumers": ["protocol-platform", "incident-domain", "operator-client", "delivery"]
+    },
+    {
+      "name": "trace-propagation",
+      "policy_contract": "conformance/observability/",
+      "consumers": ["protocol-platform", "incident-domain", "delivery"]
+    }
+  ],
+  "cache_invalidation_requirements": [
+    "A stale page invalidates the complete cached list generation.",
+    "A rejected mid-walk cursor invalidates the complete cached list generation.",
+    "MRTR and input_required results never enter the cache.",
+    "--no-cache bypasses cache reads and writes."
+  ]
+}
