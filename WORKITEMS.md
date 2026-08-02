@@ -242,7 +242,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/validation.ts, src/adapters/inbound/security.ts, src/adapters/inbound/http.ts, test/conformance/runner.ts, test/unit/security.test.ts`
   - Depends on: WI-045
 
-- [~] **WI-047** raw security contracts 4–6 (3 tests)
+- [x] **WI-047** raw security contracts 4–6 (3 tests)
   - Tests: `conformance/security/004-bounded-subschema-count`, `conformance/security/005-network-ref-refused`, `conformance/security/006-body-bound-no-effect`
   - Scope: `src/protocol/validation.ts, src/adapters/inbound/security.ts`
   - Depends on: WI-046
