@@ -121,19 +121,42 @@ if len(doc_ids)!=len(set(doc_ids)): errors.append('coverage-tracking.md contains
 if set(doc_ids)!=set(ids):
   errors.append(f'coverage bijection mismatch: disk-only={sorted(set(ids)-set(doc_ids))}, doc-only={sorted(set(doc_ids)-set(ids))}')
 if '197/197 planned test directories structurally present' not in coverage: errors.append('coverage summary count is stale')
-# WORKITEM closure, sizing, and ordered acyclic DAG.
+# Multi-implementation WORKITEM closure, per-lane sizing, and ordered acyclic DAG.
 wi=(root/'WORKITEMS.md').read_text()
-wi_ids=re.findall(r'\*\*(WI-[0-9]{3})\*\*',wi)
-wi_deps=re.findall(r'Depends on: (WI-[0-9]{3}|none)',wi)
-wi_counts=list(map(int,re.findall(r'\(([0-9]+) tests\)',wi)))
-wi_paths=re.findall(r'`(conformance/[^`]+)`',wi)
-expected_paths={str(p.parent.relative_to(root)) for p in tests}
-if len(wi_ids)!=len(set(wi_ids)) or len(wi_ids)!=len(wi_deps): errors.append('WORKITEM IDs/dependencies malformed')
-if wi_counts and (min(wi_counts)<2 or max(wi_counts)>5 or sum(wi_counts)!=len(tests)): errors.append('WORKITEM sizing/count invalid')
-if set(wi_paths)!=expected_paths or len(wi_paths)!=len(set(wi_paths)): errors.append('WORKITEM test-path bijection invalid')
-for i,dep in enumerate(wi_deps):
-  want='none' if i==0 else wi_ids[i-1]
-  if dep!=want: errors.append(f'{wi_ids[i]} dependency {dep} != ordered predecessor {want}')
+lane_matches=list(re.finditer(r'^## Lane: ([a-z]+)$',wi,re.M))
+expected_lane_order=['raw','sdk','integration','infrastructure','cicd']
+lanes={}; seen_wi=[]
+for index,lane_match in enumerate(lane_matches):
+  lane=lane_match.group(1); end=lane_matches[index+1].start() if index+1<len(lane_matches) else len(wi)
+  section=wi[lane_match.end():end]; entries=[]
+  pattern=r'^- \[([ x~!])\] \*\*(WI-[0-9]{3})\*\* .*?\(([0-9]+) tests\)\n  - Tests: (.*?)\n  - Scope: (.*?)\n  - Depends on: (.*?)$'
+  for m in re.finditer(pattern,section,re.M):
+    paths=re.findall(r'`(conformance/[^`]+)`',m.group(4)); deps=[] if m.group(6)=='none' else [x.strip() for x in m.group(6).split(',')]
+    entries.append({'id':m.group(2),'count':int(m.group(3)),'paths':paths,'scope':m.group(5),'deps':deps})
+  lanes[lane]=entries; seen_wi.extend(entries)
+if [m.group(1) for m in lane_matches]!=expected_lane_order: errors.append('WORKITEM lane order/names malformed')
+wi_ids=[x['id'] for x in seen_wi]
+if len(wi_ids)!=len(set(wi_ids)) or wi_ids!=[f'WI-{i:03d}' for i in range(1,len(wi_ids)+1)]: errors.append('WORKITEM IDs must be unique and sequential')
+known=set()
+for entry in seen_wi:
+  if not 2<=entry['count']<=5 or entry['count']!=len(entry['paths']): errors.append(f"{entry['id']} sizing/count invalid")
+  if not entry['scope'].strip(): errors.append(f"{entry['id']} scope missing")
+  unknown_deps=set(entry['deps'])-known
+  if unknown_deps: errors.append(f"{entry['id']} has unknown or forward dependencies {sorted(unknown_deps)}")
+  known.add(entry['id'])
+all_paths={str(p.parent.relative_to(root)) for p in tests}
+def paths_for(*categories): return {p for p in all_paths if p.split('/')[1] in categories}
+arch_raw={p for p in paths_for('architecture') if any(x in p for x in ('005-raw-public','001-raw-layer','002-raw-adapter'))}
+arch_sdk=paths_for('architecture')-arch_raw
+ordinary=paths_for('protocol','versioning','transport','discovery','primitives','incidents','mrtr','streaming','cache','cli','properties','security','dependencies','observability')
+raw_expected=(ordinary|arch_raw)-{p for p in ordinary if '/observability/002-' in p}
+sdk_expected=(ordinary|arch_sdk)-{p for p in ordinary if '/observability/001-' in p or '/dependencies/005-' in p}
+lane_expected={'raw':raw_expected,'sdk':sdk_expected,'integration':paths_for('interoperability','performance'),'infrastructure':paths_for('infra'),'cicd':paths_for('cicd')}
+for lane,expected in lane_expected.items():
+  assigned=[p for entry in lanes.get(lane,[]) for p in entry['paths']]
+  if len(assigned)!=len(set(assigned)) or set(assigned)!=expected:
+    errors.append(f'WORKITEM lane {lane} assignment mismatch: missing={sorted(expected-set(assigned))}, extra={sorted(set(assigned)-expected)}')
+if set().union(*lane_expected.values())!=all_paths: errors.append('WORKITEM lanes do not cover every golden')
 # Agent wrapper leakage in shipped artifacts.
 for p in root.rglob('*'):
   if '.git' in p.parts or not p.is_file() or p.suffix not in ('.md','.json','.yaml','.yml'): continue

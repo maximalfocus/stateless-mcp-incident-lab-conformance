@@ -118,6 +118,22 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("evaluated_checks must exactly equal input checks", result.stdout)
 
+    def test_missing_sdk_lane_assignment_goes_red(self):
+        path = self.tmp / "WORKITEMS.md"
+        before, sdk = path.read_text().split("## Lane: sdk", 1)
+        sdk = sdk.replace("`conformance/protocol/001-valid-request-shape`, ", "", 1)
+        path.write_text(before + "## Lane: sdk" + sdk)
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("WORKITEM lane sdk assignment mismatch", result.stdout)
+
+    def test_forward_workitem_dependency_goes_red(self):
+        path = self.tmp / "WORKITEMS.md"
+        path.write_text(path.read_text().replace("  - Depends on: none", "  - Depends on: WI-999", 1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("unknown or forward dependencies", result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

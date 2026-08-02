@@ -10,6 +10,14 @@ Completed for the executable-golden evolution at PRD commit `91cd6b984a27c29cca8
 - [x] **8f — Source verification.** Protocol shapes were checked against captured `sources/spec-2026-07-28/schema.ts`; MRTR uses `inputRequests` keyed to `elicitation/create`, retries use sibling `inputResponses`/`requestState`, and header encoding uses the normative `=?base64?...?=` sentinel.
 - [x] **8g — Negative coverage.** Exact malformed-input, unsupported-version/capability, header mismatch, cursor, unknown handle/resource/prompt, MRTR tamper/expiry/reuse, body limit, deadline, origin, schema bound, cache-disabled, and feature-unsupported observations are present.
 
+## Multi-implementation handoff evolution
+
+- [x] `WORKITEMS.md` has independent raw, SDK, integration, infrastructure, and CI/CD status lanes.
+- [x] Each WI contains 2–5 tests; IDs are globally unique and sequential; every dependency resolves backward.
+- [x] Raw and SDK lanes independently cover their applicable contracts without mixing provider-only architecture or health tests.
+- [x] Integration, infrastructure, and CI/CD goldens are assigned only to their owning family lane.
+- [x] The validator rejects missing/extra lane assignments and unknown/forward dependencies; both failure modes have mutation tests.
+
 ## Mechanical evidence
 
 - `python3 scripts/validate-suite.py conformance`

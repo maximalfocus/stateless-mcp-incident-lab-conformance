@@ -29,3 +29,13 @@
 **Decision:** Conformance pins protocol revision and observable behavior, not an SDK semver. Implementation must select and lock a stable supporting release; if none exists it stops for user review.
 
 **Rationale:** A package version is an implementation binding and must not weaken the shared cross-provider contract.
+
+## AMB-004: Work-item completion across independent implementations
+
+**Affected:** `WORKITEMS.md`; all implementation consumers.
+
+**Ambiguity:** One status cell cannot represent completion independently for raw and SDK implementations, while interoperability, infrastructure, and CI/CD contracts are not owned by either implementation repository.
+
+**Decision:** Work items are partitioned into five explicit lanes: `raw`, `sdk`, `integration`, `infrastructure`, and `cicd`. One `/cdd-implement` invocation selects exactly one lane and never mutates another. Shared goldens are replayed independently in both implementation lanes; family integration begins only after both implementation lanes complete.
+
+**Rationale:** Status now records the repository that actually proved the contract and cannot cause the second implementation to skip work completed only by the first.
