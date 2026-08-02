@@ -13,7 +13,7 @@
     "file_path",
     "unordered_collection"
   ],
-  "source": "sources/spec-2026-07-28/schema.ts + PRD.md § MCP surface",
+  "source": "sources/spec-2026-07-28/schema.ts + PRD.md \u00a7 MCP surface",
   "consumers": [
     "typescript-raw",
     "typescript-sdk"
@@ -22,8 +22,12 @@
     "raw",
     "sdk"
   ],
-  "context": "protocol",
+  "context": "protocol-platform",
   "approved_by": null,
   "approved_at": null,
-  "type_contract": "unknown_tool_is_invalid_params_contract"
+  "type_contract": "unknown_tool_is_invalid_params_contract",
+  "source_deps": [
+    "src/protocol/codec.ts",
+    "src/protocol/schema.ts"
+  ]
 }
