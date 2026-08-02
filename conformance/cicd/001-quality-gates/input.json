@@ -1,9 +1,14 @@
 {
-  "scenario": "quality-gates",
-  "contract": "CI requires format, lint, typecheck, unit, conformance, coverage, mutation, and dependency audit gates",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "subject": "github_actions",
+  "workflow_glob": ".github/workflows/*.yml",
+  "required_contracts": [
+    "format",
+    "lint",
+    "typecheck",
+    "unit",
+    "conformance",
+    "coverage",
+    "mutation",
+    "dependency-audit"
   ]
 }

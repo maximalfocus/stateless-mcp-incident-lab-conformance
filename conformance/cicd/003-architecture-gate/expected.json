@@ -1,9 +1,7 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "architecture-gate",
-      "must": "CI runs architecture dependency and public-boundary assertions for each implementation"
-    }
+  "violations": [],
+  "matched_contracts": [
+    "architecture-raw",
+    "architecture-sdk"
   ]
 }

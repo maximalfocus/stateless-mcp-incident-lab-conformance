@@ -22,7 +22,10 @@
     "raw",
     "sdk"
   ],
-  "context": "cicd",
+  "context": "delivery",
   "approved_by": null,
-  "approved_at": null
+  "approved_at": null,
+  "source_deps": [
+    ".github/workflows/ci.yml"
+  ]
 }

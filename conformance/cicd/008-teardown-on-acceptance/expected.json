@@ -1,9 +1,7 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "teardown-on-acceptance",
-      "must": "Any explicitly approved cloud acceptance workflow guarantees destroy and inventory reporting on success or failure"
-    }
+  "violations": [],
+  "matched_contracts": [
+    "destroy-if-always",
+    "inventory-report"
   ]
 }

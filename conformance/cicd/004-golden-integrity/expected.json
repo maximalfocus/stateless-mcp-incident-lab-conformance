@@ -1,9 +1,7 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "golden-integrity",
-      "must": "CI validates golden shape and never auto-updates golden expected outputs"
-    }
+  "violations": [],
+  "matched_contracts": [
+    "validate-goldens",
+    "forbid-auto-update"
   ]
 }

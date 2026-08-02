@@ -1,9 +1,8 @@
 {
-  "scenario": "golden-integrity",
-  "contract": "CI validates golden shape and never auto-updates golden expected outputs",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "subject": "github_actions",
+  "workflow_glob": ".github/workflows/*.yml",
+  "required_contracts": [
+    "validate-goldens",
+    "forbid-auto-update"
   ]
 }

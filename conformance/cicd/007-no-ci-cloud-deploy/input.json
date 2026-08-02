@@ -1,9 +1,7 @@
 {
-  "scenario": "no-ci-cloud-deploy",
-  "contract": "Routine CI has no cloud apply or deploy step for this ephemeral interactive lab",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "subject": "github_actions",
+  "workflow_glob": ".github/workflows/*.yml",
+  "required_contracts": [
+    "forbid-cloud-deploy"
   ]
 }

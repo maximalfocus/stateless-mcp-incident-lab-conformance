@@ -1,9 +1,7 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "immutable-build-output",
-      "must": "Images are built once and identified by immutable digest for later acceptance"
-    }
+  "violations": [],
+  "matched_contracts": [
+    "build-once",
+    "publish-digest"
   ]
 }
