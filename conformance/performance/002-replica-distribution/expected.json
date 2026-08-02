@@ -1,9 +1,11 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "replica-distribution",
-      "must": "At least 100 sequential public requests reach at least two healthy replicas with equivalent normalized results"
+  "thresholds": {
+    "unique_replicas": {
+      "min": 2
+    },
+    "response_mismatches": {
+      "max": 0
     }
-  ]
+  },
+  "holds": true
 }

@@ -1,9 +1,11 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "catalog-latency",
-      "must": "After warm-up at 10 requests per second, catalog p95 is at most 750 ms and error rate is below 1 percent locally and in AWS"
+  "thresholds": {
+    "p95_ms": {
+      "max": 750
+    },
+    "error_rate": {
+      "lt": 0.01
     }
-  ]
+  },
+  "holds": true
 }
