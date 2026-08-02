@@ -22,7 +22,18 @@ class ValidateSuiteMutationTests(unittest.TestCase):
             capture_output=True,
         )
 
-    def test_current_suite_exposes_nonreplayable_contracts(self):
+    def test_current_suite_is_replayable(self):
+        result = self.run_validator()
+        self.assertEqual(result.returncode, 0, result.stdout)
+        self.assertIn("PASS recursive structure", result.stdout)
+
+    def test_prose_only_fixture_goes_red(self):
+        directory = self.tmp / "conformance/versioning/001-metadata-in-params"
+        (directory / "input.json").write_text('{"scenario":"metadata-in-params"}\n')
+        request = directory / "request.json"
+        request.write_text(request.read_text().replace('"_meta": {', '"scenario": "metadata-in-params", "_meta": {', 1))
+        expected = directory / "expected.json"
+        expected.write_text('{"assertions":[{"type":"contract","subject":"metadata","must":"work"}]}\n')
         result = self.run_validator()
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("prose-only contract assertion is not executable", result.stdout)
@@ -48,6 +59,20 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         result = self.run_validator()
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("no expected", result.stdout)
+
+    def test_unknown_placeholder_goes_red(self):
+        path = self.tmp / "conformance/protocol/001-valid-request-shape/expected.json"
+        path.write_text(path.read_text().replace('true', '"{{UNKNOWN_PLACEHOLDER}}"', 1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("undeclared placeholders", result.stdout)
+
+    def test_missing_source_dependencies_goes_red(self):
+        path = self.tmp / "conformance/protocol/001-valid-request-shape/test.json"
+        path.write_text(path.read_text().replace('"source_deps": [', '"removed_source_deps": [', 1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("missing source_deps", result.stdout)
 
 
 if __name__ == "__main__":

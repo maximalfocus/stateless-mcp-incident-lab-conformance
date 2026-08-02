@@ -2,6 +2,9 @@ from pathlib import Path
 import json,re,sys
 root=Path(__file__).resolve().parents[1]
 conf=root/'conformance'; errors=[]; warns=[]; ids={}; tests=[]
+context_map=json.loads((root/'context-map.json').read_text())
+valid_contexts={x['name'] for x in context_map['contexts']}
+declared_placeholders=set(json.loads((root/'suite-invariants.json').read_text())['placeholders'])
 allowed={'cli','http','http-html','function','property','component','interaction','metric-assertion','lint-assertion','http-contract','decision-record','workflow-assertion','state-machine','story','e2e','cross-browser-assertion','contract','structural-contract','documentation-contract','packaging-contract','cross-language-contract','transactional','signal-reactivity','reactive-form','graphql','grpc','message','websocket','sse','sql','accessibility','prompt-eval','tool-call','trace-span','webhook','visual-regression','i18n'}
 for p in sorted(conf.rglob('test.json')):
   tests.append(p); rel=p.parent.relative_to(root)
@@ -11,9 +14,11 @@ for p in sorted(conf.rglob('test.json')):
   if not isinstance(sid,str) or not re.fullmatch(r'[A-Z]+-[0-9]{3}',sid): errors.append(f'{rel}: invalid spec_id {sid!r}')
   elif sid in ids: errors.append(f'{rel}: duplicate {sid} also {ids[sid]}')
   else: ids[sid]=rel
-  for k in ('description','description_bdd','boundary','normalisation','source','consumers','providers','context'):
+  for k in ('description','description_bdd','boundary','normalisation','source','consumers','providers','context','source_deps'):
     if k not in t: errors.append(f'{sid}: missing {k}')
   if t.get('boundary') not in allowed: errors.append(f'{sid}: invalid boundary')
+  if t.get('context') not in valid_contexts: errors.append(f"{sid}: context {t.get('context')!r} absent from context-map.json")
+  if not isinstance(t.get('source_deps'),list) or not t.get('source_deps'): errors.append(f'{sid}: source_deps must be a non-empty list')
   for f in p.parent.glob('*.json'):
     try: json.loads(f.read_text())
     except Exception as e: errors.append(f'{f.relative_to(root)} invalid JSON: {e}')
@@ -28,7 +33,10 @@ for p in sorted(conf.rglob('test.json')):
       params=body.get('params',{}) if isinstance(body,dict) else {}
       if isinstance(params,dict) and 'scenario' in params: errors.append(f'{sid}: request relies on runner-only params.scenario')
       headers=request.get('headers',{}) if isinstance(request,dict) else {}
-      if body.get('method')!='healthz' and headers.get('Mcp-Method')!=body.get('method'): errors.append(f'{sid}: Mcp-Method/body method mismatch')
+      input_path=p.parent/'input.json'
+      input_data=json.loads(input_path.read_text()) if input_path.exists() else {}
+      intentional_violation=isinstance(input_data,dict) and input_data.get('intentional_request_violation') is True
+      if isinstance(body,dict) and body.get('method')!='healthz' and headers.get('Mcp-Method')!=body.get('method') and not intentional_violation: errors.append(f'{sid}: Mcp-Method/body method mismatch')
   if t.get('boundary')=='function' and not (p.parent/'input.json').exists(): errors.append(f'{sid}: function missing input')
   input_path=p.parent/'input.json'
   if input_path.exists():
@@ -49,6 +57,8 @@ for p in sorted(conf.rglob('test.json')):
   txt='\n'.join(x.read_text() for x in p.parent.glob('*.json'))
   if 'scenario/run' in txt: errors.append(f'{sid}: fixture targets harness pseudo-RPC rather than public boundary')
   if '"..."' in txt: errors.append(f'{sid}: invalid ellipsis placeholder')
+  unknown_placeholders=set(re.findall(r'\{\{[A-Z_]+\}\}',txt))-declared_placeholders
+  if unknown_placeholders: errors.append(f'{sid}: undeclared placeholders {sorted(unknown_placeholders)}')
 if len(tests)!=197: errors.append(f'test count {len(tests)} != 197')
 expected_cats={'protocol','versioning','transport','discovery','primitives','incidents','mrtr','streaming','cache','cli','interoperability','properties','security','observability','performance','architecture','infra','cicd','dependencies'}
 cats={p.relative_to(conf).parts[0] for p in tests}
@@ -85,6 +95,7 @@ for p in tests:
   expected_path=p.parent/'expected.json'
   if not expected_path.exists(): continue
   e=json.loads(expected_path.read_text())
+  if not isinstance(e,dict) or not e: errors.append(f"{t['spec_id']}: expected.json must be a non-empty object")
   if t.get('boundary')!='property':
     assertions=e.get('assertions',[])
     known_assertions={'no_import','no_deep_import','strict_http_shape','contract'}
