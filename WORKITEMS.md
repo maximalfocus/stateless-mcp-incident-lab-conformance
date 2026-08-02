@@ -142,7 +142,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/domain/incident.ts, src/application/incidents.ts`
   - Depends on: WI-025
 
-- [ ] **WI-027** raw incidents contracts 10–12 (3 tests)
+- [~] **WI-027** raw incidents contracts 10–12 (3 tests)
   - Tests: `conformance/incidents/010-reject-resolved-transition`, `conformance/incidents/011-unknown-handle-recovery`, `conformance/incidents/012-expired-handle-recovery`
   - Scope: `src/domain/incident.ts, src/application/incidents.ts`
   - Depends on: WI-026
