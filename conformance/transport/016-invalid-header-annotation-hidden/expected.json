@@ -1,33 +1,11 @@
 {
-  "assertions": [
-    {
-      "type": "strict_http_shape"
-    }
+  "accepted": [
+    "create_incident"
   ],
-  "status": 200,
-  "headers": {
-    "{{ALLOW_EXTRA}}": true,
-    "Content-Type": "application/json"
-  },
-  "body": {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-      "resultType": "complete",
-      "tools": [
-        {
-          "name": "create_incident"
-        }
-      ],
-      "ttlMs": 60000,
-      "cacheScope": "public",
-      "_meta": {
-        "io.modelcontextprotocol/serverInfo": {
-          "name": "stateless-mcp-incident-lab",
-          "version": "2026-07-28"
-        },
-        "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
-      }
+  "rejected": [
+    {
+      "name": "unsafe_tool",
+      "reason": "x-mcp-header must contain only ASCII letters, digits, and hyphen"
     }
-  }
+  ]
 }

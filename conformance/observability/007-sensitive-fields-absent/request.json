@@ -1,15 +1,40 @@
 {
-  "method": "GET",
-  "path": "/sdk/healthz",
+  "method": "POST",
+  "path": "/raw/mcp",
   "headers": {
     "Accept": "application/json, text/event-stream",
     "MCP-Protocol-Version": "2026-07-28",
-    "Mcp-Method": "healthz"
+    "Mcp-Method": "tools/call",
+    "Mcp-Name": "execute_remediation"
   },
   "body": {
     "jsonrpc": "2.0",
     "id": 1,
-    "method": "healthz",
-    "params": {}
+    "method": "tools/call",
+    "params": {
+      "name": "execute_remediation",
+      "arguments": {
+        "incident_id": "INCIDENT-SECRET",
+        "remediation_id": "REMEDIATION-SECRET"
+      },
+      "requestState": "SIGNED-STATE",
+      "inputResponses": {
+        "approval": {
+          "action": "accept",
+          "content": {
+            "decision": "accept",
+            "confirmation": true
+          }
+        }
+      },
+      "_meta": {
+        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/clientCapabilities": {
+          "elicitation": {
+            "form": {}
+          }
+        }
+      }
+    }
   }
 }

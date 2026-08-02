@@ -1,9 +1,7 @@
 {
-  "fixture": "adversarial-request",
-  "effect_count_before": 0,
-  "effect_count_after": 0,
+  "operation": "validate_json_schema",
   "schema": {
     "$ref": "https://attacker.example/schema.json"
   },
-  "network_requests_allowed": 0
+  "network_access": false
 }

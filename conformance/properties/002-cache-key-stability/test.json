@@ -29,25 +29,35 @@
     "kind": "invariant",
     "target": "derive_cache_key",
     "domain": {
-      "type": "canonical-rpc-call"
+      "type": "equivalent-canonical-rpc-call-pair"
     },
     "examples": [
-      {
-        "method": "tools/list",
-        "params": {}
-      },
-      {
-        "method": "tools/list",
-        "params": {
-          "cursor": ""
+      [
+        {
+          "method": "resources/read",
+          "params": {
+            "uri": "incident://topology/services",
+            "cursor": ""
+          }
+        },
+        {
+          "params": {
+            "cursor": "",
+            "uri": "incident://topology/services"
+          },
+          "method": "resources/read"
         }
-      },
-      {
-        "method": "resources/read",
-        "params": {
-          "uri": "incident://topology/services"
+      ],
+      [
+        {
+          "method": "tools/list",
+          "params": {}
+        },
+        {
+          "method": "tools/list",
+          "params": {}
         }
-      }
+      ]
     ],
     "iterations": 200
   },

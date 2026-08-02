@@ -1,10 +1,24 @@
 {
   "passed": true,
   "normalized": {
-    "supportedVersions": [
-      "2026-07-28"
-    ],
     "incident_status": "MITIGATED",
-    "effect_count": 1
+    "mrtr": {
+      "initial_result_type": "input_required",
+      "retry_result_type": "complete",
+      "effect_count": 1
+    },
+    "streaming": {
+      "progress_tokens_preserved": true,
+      "monotonic": true,
+      "final_response_count": 1
+    },
+    "cache": {
+      "fresh_hit_network_calls": 0,
+      "stale_refresh_network_calls": 1
+    },
+    "recovery": {
+      "unsupported_version_retried": true,
+      "broken_stream_reissued": true
+    }
   }
 }

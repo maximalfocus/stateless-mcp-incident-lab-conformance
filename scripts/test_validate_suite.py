@@ -74,6 +74,20 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("missing source_deps", result.stdout)
 
+    def test_unknown_operation_goes_red(self):
+        path = self.tmp / "conformance/cache/001-exact-six-cacheable/input.json"
+        path.write_text(path.read_text().replace("classify_cacheability", "invented_operation", 1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("unknown operation", result.stdout)
+
+    def test_unknown_expected_field_goes_red(self):
+        path = self.tmp / "conformance/cache/001-exact-six-cacheable/expected.json"
+        path.write_text(path.read_text().replace('{', '{"typo_field": true,', 1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("unknown expected fields", result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

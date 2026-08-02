@@ -4,5 +4,6 @@
     "response",
     "logs",
     "spans"
-  ]
+  ],
+  "operation": "capture_logs"
 }

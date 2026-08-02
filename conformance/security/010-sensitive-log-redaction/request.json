@@ -5,24 +5,35 @@
     "Accept": "application/json, text/event-stream",
     "MCP-Protocol-Version": "2026-07-28",
     "Mcp-Method": "tools/call",
-    "Mcp-Name": "create_incident"
+    "Mcp-Name": "execute_remediation"
   },
   "body": {
     "jsonrpc": "2.0",
     "id": 1,
     "method": "tools/call",
     "params": {
-      "name": "create_incident",
+      "name": "execute_remediation",
       "arguments": {
-        "title": "x",
-        "severity": "high",
-        "suspected_services": [
-          "api"
-        ]
+        "incident_id": "INCIDENT-SECRET",
+        "remediation_id": "REMEDIATION-SECRET"
+      },
+      "requestState": "SIGNED-STATE",
+      "inputResponses": {
+        "approval": {
+          "action": "accept",
+          "content": {
+            "decision": "accept",
+            "confirmation": true
+          }
+        }
       },
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
-        "io.modelcontextprotocol/clientCapabilities": {}
+        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/clientCapabilities": {
+          "elicitation": {
+            "form": {}
+          }
+        }
       }
     }
   }

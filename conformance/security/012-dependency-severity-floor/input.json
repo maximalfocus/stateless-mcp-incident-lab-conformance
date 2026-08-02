@@ -1,10 +1,35 @@
 {
-  "operation": "evaluate_audit",
-  "findings": [
+  "operation": "evaluate_audit_cases",
+  "cases": [
     {
-      "advisory": "GHSA-low",
-      "severity": "low",
-      "suppressed": false
+      "name": "low",
+      "findings": [
+        {
+          "advisory": "GHSA-low",
+          "severity": "low",
+          "suppressed": false
+        }
+      ]
+    },
+    {
+      "name": "high",
+      "findings": [
+        {
+          "advisory": "GHSA-high",
+          "severity": "high",
+          "suppressed": false
+        }
+      ]
+    },
+    {
+      "name": "critical",
+      "findings": [
+        {
+          "advisory": "GHSA-critical",
+          "severity": "critical",
+          "suppressed": false
+        }
+      ]
     }
   ]
 }

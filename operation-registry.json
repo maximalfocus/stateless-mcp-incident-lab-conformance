@@ -1,0 +1,1188 @@
+{
+  "schema_version": 1,
+  "contract": "Every non-wire boundary dispatches through this closed shared name registry. Provider bindings implement these names verbatim and may not dispatch on spec_id.",
+  "registries": {
+    "operations": {
+      "advance_and_read": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "clock_steps_ms",
+          "entry",
+          "operation",
+          "reads_at_steps"
+        ],
+        "input_allowed": [
+          "clock_steps_ms",
+          "entry",
+          "operation",
+          "reads_at_steps"
+        ],
+        "expected_required": [
+          "background_refreshes",
+          "network_calls",
+          "read_source"
+        ],
+        "expected_allowed": [
+          "background_refreshes",
+          "network_calls",
+          "read_source"
+        ]
+      },
+      "capture_logs": {
+        "boundaries": [
+          "trace-span"
+        ],
+        "input_required": [
+          "operation"
+        ],
+        "input_allowed": [
+          "capture",
+          "clock_ticks_ms",
+          "dependencies_ready",
+          "operation",
+          "sensitive_values"
+        ],
+        "expected_required": [],
+        "expected_allowed": [
+          "logs",
+          "observations",
+          "response"
+        ]
+      },
+      "capture_sensitive_telemetry": {
+        "boundaries": [
+          "trace-span"
+        ],
+        "input_required": [
+          "capture",
+          "dependencies_ready",
+          "operation"
+        ],
+        "input_allowed": [
+          "capture",
+          "dependencies_ready",
+          "operation"
+        ],
+        "expected_required": [
+          "forbidden_values",
+          "matches"
+        ],
+        "expected_allowed": [
+          "forbidden_values",
+          "matches"
+        ]
+      },
+      "capture_trace": {
+        "boundaries": [
+          "trace-span"
+        ],
+        "input_required": [
+          "capture",
+          "dependencies_ready",
+          "operation"
+        ],
+        "input_allowed": [
+          "capture",
+          "dependencies_ready",
+          "operation"
+        ],
+        "expected_required": [
+          "spans"
+        ],
+        "expected_allowed": [
+          "spans"
+        ]
+      },
+      "classify_cacheability": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "methods",
+          "operation"
+        ],
+        "input_allowed": [
+          "methods",
+          "operation"
+        ],
+        "expected_required": [
+          "cacheable",
+          "not_cacheable"
+        ],
+        "expected_allowed": [
+          "cacheable",
+          "not_cacheable"
+        ]
+      },
+      "classify_scope": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "reads"
+        ],
+        "input_allowed": [
+          "operation",
+          "reads"
+        ],
+        "expected_required": [
+          "scopes"
+        ],
+        "expected_allowed": [
+          "scopes"
+        ]
+      },
+      "classify_tool_failure": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "cases",
+          "operation"
+        ],
+        "input_allowed": [
+          "cases",
+          "operation"
+        ],
+        "expected_required": [
+          "observations"
+        ],
+        "expected_allowed": [
+          "observations"
+        ]
+      },
+      "compare_matrix": {
+        "boundaries": [
+          "contract"
+        ],
+        "input_required": [
+          "normalise",
+          "operation",
+          "pairs"
+        ],
+        "input_allowed": [
+          "normalise",
+          "operation",
+          "pairs"
+        ],
+        "expected_required": [
+          "equivalent",
+          "mismatches"
+        ],
+        "expected_allowed": [
+          "equivalent",
+          "mismatches"
+        ]
+      },
+      "compare_provider_outputs": {
+        "boundaries": [
+          "contract"
+        ],
+        "input_required": [
+          "allowed_differences",
+          "operation"
+        ],
+        "input_allowed": [
+          "allowed_differences",
+          "operation"
+        ],
+        "expected_required": [
+          "unexpected_differences"
+        ],
+        "expected_allowed": [
+          "unexpected_differences"
+        ]
+      },
+      "consume_sse": {
+        "boundaries": [
+          "sse"
+        ],
+        "input_required": [
+          "close_after_event",
+          "fault",
+          "operation"
+        ],
+        "input_allowed": [
+          "close_after_event",
+          "fault",
+          "minimum_interval_ms",
+          "operation",
+          "original_request_id",
+          "retry_request_id"
+        ],
+        "expected_required": [
+          "events",
+          "headers",
+          "reissued_request_ids",
+          "resource_count_after",
+          "stream_closed"
+        ],
+        "expected_allowed": [
+          "cancelled",
+          "deadline_envelope_emitted",
+          "event_offsets_ms",
+          "events",
+          "events_after_final",
+          "final_response_count",
+          "headers",
+          "lost_request_ids",
+          "reissued_request_ids",
+          "resource_count_after",
+          "stream_closed"
+        ]
+      },
+      "cross_replica_mrtr": {
+        "boundaries": [
+          "contract"
+        ],
+        "input_required": [
+          "operation",
+          "pairs"
+        ],
+        "input_allowed": [
+          "operation",
+          "pairs"
+        ],
+        "expected_required": [
+          "providers"
+        ],
+        "expected_allowed": [
+          "providers"
+        ]
+      },
+      "decode_jsonrpc": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "utf8"
+        ],
+        "input_allowed": [
+          "operation",
+          "utf8"
+        ],
+        "expected_required": [
+          "error",
+          "ok"
+        ],
+        "expected_allowed": [
+          "error",
+          "ok"
+        ]
+      },
+      "derive_cache_keys": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "calls",
+          "operation"
+        ],
+        "input_allowed": [
+          "calls",
+          "operation"
+        ],
+        "expected_required": [
+          "keys",
+          "unique_count"
+        ],
+        "expected_allowed": [
+          "keys",
+          "unique_count"
+        ]
+      },
+      "derive_mirrored_headers": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "annotation",
+          "argument_cases",
+          "operation"
+        ],
+        "input_allowed": [
+          "annotation",
+          "argument_cases",
+          "operation"
+        ],
+        "expected_required": [
+          "observations"
+        ],
+        "expected_allowed": [
+          "observations"
+        ]
+      },
+      "discover_with_version_recovery": {
+        "boundaries": [
+          "http"
+        ],
+        "input_required": [
+          "max_attempts",
+          "offered_versions",
+          "operation"
+        ],
+        "input_allowed": [
+          "max_attempts",
+          "offered_versions",
+          "operation"
+        ],
+        "expected_required": [
+          "assertions",
+          "body",
+          "headers",
+          "status"
+        ],
+        "expected_allowed": [
+          "assertions",
+          "body",
+          "headers",
+          "status"
+        ]
+      },
+      "dispatch_method": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "request"
+        ],
+        "input_allowed": [
+          "operation",
+          "request"
+        ],
+        "expected_required": [
+          "http_status",
+          "response"
+        ],
+        "expected_allowed": [
+          "http_status",
+          "response"
+        ]
+      },
+      "encode_mirrored_header": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "values"
+        ],
+        "input_allowed": [
+          "operation",
+          "values"
+        ],
+        "expected_required": [
+          "observations"
+        ],
+        "expected_allowed": [
+          "observations"
+        ]
+      },
+      "evaluate_audit_cases": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "cases",
+          "operation"
+        ],
+        "input_allowed": [
+          "cases",
+          "operation"
+        ],
+        "expected_required": [
+          "observations"
+        ],
+        "expected_allowed": [
+          "observations"
+        ]
+      },
+      "filter_transport_tools": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "tools"
+        ],
+        "input_allowed": [
+          "operation",
+          "tools"
+        ],
+        "expected_required": [
+          "accepted",
+          "rejected"
+        ],
+        "expected_allowed": [
+          "accepted",
+          "rejected"
+        ]
+      },
+      "generate_incident_handle": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "clock",
+          "id_source",
+          "operation",
+          "ttl_ms"
+        ],
+        "input_allowed": [
+          "clock",
+          "id_source",
+          "operation",
+          "ttl_ms"
+        ],
+        "expected_required": [
+          "entropy_bits",
+          "expires_at",
+          "incident_id",
+          "variant",
+          "version"
+        ],
+        "expected_allowed": [
+          "entropy_bits",
+          "expires_at",
+          "incident_id",
+          "variant",
+          "version"
+        ]
+      },
+      "header_codec_round_trip": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "value"
+        ],
+        "input_allowed": [
+          "operation",
+          "value"
+        ],
+        "expected_required": [
+          "decoded",
+          "encoded"
+        ],
+        "expected_allowed": [
+          "decoded",
+          "encoded"
+        ]
+      },
+      "health_check": {
+        "boundaries": [
+          "trace-span"
+        ],
+        "input_required": [
+          "capture",
+          "dependencies_ready",
+          "operation"
+        ],
+        "input_allowed": [
+          "capture",
+          "dependencies_ready",
+          "operation"
+        ],
+        "expected_required": [
+          "assertions",
+          "body",
+          "headers",
+          "status"
+        ],
+        "expected_allowed": [
+          "assertions",
+          "body",
+          "headers",
+          "status"
+        ]
+      },
+      "read": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "entry",
+          "now_ms",
+          "operation"
+        ],
+        "input_allowed": [
+          "entry",
+          "now_ms",
+          "operation"
+        ],
+        "expected_required": [
+          "network_calls",
+          "source",
+          "value",
+          "warnings"
+        ],
+        "expected_allowed": [
+          "network_calls",
+          "source",
+          "value",
+          "warnings"
+        ]
+      },
+      "refresh_stale": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "entry",
+          "operation",
+          "refresh"
+        ],
+        "input_allowed": [
+          "entry",
+          "operation",
+          "refresh"
+        ],
+        "expected_required": [
+          "source",
+          "value",
+          "warnings"
+        ],
+        "expected_allowed": [
+          "source",
+          "value",
+          "warnings"
+        ]
+      },
+      "run_incident_scenario": {
+        "boundaries": [
+          "state-machine"
+        ],
+        "input_required": [
+          "actions",
+          "clock",
+          "incident_id",
+          "initial_state",
+          "operation"
+        ],
+        "input_allowed": [
+          "actions",
+          "clock",
+          "incident_id",
+          "initial_state",
+          "operation"
+        ],
+        "expected_required": [
+          "observations",
+          "states",
+          "transitions"
+        ],
+        "expected_allowed": [
+          "observations",
+          "states",
+          "transitions"
+        ]
+      },
+      "run_matrix_scenario": {
+        "boundaries": [
+          "contract"
+        ],
+        "input_required": [
+          "client",
+          "operation",
+          "scenario",
+          "server"
+        ],
+        "input_allowed": [
+          "client",
+          "operation",
+          "scenario",
+          "server"
+        ],
+        "expected_required": [
+          "normalized",
+          "passed"
+        ],
+        "expected_allowed": [
+          "normalized",
+          "passed"
+        ]
+      },
+      "scan_capabilities": {
+        "boundaries": [
+          "lint-assertion"
+        ],
+        "input_required": [
+          "forbidden_calls",
+          "forbidden_imports",
+          "operation",
+          "source_globs"
+        ],
+        "input_allowed": [
+          "forbidden_calls",
+          "forbidden_imports",
+          "operation",
+          "source_globs"
+        ],
+        "expected_required": [
+          "observations"
+        ],
+        "expected_allowed": [
+          "observations"
+        ]
+      },
+      "send_public_requests": {
+        "boundaries": [
+          "contract"
+        ],
+        "input_required": [
+          "count_per_endpoint",
+          "endpoints",
+          "operation"
+        ],
+        "input_allowed": [
+          "count_per_endpoint",
+          "endpoints",
+          "operation"
+        ],
+        "expected_required": [
+          "providers"
+        ],
+        "expected_allowed": [
+          "providers"
+        ]
+      },
+      "store_candidates": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "results"
+        ],
+        "input_allowed": [
+          "operation",
+          "results"
+        ],
+        "expected_required": [
+          "cache_entries",
+          "stored"
+        ],
+        "expected_allowed": [
+          "cache_entries",
+          "stored"
+        ]
+      },
+      "store_then_read": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "reads",
+          "response"
+        ],
+        "input_allowed": [
+          "operation",
+          "reads",
+          "response"
+        ],
+        "expected_required": [
+          "network_calls",
+          "stored"
+        ],
+        "expected_allowed": [
+          "network_calls",
+          "stored"
+        ]
+      },
+      "validate_error_response": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "value"
+        ],
+        "input_allowed": [
+          "operation",
+          "value"
+        ],
+        "expected_required": [
+          "code",
+          "has_result",
+          "has_result_meta",
+          "id",
+          "valid"
+        ],
+        "expected_allowed": [
+          "code",
+          "has_result",
+          "has_result_meta",
+          "id",
+          "valid"
+        ]
+      },
+      "validate_hints": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "results"
+        ],
+        "input_allowed": [
+          "operation",
+          "results"
+        ],
+        "expected_required": [
+          "valid"
+        ],
+        "expected_allowed": [
+          "valid"
+        ]
+      },
+      "validate_json_schema": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation"
+        ],
+        "input_allowed": [
+          "cases",
+          "limits",
+          "network_access",
+          "operation",
+          "policy",
+          "schema",
+          "schema_builder"
+        ],
+        "expected_required": [],
+        "expected_allowed": [
+          "error",
+          "network_requests",
+          "results",
+          "valid"
+        ]
+      },
+      "validate_message": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "cases",
+          "operation"
+        ],
+        "input_allowed": [
+          "cases",
+          "operation"
+        ],
+        "expected_required": [
+          "errors",
+          "valid"
+        ],
+        "expected_allowed": [
+          "errors",
+          "valid"
+        ]
+      },
+      "validate_notification": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "value"
+        ],
+        "input_allowed": [
+          "operation",
+          "value"
+        ],
+        "expected_required": [
+          "response_required",
+          "valid"
+        ],
+        "expected_allowed": [
+          "response_required",
+          "valid"
+        ]
+      },
+      "validate_request": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation"
+        ],
+        "input_allowed": [
+          "cases",
+          "operation",
+          "value"
+        ],
+        "expected_required": [
+          "valid"
+        ],
+        "expected_allowed": [
+          "error",
+          "errors",
+          "input_id",
+          "valid"
+        ]
+      },
+      "validate_result_response": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "value"
+        ],
+        "input_allowed": [
+          "operation",
+          "value"
+        ],
+        "expected_required": [
+          "id",
+          "result_type",
+          "valid"
+        ],
+        "expected_allowed": [
+          "id",
+          "result_type",
+          "valid"
+        ]
+      },
+      "walk_list_cases": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "cases",
+          "operation"
+        ],
+        "input_allowed": [
+          "cases",
+          "operation"
+        ],
+        "expected_required": [
+          "observations"
+        ],
+        "expected_allowed": [
+          "observations"
+        ]
+      },
+      "walk_paginated_list": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "method",
+          "operation",
+          "pages"
+        ],
+        "input_allowed": [
+          "method",
+          "operation",
+          "pages"
+        ],
+        "expected_required": [
+          "items",
+          "partial_result_returned",
+          "requested_cursors",
+          "terminated_by"
+        ],
+        "expected_allowed": [
+          "items",
+          "partial_result_returned",
+          "requested_cursors",
+          "terminated_by"
+        ]
+      }
+    },
+    "profiles": {
+      "catalog-latency": {
+        "boundaries": [
+          "metric-assertion"
+        ],
+        "input_required": [
+          "duration_seconds",
+          "environments",
+          "profile",
+          "rate_per_second",
+          "warmup_requests"
+        ],
+        "input_allowed": [
+          "duration_seconds",
+          "environments",
+          "profile",
+          "rate_per_second",
+          "warmup_requests"
+        ],
+        "expected_required": [
+          "holds",
+          "thresholds"
+        ],
+        "expected_allowed": [
+          "holds",
+          "thresholds"
+        ]
+      },
+      "concurrent-mrtr-idempotency": {
+        "boundaries": [
+          "metric-assertion"
+        ],
+        "input_required": [
+          "concurrent_retries",
+          "profile",
+          "request_state"
+        ],
+        "input_allowed": [
+          "concurrent_retries",
+          "profile",
+          "request_state"
+        ],
+        "expected_required": [
+          "holds",
+          "thresholds"
+        ],
+        "expected_allowed": [
+          "holds",
+          "thresholds"
+        ]
+      },
+      "replica-distribution": {
+        "boundaries": [
+          "metric-assertion"
+        ],
+        "input_required": [
+          "compare",
+          "minimum_healthy_replicas",
+          "profile",
+          "requests"
+        ],
+        "input_allowed": [
+          "compare",
+          "minimum_healthy_replicas",
+          "profile",
+          "requests"
+        ],
+        "expected_required": [
+          "holds",
+          "thresholds"
+        ],
+        "expected_allowed": [
+          "holds",
+          "thresholds"
+        ]
+      }
+    },
+    "subjects": {
+      "cdk_synth": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "rules",
+          "subject",
+          "template_glob"
+        ],
+        "input_allowed": [
+          "rules",
+          "subject",
+          "template_glob"
+        ],
+        "expected_required": [
+          "violations"
+        ],
+        "expected_allowed": [
+          "violations"
+        ]
+      },
+      "dependency_install": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "commands",
+          "files",
+          "subject"
+        ],
+        "input_allowed": [
+          "commands",
+          "files",
+          "subject"
+        ],
+        "expected_required": [
+          "lockfiles",
+          "resolution_reproducible",
+          "violations"
+        ],
+        "expected_allowed": [
+          "lockfiles",
+          "resolution_reproducible",
+          "violations"
+        ]
+      },
+      "github_actions": {
+        "boundaries": [
+          "workflow-assertion"
+        ],
+        "input_required": [
+          "required_contracts",
+          "subject",
+          "workflow_glob"
+        ],
+        "input_allowed": [
+          "required_contracts",
+          "subject",
+          "workflow_glob"
+        ],
+        "expected_required": [
+          "matched_contracts",
+          "violations"
+        ],
+        "expected_allowed": [
+          "matched_contracts",
+          "violations"
+        ]
+      },
+      "npm_audit": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "subject",
+          "suppressions_file",
+          "threshold"
+        ],
+        "input_allowed": [
+          "subject",
+          "suppressions_file",
+          "threshold"
+        ],
+        "expected_required": [
+          "unsuppressed",
+          "violations"
+        ],
+        "expected_allowed": [
+          "unsuppressed",
+          "violations"
+        ]
+      },
+      "raw_dependency_graph": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "forbidden",
+          "subject"
+        ],
+        "input_allowed": [
+          "forbidden",
+          "subject"
+        ],
+        "expected_required": [
+          "matched_packages",
+          "violations"
+        ],
+        "expected_allowed": [
+          "matched_packages",
+          "violations"
+        ]
+      },
+      "runtime_licenses": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "allow",
+          "exceptions_file",
+          "subject"
+        ],
+        "input_allowed": [
+          "allow",
+          "exceptions_file",
+          "subject"
+        ],
+        "expected_required": [
+          "violations"
+        ],
+        "expected_allowed": [
+          "violations"
+        ]
+      },
+      "vulnerability_suppressions": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "required_fields",
+          "subject"
+        ],
+        "input_allowed": [
+          "required_fields",
+          "subject"
+        ],
+        "expected_required": [
+          "violations"
+        ],
+        "expected_allowed": [
+          "violations"
+        ]
+      }
+    },
+    "property_targets": {
+      "derive_cache_key": {
+        "boundaries": [
+          "property"
+        ],
+        "kinds": [
+          "invariant",
+          "metamorphic"
+        ]
+      },
+      "encode_header": {
+        "boundaries": [
+          "property"
+        ],
+        "kinds": [
+          "round_trip"
+        ],
+        "inverse": "decode_header"
+      },
+      "execute_concurrent_retries": {
+        "boundaries": [
+          "property"
+        ],
+        "kinds": [
+          "bounds"
+        ]
+      },
+      "execute_on_replica": {
+        "boundaries": [
+          "property"
+        ],
+        "kinds": [
+          "invariant"
+        ]
+      },
+      "list_catalog": {
+        "boundaries": [
+          "property"
+        ],
+        "kinds": [
+          "ordering"
+        ]
+      },
+      "verify_request_state": {
+        "boundaries": [
+          "property"
+        ],
+        "kinds": [
+          "metamorphic"
+        ]
+      }
+    }
+  }
+}

@@ -1,23 +1,24 @@
 {
-  "assertions": [
+  "observations": [
     {
-      "type": "strict_http_shape"
+      "value_index": 0,
+      "accepted": false,
+      "reason": "forbidden control character"
+    },
+    {
+      "value_index": 1,
+      "accepted": false,
+      "reason": "forbidden control character"
+    },
+    {
+      "value_index": 2,
+      "accepted": false,
+      "reason": "forbidden control character"
+    },
+    {
+      "value_index": 3,
+      "accepted": false,
+      "reason": "invalid Base64 sentinel"
     }
-  ],
-  "status": 400,
-  "headers": {
-    "{{ALLOW_EXTRA}}": true,
-    "Content-Type": "application/json"
-  },
-  "body": {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-      "code": -32020,
-      "message": "Header metadata mismatch",
-      "data": {
-        "reason": "invalid header value"
-      }
-    }
-  }
+  ]
 }

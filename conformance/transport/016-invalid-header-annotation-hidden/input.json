@@ -1,14 +1,28 @@
 {
+  "operation": "filter_transport_tools",
   "tools": [
     {
       "name": "unsafe_tool",
-      "x-mcp-header": {
-        "argument": "x",
-        "header": "Bad Header"
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "string",
+            "x-mcp-header": "Bad Header"
+          }
+        }
       }
     },
     {
-      "name": "create_incident"
+      "name": "create_incident",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          }
+        }
+      }
     }
   ]
 }

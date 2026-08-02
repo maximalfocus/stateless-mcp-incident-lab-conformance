@@ -4,5 +4,10 @@
     "response",
     "logs",
     "spans"
-  ]
+  ],
+  "clock_ticks_ms": [
+    100,
+    112
+  ],
+  "operation": "capture_logs"
 }

@@ -6,7 +6,7 @@
     "when": "the transport contract is exercised",
     "then": "a tool with an invalid x-mcp-header annotation is excluded from tools/list"
   },
-  "boundary": "http",
+  "boundary": "function",
   "normalisation": [
     "timestamp",
     "generated_id",
@@ -28,5 +28,6 @@
   "source_deps": [
     "src/adapters/inbound/http.ts",
     "src/client/http.ts"
-  ]
+  ],
+  "type_contract": "filter_transport_tools"
 }

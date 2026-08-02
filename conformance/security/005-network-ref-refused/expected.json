@@ -1,23 +1,8 @@
 {
-  "assertions": [
-    {
-      "type": "strict_http_shape"
-    }
-  ],
-  "status": 400,
-  "headers": {
-    "{{ALLOW_EXTRA}}": true,
-    "Content-Type": "application/json"
-  },
-  "body": {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-      "code": -32602,
-      "message": "Invalid params",
-      "data": {
-        "reason": "Network schema references are forbidden"
-      }
-    }
+  "valid": false,
+  "network_requests": 0,
+  "error": {
+    "code": -32602,
+    "reason": "Network schema references are forbidden"
   }
 }

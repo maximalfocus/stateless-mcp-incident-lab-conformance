@@ -1,12 +1,24 @@
 {
   "replay_examples": [
     {
-      "state": "VALID-STATE-FIXTURE",
+      "secret_hex": "000102030405060708090a0b0c0d0e0f",
+      "payload": {
+        "method": "tools/call",
+        "arguments_digest": "sha256:fixture",
+        "issued_at": "2026-08-02T00:00:00Z",
+        "expires_at": "2026-08-02T00:05:00Z"
+      },
       "bit": 0
     },
     {
-      "state": "VALID-STATE-FIXTURE",
-      "bit": 31
+      "secret_hex": "000102030405060708090a0b0c0d0e0f",
+      "payload": {
+        "method": "tools/call",
+        "arguments_digest": "sha256:fixture",
+        "issued_at": "2026-08-02T00:00:00Z",
+        "expires_at": "2026-08-02T00:05:00Z"
+      },
+      "bit": 127
     }
   ],
   "seed": 20260802

@@ -7,5 +7,12 @@
       "status": "OPEN",
       "expires_at": "2026-08-02T01:00:00Z"
     }
+  ],
+  "remediations": [
+    {
+      "remediation_id": "REMEDIATION-001",
+      "incident_id": "INCIDENT-OPEN",
+      "status": "PROPOSED"
+    }
   ]
 }

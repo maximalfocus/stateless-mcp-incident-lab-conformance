@@ -4,6 +4,23 @@
     "supportedVersions": [
       "2026-07-28"
     ],
-    "effect_count": 0
+    "tools": [
+      "create_incident",
+      "execute_remediation",
+      "get_incident",
+      "propose_remediation",
+      "query_telemetry",
+      "resolve_incident",
+      "run_diagnostic"
+    ],
+    "resources": [
+      "incident://runbooks/api",
+      "incident://runbooks/database",
+      "incident://topology/services"
+    ],
+    "prompts": [
+      "triage_incident",
+      "review_remediation"
+    ]
   }
 }

@@ -1,12 +1,31 @@
 {
-  "items": [
-    "a",
-    "b"
-  ],
-  "discarded_cached_pages": 2,
-  "network_cursors": [
-    null,
-    "n1"
-  ],
-  "partial_result_returned": false
+  "observations": [
+    {
+      "name": "stale_page",
+      "items": [
+        "a",
+        "b"
+      ],
+      "discarded_cached_pages": 2,
+      "network_cursors": [
+        "<absent>",
+        "n1"
+      ],
+      "partial_result_returned": false
+    },
+    {
+      "name": "rejected_cursor",
+      "items": [
+        "a",
+        "b"
+      ],
+      "discarded_cached_pages": 1,
+      "network_cursors": [
+        "old-cursor",
+        "<absent>",
+        "new-cursor"
+      ],
+      "partial_result_returned": false
+    }
+  ]
 }

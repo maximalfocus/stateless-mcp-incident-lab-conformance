@@ -20,6 +20,10 @@
           "name": "API runbook"
         },
         {
+          "uri": "incident://runbooks/database",
+          "name": "Database runbook"
+        },
+        {
           "uri": "incident://topology/services",
           "name": "Service topology"
         }

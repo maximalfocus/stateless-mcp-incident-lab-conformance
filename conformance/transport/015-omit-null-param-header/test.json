@@ -6,7 +6,7 @@
     "when": "the transport contract is exercised",
     "then": "both tested absent-value cases emit and require no Mcp-Param header"
   },
-  "boundary": "http",
+  "boundary": "function",
   "normalisation": [
     "timestamp",
     "generated_id",
@@ -28,5 +28,6 @@
   "source_deps": [
     "src/adapters/inbound/http.ts",
     "src/client/http.ts"
-  ]
+  ],
+  "type_contract": "derive_mirrored_headers"
 }

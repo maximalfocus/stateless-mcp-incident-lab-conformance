@@ -1,6 +1,9 @@
 {
   "exit_code": 0,
-  "stdout": "{\"supportedVersions\":[\"2026-07-28\"]}\n",
-  "stderr": "POST /raw/mcp\nMcp-Name: [REDACTED]\n{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"server/discover\"}\n",
-  "network_calls": 1
+  "stdout": "{\"uri\":\"incident://incidents/INCIDENT-SECRET/timeline\",\"mimeType\":\"application/json\",\"text\":\"{\\\"events\\\":[]}\"}\n",
+  "stderr": "POST /raw/mcp\nMcp-Name: [REDACTED]\n{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"resources/read\",\"params\":{\"uri\":\"[REDACTED]\"}}\n",
+  "network_calls": 1,
+  "stderr_forbidden_values": [
+    "INCIDENT-SECRET"
+  ]
 }

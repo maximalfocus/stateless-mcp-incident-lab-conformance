@@ -1,33 +1,12 @@
 {
-  "assertions": [
+  "observations": [
     {
-      "type": "strict_http_shape"
+      "case": "absent",
+      "headers": {}
+    },
+    {
+      "case": "null",
+      "headers": {}
     }
-  ],
-  "status": 200,
-  "headers": {
-    "{{ALLOW_EXTRA}}": true,
-    "Content-Type": "application/json"
-  },
-  "body": {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-      "resultType": "complete",
-      "content": [
-        {
-          "type": "text",
-          "text": "Missing required service"
-        }
-      ],
-      "isError": true,
-      "_meta": {
-        "io.modelcontextprotocol/serverInfo": {
-          "name": "stateless-mcp-incident-lab",
-          "version": "2026-07-28"
-        },
-        "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
-      }
-    }
-  }
+  ]
 }

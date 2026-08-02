@@ -1,38 +1,7 @@
 {
-  "assertions": [
-    {
-      "type": "strict_http_shape"
-    }
-  ],
-  "status": 400,
-  "headers": {
-    "{{ALLOW_EXTRA}}": true,
-    "Content-Type": "application/json"
-  },
-  "body": {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-      "resultType": "complete",
-      "content": [
-        {
-          "type": "text",
-          "text": "{\"incident_id\":\"{{GENERATED_ID}}\",\"expires_at\":\"{{TIMESTAMP}}\"}"
-        }
-      ],
-      "structuredContent": {
-        "incident_id": "{{GENERATED_ID}}",
-        "expires_at": "{{TIMESTAMP}}",
-        "id_strength": "uuid-v4-or-stronger"
-      },
-      "isError": false,
-      "_meta": {
-        "io.modelcontextprotocol/serverInfo": {
-          "name": "stateless-mcp-incident-lab",
-          "version": "2026-07-28"
-        },
-        "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
-      }
-    }
-  }
+  "incident_id": "00112233-4455-4677-8899-aabbccddeeff",
+  "version": 4,
+  "variant": "RFC4122",
+  "entropy_bits": 122,
+  "expires_at": "2026-08-02T01:00:00Z"
 }

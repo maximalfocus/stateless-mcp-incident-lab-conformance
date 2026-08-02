@@ -1,34 +1,73 @@
 {
-  "operation": "walk_list",
-  "cached_pages": [
+  "operation": "walk_list_cases",
+  "cases": [
     {
-      "cursor": null,
-      "items": [
-        "a"
+      "name": "stale_page",
+      "cached_pages": [
+        {
+          "cursor": "<absent>",
+          "items": [
+            "a"
+          ],
+          "fresh": true,
+          "nextCursor": "c1"
+        },
+        {
+          "cursor": "c1",
+          "items": [
+            "old"
+          ],
+          "fresh": false
+        }
       ],
-      "fresh": true,
-      "nextCursor": "c1"
+      "network_pages": [
+        {
+          "cursor": "<absent>",
+          "items": [
+            "a"
+          ],
+          "nextCursor": "n1"
+        },
+        {
+          "cursor": "n1",
+          "items": [
+            "b"
+          ]
+        }
+      ]
     },
     {
-      "cursor": "c1",
-      "items": [
-        "old"
+      "name": "rejected_cursor",
+      "cached_pages": [
+        {
+          "cursor": "<absent>",
+          "items": [
+            "a"
+          ],
+          "fresh": true,
+          "nextCursor": "old-cursor"
+        }
       ],
-      "fresh": false
-    }
-  ],
-  "network_pages": [
-    {
-      "cursor": null,
-      "items": [
-        "a"
-      ],
-      "nextCursor": "n1"
-    },
-    {
-      "cursor": "n1",
-      "items": [
-        "b"
+      "network_attempts": [
+        {
+          "cursor": "old-cursor",
+          "error": {
+            "code": -32602
+          }
+        },
+        {
+          "cursor": "<absent>",
+          "items": [
+            "a"
+          ],
+          "nextCursor": "new-cursor"
+        },
+        {
+          "cursor": "new-cursor",
+          "items": [
+            "b"
+          ]
+        }
       ]
     }
   ]

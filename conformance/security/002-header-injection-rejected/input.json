@@ -1,7 +1,5 @@
 {
-  "fixture": "adversarial-request",
-  "effect_count_before": 0,
-  "effect_count_after": 0,
+  "operation": "encode_mirrored_header",
   "values": [
     "line\rbreak",
     "line\nbreak",

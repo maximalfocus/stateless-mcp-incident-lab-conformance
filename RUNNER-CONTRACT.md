@@ -1,6 +1,6 @@
 # Conformance runner contract
 
-The golden files are provider-neutral declarative contracts. A provider binding MUST execute `input.json` through the named public boundary and compare its normalized observation with the complete `expected.json`; it MUST NOT return a precomputed pass record, derive actual output from `expected.json`, or dispatch on `spec_id`/directory name. The input's `operation`, `subject`, `profile`, or `argv` selects a real public adapter registered by name in the runner.
+The golden files are provider-neutral declarative contracts. A provider binding MUST execute `input.json` through the named public boundary and compare its normalized observation with the complete `expected.json`; it MUST NOT return a precomputed pass record, derive actual output from `expected.json`, or dispatch on `spec_id`/directory name. The input's `operation`, `subject`, `profile`, or `argv` selects a real public adapter. `operation-registry.json` is the single closed named-function registry: every provider binding implements those names verbatim, and the suite validator rejects unknown/dangling names and top-level input/expected fields.
 
 ## Boundary dispatch and exact observations
 

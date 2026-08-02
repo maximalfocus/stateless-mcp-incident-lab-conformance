@@ -6,5 +6,67 @@
     "list",
     "http://lab/raw/mcp"
   ],
-  "stdin": ""
+  "stdin": "",
+  "cases": [
+    {
+      "name": "success",
+      "argv": [
+        "incident-mcp",
+        "discover",
+        "http://lab/raw/mcp"
+      ],
+      "upstream": {
+        "kind": "success"
+      }
+    },
+    {
+      "name": "usage",
+      "argv": [
+        "incident-mcp",
+        "unknown"
+      ],
+      "upstream": {
+        "kind": "unused"
+      }
+    },
+    {
+      "name": "protocol",
+      "argv": [
+        "incident-mcp",
+        "discover",
+        "http://lab/raw/mcp"
+      ],
+      "upstream": {
+        "kind": "jsonrpc_error",
+        "code": -32602
+      }
+    },
+    {
+      "name": "domain",
+      "argv": [
+        "incident-mcp",
+        "tools",
+        "call",
+        "http://lab/raw/mcp",
+        "get_incident",
+        "--json",
+        "{\"incident_id\":\"UNKNOWN\"}"
+      ],
+      "upstream": {
+        "kind": "tool_error"
+      }
+    },
+    {
+      "name": "transport",
+      "argv": [
+        "incident-mcp",
+        "discover",
+        "http://lab/raw/mcp"
+      ],
+      "upstream": {
+        "kind": "network_error",
+        "code": "ECONNREFUSED"
+      }
+    }
+  ]
 }

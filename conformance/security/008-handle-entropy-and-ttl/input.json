@@ -1,5 +1,9 @@
 {
-  "fixture": "adversarial-request",
-  "effect_count_before": 0,
-  "effect_count_after": 0
+  "operation": "generate_incident_handle",
+  "id_source": {
+    "name": "uuid_v4",
+    "fixture_bytes": "00112233445546778899aabbccddeeff"
+  },
+  "clock": "2026-08-02T00:00:00Z",
+  "ttl_ms": 3600000
 }

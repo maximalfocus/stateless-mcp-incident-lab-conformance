@@ -1,5 +1,14 @@
 {
   "operation": "send_public_requests",
-  "endpoint": "http://localhost/raw/mcp",
-  "count": 100
+  "count_per_endpoint": 100,
+  "endpoints": [
+    {
+      "provider": "raw",
+      "url": "http://localhost/raw/mcp"
+    },
+    {
+      "provider": "sdk",
+      "url": "http://localhost/sdk/mcp"
+    }
+  ]
 }

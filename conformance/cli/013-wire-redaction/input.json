@@ -2,8 +2,26 @@
   "argv": [
     "incident-mcp",
     "--wire",
-    "discover",
-    "http://lab/raw/mcp"
+    "resources",
+    "read",
+    "http://lab/raw/mcp",
+    "incident://incidents/INCIDENT-SECRET/timeline"
   ],
-  "stdin": ""
+  "stdin": "",
+  "server_response": {
+    "resultType": "complete",
+    "contents": [
+      {
+        "uri": "incident://incidents/INCIDENT-SECRET/timeline",
+        "mimeType": "application/json",
+        "text": "{\"events\":[]}"
+      }
+    ],
+    "ttlMs": 1000,
+    "cacheScope": "private"
+  },
+  "sensitive_values": [
+    "INCIDENT-SECRET",
+    "incident://incidents/INCIDENT-SECRET/timeline"
+  ]
 }

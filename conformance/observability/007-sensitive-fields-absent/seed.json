@@ -1,4 +1,17 @@
 {
   "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB",
-  "clock": "2026-08-02T00:00:00Z"
+  "clock": "2026-08-02T00:00:00Z",
+  "incidents": [
+    {
+      "incident_id": "INCIDENT-SECRET",
+      "status": "INVESTIGATING"
+    }
+  ],
+  "remediations": [
+    {
+      "remediation_id": "REMEDIATION-SECRET",
+      "incident_id": "INCIDENT-SECRET",
+      "status": "PROPOSED"
+    }
+  ]
 }

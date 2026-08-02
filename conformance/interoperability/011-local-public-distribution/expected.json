@@ -1,7 +1,20 @@
 {
-  "unique_replicas": [
-    "raw-1",
-    "raw-2"
-  ],
-  "normalized_mismatches": []
+  "providers": [
+    {
+      "provider": "raw",
+      "unique_replicas": [
+        "raw-1",
+        "raw-2"
+      ],
+      "normalized_mismatches": []
+    },
+    {
+      "provider": "sdk",
+      "unique_replicas": [
+        "sdk-1",
+        "sdk-2"
+      ],
+      "normalized_mismatches": []
+    }
+  ]
 }

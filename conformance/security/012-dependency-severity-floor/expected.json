@@ -1,6 +1,23 @@
 {
-  "observations": {
-    "accepted": true,
-    "unsuppressed_high_or_critical": []
-  }
+  "observations": [
+    {
+      "name": "low",
+      "accepted": true,
+      "blocking_findings": []
+    },
+    {
+      "name": "high",
+      "accepted": false,
+      "blocking_findings": [
+        "GHSA-high"
+      ]
+    },
+    {
+      "name": "critical",
+      "accepted": false,
+      "blocking_findings": [
+        "GHSA-critical"
+      ]
+    }
+  ]
 }

@@ -6,7 +6,7 @@
     "when": "the security contract is exercised",
     "then": "schema validation rejects composition count beyond the configured bound"
   },
-  "boundary": "http",
+  "boundary": "function",
   "normalisation": [
     "timestamp",
     "generated_id",
@@ -29,5 +29,6 @@
     "src/adapters/inbound/http.ts",
     "src/protocol/schema.ts",
     "src/observability/redaction.ts"
-  ]
+  ],
+  "type_contract": "validate_json_schema"
 }

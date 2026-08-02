@@ -1,9 +1,11 @@
 {
-  "fixture": "adversarial-request",
-  "effect_count_before": 0,
-  "effect_count_after": 0,
-  "schema": {
+  "operation": "validate_json_schema",
+  "schema_builder": {
+    "name": "any_of",
     "subschema_count": 257
   },
-  "max_subschemas": 256
+  "limits": {
+    "max_depth": 64,
+    "max_subschemas": 256
+  }
 }

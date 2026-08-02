@@ -1,5 +1,15 @@
 {
   "operation": "cross_replica_mrtr",
-  "initial_endpoint": "http://localhost:3001/raw/mcp",
-  "retry_endpoint": "http://localhost:3002/raw/mcp"
+  "pairs": [
+    {
+      "provider": "raw",
+      "initial_endpoint": "http://localhost:3001/raw/mcp",
+      "retry_endpoint": "http://localhost:3002/raw/mcp"
+    },
+    {
+      "provider": "sdk",
+      "initial_endpoint": "http://localhost:4001/sdk/mcp",
+      "retry_endpoint": "http://localhost:4002/sdk/mcp"
+    }
+  ]
 }

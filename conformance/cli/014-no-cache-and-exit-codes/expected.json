@@ -5,11 +5,26 @@
   "network_calls": 1,
   "cache_reads": 0,
   "cache_writes": 0,
-  "exit_codes": {
-    "success": 0,
-    "usage": 2,
-    "protocol": 3,
-    "domain": 4,
-    "transport": 5
-  }
+  "case_exit_codes": [
+    {
+      "name": "success",
+      "exit_code": 0
+    },
+    {
+      "name": "usage",
+      "exit_code": 2
+    },
+    {
+      "name": "protocol",
+      "exit_code": 3
+    },
+    {
+      "name": "domain",
+      "exit_code": 4
+    },
+    {
+      "name": "transport",
+      "exit_code": 5
+    }
+  ]
 }

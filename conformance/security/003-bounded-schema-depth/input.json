@@ -1,9 +1,11 @@
 {
-  "fixture": "adversarial-request",
-  "effect_count_before": 0,
-  "effect_count_after": 0,
-  "schema": {
-    "nested_depth": 65
+  "operation": "validate_json_schema",
+  "schema_builder": {
+    "name": "nested_object",
+    "depth": 65
   },
-  "max_depth": 64
+  "limits": {
+    "max_depth": 64,
+    "max_subschemas": 256
+  }
 }

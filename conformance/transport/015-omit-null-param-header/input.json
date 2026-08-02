@@ -1,5 +1,17 @@
 {
-  "assert_absent_headers": [
-    "Mcp-Param-service"
+  "operation": "derive_mirrored_headers",
+  "annotation": {
+    "argument": "service",
+    "header": "Service"
+  },
+  "argument_cases": [
+    {
+      "arguments": {}
+    },
+    {
+      "arguments": {
+        "service": null
+      }
+    }
   ]
 }

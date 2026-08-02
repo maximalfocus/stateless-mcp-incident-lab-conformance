@@ -1,6 +1,18 @@
 {
-  "initial_replica": "raw-1",
-  "retry_replica": "raw-2",
-  "resultType": "complete",
-  "effect_count": 1
+  "providers": [
+    {
+      "provider": "raw",
+      "initial_replica": "raw-1",
+      "retry_replica": "raw-2",
+      "resultType": "complete",
+      "effect_count": 1
+    },
+    {
+      "provider": "sdk",
+      "initial_replica": "sdk-1",
+      "retry_replica": "sdk-2",
+      "resultType": "complete",
+      "effect_count": 1
+    }
+  ]
 }

@@ -5,6 +5,8 @@ conf=root/'conformance'; errors=[]; warns=[]; ids={}; tests=[]
 context_map=json.loads((root/'context-map.json').read_text())
 valid_contexts={x['name'] for x in context_map['contexts']}
 declared_placeholders=set(json.loads((root/'suite-invariants.json').read_text())['placeholders'])
+operation_registry=json.loads((root/'operation-registry.json').read_text())['registries']
+used_registry_names={k:set() for k in operation_registry}
 allowed={'cli','http','http-html','function','property','component','interaction','metric-assertion','lint-assertion','http-contract','decision-record','workflow-assertion','state-machine','story','e2e','cross-browser-assertion','contract','structural-contract','documentation-contract','packaging-contract','cross-language-contract','transactional','signal-reactivity','reactive-form','graphql','grpc','message','websocket','sse','sql','accessibility','prompt-eval','tool-call','trace-span','webhook','visual-regression','i18n'}
 for p in sorted(conf.rglob('test.json')):
   tests.append(p); rel=p.parent.relative_to(root)
@@ -43,6 +45,21 @@ for p in sorted(conf.rglob('test.json')):
     input_data=json.loads(input_path.read_text())
     if isinstance(input_data,dict) and set(input_data)<= {'scenario','contract','protocol_version','providers'}: errors.append(f'{sid}: input is descriptive metadata, not replayable fixture data')
     if t.get('boundary')=='cli' and 'argv' not in input_data: errors.append(f'{sid}: CLI fixture missing argv')
+    expected_path=p.parent/'expected.json'
+    expected_data=json.loads(expected_path.read_text()) if expected_path.exists() else {}
+    for key,registry_name in (('operation','operations'),('subject','subjects'),('profile','profiles')):
+      name=input_data.get(key) if isinstance(input_data,dict) else None
+      if name is None: continue
+      registry=operation_registry[registry_name]
+      if name not in registry: errors.append(f'{sid}: unknown {key} {name!r}'); continue
+      used_registry_names[registry_name].add(name); contract=registry[name]
+      if t.get('boundary') not in contract['boundaries']: errors.append(f'{sid}: {key} {name!r} does not allow boundary {t.get("boundary")!r}')
+      missing_input=set(contract['input_required'])-set(input_data); unknown_input=set(input_data)-set(contract['input_allowed'])
+      missing_expected=set(contract['expected_required'])-set(expected_data); unknown_expected=set(expected_data)-set(contract['expected_allowed'])
+      if missing_input: errors.append(f'{sid}: {key} {name!r} missing input fields {sorted(missing_input)}')
+      if unknown_input: errors.append(f'{sid}: {key} {name!r} unknown input fields {sorted(unknown_input)}')
+      if missing_expected: errors.append(f'{sid}: {key} {name!r} missing expected fields {sorted(missing_expected)}')
+      if unknown_expected: errors.append(f'{sid}: {key} {name!r} unknown expected fields {sorted(unknown_expected)}')
   if t.get('boundary')=='property':
     prop=t.get('property',{})
     for k in ('kind','target','domain','iterations','examples'):
@@ -52,6 +69,11 @@ for p in sorted(conf.rglob('test.json')):
     if prop.get('kind')=='bounds' and not {'min','max'} <= prop.keys(): errors.append(f'{sid}: bounds missing min/max')
     examples=prop.get('examples',[])
     if isinstance(examples,list) and len(examples)==4 and examples[1:]==['empty','unicode','boundary']: errors.append(f'{sid}: property examples are labels, not concrete regression inputs')
+    target=prop.get('target'); registry=operation_registry['property_targets']
+    if target not in registry: errors.append(f'{sid}: unknown property target {target!r}')
+    else:
+      used_registry_names['property_targets'].add(target)
+      if prop.get('kind') not in registry[target]['kinds']: errors.append(f'{sid}: property target {target!r} does not allow kind {prop.get("kind")!r}')
   if sid and sid.startswith('ARCH-'):
     if t.get('adr')!='ADR-0001' or t.get('adr_repo')!='maximalfocus/stateless-mcp-incident-lab-architecture': errors.append(f'{sid}: bad architecture citation')
   txt='\n'.join(x.read_text() for x in p.parent.glob('*.json'))
@@ -59,6 +81,9 @@ for p in sorted(conf.rglob('test.json')):
   if '"..."' in txt: errors.append(f'{sid}: invalid ellipsis placeholder')
   unknown_placeholders=set(re.findall(r'\{\{[A-Z_]+\}\}',txt))-declared_placeholders
   if unknown_placeholders: errors.append(f'{sid}: undeclared placeholders {sorted(unknown_placeholders)}')
+for registry_name,registry in operation_registry.items():
+  unused=set(registry)-used_registry_names[registry_name]
+  if unused: errors.append(f'operation-registry.json has unused {registry_name}: {sorted(unused)}')
 if len(tests)!=197: errors.append(f'test count {len(tests)} != 197')
 expected_cats={'protocol','versioning','transport','discovery','primitives','incidents','mrtr','streaming','cache','cli','interoperability','properties','security','observability','performance','architecture','infra','cicd','dependencies'}
 cats={p.relative_to(conf).parts[0] for p in tests}

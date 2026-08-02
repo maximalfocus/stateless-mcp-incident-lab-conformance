@@ -4,12 +4,12 @@
   "headers": {
     "Accept": "application/json, text/event-stream",
     "MCP-Protocol-Version": "2026-07-28",
-    "Mcp-Method": "healthz"
+    "Mcp-Method": "unknown/method"
   },
   "body": {
     "jsonrpc": "2.0",
     "id": 1,
-    "method": "healthz",
+    "method": "unknown/method",
     "params": {}
   }
 }

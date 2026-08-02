@@ -6,7 +6,7 @@
     "when": "the security contract is exercised",
     "then": "cR, LF, NUL, and invalid sentinel input cannot enter mirrored headers"
   },
-  "boundary": "http",
+  "boundary": "function",
   "normalisation": [
     "timestamp",
     "generated_id",
@@ -29,5 +29,6 @@
     "src/adapters/inbound/http.ts",
     "src/protocol/schema.ts",
     "src/observability/redaction.ts"
-  ]
+  ],
+  "type_contract": "encode_mirrored_header"
 }
