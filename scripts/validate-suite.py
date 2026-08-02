@@ -134,6 +134,8 @@ for index,lane_match in enumerate(lane_matches):
     paths=re.findall(r'`(conformance/[^`]+)`',m.group(4)); deps=[] if m.group(6)=='none' else [x.strip() for x in m.group(6).split(',')]
     entries.append({'id':m.group(2),'count':int(m.group(3)),'paths':paths,'scope':m.group(5),'deps':deps})
   lanes[lane]=entries; seen_wi.extend(entries)
+  target_tokens={'raw':'stateless-mcp-incident-lab-typescript-raw','sdk':'stateless-mcp-incident-lab-typescript-sdk','integration':'stateless-mcp-incident-lab-prd','infrastructure':'stateless-mcp-incident-lab-infrastructure','cicd':'stateless-mcp-incident-lab-cicd'}
+  if target_tokens.get(lane) not in section: errors.append(f'WORKITEM lane {lane} has no concrete owning repository')
 if [m.group(1) for m in lane_matches]!=expected_lane_order: errors.append('WORKITEM lane order/names malformed')
 wi_ids=[x['id'] for x in seen_wi]
 if len(wi_ids)!=len(set(wi_ids)) or wi_ids!=[f'WI-{i:03d}' for i in range(1,len(wi_ids)+1)]: errors.append('WORKITEM IDs must be unique and sequential')

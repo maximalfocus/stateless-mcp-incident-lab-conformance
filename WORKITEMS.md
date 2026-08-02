@@ -543,31 +543,31 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
 
 ## Lane: integration
 
-Target: explicit family integration invocation after both implementation lanes are complete.
+Target: explicit family integration invocation in `stateless-mcp-incident-lab-prd` after both implementation lanes are complete; this lane owns the shared Compose matrix and performance harness.
 
 - [ ] **WI-106** family interoperability contracts 1–3 (3 tests)
   - Tests: `conformance/interoperability/001-raw-client-raw-server-discovery`, `conformance/interoperability/002-raw-client-sdk-server-discovery`, `conformance/interoperability/003-sdk-client-raw-server-discovery`
-  - Scope: `test/conformance/interop-runner.ts`
+  - Scope: `demo/matrix.compose.yaml, demo/run-matrix.ts`
   - Depends on: WI-053, WI-105
 
 - [ ] **WI-107** family interoperability contracts 4–6 (3 tests)
   - Tests: `conformance/interoperability/004-sdk-client-sdk-server-discovery`, `conformance/interoperability/005-raw-client-raw-server-workflow`, `conformance/interoperability/006-raw-client-sdk-server-workflow`
-  - Scope: `test/conformance/interop-runner.ts`
+  - Scope: `demo/matrix.compose.yaml, demo/run-matrix.ts`
   - Depends on: WI-106
 
 - [ ] **WI-108** family interoperability contracts 7–9 (3 tests)
   - Tests: `conformance/interoperability/007-sdk-client-raw-server-workflow`, `conformance/interoperability/008-sdk-client-sdk-server-workflow`, `conformance/interoperability/009-matrix-equivalent-observables`
-  - Scope: `test/conformance/interop-runner.ts`
+  - Scope: `demo/matrix.compose.yaml, demo/run-matrix.ts`
   - Depends on: WI-107
 
 - [ ] **WI-109** family interoperability contracts 10–12 (3 tests)
   - Tests: `conformance/interoperability/010-allowed-metadata-difference`, `conformance/interoperability/011-local-public-distribution`, `conformance/interoperability/012-local-direct-cross-replica`
-  - Scope: `test/conformance/interop-runner.ts`
+  - Scope: `demo/matrix.compose.yaml, demo/run-matrix.ts`
   - Depends on: WI-108
 
 - [ ] **WI-110** family performance contracts 1–3 (3 tests)
   - Tests: `conformance/performance/001-catalog-latency`, `conformance/performance/002-replica-distribution`, `conformance/performance/003-concurrent-idempotency`
-  - Scope: `test/performance/catalog.js, test/performance/mrtr.js`
+  - Scope: `test/performance/catalog.js, test/performance/mrtr.js, demo/matrix.compose.yaml`
   - Depends on: WI-109
 
 ## Lane: infrastructure

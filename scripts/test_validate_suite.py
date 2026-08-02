@@ -134,6 +134,13 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("unknown or forward dependencies", result.stdout)
 
+    def test_workitem_lane_without_owner_goes_red(self):
+        path = self.tmp / "WORKITEMS.md"
+        path.write_text(path.read_text().replace("stateless-mcp-incident-lab-prd", "unspecified-family-repo", 1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("lane integration has no concrete owning repository", result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()
