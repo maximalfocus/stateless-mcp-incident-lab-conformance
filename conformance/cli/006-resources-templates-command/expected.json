@@ -1,9 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "resources-templates-command",
-      "must": "incident-mcp resources templates URL emits both URI templates"
-    }
-  ]
+  "exit_code": 0,
+  "stdout": "{\"resourceTemplates\":[\"incident://incidents/{incident_id}/timeline\",\"incident://runbooks/{service_id}\"]}\n",
+  "stderr": "",
+  "network_calls": 1
 }

@@ -1,9 +1,9 @@
 {
-  "scenario": "tools-list-command",
-  "contract": "incident-mcp tools list URL follows pagination and emits complete JSON",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "argv": [
+    "incident-mcp",
+    "tools",
+    "list",
+    "http://lab/raw/mcp"
+  ],
+  "stdin": ""
 }

@@ -1,9 +1,9 @@
 {
-  "scenario": "prompts-list-command",
-  "contract": "incident-mcp prompts list URL emits deterministic prompt catalog JSON",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "argv": [
+    "incident-mcp",
+    "prompts",
+    "list",
+    "http://lab/raw/mcp"
+  ],
+  "stdin": ""
 }

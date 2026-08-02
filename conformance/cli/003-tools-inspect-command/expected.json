@@ -1,9 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "tools-inspect-command",
-      "must": "incident-mcp tools inspect URL name emits one tool schema"
-    }
-  ]
+  "exit_code": 0,
+  "stdout": "{\"name\":\"create_incident\",\"inputSchema\":{\"type\":\"object\"},\"outputSchema\":{\"type\":\"object\"}}\n",
+  "stderr": "",
+  "network_calls": 1
 }

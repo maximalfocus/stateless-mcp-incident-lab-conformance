@@ -1,9 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "resources-read-command",
-      "must": "incident-mcp resources read URL URI emits resource contents"
-    }
-  ]
+  "exit_code": 0,
+  "stdout": "{\"uri\":\"incident://topology/services\",\"mimeType\":\"application/json\"}\n",
+  "stderr": "",
+  "network_calls": 1
 }

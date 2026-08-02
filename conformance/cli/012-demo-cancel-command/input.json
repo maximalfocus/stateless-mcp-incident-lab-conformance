@@ -1,9 +1,9 @@
 {
-  "scenario": "demo-cancel-command",
-  "contract": "incident-mcp demo URL --cancel applies no remediation",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "argv": [
+    "incident-mcp",
+    "demo",
+    "http://lab/raw/mcp",
+    "--cancel"
+  ],
+  "stdin": ""
 }

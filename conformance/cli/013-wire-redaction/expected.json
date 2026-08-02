@@ -1,9 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "wire-redaction",
-      "must": "--wire writes redacted HTTP and JSON-RPC diagnostics to stderr and never contaminates stdout JSON"
-    }
-  ]
+  "exit_code": 0,
+  "stdout": "{\"supportedVersions\":[\"2026-07-28\"]}\n",
+  "stderr": "POST /raw/mcp\nMcp-Name: [REDACTED]\n{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"server/discover\"}\n",
+  "network_calls": 1
 }

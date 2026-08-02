@@ -1,9 +1,9 @@
 {
-  "scenario": "resources-templates-command",
-  "contract": "incident-mcp resources templates URL emits both URI templates",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "argv": [
+    "incident-mcp",
+    "resources",
+    "templates",
+    "http://lab/raw/mcp"
+  ],
+  "stdin": ""
 }

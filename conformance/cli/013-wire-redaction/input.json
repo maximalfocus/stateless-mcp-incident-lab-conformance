@@ -1,9 +1,9 @@
 {
-  "scenario": "wire-redaction",
-  "contract": "--wire writes redacted HTTP and JSON-RPC diagnostics to stderr and never contaminates stdout JSON",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "argv": [
+    "incident-mcp",
+    "--wire",
+    "discover",
+    "http://lab/raw/mcp"
+  ],
+  "stdin": ""
 }

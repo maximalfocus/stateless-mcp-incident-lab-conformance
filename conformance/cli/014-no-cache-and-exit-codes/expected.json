@@ -1,9 +1,15 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "no-cache-and-exit-codes",
-      "must": "--no-cache bypasses reads and writes; success, usage, protocol, domain, and transport failures use stable documented exit codes"
-    }
-  ]
+  "exit_code": 0,
+  "stdout": "{\"tools\":[\"create_incident\",\"execute_remediation\",\"get_incident\",\"propose_remediation\",\"query_telemetry\",\"resolve_incident\",\"run_diagnostic\"]}\n",
+  "stderr": "",
+  "network_calls": 1,
+  "cache_reads": 0,
+  "cache_writes": 0,
+  "exit_codes": {
+    "success": 0,
+    "usage": 2,
+    "protocol": 3,
+    "domain": 4,
+    "transport": 5
+  }
 }

@@ -1,9 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "demo-approve-command",
-      "must": "incident-mcp demo URL --approve completes a mitigated workflow"
-    }
-  ]
+  "exit_code": 0,
+  "stdout": "{\"incident_id\":\"{{GENERATED_ID}}\",\"status\":\"MITIGATED\",\"remediation_effect_count\":1}\n",
+  "stderr": "",
+  "network_calls": 1
 }

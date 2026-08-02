@@ -1,9 +1,10 @@
 {
-  "scenario": "no-cache-and-exit-codes",
-  "contract": "--no-cache bypasses reads and writes; success, usage, protocol, domain, and transport failures use stable documented exit codes",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "argv": [
+    "incident-mcp",
+    "--no-cache",
+    "tools",
+    "list",
+    "http://lab/raw/mcp"
+  ],
+  "stdin": ""
 }

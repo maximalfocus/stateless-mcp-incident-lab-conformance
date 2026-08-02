@@ -1,9 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "discover-command",
-      "must": "incident-mcp discover URL emits machine-readable discovery JSON"
-    }
-  ]
+  "exit_code": 0,
+  "stdout": "{\"supportedVersions\":[\"2026-07-28\"]}\n",
+  "stderr": "",
+  "network_calls": 1
 }

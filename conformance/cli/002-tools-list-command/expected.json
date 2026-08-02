@@ -1,9 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "tools-list-command",
-      "must": "incident-mcp tools list URL follows pagination and emits complete JSON"
-    }
-  ]
+  "exit_code": 0,
+  "stdout": "{\"tools\":[\"create_incident\",\"execute_remediation\",\"get_incident\",\"propose_remediation\",\"query_telemetry\",\"resolve_incident\",\"run_diagnostic\"]}\n",
+  "stderr": "",
+  "network_calls": 1
 }

@@ -1,9 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "prompts-get-command",
-      "must": "incident-mcp prompts get URL name --json arguments emits prompt messages"
-    }
-  ]
+  "exit_code": 0,
+  "stdout": "{\"name\":\"triage_incident\",\"messages\":[{\"role\":\"user\",\"text\":\"Investigate incident INCIDENT-OPEN.\"}]}\n",
+  "stderr": "",
+  "network_calls": 1
 }

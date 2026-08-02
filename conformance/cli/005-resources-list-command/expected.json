@@ -1,9 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "resources-list-command",
-      "must": "incident-mcp resources list URL emits safe deterministic catalog JSON"
-    }
-  ]
+  "exit_code": 0,
+  "stdout": "{\"resources\":[\"incident://runbooks/api\",\"incident://runbooks/database\",\"incident://topology/services\"]}\n",
+  "stderr": "",
+  "network_calls": 1
 }

@@ -1,9 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "prompts-list-command",
-      "must": "incident-mcp prompts list URL emits deterministic prompt catalog JSON"
-    }
-  ]
+  "exit_code": 0,
+  "stdout": "{\"prompts\":[\"triage_incident\",\"review_remediation\"]}\n",
+  "stderr": "",
+  "network_calls": 1
 }

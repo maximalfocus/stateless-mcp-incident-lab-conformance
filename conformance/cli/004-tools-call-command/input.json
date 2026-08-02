@@ -1,9 +1,12 @@
 {
-  "scenario": "tools-call-command",
-  "contract": "incident-mcp tools call URL name --json arguments invokes and emits structured JSON",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "argv": [
+    "incident-mcp",
+    "tools",
+    "call",
+    "http://lab/raw/mcp",
+    "create_incident",
+    "--json",
+    "{\"title\":\"API latency\",\"severity\":\"high\",\"suspected_services\":[\"api\"]}"
+  ],
+  "stdin": ""
 }
