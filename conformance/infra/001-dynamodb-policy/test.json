@@ -1,0 +1,29 @@
+{
+  "spec_id": "INFRA-001",
+  "description": "CDK defines on-demand encrypted DynamoDB with TTL and no point-in-time recovery for the ephemeral lab",
+  "description_bdd": {
+    "given": "the dynamodb policy scenario",
+    "when": "the infra contract is exercised",
+    "then": "cDK defines on-demand encrypted DynamoDB with TTL and no point-in-time recovery for the ephemeral lab"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Deployment / AWS and Security posture",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "infra",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "dynamodb_policy_contract"
+}

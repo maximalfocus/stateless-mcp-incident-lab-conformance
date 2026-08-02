@@ -1,0 +1,29 @@
+{
+  "spec_id": "INFRA-007",
+  "description": "MRTR HMAC material comes from Secrets Manager and is absent from plaintext task definitions",
+  "description_bdd": {
+    "given": "the secret manager state key scenario",
+    "when": "the infra contract is exercised",
+    "then": "mRTR HMAC material comes from Secrets Manager and is absent from plaintext task definitions"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Deployment / AWS and Security posture",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "infra",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "secret_manager_state_key_contract"
+}

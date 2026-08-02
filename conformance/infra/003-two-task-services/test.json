@@ -1,0 +1,29 @@
+{
+  "spec_id": "INFRA-003",
+  "description": "Each server realization has at least two Fargate tasks and correct health checks",
+  "description_bdd": {
+    "given": "the two task services scenario",
+    "when": "the infra contract is exercised",
+    "then": "each server realization has at least two Fargate tasks and correct health checks"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Deployment / AWS and Security posture",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "infra",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "two_task_services_contract"
+}

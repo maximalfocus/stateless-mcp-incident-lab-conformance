@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "least-privilege-network-iam",
+      "must": "Security groups and IAM permit only required paths and DynamoDB, logs, metrics, and secret actions"
+    }
+  ]
+}

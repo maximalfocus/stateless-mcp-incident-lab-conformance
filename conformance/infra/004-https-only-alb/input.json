@@ -1,0 +1,9 @@
+{
+  "scenario": "https-only-alb",
+  "contract": "The internet-facing ALB has mandatory HTTPS and no public plaintext listener",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

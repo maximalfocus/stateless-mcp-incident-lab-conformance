@@ -1,0 +1,29 @@
+{
+  "spec_id": "INFRA-009",
+  "description": "All resources carry project, environment, and owner tags and logs retain at most seven days",
+  "description_bdd": {
+    "given": "the required tags retention scenario",
+    "when": "the infra contract is exercised",
+    "then": "all resources carry project, environment, and owner tags and logs retain at most seven days"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Deployment / AWS and Security posture",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "infra",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "required_tags_retention_contract"
+}

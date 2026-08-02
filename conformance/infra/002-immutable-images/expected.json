@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "immutable-images",
+      "must": "ECR and ECS consume immutable raw and SDK image digests and repositories empty on destroy"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "spec_id": "INFRA-010",
+  "description": "Automation orders deploy then verify then destroy and post-destroy inventory is empty",
+  "description_bdd": {
+    "given": "the deploy verify destroy scenario",
+    "when": "the infra contract is exercised",
+    "then": "automation orders deploy then verify then destroy and post-destroy inventory is empty"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Deployment / AWS and Security posture",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "infra",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "deploy_verify_destroy_contract"
+}

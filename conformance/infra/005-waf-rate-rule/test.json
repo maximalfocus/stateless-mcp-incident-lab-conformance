@@ -1,0 +1,29 @@
+{
+  "spec_id": "INFRA-005",
+  "description": "AWS WAF attaches a bounded rate-based protection rule",
+  "description_bdd": {
+    "given": "the waf rate rule scenario",
+    "when": "the infra contract is exercised",
+    "then": "aWS WAF attaches a bounded rate-based protection rule"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Deployment / AWS and Security posture",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "infra",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "waf_rate_rule_contract"
+}

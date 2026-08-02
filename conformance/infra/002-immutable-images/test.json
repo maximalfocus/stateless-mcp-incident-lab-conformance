@@ -1,0 +1,29 @@
+{
+  "spec_id": "INFRA-002",
+  "description": "ECR and ECS consume immutable raw and SDK image digests and repositories empty on destroy",
+  "description_bdd": {
+    "given": "the immutable images scenario",
+    "when": "the infra contract is exercised",
+    "then": "eCR and ECS consume immutable raw and SDK image digests and repositories empty on destroy"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Deployment / AWS and Security posture",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "infra",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "immutable_images_contract"
+}

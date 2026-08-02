@@ -1,0 +1,29 @@
+{
+  "spec_id": "INFRA-004",
+  "description": "The internet-facing ALB has mandatory HTTPS and no public plaintext listener",
+  "description_bdd": {
+    "given": "the https only alb scenario",
+    "when": "the infra contract is exercised",
+    "then": "the internet-facing ALB has mandatory HTTPS and no public plaintext listener"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Deployment / AWS and Security posture",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "infra",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "https_only_alb_contract"
+}

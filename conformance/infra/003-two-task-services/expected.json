@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "two-task-services",
+      "must": "Each server realization has at least two Fargate tasks and correct health checks"
+    }
+  ]
+}

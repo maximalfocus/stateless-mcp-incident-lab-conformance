@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "required-tags-retention",
+      "must": "All resources carry project, environment, and owner tags and logs retain at most seven days"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "scenario": "access-log-redaction",
+  "contract": "Nginx and ALB/WAF access logging omit or redact Mcp-Name and request body bearer values",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

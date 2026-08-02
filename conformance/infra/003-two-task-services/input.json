@@ -1,0 +1,9 @@
+{
+  "scenario": "two-task-services",
+  "contract": "Each server realization has at least two Fargate tasks and correct health checks",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

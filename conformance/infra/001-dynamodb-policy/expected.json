@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "dynamodb-policy",
+      "must": "CDK defines on-demand encrypted DynamoDB with TTL and no point-in-time recovery for the ephemeral lab"
+    }
+  ]
+}

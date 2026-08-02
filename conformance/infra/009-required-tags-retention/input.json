@@ -1,0 +1,9 @@
+{
+  "scenario": "required-tags-retention",
+  "contract": "All resources carry project, environment, and owner tags and logs retain at most seven days",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

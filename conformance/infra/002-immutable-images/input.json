@@ -1,0 +1,9 @@
+{
+  "scenario": "immutable-images",
+  "contract": "ECR and ECS consume immutable raw and SDK image digests and repositories empty on destroy",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

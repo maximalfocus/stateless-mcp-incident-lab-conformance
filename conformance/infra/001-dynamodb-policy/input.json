@@ -1,0 +1,9 @@
+{
+  "scenario": "dynamodb-policy",
+  "contract": "CDK defines on-demand encrypted DynamoDB with TTL and no point-in-time recovery for the ephemeral lab",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

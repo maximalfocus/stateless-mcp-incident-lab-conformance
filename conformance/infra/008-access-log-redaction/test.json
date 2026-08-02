@@ -1,0 +1,29 @@
+{
+  "spec_id": "INFRA-008",
+  "description": "Nginx and ALB/WAF access logging omit or redact Mcp-Name and request body bearer values",
+  "description_bdd": {
+    "given": "the access log redaction scenario",
+    "when": "the infra contract is exercised",
+    "then": "nginx and ALB/WAF access logging omit or redact Mcp-Name and request body bearer values"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Deployment / AWS and Security posture",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "infra",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "access_log_redaction_contract"
+}

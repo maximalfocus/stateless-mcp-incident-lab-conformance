@@ -1,0 +1,9 @@
+{
+  "scenario": "secret-manager-state-key",
+  "contract": "MRTR HMAC material comes from Secrets Manager and is absent from plaintext task definitions",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}
