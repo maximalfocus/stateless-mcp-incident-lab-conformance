@@ -1,0 +1,29 @@
+{
+  "spec_id": "PROTO-004",
+  "description": "An object or array request id is rejected with -32600 and the error omits id",
+  "description_bdd": {
+    "given": "the reject nonscalar request id scenario",
+    "when": "the protocol contract is exercised",
+    "then": "an object or array request id is rejected with -32600 and the error omits id"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/schema.ts + PRD.md § MCP surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "protocol",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "reject_nonscalar_request_id_contract"
+}

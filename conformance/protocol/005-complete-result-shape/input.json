@@ -1,0 +1,9 @@
+{
+  "scenario": "complete-result-shape",
+  "contract": "A successful final result has resultType complete and required serverInfo and vendor replica metadata",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

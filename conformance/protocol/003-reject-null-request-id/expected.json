@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "reject-null-request-id",
+      "must": "A request id of null is rejected with -32600 and the error omits id"
+    }
+  ]
+}

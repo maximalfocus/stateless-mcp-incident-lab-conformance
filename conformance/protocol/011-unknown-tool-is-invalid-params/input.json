@@ -1,0 +1,9 @@
+{
+  "scenario": "unknown-tool-is-invalid-params",
+  "contract": "An unknown tool name yields -32602 rather than the method-not-found code",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

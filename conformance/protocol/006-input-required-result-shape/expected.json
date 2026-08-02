@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "input-required-result-shape",
+      "must": "An interim MRTR result has resultType input_required and required serverInfo and vendor replica metadata"
+    }
+  ]
+}

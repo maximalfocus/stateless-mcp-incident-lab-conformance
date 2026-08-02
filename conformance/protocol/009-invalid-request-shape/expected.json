@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "invalid-request-shape",
+      "must": "A non-request JSON value yields -32600, HTTP 400, and no id member"
+    }
+  ]
+}

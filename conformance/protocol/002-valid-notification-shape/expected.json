@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "valid-notification-shape",
+      "must": "A notification omits id and is distinguishable from a request"
+    }
+  ]
+}

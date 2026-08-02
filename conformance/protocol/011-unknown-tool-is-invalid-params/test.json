@@ -1,0 +1,29 @@
+{
+  "spec_id": "PROTO-011",
+  "description": "An unknown tool name yields -32602 rather than the method-not-found code",
+  "description_bdd": {
+    "given": "the unknown tool is invalid params scenario",
+    "when": "the protocol contract is exercised",
+    "then": "an unknown tool name yields -32602 rather than the method-not-found code"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/schema.ts + PRD.md § MCP surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "protocol",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "unknown_tool_is_invalid_params_contract"
+}

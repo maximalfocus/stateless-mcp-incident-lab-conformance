@@ -1,0 +1,29 @@
+{
+  "spec_id": "PROTO-002",
+  "description": "A notification omits id and is distinguishable from a request",
+  "description_bdd": {
+    "given": "the valid notification shape scenario",
+    "when": "the protocol contract is exercised",
+    "then": "a notification omits id and is distinguishable from a request"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/schema.ts + PRD.md § MCP surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "protocol",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "valid_notification_shape_contract"
+}

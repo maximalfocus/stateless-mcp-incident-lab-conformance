@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "unknown-method-code",
+      "must": "An unimplemented RPC method yields -32601 and HTTP 404"
+    }
+  ]
+}

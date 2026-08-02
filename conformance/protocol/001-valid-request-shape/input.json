@@ -1,0 +1,9 @@
+{
+  "scenario": "valid-request-shape",
+  "contract": "A JSON-RPC request has jsonrpc 2.0, a string or integer id, a method, and object params",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

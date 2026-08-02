@@ -1,0 +1,9 @@
+{
+  "scenario": "input-required-result-shape",
+  "contract": "An interim MRTR result has resultType input_required and required serverInfo and vendor replica metadata",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

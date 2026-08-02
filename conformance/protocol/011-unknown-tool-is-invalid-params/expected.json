@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "unknown-tool-is-invalid-params",
+      "must": "An unknown tool name yields -32602 rather than the method-not-found code"
+    }
+  ]
+}

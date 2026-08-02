@@ -1,0 +1,29 @@
+{
+  "spec_id": "PROTO-012",
+  "description": "JSON Schema 2020-12 validation refuses network refs and rejects schemas beyond configured depth or subschema bounds",
+  "description_bdd": {
+    "given": "the schema safety bounds scenario",
+    "when": "the protocol contract is exercised",
+    "then": "jSON Schema 2020-12 validation refuses network refs and rejects schemas beyond configured depth or subschema bounds"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/schema.ts + PRD.md § MCP surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "protocol",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "schema_safety_bounds_contract"
+}

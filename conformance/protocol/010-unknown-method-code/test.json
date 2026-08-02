@@ -1,0 +1,29 @@
+{
+  "spec_id": "PROTO-010",
+  "description": "An unimplemented RPC method yields -32601 and HTTP 404",
+  "description_bdd": {
+    "given": "the unknown method code scenario",
+    "when": "the protocol contract is exercised",
+    "then": "an unimplemented RPC method yields -32601 and HTTP 404"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/schema.ts + PRD.md § MCP surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "protocol",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "unknown_method_code_contract"
+}

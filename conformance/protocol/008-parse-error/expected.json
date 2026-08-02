@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "parse-error",
+      "must": "Unparseable JSON yields -32700, HTTP 400, and no id member"
+    }
+  ]
+}

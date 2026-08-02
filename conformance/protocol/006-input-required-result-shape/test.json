@@ -1,0 +1,29 @@
+{
+  "spec_id": "PROTO-006",
+  "description": "An interim MRTR result has resultType input_required and required serverInfo and vendor replica metadata",
+  "description_bdd": {
+    "given": "the input required result shape scenario",
+    "when": "the protocol contract is exercised",
+    "then": "an interim MRTR result has resultType input_required and required serverInfo and vendor replica metadata"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/schema.ts + PRD.md § MCP surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "protocol",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "input_required_result_shape_contract"
+}

@@ -1,0 +1,29 @@
+{
+  "spec_id": "PROTO-008",
+  "description": "Unparseable JSON yields -32700, HTTP 400, and no id member",
+  "description_bdd": {
+    "given": "the parse error scenario",
+    "when": "the protocol contract is exercised",
+    "then": "unparseable JSON yields -32700, HTTP 400, and no id member"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/schema.ts + PRD.md § MCP surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "protocol",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "parse_error_contract"
+}

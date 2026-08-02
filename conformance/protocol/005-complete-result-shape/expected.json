@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "complete-result-shape",
+      "must": "A successful final result has resultType complete and required serverInfo and vendor replica metadata"
+    }
+  ]
+}

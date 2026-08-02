@@ -1,0 +1,9 @@
+{
+  "scenario": "error-shape-no-result-meta",
+  "contract": "A JSON-RPC error has an exact error envelope and no result or result metadata",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

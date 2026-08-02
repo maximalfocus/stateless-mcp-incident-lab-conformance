@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "schema-safety-bounds",
+      "must": "JSON Schema 2020-12 validation refuses network refs and rejects schemas beyond configured depth or subschema bounds"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "scenario": "invalid-request-shape",
+  "contract": "A non-request JSON value yields -32600, HTTP 400, and no id member",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}
