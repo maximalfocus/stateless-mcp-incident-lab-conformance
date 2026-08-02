@@ -27,7 +27,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/codec.ts, src/protocol/schema.ts`
   - Depends on: WI-002
 
-- [~] **WI-004** raw protocol contracts 7–9 (3 tests)
+- [x] **WI-004** raw protocol contracts 7–9 (3 tests)
   - Tests: `conformance/protocol/007-error-shape-no-result-meta`, `conformance/protocol/008-parse-error`, `conformance/protocol/009-invalid-request-shape`
   - Scope: `src/protocol/codec.ts, src/protocol/schema.ts`
   - Depends on: WI-003
