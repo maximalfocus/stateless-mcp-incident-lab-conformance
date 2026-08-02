@@ -167,7 +167,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/application/mrtr.ts, src/adapters/outbound/request-state.ts`
   - Depends on: WI-030
 
-- [~] **WI-032** raw mrtr contracts 13–16 (4 tests)
+- [x] **WI-032** raw mrtr contracts 13–16 (4 tests)
   - Tests: `conformance/mrtr/013-expired-state`, `conformance/mrtr/014-wrong-method-binding`, `conformance/mrtr/015-wrong-arguments-binding`, `conformance/mrtr/016-cross-replica-retry`
   - Scope: `src/application/mrtr.ts, src/adapters/outbound/request-state.ts`
   - Depends on: WI-031
