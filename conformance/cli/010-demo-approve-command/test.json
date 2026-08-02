@@ -1,0 +1,28 @@
+{
+  "spec_id": "CLI-010",
+  "description": "incident-mcp demo URL --approve completes a mitigated workflow",
+  "description_bdd": {
+    "given": "the demo approve command scenario",
+    "when": "the cli contract is exercised",
+    "then": "incident-mcp demo URL --approve completes a mitigated workflow"
+  },
+  "boundary": "cli",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § CLI surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cli",
+  "approved_by": null,
+  "approved_at": null
+}

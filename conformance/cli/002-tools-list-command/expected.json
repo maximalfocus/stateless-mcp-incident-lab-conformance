@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "tools-list-command",
+      "must": "incident-mcp tools list URL follows pagination and emits complete JSON"
+    }
+  ]
+}

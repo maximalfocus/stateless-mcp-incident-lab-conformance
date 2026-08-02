@@ -1,0 +1,28 @@
+{
+  "spec_id": "CLI-011",
+  "description": "incident-mcp demo URL --decline applies no remediation",
+  "description_bdd": {
+    "given": "the demo decline command scenario",
+    "when": "the cli contract is exercised",
+    "then": "incident-mcp demo URL --decline applies no remediation"
+  },
+  "boundary": "cli",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § CLI surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cli",
+  "approved_by": null,
+  "approved_at": null
+}

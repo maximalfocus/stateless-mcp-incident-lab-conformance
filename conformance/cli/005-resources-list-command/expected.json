@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "resources-list-command",
+      "must": "incident-mcp resources list URL emits safe deterministic catalog JSON"
+    }
+  ]
+}

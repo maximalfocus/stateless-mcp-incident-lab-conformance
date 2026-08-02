@@ -1,0 +1,9 @@
+{
+  "scenario": "tools-call-command",
+  "contract": "incident-mcp tools call URL name --json arguments invokes and emits structured JSON",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "spec_id": "CLI-006",
+  "description": "incident-mcp resources templates URL emits both URI templates",
+  "description_bdd": {
+    "given": "the resources templates command scenario",
+    "when": "the cli contract is exercised",
+    "then": "incident-mcp resources templates URL emits both URI templates"
+  },
+  "boundary": "cli",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § CLI surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cli",
+  "approved_by": null,
+  "approved_at": null
+}

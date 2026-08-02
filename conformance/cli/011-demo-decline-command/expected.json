@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "demo-decline-command",
+      "must": "incident-mcp demo URL --decline applies no remediation"
+    }
+  ]
+}

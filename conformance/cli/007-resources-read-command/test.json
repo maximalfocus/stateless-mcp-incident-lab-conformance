@@ -1,0 +1,28 @@
+{
+  "spec_id": "CLI-007",
+  "description": "incident-mcp resources read URL URI emits resource contents",
+  "description_bdd": {
+    "given": "the resources read command scenario",
+    "when": "the cli contract is exercised",
+    "then": "incident-mcp resources read URL URI emits resource contents"
+  },
+  "boundary": "cli",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § CLI surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cli",
+  "approved_by": null,
+  "approved_at": null
+}

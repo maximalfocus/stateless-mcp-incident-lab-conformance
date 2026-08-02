@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "prompts-list-command",
+      "must": "incident-mcp prompts list URL emits deterministic prompt catalog JSON"
+    }
+  ]
+}

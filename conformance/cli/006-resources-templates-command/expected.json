@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "resources-templates-command",
+      "must": "incident-mcp resources templates URL emits both URI templates"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "spec_id": "CLI-012",
+  "description": "incident-mcp demo URL --cancel applies no remediation",
+  "description_bdd": {
+    "given": "the demo cancel command scenario",
+    "when": "the cli contract is exercised",
+    "then": "incident-mcp demo URL --cancel applies no remediation"
+  },
+  "boundary": "cli",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § CLI surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cli",
+  "approved_by": null,
+  "approved_at": null
+}

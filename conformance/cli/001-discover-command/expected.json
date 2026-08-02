@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "discover-command",
+      "must": "incident-mcp discover URL emits machine-readable discovery JSON"
+    }
+  ]
+}

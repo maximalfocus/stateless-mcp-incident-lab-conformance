@@ -1,0 +1,28 @@
+{
+  "spec_id": "CLI-014",
+  "description": "--no-cache bypasses reads and writes; success, usage, protocol, domain, and transport failures use stable documented exit codes",
+  "description_bdd": {
+    "given": "the no cache and exit codes scenario",
+    "when": "the cli contract is exercised",
+    "then": "--no-cache bypasses reads and writes; success, usage, protocol, domain, and transport failures use stable documented exit codes"
+  },
+  "boundary": "cli",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § CLI surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cli",
+  "approved_by": null,
+  "approved_at": null
+}

@@ -1,0 +1,9 @@
+{
+  "scenario": "discover-command",
+  "contract": "incident-mcp discover URL emits machine-readable discovery JSON",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "demo-approve-command",
+      "must": "incident-mcp demo URL --approve completes a mitigated workflow"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "scenario": "tools-inspect-command",
+  "contract": "incident-mcp tools inspect URL name emits one tool schema",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "prompts-get-command",
+      "must": "incident-mcp prompts get URL name --json arguments emits prompt messages"
+    }
+  ]
+}

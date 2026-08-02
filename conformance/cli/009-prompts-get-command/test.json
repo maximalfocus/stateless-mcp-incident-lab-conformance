@@ -1,0 +1,28 @@
+{
+  "spec_id": "CLI-009",
+  "description": "incident-mcp prompts get URL name --json arguments emits prompt messages",
+  "description_bdd": {
+    "given": "the prompts get command scenario",
+    "when": "the cli contract is exercised",
+    "then": "incident-mcp prompts get URL name --json arguments emits prompt messages"
+  },
+  "boundary": "cli",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § CLI surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cli",
+  "approved_by": null,
+  "approved_at": null
+}

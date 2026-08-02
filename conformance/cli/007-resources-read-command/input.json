@@ -1,0 +1,9 @@
+{
+  "scenario": "resources-read-command",
+  "contract": "incident-mcp resources read URL URI emits resource contents",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

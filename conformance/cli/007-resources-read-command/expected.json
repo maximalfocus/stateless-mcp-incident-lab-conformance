@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "resources-read-command",
+      "must": "incident-mcp resources read URL URI emits resource contents"
+    }
+  ]
+}

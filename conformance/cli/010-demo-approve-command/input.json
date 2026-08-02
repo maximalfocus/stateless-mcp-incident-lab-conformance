@@ -1,0 +1,9 @@
+{
+  "scenario": "demo-approve-command",
+  "contract": "incident-mcp demo URL --approve completes a mitigated workflow",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

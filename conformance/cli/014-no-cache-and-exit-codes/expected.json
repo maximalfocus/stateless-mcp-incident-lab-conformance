@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "no-cache-and-exit-codes",
+      "must": "--no-cache bypasses reads and writes; success, usage, protocol, domain, and transport failures use stable documented exit codes"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "tools-call-command",
+      "must": "incident-mcp tools call URL name --json arguments invokes and emits structured JSON"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "spec_id": "CLI-002",
+  "description": "incident-mcp tools list URL follows pagination and emits complete JSON",
+  "description_bdd": {
+    "given": "the tools list command scenario",
+    "when": "the cli contract is exercised",
+    "then": "incident-mcp tools list URL follows pagination and emits complete JSON"
+  },
+  "boundary": "cli",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § CLI surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cli",
+  "approved_by": null,
+  "approved_at": null
+}

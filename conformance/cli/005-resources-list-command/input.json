@@ -1,0 +1,9 @@
+{
+  "scenario": "resources-list-command",
+  "contract": "incident-mcp resources list URL emits safe deterministic catalog JSON",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

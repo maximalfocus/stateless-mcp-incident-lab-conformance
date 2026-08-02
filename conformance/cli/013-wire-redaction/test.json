@@ -1,0 +1,28 @@
+{
+  "spec_id": "CLI-013",
+  "description": "--wire writes redacted HTTP and JSON-RPC diagnostics to stderr and never contaminates stdout JSON",
+  "description_bdd": {
+    "given": "the wire redaction scenario",
+    "when": "the cli contract is exercised",
+    "then": "--wire writes redacted HTTP and JSON-RPC diagnostics to stderr and never contaminates stdout JSON"
+  },
+  "boundary": "cli",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § CLI surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cli",
+  "approved_by": null,
+  "approved_at": null
+}

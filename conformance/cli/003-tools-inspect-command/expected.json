@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "tools-inspect-command",
+      "must": "incident-mcp tools inspect URL name emits one tool schema"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "wire-redaction",
+      "must": "--wire writes redacted HTTP and JSON-RPC diagnostics to stderr and never contaminates stdout JSON"
+    }
+  ]
+}

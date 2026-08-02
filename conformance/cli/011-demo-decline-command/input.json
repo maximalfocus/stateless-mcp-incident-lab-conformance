@@ -1,0 +1,9 @@
+{
+  "scenario": "demo-decline-command",
+  "contract": "incident-mcp demo URL --decline applies no remediation",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}
