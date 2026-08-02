@@ -12,7 +12,7 @@ The 197 unique goldens are intentionally replayed where both implementations con
 
 Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-typescript-raw`.
 
-- [~] **WI-001** raw architecture contracts (3 tests)
+- [x] **WI-001** raw architecture contracts (3 tests)
   - Tests: `conformance/architecture/boundaries/005-raw-public-module-boundaries`, `conformance/architecture/dependencies/001-raw-layer-dependencies`, `conformance/architecture/dependencies/002-raw-adapter-independence`
   - Scope: `scripts/verify-architecture.ts, src/**/index.ts`
   - Depends on: none
