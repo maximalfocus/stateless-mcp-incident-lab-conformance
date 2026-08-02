@@ -1,0 +1,9 @@
+{
+  "scenario": "audit-floor",
+  "contract": "npm audit reports no unsuppressed high or critical vulnerability",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

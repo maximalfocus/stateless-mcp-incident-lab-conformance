@@ -1,0 +1,29 @@
+{
+  "spec_id": "DEP-003",
+  "description": "npm audit reports no unsuppressed high or critical vulnerability",
+  "description_bdd": {
+    "given": "the audit floor scenario",
+    "when": "the dependencies contract is exercised",
+    "then": "npm audit reports no unsuppressed high or critical vulnerability"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Non-functional requirements / Security and PLAN-001-stateless-core.md § Categories / dependencies",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "dependencies",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "audit_floor_contract"
+}

@@ -1,0 +1,9 @@
+{
+  "scenario": "raw-sdk-absence",
+  "contract": "The raw implementation lockfile and dependency graph contain no @modelcontextprotocol/sdk package",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

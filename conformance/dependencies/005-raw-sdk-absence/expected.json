@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "raw-sdk-absence",
+      "must": "The raw implementation lockfile and dependency graph contain no @modelcontextprotocol/sdk package"
+    }
+  ]
+}

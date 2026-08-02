@@ -1,0 +1,29 @@
+{
+  "spec_id": "DEP-005",
+  "description": "The raw implementation lockfile and dependency graph contain no @modelcontextprotocol/sdk package",
+  "description_bdd": {
+    "given": "the raw sdk absence scenario",
+    "when": "the dependencies contract is exercised",
+    "then": "the raw implementation lockfile and dependency graph contain no @modelcontextprotocol/sdk package"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Non-functional requirements / Security and PLAN-001-stateless-core.md § Categories / dependencies",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "dependencies",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "raw_sdk_absence_contract"
+}

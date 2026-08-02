@@ -1,0 +1,9 @@
+{
+  "scenario": "expiring-suppressions",
+  "contract": "Every vulnerability suppression has owner, rationale, expiry, and exact advisory identifier",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

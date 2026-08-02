@@ -1,0 +1,29 @@
+{
+  "spec_id": "DEP-001",
+  "description": "Each implementation commits one lockfile and frozen install reproduces dependency resolution",
+  "description_bdd": {
+    "given": "the lockfile reproducible scenario",
+    "when": "the dependencies contract is exercised",
+    "then": "each implementation commits one lockfile and frozen install reproduces dependency resolution"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Non-functional requirements / Security and PLAN-001-stateless-core.md § Categories / dependencies",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "dependencies",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "lockfile_reproducible_contract"
+}

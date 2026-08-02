@@ -1,0 +1,9 @@
+{
+  "scenario": "approved-licenses",
+  "contract": "Runtime dependency licenses are from the approved allowlist or carry an explicit reviewed exception",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "approved-licenses",
+      "must": "Runtime dependency licenses are from the approved allowlist or carry an explicit reviewed exception"
+    }
+  ]
+}

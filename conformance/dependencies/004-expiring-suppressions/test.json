@@ -1,0 +1,29 @@
+{
+  "spec_id": "DEP-004",
+  "description": "Every vulnerability suppression has owner, rationale, expiry, and exact advisory identifier",
+  "description_bdd": {
+    "given": "the expiring suppressions scenario",
+    "when": "the dependencies contract is exercised",
+    "then": "every vulnerability suppression has owner, rationale, expiry, and exact advisory identifier"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PRD.md § Non-functional requirements / Security and PLAN-001-stateless-core.md § Categories / dependencies",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "dependencies",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "expiring_suppressions_contract"
+}

@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "expiring-suppressions",
+      "must": "Every vulnerability suppression has owner, rationale, expiry, and exact advisory identifier"
+    }
+  ]
+}

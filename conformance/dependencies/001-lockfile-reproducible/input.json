@@ -1,0 +1,9 @@
+{
+  "scenario": "lockfile-reproducible",
+  "contract": "Each implementation commits one lockfile and frozen install reproduces dependency resolution",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}
