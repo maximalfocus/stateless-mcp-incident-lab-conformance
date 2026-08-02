@@ -1,0 +1,9 @@
+{
+  "scenario": "nonnegative-ttl",
+  "contract": "Every cacheable complete result carries ttlMs greater than or equal to zero",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

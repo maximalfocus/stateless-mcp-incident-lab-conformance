@@ -1,0 +1,29 @@
+{
+  "spec_id": "CACHE-001",
+  "description": "Only discover, four list operations, and resources/read may carry cache hints",
+  "description_bdd": {
+    "given": "the exact six cacheable scenario",
+    "when": "the cache contract is exercised",
+    "then": "only discover, four list operations, and resources/read may carry cache hints"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__utilities__caching.md and server__utilities__pagination.md + PRD.md § Caching",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cache",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "exact_six_cacheable_contract"
+}

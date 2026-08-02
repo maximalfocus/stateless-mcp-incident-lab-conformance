@@ -1,0 +1,9 @@
+{
+  "scenario": "no-hints-no-cache",
+  "contract": "A result without cache hints is never cached",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

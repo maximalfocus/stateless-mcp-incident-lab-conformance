@@ -1,0 +1,29 @@
+{
+  "spec_id": "CACHE-005",
+  "description": "A fresh hinted entry is served without network refresh",
+  "description_bdd": {
+    "given": "the fresh hit scenario",
+    "when": "the cache contract is exercised",
+    "then": "a fresh hinted entry is served without network refresh"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__utilities__caching.md and server__utilities__pagination.md + PRD.md § Caching",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cache",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "fresh_hit_contract"
+}

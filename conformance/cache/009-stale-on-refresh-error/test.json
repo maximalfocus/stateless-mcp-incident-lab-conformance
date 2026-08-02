@@ -1,0 +1,29 @@
+{
+  "spec_id": "CACHE-009",
+  "description": "Stale data may be served only after failed refresh and with a visible warning",
+  "description_bdd": {
+    "given": "the stale on refresh error scenario",
+    "when": "the cache contract is exercised",
+    "then": "stale data may be served only after failed refresh and with a visible warning"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__utilities__caching.md and server__utilities__pagination.md + PRD.md § Caching",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cache",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "stale_on_refresh_error_contract"
+}

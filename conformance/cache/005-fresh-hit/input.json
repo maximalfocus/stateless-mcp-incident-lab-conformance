@@ -1,0 +1,9 @@
+{
+  "scenario": "fresh-hit",
+  "contract": "A fresh hinted entry is served without network refresh",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

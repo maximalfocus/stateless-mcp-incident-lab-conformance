@@ -1,0 +1,29 @@
+{
+  "spec_id": "CACHE-007",
+  "description": "A result without cache hints is never cached",
+  "description_bdd": {
+    "given": "the no hints no cache scenario",
+    "when": "the cache contract is exercised",
+    "then": "a result without cache hints is never cached"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__utilities__caching.md and server__utilities__pagination.md + PRD.md § Caching",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cache",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "no_hints_no_cache_contract"
+}

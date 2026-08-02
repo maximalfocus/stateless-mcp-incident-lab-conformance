@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "exact-six-cacheable",
+      "must": "Only discover, four list operations, and resources/read may carry cache hints"
+    }
+  ]
+}

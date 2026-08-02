@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "key-method-params-cursor",
+      "must": "The cache key includes method and all result-affecting params including cursor"
+    }
+  ]
+}

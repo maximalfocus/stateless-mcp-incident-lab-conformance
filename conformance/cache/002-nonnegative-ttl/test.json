@@ -1,0 +1,29 @@
+{
+  "spec_id": "CACHE-002",
+  "description": "Every cacheable complete result carries ttlMs greater than or equal to zero",
+  "description_bdd": {
+    "given": "the nonnegative ttl scenario",
+    "when": "the cache contract is exercised",
+    "then": "every cacheable complete result carries ttlMs greater than or equal to zero"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__utilities__caching.md and server__utilities__pagination.md + PRD.md § Caching",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cache",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "nonnegative_ttl_contract"
+}

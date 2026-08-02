@@ -1,0 +1,29 @@
+{
+  "spec_id": "CACHE-006",
+  "description": "TTL expiry triggers refresh only on demand and is never used as a polling interval",
+  "description_bdd": {
+    "given": "the ttl not polling scenario",
+    "when": "the cache contract is exercised",
+    "then": "tTL expiry triggers refresh only on demand and is never used as a polling interval"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__utilities__caching.md and server__utilities__pagination.md + PRD.md § Caching",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cache",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "ttl_not_polling_contract"
+}

@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "no-hints-no-cache",
+      "must": "A result without cache hints is never cached"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "spec_id": "CACHE-008",
+  "description": "input_required results and MRTR retries are never cached",
+  "description_bdd": {
+    "given": "the no mrtr cache scenario",
+    "when": "the cache contract is exercised",
+    "then": "input_required results and MRTR retries are never cached"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__utilities__caching.md and server__utilities__pagination.md + PRD.md § Caching",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cache",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "no_mrtr_cache_contract"
+}

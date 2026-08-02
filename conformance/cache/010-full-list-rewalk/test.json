@@ -1,0 +1,29 @@
+{
+  "spec_id": "CACHE-010",
+  "description": "Any stale page or rejected mid-walk cursor discards the entire cached list generation and rewalks from page one",
+  "description_bdd": {
+    "given": "the full list rewalk scenario",
+    "when": "the cache contract is exercised",
+    "then": "any stale page or rejected mid-walk cursor discards the entire cached list generation and rewalks from page one"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__utilities__caching.md and server__utilities__pagination.md + PRD.md § Caching",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cache",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "full_list_rewalk_contract"
+}

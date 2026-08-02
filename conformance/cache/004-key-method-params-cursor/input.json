@@ -1,0 +1,9 @@
+{
+  "scenario": "key-method-params-cursor",
+  "contract": "The cache key includes method and all result-affecting params including cursor",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

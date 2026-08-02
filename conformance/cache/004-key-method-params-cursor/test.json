@@ -1,0 +1,29 @@
+{
+  "spec_id": "CACHE-004",
+  "description": "The cache key includes method and all result-affecting params including cursor",
+  "description_bdd": {
+    "given": "the key method params cursor scenario",
+    "when": "the cache contract is exercised",
+    "then": "the cache key includes method and all result-affecting params including cursor"
+  },
+  "boundary": "function",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__utilities__caching.md and server__utilities__pagination.md + PRD.md § Caching",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cache",
+  "approved_by": null,
+  "approved_at": null,
+  "type_contract": "key_method_params_cursor_contract"
+}

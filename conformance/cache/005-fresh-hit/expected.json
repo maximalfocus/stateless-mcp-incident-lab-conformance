@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "fresh-hit",
+      "must": "A fresh hinted entry is served without network refresh"
+    }
+  ]
+}

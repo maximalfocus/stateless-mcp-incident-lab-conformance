@@ -1,0 +1,9 @@
+{
+  "scenario": "scope-by-resource",
+  "contract": "The six operations are public except incident-scoped resources/read which is private",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}
