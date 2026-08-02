@@ -1,0 +1,28 @@
+{
+  "spec_id": "STREAM-006",
+  "description": "Closing the HTTP stream cancels work and releases request resources",
+  "description_bdd": {
+    "given": "the disconnect cancels scenario",
+    "when": "the streaming contract is exercised",
+    "then": "closing the HTTP stream cancels work and releases request resources"
+  },
+  "boundary": "sse",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__patterns__progress.md, basic__patterns__cancellation.md + PRD.md § Progress and cancellation",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "streaming",
+  "approved_by": null,
+  "approved_at": null
+}

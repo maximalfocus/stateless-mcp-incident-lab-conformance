@@ -1,0 +1,28 @@
+{
+  "spec_id": "STREAM-008",
+  "description": "Every SSE response sets X-Accel-Buffering no",
+  "description_bdd": {
+    "given": "the non buffering header scenario",
+    "when": "the streaming contract is exercised",
+    "then": "every SSE response sets X-Accel-Buffering no"
+  },
+  "boundary": "sse",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__patterns__progress.md, basic__patterns__cancellation.md + PRD.md § Progress and cancellation",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "streaming",
+  "approved_by": null,
+  "approved_at": null
+}

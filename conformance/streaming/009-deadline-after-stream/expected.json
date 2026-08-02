@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "deadline-after-stream",
+      "must": "A deadline after SSE begins closes the stream rather than emitting a 504 envelope"
+    }
+  ]
+}

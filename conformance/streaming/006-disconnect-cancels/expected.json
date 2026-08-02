@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "disconnect-cancels",
+      "must": "Closing the HTTP stream cancels work and releases request resources"
+    }
+  ]
+}

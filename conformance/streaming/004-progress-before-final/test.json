@@ -1,0 +1,28 @@
+{
+  "spec_id": "STREAM-004",
+  "description": "All progress events precede exactly one final JSON-RPC response",
+  "description_bdd": {
+    "given": "the progress before final scenario",
+    "when": "the streaming contract is exercised",
+    "then": "all progress events precede exactly one final JSON-RPC response"
+  },
+  "boundary": "sse",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__patterns__progress.md, basic__patterns__cancellation.md + PRD.md § Progress and cancellation",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "streaming",
+  "approved_by": null,
+  "approved_at": null
+}

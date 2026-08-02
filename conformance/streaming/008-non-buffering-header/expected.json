@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "non-buffering-header",
+      "must": "Every SSE response sets X-Accel-Buffering no"
+    }
+  ]
+}

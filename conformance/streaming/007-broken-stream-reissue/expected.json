@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "broken-stream-reissue",
+      "must": "A broken stream before final response is lost and reissued with a new id"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "integer-progress-token",
+      "must": "An integer progressToken is preserved without string coercion"
+    }
+  ]
+}

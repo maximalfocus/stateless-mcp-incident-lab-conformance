@@ -1,0 +1,9 @@
+{
+  "scenario": "monotonic-progress",
+  "contract": "Progress values are monotonic and rate-limited",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

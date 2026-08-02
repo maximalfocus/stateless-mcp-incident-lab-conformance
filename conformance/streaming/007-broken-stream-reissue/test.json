@@ -1,0 +1,28 @@
+{
+  "spec_id": "STREAM-007",
+  "description": "A broken stream before final response is lost and reissued with a new id",
+  "description_bdd": {
+    "given": "the broken stream reissue scenario",
+    "when": "the streaming contract is exercised",
+    "then": "a broken stream before final response is lost and reissued with a new id"
+  },
+  "boundary": "sse",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/basic__patterns__progress.md, basic__patterns__cancellation.md + PRD.md § Progress and cancellation",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "streaming",
+  "approved_by": null,
+  "approved_at": null
+}

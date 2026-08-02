@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "progress-before-final",
+      "must": "All progress events precede exactly one final JSON-RPC response"
+    }
+  ]
+}

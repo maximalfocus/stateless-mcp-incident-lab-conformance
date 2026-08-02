@@ -1,0 +1,9 @@
+{
+  "scenario": "disconnect-cancels",
+  "contract": "Closing the HTTP stream cancels work and releases request resources",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

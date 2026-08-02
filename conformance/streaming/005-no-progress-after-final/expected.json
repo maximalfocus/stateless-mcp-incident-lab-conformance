@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "no-progress-after-final",
+      "must": "No event is emitted after the final response"
+    }
+  ]
+}

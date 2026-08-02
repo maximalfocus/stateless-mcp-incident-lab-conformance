@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "string-progress-token",
+      "must": "A string progressToken produces request-scoped SSE progress carrying the same token"
+    }
+  ]
+}
