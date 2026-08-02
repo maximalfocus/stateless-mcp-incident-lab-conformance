@@ -11,9 +11,8 @@
     "id": 1,
     "method": "server/discover",
     "params": {
-      "scenario": "identity-and-guidance",
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
         "io.modelcontextprotocol/clientCapabilities": {}
       }
     }

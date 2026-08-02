@@ -1,9 +1,4 @@
 {
-  "scenario": "no-subscribe-logging-completions",
-  "contract": "Discovery does not advertise subscribe, logging, or completions",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "fresh_process",
+  "request_count": 1
 }

@@ -22,7 +22,10 @@
     "raw",
     "sdk"
   ],
-  "context": "discovery",
+  "context": "protocol-platform",
   "approved_by": null,
-  "approved_at": null
+  "approved_at": null,
+  "source_deps": [
+    "src/application/discover.ts"
+  ]
 }
