@@ -1,9 +1,21 @@
 {
-  "scenario": "cache-key-stability",
-  "contract": "Equivalent canonical method and parameter values always produce the same cache key",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "replay_examples": [
+    {
+      "method": "tools/list",
+      "params": {}
+    },
+    {
+      "method": "tools/list",
+      "params": {
+        "cursor": ""
+      }
+    },
+    {
+      "method": "resources/read",
+      "params": {
+        "uri": "incident://topology/services"
+      }
+    }
+  ],
+  "seed": 20260802
 }

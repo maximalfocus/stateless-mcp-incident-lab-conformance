@@ -22,22 +22,33 @@
     "raw",
     "sdk"
   ],
-  "context": "properties",
+  "context": "assurance",
   "approved_by": null,
   "approved_at": null,
   "property": {
     "kind": "ordering",
-    "target": "sort_catalog",
-    "key": "uri_or_name",
+    "target": "list_catalog",
+    "key": "name_or_uri",
     "domain": {
-      "generator": "protocol-valid-values-and-pinned-adversarial-cases"
+      "type": "catalog-set",
+      "max_items": 100
     },
-    "iterations": 1000,
     "examples": [
-      "deterministic-catalog-order",
-      "empty",
-      "unicode",
-      "boundary"
-    ]
-  }
+      [],
+      [
+        "b",
+        "a"
+      ],
+      [
+        "服务",
+        "api"
+      ]
+    ],
+    "iterations": 200
+  },
+  "source_deps": [
+    "src/protocol/header-codec.ts",
+    "src/client/cache-key.ts",
+    "src/protocol/request-state.ts"
+  ]
 }

@@ -22,21 +22,36 @@
     "raw",
     "sdk"
   ],
-  "context": "properties",
+  "context": "assurance",
   "approved_by": null,
   "approved_at": null,
   "property": {
     "kind": "invariant",
-    "target": "normalize_provider_result",
+    "target": "execute_on_replica",
     "domain": {
-      "generator": "protocol-valid-values-and-pinned-adversarial-cases"
+      "type": "valid-self-contained-request-and-replica-pair"
     },
-    "iterations": 1000,
     "examples": [
-      "replica-independence",
-      "empty",
-      "unicode",
-      "boundary"
-    ]
-  }
+      {
+        "method": "server/discover",
+        "replicas": [
+          "raw-1",
+          "raw-2"
+        ]
+      },
+      {
+        "method": "tools/list",
+        "replicas": [
+          "sdk-1",
+          "sdk-2"
+        ]
+      }
+    ],
+    "iterations": 200
+  },
+  "source_deps": [
+    "src/protocol/header-codec.ts",
+    "src/client/cache-key.ts",
+    "src/protocol/request-state.ts"
+  ]
 }

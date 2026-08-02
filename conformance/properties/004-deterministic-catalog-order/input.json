@@ -1,9 +1,14 @@
 {
-  "scenario": "deterministic-catalog-order",
-  "contract": "For every unchanged catalog set, repeated listings have identical deterministic order",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "replay_examples": [
+    [],
+    [
+      "b",
+      "a"
+    ],
+    [
+      "服务",
+      "api"
+    ]
+  ],
+  "seed": 20260802
 }

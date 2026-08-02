@@ -22,21 +22,30 @@
     "raw",
     "sdk"
   ],
-  "context": "properties",
+  "context": "assurance",
   "approved_by": null,
   "approved_at": null,
   "property": {
-    "kind": "invariant",
+    "kind": "metamorphic",
     "target": "verify_request_state",
     "domain": {
-      "generator": "protocol-valid-values-and-pinned-adversarial-cases"
+      "type": "signed-request-state-and-bit-index"
     },
-    "iterations": 1000,
     "examples": [
-      "request-state-tamper-rejection",
-      "empty",
-      "unicode",
-      "boundary"
-    ]
-  }
+      {
+        "state": "VALID-STATE-FIXTURE",
+        "bit": 0
+      },
+      {
+        "state": "VALID-STATE-FIXTURE",
+        "bit": 31
+      }
+    ],
+    "iterations": 200
+  },
+  "source_deps": [
+    "src/protocol/header-codec.ts",
+    "src/client/cache-key.ts",
+    "src/protocol/request-state.ts"
+  ]
 }

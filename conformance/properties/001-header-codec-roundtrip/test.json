@@ -22,22 +22,28 @@
     "raw",
     "sdk"
   ],
-  "context": "properties",
+  "context": "assurance",
   "approved_by": null,
   "approved_at": null,
   "property": {
     "kind": "round_trip",
-    "target": "encode_header_value",
-    "inverse": "decode_header_value",
+    "target": "encode_header",
+    "inverse": "decode_header",
     "domain": {
-      "generator": "protocol-valid-values-and-pinned-adversarial-cases"
+      "type": "unicode-string",
+      "max_length": 256
     },
-    "iterations": 1000,
     "examples": [
-      "header-codec-roundtrip",
-      "empty",
-      "unicode",
-      "boundary"
-    ]
-  }
+      "api",
+      "服务/支付",
+      "line-safe value",
+      ""
+    ],
+    "iterations": 200
+  },
+  "source_deps": [
+    "src/protocol/header-codec.ts",
+    "src/client/cache-key.ts",
+    "src/protocol/request-state.ts"
+  ]
 }

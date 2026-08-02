@@ -1,9 +1,13 @@
 {
-  "scenario": "request-state-tamper-rejection",
-  "contract": "Every one-bit mutation of a valid requestState is rejected without effect",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "replay_examples": [
+    {
+      "state": "VALID-STATE-FIXTURE",
+      "bit": 0
+    },
+    {
+      "state": "VALID-STATE-FIXTURE",
+      "bit": 31
+    }
+  ],
+  "seed": 20260802
 }

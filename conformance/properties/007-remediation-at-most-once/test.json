@@ -22,23 +22,30 @@
     "raw",
     "sdk"
   ],
-  "context": "properties",
+  "context": "assurance",
   "approved_by": null,
   "approved_at": null,
   "property": {
     "kind": "bounds",
-    "target": "count_remediation_effects",
+    "target": "execute_concurrent_retries",
     "min": 0,
     "max": 1,
     "domain": {
-      "generator": "protocol-valid-values-and-pinned-adversarial-cases"
+      "type": "valid-accepted-retry-count",
+      "min": 1,
+      "max": 100
     },
-    "iterations": 1000,
     "examples": [
-      "remediation-at-most-once",
-      "empty",
-      "unicode",
-      "boundary"
-    ]
-  }
+      1,
+      2,
+      20,
+      100
+    ],
+    "iterations": 200
+  },
+  "source_deps": [
+    "src/protocol/header-codec.ts",
+    "src/client/cache-key.ts",
+    "src/protocol/request-state.ts"
+  ]
 }

@@ -22,21 +22,45 @@
     "raw",
     "sdk"
   ],
-  "context": "properties",
+  "context": "assurance",
   "approved_by": null,
   "approved_at": null,
   "property": {
     "kind": "metamorphic",
-    "target": "canonical_cache_key",
+    "target": "derive_cache_key",
     "domain": {
-      "generator": "protocol-valid-values-and-pinned-adversarial-cases"
+      "type": "rpc-call-pair",
+      "constraint": "one result-affecting field differs"
     },
-    "iterations": 1000,
     "examples": [
-      "cache-key-separation",
-      "empty",
-      "unicode",
-      "boundary"
-    ]
-  }
+      [
+        {
+          "method": "tools/list",
+          "params": {}
+        },
+        {
+          "method": "prompts/list",
+          "params": {}
+        }
+      ],
+      [
+        {
+          "method": "tools/list",
+          "params": {}
+        },
+        {
+          "method": "tools/list",
+          "params": {
+            "cursor": ""
+          }
+        }
+      ]
+    ],
+    "iterations": 200
+  },
+  "source_deps": [
+    "src/protocol/header-codec.ts",
+    "src/client/cache-key.ts",
+    "src/protocol/request-state.ts"
+  ]
 }

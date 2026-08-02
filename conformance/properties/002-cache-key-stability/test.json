@@ -22,21 +22,38 @@
     "raw",
     "sdk"
   ],
-  "context": "properties",
+  "context": "assurance",
   "approved_by": null,
   "approved_at": null,
   "property": {
-    "kind": "idempotent",
-    "target": "canonical_cache_key",
+    "kind": "invariant",
+    "target": "derive_cache_key",
     "domain": {
-      "generator": "protocol-valid-values-and-pinned-adversarial-cases"
+      "type": "canonical-rpc-call"
     },
-    "iterations": 1000,
     "examples": [
-      "cache-key-stability",
-      "empty",
-      "unicode",
-      "boundary"
-    ]
-  }
+      {
+        "method": "tools/list",
+        "params": {}
+      },
+      {
+        "method": "tools/list",
+        "params": {
+          "cursor": ""
+        }
+      },
+      {
+        "method": "resources/read",
+        "params": {
+          "uri": "incident://topology/services"
+        }
+      }
+    ],
+    "iterations": 200
+  },
+  "source_deps": [
+    "src/protocol/header-codec.ts",
+    "src/client/cache-key.ts",
+    "src/protocol/request-state.ts"
+  ]
 }

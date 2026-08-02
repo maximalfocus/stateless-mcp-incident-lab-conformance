@@ -1,9 +1,9 @@
 {
-  "scenario": "header-codec-roundtrip",
-  "contract": "For every accepted Unicode header value, decoding its sentinel encoding returns the original value",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "replay_examples": [
+    "api",
+    "服务/支付",
+    "line-safe value",
+    ""
+  ],
+  "seed": 20260802
 }

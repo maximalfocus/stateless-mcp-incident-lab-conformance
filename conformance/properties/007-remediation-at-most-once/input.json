@@ -1,9 +1,9 @@
 {
-  "scenario": "remediation-at-most-once",
-  "contract": "For any number of concurrent accepted retries, the effect count is bounded between zero and one and reaches one for a valid state",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "replay_examples": [
+    1,
+    2,
+    20,
+    100
+  ],
+  "seed": 20260802
 }
