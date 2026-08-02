@@ -12,9 +12,9 @@
     "id": 1,
     "method": "resources/read",
     "params": {
-      "uri": "服务/支付",
+      "uri": "\u670d\u52a1/\u652f\u4ed8",
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
+        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
         "io.modelcontextprotocol/clientCapabilities": {}
       }
     }

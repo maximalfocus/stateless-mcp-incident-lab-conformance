@@ -4,7 +4,9 @@
   "headers": {
     "Accept": "application/json, text/event-stream",
     "MCP-Protocol-Version": "2026-07-28",
-    "Mcp-Method": "server/discover"
+    "Mcp-Method": "server/discover",
+    "Cookie": "sid=attacker",
+    "Mcp-Session-Id": "invented"
   },
   "body": {
     "jsonrpc": "2.0",
@@ -12,7 +14,7 @@
     "method": "server/discover",
     "params": {
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
+        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
         "io.modelcontextprotocol/clientCapabilities": {}
       }
     }

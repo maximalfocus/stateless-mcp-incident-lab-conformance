@@ -1,19 +1,19 @@
 {
   "spec_id": "TRANS-013",
-  "description": "Mirrored HTTP header names are matched case-insensitively",
+  "description": "HTTP header names are case-insensitive, and a missing Accept header is not a metadata error",
   "description_bdd": {
     "given": "the header names case insensitive scenario",
     "when": "the transport contract is exercised",
-    "then": "mirrored HTTP header names are matched case-insensitively"
+    "then": "lowercase required header names are accepted and missing Accept does not produce -32020"
   },
-  "boundary": "http",
+  "boundary": "http-contract",
   "normalisation": [
     "timestamp",
     "generated_id",
     "file_path",
     "unordered_collection"
   ],
-  "source": "sources/spec-2026-07-28/basic__transports__streamable-http.md + PRD.md § Business rules 6-16",
+  "source": "sources/spec-2026-07-28/basic__transports__streamable-http.md + PRD.md \u00a7 Business rules 6-16",
   "consumers": [
     "typescript-raw",
     "typescript-sdk"

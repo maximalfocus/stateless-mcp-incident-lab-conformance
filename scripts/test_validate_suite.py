@@ -88,6 +88,20 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("unknown expected fields", result.stdout)
 
+    def test_protocol_version_header_body_mismatch_goes_red(self):
+        path = self.tmp / "conformance/discovery/001-supported-version/request.json"
+        path.write_text(path.read_text().replace('"MCP-Protocol-Version": "2026-07-28"', '"MCP-Protocol-Version": "2025-11-25"', 1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("MCP-Protocol-Version/body version mismatch", result.stdout)
+
+    def test_annotated_parameter_header_mismatch_goes_red(self):
+        path = self.tmp / "conformance/primitives/017-query-telemetry-output/request.json"
+        path.write_text(path.read_text().replace('"Mcp-Param-Service": "api"', '"Mcp-Param-Service": "API"', 1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Mcp-Param-Service/body argument mismatch", result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

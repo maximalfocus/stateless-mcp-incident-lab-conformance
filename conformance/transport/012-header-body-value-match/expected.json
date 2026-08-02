@@ -16,9 +16,9 @@
       "code": -32020,
       "message": "Header metadata mismatch",
       "data": {
-        "header": "Mcp-Method",
-        "expected": "server/discover",
-        "actual": "tools/list"
+        "header": "Mcp-Param-Service",
+        "expected": "api",
+        "actual": "API"
       }
     }
   }

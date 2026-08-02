@@ -39,6 +39,16 @@ for p in sorted(conf.rglob('test.json')):
       input_data=json.loads(input_path.read_text()) if input_path.exists() else {}
       intentional_violation=isinstance(input_data,dict) and input_data.get('intentional_request_violation') is True
       if isinstance(body,dict) and body.get('method')!='healthz' and headers.get('Mcp-Method')!=body.get('method') and not intentional_violation: errors.append(f'{sid}: Mcp-Method/body method mismatch')
+      body_meta=params.get('_meta',{}) if isinstance(params,dict) else {}
+      body_version=body_meta.get('io.modelcontextprotocol/protocolVersion') if isinstance(body_meta,dict) else None
+      if body_version is not None and headers.get('MCP-Protocol-Version')!=body_version and not intentional_violation: errors.append(f'{sid}: MCP-Protocol-Version/body version mismatch')
+      if isinstance(body,dict) and body.get('method') in ('tools/call','resources/read','prompts/get'):
+        mirrored_name=params.get('name') or params.get('uri')
+        header_name=headers.get('Mcp-Name')
+        if isinstance(mirrored_name,str) and header_name!=mirrored_name and not intentional_violation: errors.append(f'{sid}: Mcp-Name/body name mismatch')
+        arguments=params.get('arguments',{}) if isinstance(params,dict) else {}
+        if params.get('name')=='query_telemetry' and isinstance(arguments,dict) and arguments.get('service') is not None:
+          if headers.get('Mcp-Param-Service')!=arguments.get('service') and not intentional_violation: errors.append(f'{sid}: Mcp-Param-Service/body argument mismatch')
   if t.get('boundary')=='function' and not (p.parent/'input.json').exists(): errors.append(f'{sid}: function missing input')
   input_path=p.parent/'input.json'
   if input_path.exists():

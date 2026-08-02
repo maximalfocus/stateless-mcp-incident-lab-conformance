@@ -1,4 +1,46 @@
 {
-  "fixture": "fresh_process",
-  "intentional_request_violation": true
+  "requests": [
+    {
+      "case": "lowercase_names",
+      "method": "POST",
+      "path": "/raw/mcp",
+      "headers": {
+        "accept": "application/json, text/event-stream",
+        "mcp-protocol-version": "2026-07-28",
+        "mcp-method": "server/discover"
+      },
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "server/discover",
+        "params": {
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+            "io.modelcontextprotocol/clientCapabilities": {}
+          }
+        }
+      }
+    },
+    {
+      "case": "missing_accept",
+      "method": "POST",
+      "path": "/raw/mcp",
+      "headers": {
+        "MCP-Protocol-Version": "2026-07-28",
+        "Mcp-Method": "server/discover"
+      },
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "server/discover",
+        "params": {
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+            "io.modelcontextprotocol/clientCapabilities": {}
+          }
+        }
+      }
+    }
+  ],
+  "compare": "complete_http_responses"
 }

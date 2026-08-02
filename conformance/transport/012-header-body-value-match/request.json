@@ -4,15 +4,25 @@
   "headers": {
     "Accept": "application/json, text/event-stream",
     "MCP-Protocol-Version": "2026-07-28",
-    "Mcp-Method": "tools/list"
+    "Mcp-Method": "tools/call",
+    "Mcp-Name": "query_telemetry",
+    "Mcp-Param-Service": "API"
   },
   "body": {
     "jsonrpc": "2.0",
     "id": 1,
-    "method": "server/discover",
+    "method": "tools/call",
     "params": {
+      "name": "query_telemetry",
+      "arguments": {
+        "incident_id": "INCIDENT-OPEN",
+        "service": "api",
+        "signal": "latency",
+        "start": "2026-08-01T23:55:00Z",
+        "end": "2026-08-02T00:05:00Z"
+      },
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
+        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
         "io.modelcontextprotocol/clientCapabilities": {}
       }
     }

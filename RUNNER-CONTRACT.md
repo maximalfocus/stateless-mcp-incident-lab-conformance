@@ -4,7 +4,7 @@ The golden files are provider-neutral declarative contracts. A provider binding 
 
 ## Boundary dispatch and exact observations
 
-- `http` and `tool-call`: reset `seed.json`, issue `request.json`, and compare status, selected headers, and the complete body. A test with explicit `input.json.requests` executes that sequence and compares the resulting composite observation.
+- `http` and `tool-call`: reset `seed.json`, issue `request.json`, and compare status, selected headers, and the complete body. `http-contract` executes the complete request sequence declared in `input.json.requests` and compares the resulting composite observation.
 - `sse`: issue `request.json`, apply only the transport fault declared in `input.json`, then compare ordered events, headers, close/cancel state, resources, and any reissued IDs.
 - `function`, `state-machine`, `contract`, `workflow-assertion`, `lint-assertion`, `trace-span`, and `metric-assertion`: invoke the named operation/subject/profile against the implementation or artifact and compare the complete returned observation exactly.
 - `cli`: execute `argv`; compare exit code, exact stdout/stderr, network-call count, and declared cache observations. JSON embedded in stdout is parsed before placeholder normalization and then serialized compactly with a trailing newline.

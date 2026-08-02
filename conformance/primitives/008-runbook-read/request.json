@@ -13,7 +13,7 @@
     "method": "resources/read",
     "params": {
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
+        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
         "io.modelcontextprotocol/clientCapabilities": {}
       },
       "uri": "incident://runbooks/api"
