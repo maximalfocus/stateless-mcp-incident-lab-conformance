@@ -107,7 +107,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/application/catalogs.ts, src/application/tools.ts, src/adapters/inbound/http.ts`
   - Depends on: WI-018
 
-- [~] **WI-020** raw primitives contracts 10–12 (3 tests)
+- [x] **WI-020** raw primitives contracts 10–12 (3 tests)
   - Tests: `conformance/primitives/010-unknown-resource`, `conformance/primitives/011-prompts-list-order`, `conformance/primitives/012-triage-prompt-get`
   - Scope: `src/application/catalogs.ts, src/application/tools.ts, src/adapters/inbound/http.ts`
   - Depends on: WI-019
