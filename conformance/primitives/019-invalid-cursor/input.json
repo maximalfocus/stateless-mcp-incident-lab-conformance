@@ -1,0 +1,9 @@
+{
+  "scenario": "invalid-cursor",
+  "contract": "Any invalid catalog cursor returns -32602",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

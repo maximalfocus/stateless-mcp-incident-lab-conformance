@@ -1,0 +1,9 @@
+{
+  "scenario": "resources-list-order",
+  "contract": "Resource and template catalogs have deterministic URI order",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "method": "POST",
+  "path": "/raw/mcp",
+  "headers": {
+    "Accept": "application/json, text/event-stream",
+    "MCP-Protocol-Version": "2026-07-28",
+    "Mcp-Method": "resources/read",
+    "Mcp-Name": "{{ANY_STRING}}"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "resources/read",
+    "params": {
+      "scenario": "timeline-read",
+      "_meta": {
+        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+        "io.modelcontextprotocol/clientCapabilities": {}
+      }
+    }
+  }
+}

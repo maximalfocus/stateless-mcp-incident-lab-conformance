@@ -1,0 +1,28 @@
+{
+  "spec_id": "PRIM-012",
+  "description": "prompts/get triage_incident validates incident_id and returns user-controlled investigation messages",
+  "description_bdd": {
+    "given": "the triage prompt get scenario",
+    "when": "the primitives contract is exercised",
+    "then": "prompts/get triage_incident validates incident_id and returns user-controlled investigation messages"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__tools.md, server__resources.md, server__prompts.md, server__utilities__pagination.md + PRD.md § MCP surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "primitives",
+  "approved_by": null,
+  "approved_at": null
+}

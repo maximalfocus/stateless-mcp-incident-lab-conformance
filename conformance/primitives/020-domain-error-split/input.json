@@ -1,0 +1,9 @@
+{
+  "scenario": "domain-error-split",
+  "contract": "Tool domain failures are complete isError results while malformed protocol inputs are JSON-RPC errors",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

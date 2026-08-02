@@ -1,0 +1,28 @@
+{
+  "spec_id": "PRIM-005",
+  "description": "resources/templates/list exposes runbook and incident timeline RFC 6570 templates",
+  "description_bdd": {
+    "given": "the resource templates list scenario",
+    "when": "the primitives contract is exercised",
+    "then": "resources/templates/list exposes runbook and incident timeline RFC 6570 templates"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__tools.md, server__resources.md, server__prompts.md, server__utilities__pagination.md + PRD.md § MCP surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "primitives",
+  "approved_by": null,
+  "approved_at": null
+}

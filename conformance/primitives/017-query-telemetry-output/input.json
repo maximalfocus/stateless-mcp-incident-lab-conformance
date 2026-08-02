@@ -1,0 +1,9 @@
+{
+  "scenario": "query-telemetry-output",
+  "contract": "query_telemetry returns deterministic events and mirrors service through the annotated header",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

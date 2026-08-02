@@ -1,0 +1,9 @@
+{
+  "scenario": "runbook-read",
+  "contract": "Reading a seeded runbook URI returns versioned markdown and public cache hints",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

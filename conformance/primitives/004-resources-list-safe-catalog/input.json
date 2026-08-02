@@ -1,0 +1,9 @@
+{
+  "scenario": "resources-list-safe-catalog",
+  "contract": "resources/list exposes topology and one concrete runbook per seeded service but no incident handle",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

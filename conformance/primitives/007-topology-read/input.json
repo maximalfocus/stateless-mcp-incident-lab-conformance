@@ -1,0 +1,9 @@
+{
+  "scenario": "topology-read",
+  "contract": "Reading incident://topology/services returns the complete stable topology resource",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

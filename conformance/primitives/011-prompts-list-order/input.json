@@ -1,0 +1,9 @@
+{
+  "scenario": "prompts-list-order",
+  "contract": "prompts/list returns triage_incident then review_remediation deterministically",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "scenario": "tools-list-pagination",
+  "contract": "The client follows opaque tool-list cursors including an empty-string cursor until nextCursor is absent",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

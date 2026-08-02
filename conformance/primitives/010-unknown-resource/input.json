@@ -1,0 +1,9 @@
+{
+  "scenario": "unknown-resource",
+  "contract": "An unknown resource returns -32602 and never an empty contents array",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

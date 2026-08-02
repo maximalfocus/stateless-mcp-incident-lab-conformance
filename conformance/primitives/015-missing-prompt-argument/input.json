@@ -1,0 +1,9 @@
+{
+  "scenario": "missing-prompt-argument",
+  "contract": "A missing required prompt argument returns -32602",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

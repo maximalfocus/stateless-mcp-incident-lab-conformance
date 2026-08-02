@@ -1,0 +1,9 @@
+{
+  "scenario": "run-diagnostic-output",
+  "contract": "run_diagnostic returns findings and a diagnostic_id after progress completes",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

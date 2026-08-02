@@ -1,0 +1,28 @@
+{
+  "spec_id": "PRIM-015",
+  "description": "A missing required prompt argument returns -32602",
+  "description_bdd": {
+    "given": "the missing prompt argument scenario",
+    "when": "the primitives contract is exercised",
+    "then": "a missing required prompt argument returns -32602"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__tools.md, server__resources.md, server__prompts.md, server__utilities__pagination.md + PRD.md § MCP surface",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "primitives",
+  "approved_by": null,
+  "approved_at": null
+}

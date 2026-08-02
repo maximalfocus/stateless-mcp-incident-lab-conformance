@@ -1,0 +1,9 @@
+{
+  "scenario": "resource-templates-list",
+  "contract": "resources/templates/list exposes runbook and incident timeline RFC 6570 templates",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}
