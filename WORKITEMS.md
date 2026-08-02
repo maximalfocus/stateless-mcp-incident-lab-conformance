@@ -192,7 +192,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/client/cache.ts`
   - Depends on: WI-035
 
-- [~] **WI-037** raw cache contracts 4–6 (3 tests)
+- [x] **WI-037** raw cache contracts 4–6 (3 tests)
   - Tests: `conformance/cache/004-key-method-params-cursor`, `conformance/cache/005-fresh-hit`, `conformance/cache/006-ttl-not-polling`
   - Scope: `src/client/cache.ts`
   - Depends on: WI-036
