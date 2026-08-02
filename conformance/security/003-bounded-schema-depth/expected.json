@@ -1,14 +1,24 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "bounded-schema-depth",
-      "must": "Schema validation rejects depth beyond the configured bound before evaluation"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 400,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32602,
+      "message": "Invalid params",
+      "data": {
+        "reason": "Schema depth exceeds limit",
+        "limit": 64
+      }
+    }
+  }
 }

@@ -1,14 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "dependency-severity-floor",
-      "must": "No unsuppressed high or critical dependency finding is accepted"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
-    }
-  ]
+  "observations": {
+    "accepted": true,
+    "unsuppressed_high_or_critical": []
+  }
 }

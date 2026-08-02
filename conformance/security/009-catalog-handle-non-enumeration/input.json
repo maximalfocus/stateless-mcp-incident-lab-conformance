@@ -1,9 +1,6 @@
 {
-  "scenario": "catalog-handle-non-enumeration",
-  "contract": "No catalog result contains a concrete incident URI or learner-created bearer handle",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "forbidden_patterns": [
+    "incident://incidents/[^{]",
+    "INCIDENT-[A-Z0-9-]+"
   ]
 }

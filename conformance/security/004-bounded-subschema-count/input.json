@@ -1,9 +1,9 @@
 {
-  "scenario": "bounded-subschema-count",
-  "contract": "Schema validation rejects composition count beyond the configured bound",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "adversarial-request",
+  "effect_count_before": 0,
+  "effect_count_after": 0,
+  "schema": {
+    "subschema_count": 257
+  },
+  "max_subschemas": 256
 }

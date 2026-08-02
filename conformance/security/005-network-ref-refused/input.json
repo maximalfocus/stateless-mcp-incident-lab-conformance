@@ -1,9 +1,9 @@
 {
-  "scenario": "network-ref-refused",
-  "contract": "Validators never dereference a ref resolving to a network URI",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "adversarial-request",
+  "effect_count_before": 0,
+  "effect_count_after": 0,
+  "schema": {
+    "$ref": "https://attacker.example/schema.json"
+  },
+  "network_requests_allowed": 0
 }

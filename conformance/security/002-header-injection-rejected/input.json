@@ -1,9 +1,11 @@
 {
-  "scenario": "header-injection-rejected",
-  "contract": "CR, LF, NUL, and invalid sentinel input cannot enter mirrored headers",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "fixture": "adversarial-request",
+  "effect_count_before": 0,
+  "effect_count_after": 0,
+  "values": [
+    "line\rbreak",
+    "line\nbreak",
+    "nul\u0000byte",
+    "=?base64?not-base64?="
   ]
 }

@@ -1,9 +1,7 @@
 {
-  "scenario": "deadline-no-partial-effect",
-  "contract": "Deadline cancellation leaves no partially committed domain effect",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "adversarial-request",
+  "effect_count_before": 0,
+  "effect_count_after": 0,
+  "deadline_ms": 1000,
+  "operation_ms": 1001
 }

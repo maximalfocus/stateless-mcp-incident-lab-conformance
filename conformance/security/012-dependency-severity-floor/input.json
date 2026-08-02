@@ -1,9 +1,10 @@
 {
-  "scenario": "dependency-severity-floor",
-  "contract": "No unsuppressed high or critical dependency finding is accepted",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "operation": "evaluate_audit",
+  "findings": [
+    {
+      "advisory": "GHSA-low",
+      "severity": "low",
+      "suppressed": false
+    }
   ]
 }

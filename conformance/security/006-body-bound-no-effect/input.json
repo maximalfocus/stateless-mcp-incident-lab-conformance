@@ -1,9 +1,7 @@
 {
-  "scenario": "body-bound-no-effect",
-  "contract": "Oversized bodies are counted and discarded without parsing or partial effects",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "adversarial-request",
+  "effect_count_before": 0,
+  "effect_count_after": 0,
+  "body_bytes": 1048577,
+  "limit_bytes": 1048576
 }

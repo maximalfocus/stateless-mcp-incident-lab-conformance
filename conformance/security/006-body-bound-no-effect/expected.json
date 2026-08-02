@@ -1,14 +1,22 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "body-bound-no-effect",
-      "must": "Oversized bodies are counted and discarded without parsing or partial effects"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 413,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "jsonrpc": "2.0",
+    "error": {
+      "code": -31999,
+      "message": "Request body too large",
+      "data": {
+        "limitBytes": 1048576
+      }
+    }
+  }
 }

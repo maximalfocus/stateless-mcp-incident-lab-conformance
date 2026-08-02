@@ -1,14 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "simulated-actions-only",
-      "must": "No code path imports or invokes real remediation, shell, host, or cloud-control capabilities"
-    },
-    {
-      "type": "strict_http_shape",
-      "undeclared_body_fields": "fail",
-      "undeclared_headers": "allowed_only_by_marker"
-    }
-  ]
+  "observations": {
+    "violations": [],
+    "simulated_effects_only": true
+  }
 }

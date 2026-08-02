@@ -1,9 +1,5 @@
 {
-  "scenario": "handle-entropy-and-ttl",
-  "contract": "Learner-created bearer handles are UUIDv4 or stronger, opaque, unguessable, and TTL-bounded",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "adversarial-request",
+  "effect_count_before": 0,
+  "effect_count_after": 0
 }

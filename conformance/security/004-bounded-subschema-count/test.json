@@ -22,7 +22,12 @@
     "raw",
     "sdk"
   ],
-  "context": "security",
+  "context": "assurance",
   "approved_by": null,
-  "approved_at": null
+  "approved_at": null,
+  "source_deps": [
+    "src/adapters/inbound/http.ts",
+    "src/protocol/schema.ts",
+    "src/observability/redaction.ts"
+  ]
 }

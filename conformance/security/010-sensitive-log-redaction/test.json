@@ -6,14 +6,14 @@
     "when": "the security contract is exercised",
     "then": "logs redact incident handles, requestState, elicitation content, mirrored bearer headers, and corresponding body fields"
   },
-  "boundary": "http",
+  "boundary": "trace-span",
   "normalisation": [
     "timestamp",
     "generated_id",
     "file_path",
     "unordered_collection"
   ],
-  "source": "PRD.md § Security posture and Business rules",
+  "source": "PRD.md \u00a7 Security posture and Business rules",
   "consumers": [
     "typescript-raw",
     "typescript-sdk"
@@ -22,7 +22,12 @@
     "raw",
     "sdk"
   ],
-  "context": "security",
+  "context": "assurance",
   "approved_by": null,
-  "approved_at": null
+  "approved_at": null,
+  "source_deps": [
+    "src/adapters/inbound/http.ts",
+    "src/protocol/schema.ts",
+    "src/observability/redaction.ts"
+  ]
 }

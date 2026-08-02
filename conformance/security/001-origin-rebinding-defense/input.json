@@ -1,9 +1,5 @@
 {
-  "scenario": "origin-rebinding-defense",
-  "contract": "Disallowed Origin is rejected before body parsing with bodiless HTTP 403",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "fixture": "adversarial-request",
+  "effect_count_before": 0,
+  "effect_count_after": 0
 }

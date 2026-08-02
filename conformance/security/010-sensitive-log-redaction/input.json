@@ -1,9 +1,9 @@
 {
-  "scenario": "sensitive-log-redaction",
-  "contract": "Logs redact incident handles, requestState, elicitation content, mirrored bearer headers, and corresponding body fields",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "operation": "capture_logs",
+  "sensitive_values": [
+    "INCIDENT-SECRET",
+    "SIGNED-STATE",
+    "approve=true",
+    "incident://incidents/INCIDENT-SECRET/timeline"
   ]
 }
