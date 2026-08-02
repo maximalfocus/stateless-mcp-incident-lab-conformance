@@ -1,0 +1,28 @@
+{
+  "spec_id": "DISC-003",
+  "description": "Discovery does not advertise listChanged",
+  "description_bdd": {
+    "given": "the no list changed scenario",
+    "when": "the discovery contract is exercised",
+    "then": "discovery does not advertise listChanged"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__discover.md + PRD.md § Discovery",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "discovery",
+  "approved_by": null,
+  "approved_at": null
+}

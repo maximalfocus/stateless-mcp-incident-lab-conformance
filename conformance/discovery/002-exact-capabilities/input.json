@@ -1,0 +1,9 @@
+{
+  "scenario": "exact-capabilities",
+  "contract": "Discovery advertises tools, resources, and prompts and no unimplemented capability",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

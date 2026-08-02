@@ -1,0 +1,14 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "identity-and-guidance",
+      "must": "Discovery returns stable server identity and learner guidance"
+    },
+    {
+      "type": "strict_http_shape",
+      "undeclared_body_fields": "fail",
+      "undeclared_headers": "allowed_only_by_marker"
+    }
+  ]
+}

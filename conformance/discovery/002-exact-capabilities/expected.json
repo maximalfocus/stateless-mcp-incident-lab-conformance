@@ -1,0 +1,14 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "exact-capabilities",
+      "must": "Discovery advertises tools, resources, and prompts and no unimplemented capability"
+    },
+    {
+      "type": "strict_http_shape",
+      "undeclared_body_fields": "fail",
+      "undeclared_headers": "allowed_only_by_marker"
+    }
+  ]
+}

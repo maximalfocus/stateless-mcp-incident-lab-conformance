@@ -1,0 +1,14 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "no-subscribe-logging-completions",
+      "must": "Discovery does not advertise subscribe, logging, or completions"
+    },
+    {
+      "type": "strict_http_shape",
+      "undeclared_body_fields": "fail",
+      "undeclared_headers": "allowed_only_by_marker"
+    }
+  ]
+}

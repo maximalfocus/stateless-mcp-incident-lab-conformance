@@ -1,0 +1,28 @@
+{
+  "spec_id": "DISC-006",
+  "description": "Discovery complete result carries nonnegative ttlMs and public cacheScope",
+  "description_bdd": {
+    "given": "the public cache hints scenario",
+    "when": "the discovery contract is exercised",
+    "then": "discovery complete result carries nonnegative ttlMs and public cacheScope"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__discover.md + PRD.md § Discovery",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "discovery",
+  "approved_by": null,
+  "approved_at": null
+}

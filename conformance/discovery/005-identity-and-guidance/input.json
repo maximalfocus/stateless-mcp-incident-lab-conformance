@@ -1,0 +1,9 @@
+{
+  "scenario": "identity-and-guidance",
+  "contract": "Discovery returns stable server identity and learner guidance",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

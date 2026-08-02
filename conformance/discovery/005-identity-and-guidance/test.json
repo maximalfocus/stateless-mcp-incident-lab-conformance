@@ -1,0 +1,28 @@
+{
+  "spec_id": "DISC-005",
+  "description": "Discovery returns stable server identity and learner guidance",
+  "description_bdd": {
+    "given": "the identity and guidance scenario",
+    "when": "the discovery contract is exercised",
+    "then": "discovery returns stable server identity and learner guidance"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__discover.md + PRD.md § Discovery",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "discovery",
+  "approved_by": null,
+  "approved_at": null
+}

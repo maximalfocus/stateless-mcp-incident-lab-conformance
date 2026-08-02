@@ -1,0 +1,9 @@
+{
+  "scenario": "public-cache-hints",
+  "contract": "Discovery complete result carries nonnegative ttlMs and public cacheScope",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

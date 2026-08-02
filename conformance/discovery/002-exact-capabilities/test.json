@@ -1,0 +1,28 @@
+{
+  "spec_id": "DISC-002",
+  "description": "Discovery advertises tools, resources, and prompts and no unimplemented capability",
+  "description_bdd": {
+    "given": "the exact capabilities scenario",
+    "when": "the discovery contract is exercised",
+    "then": "discovery advertises tools, resources, and prompts and no unimplemented capability"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__discover.md + PRD.md § Discovery",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "discovery",
+  "approved_by": null,
+  "approved_at": null
+}

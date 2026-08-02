@@ -1,0 +1,28 @@
+{
+  "spec_id": "DISC-004",
+  "description": "Discovery does not advertise subscribe, logging, or completions",
+  "description_bdd": {
+    "given": "the no subscribe logging completions scenario",
+    "when": "the discovery contract is exercised",
+    "then": "discovery does not advertise subscribe, logging, or completions"
+  },
+  "boundary": "http",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "sources/spec-2026-07-28/server__discover.md + PRD.md § Discovery",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "discovery",
+  "approved_by": null,
+  "approved_at": null
+}
