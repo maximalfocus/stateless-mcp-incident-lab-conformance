@@ -1,9 +1,5 @@
 {
-  "scenario": "local-public-distribution",
-  "contract": "The public Nginx endpoint distributes requests across at least two replicas per implementation",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "send_public_requests",
+  "endpoint": "http://localhost/raw/mcp",
+  "count": 100
 }

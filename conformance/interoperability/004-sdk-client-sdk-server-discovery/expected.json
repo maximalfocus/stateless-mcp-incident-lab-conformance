@@ -1,9 +1,9 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "sdk-client-sdk-server-discovery",
-      "must": "SDK client and SDK server agree on discovery and catalogs"
-    }
-  ]
+  "passed": true,
+  "normalized": {
+    "supportedVersions": [
+      "2026-07-28"
+    ],
+    "effect_count": 0
+  }
 }

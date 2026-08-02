@@ -1,9 +1,13 @@
 {
-  "scenario": "matrix-equivalent-observables",
-  "contract": "All four combinations yield equivalent normalized domain and protocol observables",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "operation": "compare_matrix",
+  "pairs": [
+    "raw-raw",
+    "raw-sdk",
+    "sdk-raw",
+    "sdk-sdk"
+  ],
+  "normalise": [
+    "serverInfo.name",
+    "io.maximalfocus.stateless-incident-lab/replica"
   ]
 }

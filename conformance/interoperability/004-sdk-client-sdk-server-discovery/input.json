@@ -1,9 +1,6 @@
 {
-  "scenario": "sdk-client-sdk-server-discovery",
-  "contract": "SDK client and SDK server agree on discovery and catalogs",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
-  ]
+  "operation": "run_matrix_scenario",
+  "client": "sdk",
+  "server": "sdk",
+  "scenario": "catalogs"
 }

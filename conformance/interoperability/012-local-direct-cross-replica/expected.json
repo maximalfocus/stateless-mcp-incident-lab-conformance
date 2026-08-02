@@ -1,9 +1,6 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "local-direct-cross-replica",
-      "must": "Test-only direct endpoints deterministically complete an MRTR initial/retry pair on different replicas"
-    }
-  ]
+  "initial_replica": "raw-1",
+  "retry_replica": "raw-2",
+  "resultType": "complete",
+  "effect_count": 1
 }

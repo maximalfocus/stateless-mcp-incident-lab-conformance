@@ -1,9 +1,3 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "allowed-metadata-difference",
-      "must": "Only documented server identity and vendor replica metadata may differ across realizations"
-    }
-  ]
+  "unexpected_differences": []
 }

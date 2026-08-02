@@ -22,7 +22,11 @@
     "raw",
     "sdk"
   ],
-  "context": "interoperability",
+  "context": "delivery",
   "approved_by": null,
-  "approved_at": null
+  "approved_at": null,
+  "source_deps": [
+    "demo/matrix.compose.yaml",
+    "demo/run-matrix.ts"
+  ]
 }

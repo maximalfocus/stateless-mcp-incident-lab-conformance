@@ -1,9 +1,9 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "raw-client-sdk-server-discovery",
-      "must": "Raw client and SDK server agree on discovery and catalogs"
-    }
-  ]
+  "passed": true,
+  "normalized": {
+    "supportedVersions": [
+      "2026-07-28"
+    ],
+    "effect_count": 0
+  }
 }

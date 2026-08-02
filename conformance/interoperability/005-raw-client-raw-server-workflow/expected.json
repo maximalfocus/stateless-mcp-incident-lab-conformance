@@ -1,9 +1,10 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "raw-client-raw-server-workflow",
-      "must": "Raw to raw completes incident, MRTR, streaming, cache, and recovery workflow"
-    }
-  ]
+  "passed": true,
+  "normalized": {
+    "supportedVersions": [
+      "2026-07-28"
+    ],
+    "incident_status": "MITIGATED",
+    "effect_count": 1
+  }
 }

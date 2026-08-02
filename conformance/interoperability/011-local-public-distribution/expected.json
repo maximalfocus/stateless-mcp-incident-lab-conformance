@@ -1,9 +1,7 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "local-public-distribution",
-      "must": "The public Nginx endpoint distributes requests across at least two replicas per implementation"
-    }
-  ]
+  "unique_replicas": [
+    "raw-1",
+    "raw-2"
+  ],
+  "normalized_mismatches": []
 }
