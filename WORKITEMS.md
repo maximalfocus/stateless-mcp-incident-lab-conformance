@@ -262,7 +262,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `package.json, package-lock.json, src/dependencies/index.ts`
   - Depends on: WI-049
 
-- [~] **WI-051** raw dependencies contracts 4–5 (2 tests)
+- [x] **WI-051** raw dependencies contracts 4–5 (2 tests)
   - Tests: `conformance/dependencies/004-expiring-suppressions`, `conformance/dependencies/005-raw-sdk-absence`
   - Scope: `package.json, package-lock.json, src/dependencies/index.ts`
   - Depends on: WI-050
