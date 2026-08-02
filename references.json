@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "name": "MCP specification 2026-07-28",
+      "type": "normative-specification",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28",
+      "local": "../stateless-mcp-incident-lab-prd/sources/spec-2026-07-28/",
+      "categories": [
+        "protocol",
+        "versioning",
+        "transport",
+        "discovery",
+        "primitives",
+        "mrtr",
+        "streaming",
+        "cache"
+      ],
+      "key_artifacts": [
+        "schema.ts",
+        "basic__transports__streamable-http.md",
+        "basic__patterns__mrtr.md"
+      ]
+    },
+    {
+      "name": "Stateless MCP Incident Lab PRD",
+      "type": "greenfield-requirements",
+      "url": "git@github.com:maximalfocus/stateless-mcp-incident-lab-prd.git",
+      "commit": "91cd6b984a27c29cca8e8505a7ec1f088251650f",
+      "categories": [
+        "protocol",
+        "versioning",
+        "transport",
+        "discovery",
+        "primitives",
+        "incidents",
+        "mrtr",
+        "streaming",
+        "cache",
+        "cli",
+        "interoperability",
+        "properties",
+        "security",
+        "observability",
+        "performance",
+        "infra",
+        "cicd",
+        "dependencies",
+        "architecture"
+      ],
+      "key_artifacts": [
+        "PRD.md",
+        "PLAN.md",
+        "PLAN-001-stateless-core.md"
+      ]
+    },
+    {
+      "name": "mcp-explorer",
+      "type": "prior-art",
+      "url": "https://github.com/simonw/mcp-explorer",
+      "local": "../stateless-mcp-incident-lab-prd/sources/mcp-explorer-README.md",
+      "categories": [
+        "cli"
+      ],
+      "key_artifacts": [
+        "README.md"
+      ]
+    },
+    {
+      "name": "Stateless MCP article",
+      "type": "motivation",
+      "url": "https://simonwillison.net/2026/Jul/31/stateless-mcp/",
+      "local": "../stateless-mcp-incident-lab-prd/sources/simon-willison-stateless-mcp.html",
+      "categories": [
+        "cli",
+        "interoperability"
+      ],
+      "key_artifacts": [
+        "captured article"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "prd_repo": "../stateless-mcp-incident-lab-prd",
+  "last_synced_commit": "91cd6b984a27c29cca8e8505a7ec1f088251650f",
+  "last_synced_at": "2026-08-02T00:00:00Z",
+  "plans_consumed": {
+    "PLAN-001-stateless-core.md": {
+      "status_at_sync": "active",
+      "commit": "91cd6b984a27c29cca8e8505a7ec1f088251650f"
+    }
+  },
+  "prd_md_hash": "8e3545dbfa5a2f9e33928869020f30f8330a43ad99e2023fa6ac203418fea662"
+}
