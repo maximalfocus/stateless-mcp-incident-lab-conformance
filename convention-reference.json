@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "strict_matching": true,
+  "allow_extra_marker": "{{ALLOW_EXTRA}}",
+  "error_envelope": {
+    "jsonrpc": "2.0",
+    "id": "request id or null when unavailable",
+    "error": {
+      "code": "integer",
+      "message": "string",
+      "data": "complete error-specific object or absent"
+    }
+  },
+  "auth_header": null,
+  "seed_user": null,
+  "protocol": {
+    "version": "2026-07-28",
+    "metadata_location": "params._meta",
+    "required_headers": {
+      "MCP-Protocol-Version": "2026-07-28",
+      "Mcp-Method": "exact JSON-RPC method",
+      "Accept": "application/json, text/event-stream"
+    },
+    "success_meta_prefix": "io.modelcontextprotocol",
+    "vendor_meta_prefix": "io.maximalfocus.stateless-incident-lab"
+  },
+  "placeholders": {
+    "{{GENERATED_ID}}": "server-generated opaque identifier",
+    "{{TIMESTAMP}}": "server-generated RFC 3339 UTC timestamp",
+    "{{JWT_TOKEN}}": "reserved; authentication is out of scope",
+    "{{ANY_STRING}}": "any non-empty string",
+    "{{ALLOW_EXTRA}}": "allow undeclared keys only in the containing object"
+  },
+  "ids": {
+    "jsonrpc": "string or integer supplied by the client",
+    "domain": "snake_case names ending in _id",
+    "seed": "stable uppercase logical IDs"
+  },
+  "collections": {
+    "empty": [],
+    "ordering": "deterministic by the category-defined key"
+  },
+  "nulls": "Use null only when the protocol declares a nullable field; otherwise omit the field."
+}

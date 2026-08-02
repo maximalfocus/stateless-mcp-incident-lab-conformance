@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "convention_reference": "convention-reference.json",
+  "matching": {
+    "mode": "exact",
+    "undeclared_output_fields_fail": true,
+    "allow_extra_marker": "{{ALLOW_EXTRA}}"
+  },
+  "metadata": {
+    "request_location": "params._meta",
+    "top_level_request_meta_forbidden": true,
+    "protocol_version": "2026-07-28",
+    "client_capabilities_per_request": true,
+    "session_id_forbidden": true
+  },
+  "http": {
+    "header_names_case_insensitive": true,
+    "header_values_case_sensitive": true,
+    "required_accept": "application/json, text/event-stream",
+    "success_content_types": ["application/json", "text/event-stream"],
+    "get_delete_status": 405
+  },
+  "errors": {
+    "envelope": "json-rpc-2.0",
+    "domain_failures_are_tool_results": true,
+    "protocol_failures_are_jsonrpc_errors": true,
+    "missing_body_meta_precedes_header_mismatch": true
+  },
+  "normalisation": {
+    "timestamps": "{{TIMESTAMP}}",
+    "generated_ids": "{{GENERATED_ID}}",
+    "paths": "forward-slash and fixture-root-relative",
+    "unordered_collections": "sort by declared deterministic key",
+    "floats": "round only when a test declares precision"
+  },
+  "security": {
+    "bearer_handles_redacted": true,
+    "request_state_redacted": true,
+    "elicitation_content_redacted": true,
+    "real_infrastructure_effects_forbidden": true
+  },
+  "placeholders": [
+    "{{GENERATED_ID}}",
+    "{{TIMESTAMP}}",
+    "{{JWT_TOKEN}}",
+    "{{ANY_STRING}}",
+    "{{ALLOW_EXTRA}}"
+  ]
+}
