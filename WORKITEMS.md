@@ -32,7 +32,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/codec.ts, src/protocol/schema.ts`
   - Depends on: WI-003
 
-- [~] **WI-005** raw protocol contracts 10–12 (3 tests)
+- [x] **WI-005** raw protocol contracts 10–12 (3 tests)
   - Tests: `conformance/protocol/010-unknown-method-code`, `conformance/protocol/011-unknown-tool-is-invalid-params`, `conformance/protocol/012-schema-safety-bounds`
   - Scope: `src/protocol/codec.ts, src/protocol/schema.ts`
   - Depends on: WI-004
