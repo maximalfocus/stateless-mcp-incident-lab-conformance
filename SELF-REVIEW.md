@@ -18,4 +18,8 @@ Completed for the executable-golden evolution at PRD commit `91cd6b984a27c29cca8
 - `python3 ../stateless-mcp-incident-lab-prd/scripts/verify-prd.py`
 - architecture sibling: `python3 scripts/verify-architecture.py` plus its 18-case mutation script in an isolated PyYAML environment
 
-Implementation remains blocked until `/peerreview` converges on this conformance repository.
+## Degraded peer-review hardening
+
+The 2026-08-02 Codex-host fallback found and corrected a shared-object generation defect that had put `2025-11-25` body metadata into 79 otherwise-current requests, plus missing seed references, non-discriminating CLI/interoperability/security/cache cases, and open-ended operation/policy dispatch. The suite now ships closed `operation-registry.json` and `policy-registry.json` contracts with mutation-tested validator enforcement, including header/body mirror checks and policy execution receipts.
+
+The same-vendor fallback gate is sufficient to proceed in degraded mode, but cross-vendor sign-off remains owed because the Claude CLI was not authenticated.

@@ -102,6 +102,22 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("Mcp-Param-Service/body argument mismatch", result.stdout)
 
+    def test_unknown_policy_check_goes_red(self):
+        path = self.tmp / "conformance/infra/001-dynamodb-policy/input.json"
+        path.write_text(path.read_text().replace('"checks": [', '"checks": ["INVENTED-CHECK",', 1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("unknown policy checks", result.stdout)
+
+    def test_skipped_policy_check_goes_red(self):
+        path = self.tmp / "conformance/cicd/001-quality-gates/expected.json"
+        data = __import__("json").loads(path.read_text())
+        data["evaluated_checks"].pop()
+        path.write_text(__import__("json").dumps(data))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("evaluated_checks must exactly equal input checks", result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

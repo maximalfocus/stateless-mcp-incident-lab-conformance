@@ -1,8 +1,8 @@
 {
   "subject": "cdk_synth",
   "template_glob": "cdk.out/*.template.json",
-  "rules": [
-    "tags=project,environment,owner",
-    "log_retention_days<=7"
+  "checks": [
+    "INFRA-009.01-tags-project-environment-owner",
+    "INFRA-009.02-log-retention-days-7"
   ]
 }

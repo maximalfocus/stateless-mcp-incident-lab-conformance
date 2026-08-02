@@ -3,5 +3,9 @@
   "matched_contracts": [
     "architecture-raw",
     "architecture-sdk"
+  ],
+  "evaluated_checks": [
+    "CICD-003.01-architecture-raw",
+    "CICD-003.02-architecture-sdk"
   ]
 }

@@ -1,3 +1,8 @@
 {
-  "violations": []
+  "violations": [],
+  "evaluated_checks": [
+    "INFRA-003.01-raw-desired-count-2",
+    "INFRA-003.02-sdk-desired-count-2",
+    "INFRA-003.03-health-paths-raw-healthz-sdk-healthz"
+  ]
 }

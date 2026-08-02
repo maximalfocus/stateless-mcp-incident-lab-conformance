@@ -7,6 +7,8 @@ valid_contexts={x['name'] for x in context_map['contexts']}
 declared_placeholders=set(json.loads((root/'suite-invariants.json').read_text())['placeholders'])
 operation_registry=json.loads((root/'operation-registry.json').read_text())['registries']
 used_registry_names={k:set() for k in operation_registry}
+policy_registry=json.loads((root/'policy-registry.json').read_text())
+used_policy_checks=set()
 allowed={'cli','http','http-html','function','property','component','interaction','metric-assertion','lint-assertion','http-contract','decision-record','workflow-assertion','state-machine','story','e2e','cross-browser-assertion','contract','structural-contract','documentation-contract','packaging-contract','cross-language-contract','transactional','signal-reactivity','reactive-form','graphql','grpc','message','websocket','sse','sql','accessibility','prompt-eval','tool-call','trace-span','webhook','visual-regression','i18n'}
 for p in sorted(conf.rglob('test.json')):
   tests.append(p); rel=p.parent.relative_to(root)
@@ -70,6 +72,16 @@ for p in sorted(conf.rglob('test.json')):
       if unknown_input: errors.append(f'{sid}: {key} {name!r} unknown input fields {sorted(unknown_input)}')
       if missing_expected: errors.append(f'{sid}: {key} {name!r} missing expected fields {sorted(missing_expected)}')
       if unknown_expected: errors.append(f'{sid}: {key} {name!r} unknown expected fields {sorted(unknown_expected)}')
+    checks=input_data.get('checks',[]) if isinstance(input_data,dict) else []
+    if checks:
+      if not isinstance(checks,list) or not all(isinstance(x,str) for x in checks): errors.append(f'{sid}: checks must be a string list')
+      else:
+        unknown_checks=set(checks)-set(policy_registry['checks'])
+        if unknown_checks: errors.append(f'{sid}: unknown policy checks {sorted(unknown_checks)}')
+        used_policy_checks.update(set(checks)-unknown_checks)
+        if expected_data.get('evaluated_checks')!=checks: errors.append(f'{sid}: evaluated_checks must exactly equal input checks')
+        for check in set(checks)-unknown_checks:
+          if policy_registry['checks'][check]['source_spec_id']!=sid: errors.append(f'{sid}: policy check {check!r} belongs to another spec')
   if t.get('boundary')=='property':
     prop=t.get('property',{})
     for k in ('kind','target','domain','iterations','examples'):
@@ -94,6 +106,8 @@ for p in sorted(conf.rglob('test.json')):
 for registry_name,registry in operation_registry.items():
   unused=set(registry)-used_registry_names[registry_name]
   if unused: errors.append(f'operation-registry.json has unused {registry_name}: {sorted(unused)}')
+unused_policy_checks=set(policy_registry['checks'])-used_policy_checks
+if unused_policy_checks: errors.append(f'policy-registry.json has unused checks: {sorted(unused_policy_checks)}')
 if len(tests)!=197: errors.append(f'test count {len(tests)} != 197')
 expected_cats={'protocol','versioning','transport','discovery','primitives','incidents','mrtr','streaming','cache','cli','interoperability','properties','security','observability','performance','architecture','infra','cicd','dependencies'}
 cats={p.relative_to(conf).parts[0] for p in tests}

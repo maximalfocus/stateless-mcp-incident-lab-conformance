@@ -1,0 +1,361 @@
+{
+  "schema_version": 1,
+  "contract": "Closed artifact-policy registry. Runners implement each check name verbatim, report every evaluated name, fail unknown names, and separately prove listed cross-resource correlation obligations.",
+  "checks": {
+    "CICD-001.01-format": {
+      "category": "cicd",
+      "source_spec_id": "CICD-001",
+      "requirement": "format",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-001.02-lint": {
+      "category": "cicd",
+      "source_spec_id": "CICD-001",
+      "requirement": "lint",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-001.03-typecheck": {
+      "category": "cicd",
+      "source_spec_id": "CICD-001",
+      "requirement": "typecheck",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-001.04-unit": {
+      "category": "cicd",
+      "source_spec_id": "CICD-001",
+      "requirement": "unit",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-001.05-conformance": {
+      "category": "cicd",
+      "source_spec_id": "CICD-001",
+      "requirement": "conformance",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-001.06-coverage": {
+      "category": "cicd",
+      "source_spec_id": "CICD-001",
+      "requirement": "coverage",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-001.07-mutation": {
+      "category": "cicd",
+      "source_spec_id": "CICD-001",
+      "requirement": "mutation",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-001.08-dependency-audit": {
+      "category": "cicd",
+      "source_spec_id": "CICD-001",
+      "requirement": "dependency-audit",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-002.01-compose-up": {
+      "category": "cicd",
+      "source_spec_id": "CICD-002",
+      "requirement": "compose-up",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-002.02-raw-raw": {
+      "category": "cicd",
+      "source_spec_id": "CICD-002",
+      "requirement": "raw-raw",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-002.03-raw-sdk": {
+      "category": "cicd",
+      "source_spec_id": "CICD-002",
+      "requirement": "raw-sdk",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-002.04-sdk-raw": {
+      "category": "cicd",
+      "source_spec_id": "CICD-002",
+      "requirement": "sdk-raw",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-002.05-sdk-sdk": {
+      "category": "cicd",
+      "source_spec_id": "CICD-002",
+      "requirement": "sdk-sdk",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-003.01-architecture-raw": {
+      "category": "cicd",
+      "source_spec_id": "CICD-003",
+      "requirement": "architecture-raw",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-003.02-architecture-sdk": {
+      "category": "cicd",
+      "source_spec_id": "CICD-003",
+      "requirement": "architecture-sdk",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-004.01-validate-goldens": {
+      "category": "cicd",
+      "source_spec_id": "CICD-004",
+      "requirement": "validate-goldens",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-004.02-forbid-auto-update": {
+      "category": "cicd",
+      "source_spec_id": "CICD-004",
+      "requirement": "forbid-auto-update",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-005.01-build-once": {
+      "category": "cicd",
+      "source_spec_id": "CICD-005",
+      "requirement": "build-once",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-005.02-publish-digest": {
+      "category": "cicd",
+      "source_spec_id": "CICD-005",
+      "requirement": "publish-digest",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-006.01-forbid-static-aws-keys": {
+      "category": "cicd",
+      "source_spec_id": "CICD-006",
+      "requirement": "forbid-static-aws-keys",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-006.02-oidc-least-privilege": {
+      "category": "cicd",
+      "source_spec_id": "CICD-006",
+      "requirement": "oidc-least-privilege",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-007.01-forbid-cloud-deploy": {
+      "category": "cicd",
+      "source_spec_id": "CICD-007",
+      "requirement": "forbid-cloud-deploy",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-008.01-destroy-if-always": {
+      "category": "cicd",
+      "source_spec_id": "CICD-008",
+      "requirement": "destroy-if-always",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "CICD-008.02-inventory-report": {
+      "category": "cicd",
+      "source_spec_id": "CICD-008",
+      "requirement": "inventory-report",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-001.01-dynamodb-billing-mode-pay-per-request": {
+      "category": "infra",
+      "source_spec_id": "INFRA-001",
+      "requirement": "dynamodb.billing_mode=PAY_PER_REQUEST",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-001.02-dynamodb-encryption-true": {
+      "category": "infra",
+      "source_spec_id": "INFRA-001",
+      "requirement": "dynamodb.encryption=true",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-001.03-dynamodb-ttl-true": {
+      "category": "infra",
+      "source_spec_id": "INFRA-001",
+      "requirement": "dynamodb.ttl=true",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-001.04-dynamodb-pitr-false": {
+      "category": "infra",
+      "source_spec_id": "INFRA-001",
+      "requirement": "dynamodb.pitr=false",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-002.01-ecr-empty-on-delete-true": {
+      "category": "infra",
+      "source_spec_id": "INFRA-002",
+      "requirement": "ecr.empty_on_delete=true",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-002.02-ecs-images-immutable-digest": {
+      "category": "infra",
+      "source_spec_id": "INFRA-002",
+      "requirement": "ecs.images=immutable_digest",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-003.01-raw-desired-count-2": {
+      "category": "infra",
+      "source_spec_id": "INFRA-003",
+      "requirement": "raw.desired_count>=2",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-003.02-sdk-desired-count-2": {
+      "category": "infra",
+      "source_spec_id": "INFRA-003",
+      "requirement": "sdk.desired_count>=2",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-003.03-health-paths-raw-healthz-sdk-healthz": {
+      "category": "infra",
+      "source_spec_id": "INFRA-003",
+      "requirement": "health_paths=/raw/healthz,/sdk/healthz",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-004.01-alb-internet-facing-true": {
+      "category": "infra",
+      "source_spec_id": "INFRA-004",
+      "requirement": "alb.internet_facing=true",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-004.02-listeners-https-443": {
+      "category": "infra",
+      "source_spec_id": "INFRA-004",
+      "requirement": "listeners=https:443",
+      "result": "violation-list",
+      "mechanism_neutral": false
+    },
+    "INFRA-004.03-listeners-not-http-80": {
+      "category": "infra",
+      "source_spec_id": "INFRA-004",
+      "requirement": "listeners_not=http:80",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-005.01-waf-rate-rule-limit-0": {
+      "category": "infra",
+      "source_spec_id": "INFRA-005",
+      "requirement": "waf.rate_rule.limit>0",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-006.01-security-groups-least-privilege": {
+      "category": "infra",
+      "source_spec_id": "INFRA-006",
+      "requirement": "security_groups=least_privilege",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-006.02-iam-actions-subset-dynamodb-logs-cloudwatch-secretsmanager": {
+      "category": "infra",
+      "source_spec_id": "INFRA-006",
+      "requirement": "iam.actions_subset=dynamodb,logs,cloudwatch,secretsmanager",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-007.01-mrtr-secret-source-secretsmanager": {
+      "category": "infra",
+      "source_spec_id": "INFRA-007",
+      "requirement": "mrtr_secret.source=secretsmanager",
+      "result": "violation-list",
+      "mechanism_neutral": false
+    },
+    "INFRA-007.02-task-plaintext-secret-false": {
+      "category": "infra",
+      "source_spec_id": "INFRA-007",
+      "requirement": "task_plaintext_secret=false",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-008.01-logs-exclude-headers-mcp-name": {
+      "category": "infra",
+      "source_spec_id": "INFRA-008",
+      "requirement": "logs.exclude_headers=Mcp-Name",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-008.02-logs-capture-body-false": {
+      "category": "infra",
+      "source_spec_id": "INFRA-008",
+      "requirement": "logs.capture_body=false",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-009.01-tags-project-environment-owner": {
+      "category": "infra",
+      "source_spec_id": "INFRA-009",
+      "requirement": "tags=project,environment,owner",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-009.02-log-retention-days-7": {
+      "category": "infra",
+      "source_spec_id": "INFRA-009",
+      "requirement": "log_retention_days<=7",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-010.01-lifecycle-deploy-verify-destroy-inventory": {
+      "category": "infra",
+      "source_spec_id": "INFRA-010",
+      "requirement": "lifecycle=deploy,verify,destroy,inventory",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-010.02-inventory-after-destroy": {
+      "category": "infra",
+      "source_spec_id": "INFRA-010",
+      "requirement": "inventory_after_destroy=[]",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    }
+  },
+  "correlation_obligations": {
+    "INFRA-002": [
+      "ECS task definitions consume the exact immutable ECR digests reported by the build."
+    ],
+    "INFRA-005": [
+      "The WAF web ACL is associated with the internet-facing ALB."
+    ],
+    "INFRA-006": [
+      "Ingress sources, IAM resources, and actions resolve to the intended service/table/log/secret resources rather than merely existing."
+    ],
+    "INFRA-007": [
+      "Each raw and SDK task definition references the Secrets Manager state-key ARN through its secrets binding."
+    ],
+    "INFRA-008": [
+      "The synthesized Nginx, ALB, and WAF logging paths actually use the redacting/omitting configurations."
+    ],
+    "CICD-005": [
+      "Acceptance consumes the digest produced by the single image-build job, not a rebuilt tag."
+    ],
+    "CICD-006": [
+      "Every AWS-touching job has its own OIDC credential step and id-token: write permission."
+    ],
+    "CICD-008": [
+      "Destroy and inventory reporting run under an unconditional failure path after any approved cloud apply."
+    ]
+  }
+}

@@ -1,8 +1,11 @@
 {
   "subject": "github_actions",
   "workflow_glob": ".github/workflows/*.yml",
-  "required_contracts": [
-    "destroy-if-always",
-    "inventory-report"
+  "checks": [
+    "CICD-008.01-destroy-if-always",
+    "CICD-008.02-inventory-report"
+  ],
+  "correlation_obligations": [
+    "Destroy and inventory reporting run under an unconditional failure path after any approved cloud apply."
   ]
 }

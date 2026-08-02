@@ -1,8 +1,11 @@
 {
   "subject": "github_actions",
   "workflow_glob": ".github/workflows/*.yml",
-  "required_contracts": [
-    "forbid-static-aws-keys",
-    "oidc-least-privilege"
+  "checks": [
+    "CICD-006.01-forbid-static-aws-keys",
+    "CICD-006.02-oidc-least-privilege"
+  ],
+  "correlation_obligations": [
+    "Every AWS-touching job has its own OIDC credential step and id-token: write permission."
   ]
 }

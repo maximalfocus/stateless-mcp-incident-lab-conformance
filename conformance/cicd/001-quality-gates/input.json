@@ -1,14 +1,14 @@
 {
   "subject": "github_actions",
   "workflow_glob": ".github/workflows/*.yml",
-  "required_contracts": [
-    "format",
-    "lint",
-    "typecheck",
-    "unit",
-    "conformance",
-    "coverage",
-    "mutation",
-    "dependency-audit"
+  "checks": [
+    "CICD-001.01-format",
+    "CICD-001.02-lint",
+    "CICD-001.03-typecheck",
+    "CICD-001.04-unit",
+    "CICD-001.05-conformance",
+    "CICD-001.06-coverage",
+    "CICD-001.07-mutation",
+    "CICD-001.08-dependency-audit"
   ]
 }

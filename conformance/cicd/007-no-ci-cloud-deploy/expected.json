@@ -2,5 +2,8 @@
   "violations": [],
   "matched_contracts": [
     "forbid-cloud-deploy"
+  ],
+  "evaluated_checks": [
+    "CICD-007.01-forbid-cloud-deploy"
   ]
 }

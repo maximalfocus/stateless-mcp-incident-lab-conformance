@@ -1,7 +1,7 @@
 {
   "subject": "github_actions",
   "workflow_glob": ".github/workflows/*.yml",
-  "required_contracts": [
-    "forbid-cloud-deploy"
+  "checks": [
+    "CICD-007.01-forbid-cloud-deploy"
   ]
 }

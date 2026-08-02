@@ -1,3 +1,7 @@
 {
-  "violations": []
+  "violations": [],
+  "evaluated_checks": [
+    "INFRA-007.01-mrtr-secret-source-secretsmanager",
+    "INFRA-007.02-task-plaintext-secret-false"
+  ]
 }

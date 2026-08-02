@@ -1,8 +1,8 @@
 {
   "subject": "cdk_synth",
   "template_glob": "cdk.out/*.template.json",
-  "rules": [
-    "lifecycle=deploy,verify,destroy,inventory",
-    "inventory_after_destroy=[]"
+  "checks": [
+    "INFRA-010.01-lifecycle-deploy-verify-destroy-inventory",
+    "INFRA-010.02-inventory-after-destroy"
   ]
 }

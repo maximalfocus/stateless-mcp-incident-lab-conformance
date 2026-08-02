@@ -3,5 +3,9 @@
   "matched_contracts": [
     "build-once",
     "publish-digest"
+  ],
+  "evaluated_checks": [
+    "CICD-005.01-build-once",
+    "CICD-005.02-publish-digest"
   ]
 }

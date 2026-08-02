@@ -1,3 +1,6 @@
 {
-  "violations": []
+  "violations": [],
+  "evaluated_checks": [
+    "INFRA-005.01-waf-rate-rule-limit-0"
+  ]
 }

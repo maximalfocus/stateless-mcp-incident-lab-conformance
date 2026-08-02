@@ -1,8 +1,8 @@
 {
   "subject": "github_actions",
   "workflow_glob": ".github/workflows/*.yml",
-  "required_contracts": [
-    "validate-goldens",
-    "forbid-auto-update"
+  "checks": [
+    "CICD-004.01-validate-goldens",
+    "CICD-004.02-forbid-auto-update"
   ]
 }

@@ -1,8 +1,11 @@
 {
   "subject": "github_actions",
   "workflow_glob": ".github/workflows/*.yml",
-  "required_contracts": [
-    "build-once",
-    "publish-digest"
+  "checks": [
+    "CICD-005.01-build-once",
+    "CICD-005.02-publish-digest"
+  ],
+  "correlation_obligations": [
+    "Acceptance consumes the digest produced by the single image-build job, not a rebuilt tag."
   ]
 }

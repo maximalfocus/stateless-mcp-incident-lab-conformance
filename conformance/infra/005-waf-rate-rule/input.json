@@ -1,7 +1,10 @@
 {
   "subject": "cdk_synth",
   "template_glob": "cdk.out/*.template.json",
-  "rules": [
-    "waf.rate_rule.limit>0"
+  "checks": [
+    "INFRA-005.01-waf-rate-rule-limit-0"
+  ],
+  "correlation_obligations": [
+    "The WAF web ACL is associated with the internet-facing ALB."
   ]
 }

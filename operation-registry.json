@@ -983,19 +983,22 @@
           "function"
         ],
         "input_required": [
-          "rules",
+          "checks",
           "subject",
           "template_glob"
         ],
         "input_allowed": [
-          "rules",
+          "checks",
+          "correlation_obligations",
           "subject",
           "template_glob"
         ],
         "expected_required": [
+          "evaluated_checks",
           "violations"
         ],
         "expected_allowed": [
+          "evaluated_checks",
           "violations"
         ]
       },
@@ -1029,20 +1032,23 @@
           "workflow-assertion"
         ],
         "input_required": [
-          "required_contracts",
+          "checks",
           "subject",
           "workflow_glob"
         ],
         "input_allowed": [
-          "required_contracts",
+          "checks",
+          "correlation_obligations",
           "subject",
           "workflow_glob"
         ],
         "expected_required": [
+          "evaluated_checks",
           "matched_contracts",
           "violations"
         ],
         "expected_allowed": [
+          "evaluated_checks",
           "matched_contracts",
           "violations"
         ]

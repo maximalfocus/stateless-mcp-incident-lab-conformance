@@ -1,8 +1,8 @@
 {
   "subject": "github_actions",
   "workflow_glob": ".github/workflows/*.yml",
-  "required_contracts": [
-    "architecture-raw",
-    "architecture-sdk"
+  "checks": [
+    "CICD-003.01-architecture-raw",
+    "CICD-003.02-architecture-sdk"
   ]
 }

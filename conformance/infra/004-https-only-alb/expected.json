@@ -1,3 +1,8 @@
 {
-  "violations": []
+  "violations": [],
+  "evaluated_checks": [
+    "INFRA-004.01-alb-internet-facing-true",
+    "INFRA-004.02-listeners-https-443",
+    "INFRA-004.03-listeners-not-http-80"
+  ]
 }

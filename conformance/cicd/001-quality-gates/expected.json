@@ -9,5 +9,15 @@
     "coverage",
     "mutation",
     "dependency-audit"
+  ],
+  "evaluated_checks": [
+    "CICD-001.01-format",
+    "CICD-001.02-lint",
+    "CICD-001.03-typecheck",
+    "CICD-001.04-unit",
+    "CICD-001.05-conformance",
+    "CICD-001.06-coverage",
+    "CICD-001.07-mutation",
+    "CICD-001.08-dependency-audit"
   ]
 }

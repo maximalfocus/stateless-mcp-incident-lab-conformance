@@ -1,9 +1,9 @@
 {
   "subject": "cdk_synth",
   "template_glob": "cdk.out/*.template.json",
-  "rules": [
-    "raw.desired_count>=2",
-    "sdk.desired_count>=2",
-    "health_paths=/raw/healthz,/sdk/healthz"
+  "checks": [
+    "INFRA-003.01-raw-desired-count-2",
+    "INFRA-003.02-sdk-desired-count-2",
+    "INFRA-003.03-health-paths-raw-healthz-sdk-healthz"
   ]
 }

@@ -6,7 +6,7 @@ The golden files are provider-neutral declarative contracts. A provider binding 
 
 - `http` and `tool-call`: reset `seed.json`, issue `request.json`, and compare status, selected headers, and the complete body. `http-contract` executes the complete request sequence declared in `input.json.requests` and compares the resulting composite observation.
 - `sse`: issue `request.json`, apply only the transport fault declared in `input.json`, then compare ordered events, headers, close/cancel state, resources, and any reissued IDs.
-- `function`, `state-machine`, `contract`, `workflow-assertion`, `lint-assertion`, `trace-span`, and `metric-assertion`: invoke the named operation/subject/profile against the implementation or artifact and compare the complete returned observation exactly.
+- `function`, `state-machine`, `contract`, `workflow-assertion`, `lint-assertion`, `trace-span`, and `metric-assertion`: invoke the named operation/subject/profile against the implementation or artifact and compare the complete returned observation exactly. Infra and workflow subjects additionally execute every closed name in `policy-registry.json`, return the identical ordered `evaluated_checks` list, and prove each declared cross-resource correlation obligation; merely finding a compliant resource is not proof it is wired to its consumer.
 - `cli`: execute `argv`; compare exit code, exact stdout/stderr, network-call count, and declared cache observations. JSON embedded in stdout is parsed before placeholder normalization and then serialized compactly with a trailing newline.
 - `property`: execute the `property` block with a property-testing library, always replay concrete `examples`, and emit `{"holds": true}` only after all iterations hold.
 

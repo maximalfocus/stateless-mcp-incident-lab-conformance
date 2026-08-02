@@ -3,5 +3,9 @@
   "matched_contracts": [
     "forbid-static-aws-keys",
     "oidc-least-privilege"
+  ],
+  "evaluated_checks": [
+    "CICD-006.01-forbid-static-aws-keys",
+    "CICD-006.02-oidc-least-privilege"
   ]
 }

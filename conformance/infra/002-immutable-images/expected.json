@@ -1,3 +1,7 @@
 {
-  "violations": []
+  "violations": [],
+  "evaluated_checks": [
+    "INFRA-002.01-ecr-empty-on-delete-true",
+    "INFRA-002.02-ecs-images-immutable-digest"
+  ]
 }

@@ -1,3 +1,9 @@
 {
-  "violations": []
+  "violations": [],
+  "evaluated_checks": [
+    "INFRA-001.01-dynamodb-billing-mode-pay-per-request",
+    "INFRA-001.02-dynamodb-encryption-true",
+    "INFRA-001.03-dynamodb-ttl-true",
+    "INFRA-001.04-dynamodb-pitr-false"
+  ]
 }

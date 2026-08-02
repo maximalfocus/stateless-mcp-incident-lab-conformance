@@ -3,5 +3,9 @@
   "matched_contracts": [
     "destroy-if-always",
     "inventory-report"
+  ],
+  "evaluated_checks": [
+    "CICD-008.01-destroy-if-always",
+    "CICD-008.02-inventory-report"
   ]
 }

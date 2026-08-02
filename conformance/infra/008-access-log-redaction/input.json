@@ -1,8 +1,11 @@
 {
   "subject": "cdk_synth",
   "template_glob": "cdk.out/*.template.json",
-  "rules": [
-    "logs.exclude_headers=Mcp-Name",
-    "logs.capture_body=false"
+  "checks": [
+    "INFRA-008.01-logs-exclude-headers-mcp-name",
+    "INFRA-008.02-logs-capture-body-false"
+  ],
+  "correlation_obligations": [
+    "The synthesized Nginx, ALB, and WAF logging paths actually use the redacting/omitting configurations."
   ]
 }

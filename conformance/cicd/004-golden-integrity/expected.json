@@ -3,5 +3,9 @@
   "matched_contracts": [
     "validate-goldens",
     "forbid-auto-update"
+  ],
+  "evaluated_checks": [
+    "CICD-004.01-validate-goldens",
+    "CICD-004.02-forbid-auto-update"
   ]
 }

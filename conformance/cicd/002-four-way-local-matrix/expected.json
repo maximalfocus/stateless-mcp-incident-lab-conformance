@@ -6,5 +6,12 @@
     "raw-sdk",
     "sdk-raw",
     "sdk-sdk"
+  ],
+  "evaluated_checks": [
+    "CICD-002.01-compose-up",
+    "CICD-002.02-raw-raw",
+    "CICD-002.03-raw-sdk",
+    "CICD-002.04-sdk-raw",
+    "CICD-002.05-sdk-sdk"
   ]
 }

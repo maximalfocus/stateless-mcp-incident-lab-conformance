@@ -1,8 +1,11 @@
 {
   "subject": "cdk_synth",
   "template_glob": "cdk.out/*.template.json",
-  "rules": [
-    "ecr.empty_on_delete=true",
-    "ecs.images=immutable_digest"
+  "checks": [
+    "INFRA-002.01-ecr-empty-on-delete-true",
+    "INFRA-002.02-ecs-images-immutable-digest"
+  ],
+  "correlation_obligations": [
+    "ECS task definitions consume the exact immutable ECR digests reported by the build."
   ]
 }

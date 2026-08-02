@@ -1,9 +1,9 @@
 {
   "subject": "cdk_synth",
   "template_glob": "cdk.out/*.template.json",
-  "rules": [
-    "alb.internet_facing=true",
-    "listeners=https:443",
-    "listeners_not=http:80"
+  "checks": [
+    "INFRA-004.01-alb-internet-facing-true",
+    "INFRA-004.02-listeners-https-443",
+    "INFRA-004.03-listeners-not-http-80"
   ]
 }
