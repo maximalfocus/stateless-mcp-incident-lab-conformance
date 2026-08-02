@@ -21,7 +21,20 @@ for p in sorted(conf.rglob('test.json')):
   if t.get('boundary') in ('http','tool-call','sse','trace-span'):
     for f in ('seed.json','request.json'):
       if not (p.parent/f).exists(): errors.append(f'{sid}: missing {f}')
+    request_path=p.parent/'request.json'
+    if request_path.exists():
+      request=json.loads(request_path.read_text())
+      body=request.get('body',{}) if isinstance(request,dict) else {}
+      params=body.get('params',{}) if isinstance(body,dict) else {}
+      if isinstance(params,dict) and 'scenario' in params: errors.append(f'{sid}: request relies on runner-only params.scenario')
+      headers=request.get('headers',{}) if isinstance(request,dict) else {}
+      if body.get('method')!='healthz' and headers.get('Mcp-Method')!=body.get('method'): errors.append(f'{sid}: Mcp-Method/body method mismatch')
   if t.get('boundary')=='function' and not (p.parent/'input.json').exists(): errors.append(f'{sid}: function missing input')
+  input_path=p.parent/'input.json'
+  if input_path.exists():
+    input_data=json.loads(input_path.read_text())
+    if isinstance(input_data,dict) and set(input_data)<= {'scenario','contract','protocol_version','providers'}: errors.append(f'{sid}: input is descriptive metadata, not replayable fixture data')
+    if t.get('boundary')=='cli' and 'argv' not in input_data: errors.append(f'{sid}: CLI fixture missing argv')
   if t.get('boundary')=='property':
     prop=t.get('property',{})
     for k in ('kind','target','domain','iterations','examples'):
@@ -29,6 +42,8 @@ for p in sorted(conf.rglob('test.json')):
     if prop.get('kind')=='round_trip' and 'inverse' not in prop: errors.append(f'{sid}: round_trip missing inverse')
     if prop.get('kind')=='ordering' and 'key' not in prop: errors.append(f'{sid}: ordering missing key')
     if prop.get('kind')=='bounds' and not {'min','max'} <= prop.keys(): errors.append(f'{sid}: bounds missing min/max')
+    examples=prop.get('examples',[])
+    if isinstance(examples,list) and len(examples)==4 and examples[1:]==['empty','unicode','boundary']: errors.append(f'{sid}: property examples are labels, not concrete regression inputs')
   if sid and sid.startswith('ARCH-'):
     if t.get('adr')!='ADR-0001' or t.get('adr_repo')!='maximalfocus/stateless-mcp-incident-lab-architecture': errors.append(f'{sid}: bad architecture citation')
   txt='\n'.join(x.read_text() for x in p.parent.glob('*.json'))
@@ -71,8 +86,11 @@ for p in tests:
   if not expected_path.exists(): continue
   e=json.loads(expected_path.read_text())
   if t.get('boundary')!='property':
-    contracts=[a for a in e.get('assertions',[]) if a.get('type')=='contract']
-    if not t['spec_id'].startswith('ARCH-') and (len(contracts)!=1 or contracts[0].get('must')!=t['description']): errors.append(f"{t['spec_id']}: expected contract/description drift")
+    assertions=e.get('assertions',[])
+    contracts=[a for a in assertions if a.get('type')=='contract']
+    if contracts: errors.append(f"{t['spec_id']}: prose-only contract assertion is not executable")
+    if any(a.get('type')=='strict_http_shape' for a in assertions) and not {'status','headers','body'} <= e.keys(): errors.append(f"{t['spec_id']}: strict_http_shape has no complete status/headers/body expectation")
+    if t.get('boundary')=='state-machine' and not {'states','transitions'} <= e.keys(): errors.append(f"{t['spec_id']}: state-machine expected lacks states/transitions")
 print(f'{len(tests)} tests, {len(cats)} categories, {len(ids)} unique spec IDs')
 if errors:
   print('\n'.join('ERROR '+x for x in errors)); sys.exit(1)

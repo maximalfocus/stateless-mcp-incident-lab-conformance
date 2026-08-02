@@ -22,9 +22,12 @@ class ValidateSuiteMutationTests(unittest.TestCase):
             capture_output=True,
         )
 
-    def test_current_suite_passes(self):
+    def test_current_suite_exposes_nonreplayable_contracts(self):
         result = self.run_validator()
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("prose-only contract assertion is not executable", result.stdout)
+        self.assertIn("input is descriptive metadata, not replayable fixture data", result.stdout)
+        self.assertIn("request relies on runner-only params.scenario", result.stdout)
 
     def test_coverage_drop_goes_red(self):
         path = self.tmp / "coverage-tracking.md"
