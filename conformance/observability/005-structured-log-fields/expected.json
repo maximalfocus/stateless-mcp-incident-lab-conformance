@@ -1,9 +1,12 @@
 {
-  "assertions": [
+  "logs": [
     {
-      "type": "contract",
-      "subject": "structured-log-fields",
-      "must": "One JSON log record includes method, redacted name, request id, replica, latency, result type, and trace id"
+      "method": "server/discover",
+      "request_id": 1,
+      "replica": "{{ANY_STRING}}",
+      "latency_ms": 12,
+      "result_type": "complete",
+      "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736"
     }
   ]
 }

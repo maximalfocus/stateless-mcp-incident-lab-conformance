@@ -1,9 +1,8 @@
 {
-  "assertions": [
-    {
-      "type": "contract",
-      "subject": "sensitive-fields-absent",
-      "must": "Captured logs and traces contain no unredacted incident handle, requestState, or elicitation content"
-    }
-  ]
+  "forbidden_values": [
+    "INCIDENT-SECRET",
+    "SIGNED-STATE",
+    "decision=accept"
+  ],
+  "matches": []
 }

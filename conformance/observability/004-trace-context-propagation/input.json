@@ -1,9 +1,8 @@
 {
-  "scenario": "trace-context-propagation",
-  "contract": "Valid W3C traceparent and tracestate in params._meta propagate to server spans and downstream calls",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "dependencies_ready": true,
+  "capture": [
+    "response",
+    "logs",
+    "spans"
   ]
 }

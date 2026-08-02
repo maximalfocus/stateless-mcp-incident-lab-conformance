@@ -1,9 +1,8 @@
 {
-  "scenario": "structured-log-fields",
-  "contract": "One JSON log record includes method, redacted name, request id, replica, latency, result type, and trace id",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "dependencies_ready": true,
+  "capture": [
+    "response",
+    "logs",
+    "spans"
   ]
 }

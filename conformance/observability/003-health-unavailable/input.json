@@ -1,9 +1,8 @@
 {
-  "scenario": "health-unavailable",
-  "contract": "Either health endpoint returns exact 503 JSON unavailable before dependencies are ready",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "dependencies_ready": false,
+  "capture": [
+    "response",
+    "logs",
+    "spans"
   ]
 }

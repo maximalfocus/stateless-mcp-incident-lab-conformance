@@ -11,10 +11,11 @@
     "id": 1,
     "method": "server/discover",
     "params": {
-      "scenario": "trace-context-propagation",
       "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
-        "io.modelcontextprotocol/clientCapabilities": {}
+        "io.modelcontextprotocol/protocolVersion": "2025-11-25",
+        "io.modelcontextprotocol/clientCapabilities": {},
+        "traceparent": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01",
+        "tracestate": "vendor=value"
       }
     }
   }

@@ -1,9 +1,8 @@
 {
-  "scenario": "raw-health-ready",
-  "contract": "GET /raw/healthz returns exact 200 JSON ok only after raw server and DynamoDB adapter are ready",
-  "protocol_version": "2026-07-28",
-  "providers": [
-    "raw",
-    "sdk"
+  "dependencies_ready": true,
+  "capture": [
+    "response",
+    "logs",
+    "spans"
   ]
 }

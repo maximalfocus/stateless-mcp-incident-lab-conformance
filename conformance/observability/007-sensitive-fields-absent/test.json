@@ -22,7 +22,11 @@
     "raw",
     "sdk"
   ],
-  "context": "observability",
+  "context": "assurance",
   "approved_by": null,
-  "approved_at": null
+  "approved_at": null,
+  "source_deps": [
+    "src/observability/logging.ts",
+    "src/observability/tracing.ts"
+  ]
 }

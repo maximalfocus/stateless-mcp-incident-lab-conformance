@@ -1,9 +1,18 @@
 {
-  "assertions": [
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32601,
+      "message": "Method not found"
+    }
+  },
+  "logs": [
     {
-      "type": "contract",
-      "subject": "error-log-replica",
-      "must": "A JSON-RPC error has no result metadata but its serving replica remains observable in structured logs"
+      "method": "unknown/method",
+      "request_id": 1,
+      "replica": "{{ANY_STRING}}",
+      "result_type": "error"
     }
   ]
 }

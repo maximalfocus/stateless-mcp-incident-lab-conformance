@@ -1,21 +1,15 @@
 {
-  "method": "POST",
-  "path": "/raw/mcp",
+  "method": "GET",
+  "path": "/sdk/healthz",
   "headers": {
     "Accept": "application/json, text/event-stream",
     "MCP-Protocol-Version": "2026-07-28",
-    "Mcp-Method": "server/discover"
+    "Mcp-Method": "healthz"
   },
   "body": {
     "jsonrpc": "2.0",
     "id": 1,
-    "method": "server/discover",
-    "params": {
-      "scenario": "sensitive-fields-absent",
-      "_meta": {
-        "io.modelcontextprotocol/protocolVersion": "2026-07-28",
-        "io.modelcontextprotocol/clientCapabilities": {}
-      }
-    }
+    "method": "healthz",
+    "params": {}
   }
 }

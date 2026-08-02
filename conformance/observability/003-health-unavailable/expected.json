@@ -1,9 +1,15 @@
 {
   "assertions": [
     {
-      "type": "contract",
-      "subject": "health-unavailable",
-      "must": "Either health endpoint returns exact 503 JSON unavailable before dependencies are ready"
+      "type": "strict_http_shape"
     }
-  ]
+  ],
+  "status": 503,
+  "headers": {
+    "{{ALLOW_EXTRA}}": true,
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "status": "unavailable"
+  }
 }
