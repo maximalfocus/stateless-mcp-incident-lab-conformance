@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "immutable-build-output",
+      "must": "Images are built once and identified by immutable digest for later acceptance"
+    }
+  ]
+}

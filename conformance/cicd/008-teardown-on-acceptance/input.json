@@ -1,0 +1,9 @@
+{
+  "scenario": "teardown-on-acceptance",
+  "contract": "Any explicitly approved cloud acceptance workflow guarantees destroy and inventory reporting on success or failure",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

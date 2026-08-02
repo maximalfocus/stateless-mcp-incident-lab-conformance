@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "four-way-local-matrix",
+      "must": "CI starts the shared Compose topology and passes all four client-server combinations"
+    }
+  ]
+}

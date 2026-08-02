@@ -1,0 +1,9 @@
+{
+  "scenario": "architecture-gate",
+  "contract": "CI runs architecture dependency and public-boundary assertions for each implementation",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

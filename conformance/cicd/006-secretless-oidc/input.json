@@ -1,0 +1,9 @@
+{
+  "scenario": "secretless-oidc",
+  "contract": "CI contains no long-lived AWS credentials and uses least-privilege OIDC where cloud identity is needed",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

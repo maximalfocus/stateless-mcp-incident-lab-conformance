@@ -1,0 +1,28 @@
+{
+  "spec_id": "CICD-002",
+  "description": "CI starts the shared Compose topology and passes all four client-server combinations",
+  "description_bdd": {
+    "given": "the four way local matrix scenario",
+    "when": "the cicd contract is exercised",
+    "then": "cI starts the shared Compose topology and passes all four client-server combinations"
+  },
+  "boundary": "workflow-assertion",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PLAN-001-stateless-core.md § Non-functional requirements and Technology choices",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cicd",
+  "approved_by": null,
+  "approved_at": null
+}

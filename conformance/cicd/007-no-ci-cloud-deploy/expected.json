@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "no-ci-cloud-deploy",
+      "must": "Routine CI has no cloud apply or deploy step for this ephemeral interactive lab"
+    }
+  ]
+}

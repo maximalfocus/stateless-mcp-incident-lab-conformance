@@ -1,0 +1,28 @@
+{
+  "spec_id": "CICD-003",
+  "description": "CI runs architecture dependency and public-boundary assertions for each implementation",
+  "description_bdd": {
+    "given": "the architecture gate scenario",
+    "when": "the cicd contract is exercised",
+    "then": "cI runs architecture dependency and public-boundary assertions for each implementation"
+  },
+  "boundary": "workflow-assertion",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PLAN-001-stateless-core.md § Non-functional requirements and Technology choices",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cicd",
+  "approved_by": null,
+  "approved_at": null
+}

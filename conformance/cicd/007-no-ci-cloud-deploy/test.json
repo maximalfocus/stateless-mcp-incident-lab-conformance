@@ -1,0 +1,28 @@
+{
+  "spec_id": "CICD-007",
+  "description": "Routine CI has no cloud apply or deploy step for this ephemeral interactive lab",
+  "description_bdd": {
+    "given": "the no ci cloud deploy scenario",
+    "when": "the cicd contract is exercised",
+    "then": "routine CI has no cloud apply or deploy step for this ephemeral interactive lab"
+  },
+  "boundary": "workflow-assertion",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PLAN-001-stateless-core.md § Non-functional requirements and Technology choices",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cicd",
+  "approved_by": null,
+  "approved_at": null
+}

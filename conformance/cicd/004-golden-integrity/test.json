@@ -1,0 +1,28 @@
+{
+  "spec_id": "CICD-004",
+  "description": "CI validates golden shape and never auto-updates golden expected outputs",
+  "description_bdd": {
+    "given": "the golden integrity scenario",
+    "when": "the cicd contract is exercised",
+    "then": "cI validates golden shape and never auto-updates golden expected outputs"
+  },
+  "boundary": "workflow-assertion",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PLAN-001-stateless-core.md § Non-functional requirements and Technology choices",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cicd",
+  "approved_by": null,
+  "approved_at": null
+}

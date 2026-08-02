@@ -1,0 +1,28 @@
+{
+  "spec_id": "CICD-008",
+  "description": "Any explicitly approved cloud acceptance workflow guarantees destroy and inventory reporting on success or failure",
+  "description_bdd": {
+    "given": "the teardown on acceptance scenario",
+    "when": "the cicd contract is exercised",
+    "then": "any explicitly approved cloud acceptance workflow guarantees destroy and inventory reporting on success or failure"
+  },
+  "boundary": "workflow-assertion",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PLAN-001-stateless-core.md § Non-functional requirements and Technology choices",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cicd",
+  "approved_by": null,
+  "approved_at": null
+}

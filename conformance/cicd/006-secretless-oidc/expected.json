@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "secretless-oidc",
+      "must": "CI contains no long-lived AWS credentials and uses least-privilege OIDC where cloud identity is needed"
+    }
+  ]
+}

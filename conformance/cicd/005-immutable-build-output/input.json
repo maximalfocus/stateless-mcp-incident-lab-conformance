@@ -1,0 +1,9 @@
+{
+  "scenario": "immutable-build-output",
+  "contract": "Images are built once and identified by immutable digest for later acceptance",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {
+      "type": "contract",
+      "subject": "quality-gates",
+      "must": "CI requires format, lint, typecheck, unit, conformance, coverage, mutation, and dependency audit gates"
+    }
+  ]
+}

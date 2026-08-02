@@ -1,0 +1,9 @@
+{
+  "scenario": "four-way-local-matrix",
+  "contract": "CI starts the shared Compose topology and passes all four client-server combinations",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

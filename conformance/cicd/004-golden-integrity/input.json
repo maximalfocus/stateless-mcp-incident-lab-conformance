@@ -1,0 +1,9 @@
+{
+  "scenario": "golden-integrity",
+  "contract": "CI validates golden shape and never auto-updates golden expected outputs",
+  "protocol_version": "2026-07-28",
+  "providers": [
+    "raw",
+    "sdk"
+  ]
+}

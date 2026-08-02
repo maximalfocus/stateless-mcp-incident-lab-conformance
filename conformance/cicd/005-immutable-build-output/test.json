@@ -1,0 +1,28 @@
+{
+  "spec_id": "CICD-005",
+  "description": "Images are built once and identified by immutable digest for later acceptance",
+  "description_bdd": {
+    "given": "the immutable build output scenario",
+    "when": "the cicd contract is exercised",
+    "then": "images are built once and identified by immutable digest for later acceptance"
+  },
+  "boundary": "workflow-assertion",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PLAN-001-stateless-core.md § Non-functional requirements and Technology choices",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cicd",
+  "approved_by": null,
+  "approved_at": null
+}

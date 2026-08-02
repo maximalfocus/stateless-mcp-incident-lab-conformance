@@ -1,0 +1,28 @@
+{
+  "spec_id": "CICD-006",
+  "description": "CI contains no long-lived AWS credentials and uses least-privilege OIDC where cloud identity is needed",
+  "description_bdd": {
+    "given": "the secretless oidc scenario",
+    "when": "the cicd contract is exercised",
+    "then": "cI contains no long-lived AWS credentials and uses least-privilege OIDC where cloud identity is needed"
+  },
+  "boundary": "workflow-assertion",
+  "normalisation": [
+    "timestamp",
+    "generated_id",
+    "file_path",
+    "unordered_collection"
+  ],
+  "source": "PLAN-001-stateless-core.md § Non-functional requirements and Technology choices",
+  "consumers": [
+    "typescript-raw",
+    "typescript-sdk"
+  ],
+  "providers": [
+    "raw",
+    "sdk"
+  ],
+  "context": "cicd",
+  "approved_by": null,
+  "approved_at": null
+}
