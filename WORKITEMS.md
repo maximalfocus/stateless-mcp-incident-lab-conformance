@@ -366,7 +366,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/application/catalogs.ts, src/application/tools.ts`
   - Depends on: WI-069
 
-- [ ] **WI-071** SDK primitives contracts 4–6 (3 tests)
+- [~] **WI-071** SDK primitives contracts 4–6 (3 tests)
   - Tests: `conformance/primitives/004-resources-list-safe-catalog`, `conformance/primitives/005-resource-templates-list`, `conformance/primitives/006-resources-list-order`
   - Scope: `src/application/catalogs.ts, src/application/tools.ts`
   - Depends on: WI-070
