@@ -203,6 +203,13 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("prohibited golden auto-update behavior", result.stdout)
 
+    def test_dead_fixture_on_non_executing_boundary_goes_red(self):
+        target = self.tmp / "conformance/cache/001-exact-six-cacheable/request.json"
+        target.write_text('{}\n')
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("non-executing boundary carries dead fixtures", result.stdout)
+
     def test_unknown_state_fault_goes_red(self):
         path = self.tmp / "conformance/mrtr/012-tampered-state/input.json"
         path.write_text(path.read_text().replace('"tampered"', '"invented"'))

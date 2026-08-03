@@ -6,14 +6,14 @@
     "when": "the mrtr contract is exercised",
     "then": "the client returns requestState byte-for-byte without interpreting it"
   },
-  "boundary": "tool-call",
+  "boundary": "function",
   "normalisation": [
     "timestamp",
     "generated_id",
     "file_path",
     "unordered_collection"
   ],
-  "source": "sources/spec-2026-07-28/basic__patterns__mrtr.md and client__elicitation.md + PRD.md § MRTR elicitation",
+  "source": "sources/spec-2026-07-28/basic__patterns__mrtr.md and client__elicitation.md + PRD.md \u00a7 MRTR elicitation",
   "consumers": [
     "typescript-raw",
     "typescript-sdk"
@@ -26,7 +26,6 @@
   "approved_by": null,
   "approved_at": null,
   "source_deps": [
-    "src/application/remediation.ts",
-    "src/protocol/request-state.ts"
+    "src/client/cli.ts"
   ]
 }

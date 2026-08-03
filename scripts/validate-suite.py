@@ -63,6 +63,9 @@ for p in sorted(conf.rglob('test.json')):
         if params.get('name')=='query_telemetry' and isinstance(arguments,dict) and arguments.get('service') is not None:
           if headers.get('Mcp-Param-Service')!=arguments.get('service') and not intentional_violation: errors.append(f'{sid}: Mcp-Param-Service/body argument mismatch')
   if t.get('boundary')=='function' and not (p.parent/'input.json').exists(): errors.append(f'{sid}: function missing input')
+  if t.get('boundary') not in ('http','tool-call','sse','trace-span'):
+    dead=[name for name in ('request.json','seed.json') if (p.parent/name).exists()]
+    if dead: errors.append(f'{sid}: non-executing boundary carries dead fixtures {dead}')
   input_path=p.parent/'input.json'
   if input_path.exists():
     input_data=json.loads(input_path.read_text())

@@ -1,5 +1,4 @@
 {
-  "fixture": "accepted-remediation",
-  "clock": "2026-08-02T00:00:00Z",
-  "effect_count_before": 0
+  "operation": "echo_request_state",
+  "request_state": "opaque.+/=_-TOKEN"
 }

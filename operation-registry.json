@@ -454,6 +454,25 @@
           "version"
         ]
       },
+      "echo_request_state": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "operation",
+          "request_state"
+        ],
+        "input_allowed": [
+          "operation",
+          "request_state"
+        ],
+        "expected_required": [
+          "request_state"
+        ],
+        "expected_allowed": [
+          "request_state"
+        ]
+      },
       "header_codec_round_trip": {
         "boundaries": [
           "function"
