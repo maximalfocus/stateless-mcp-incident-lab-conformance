@@ -341,7 +341,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/adapters/inbound/http.ts, src/client/http.ts`
   - Depends on: WI-064
 
-- [ ] **WI-066** SDK transport contracts 13–15 (3 tests)
+- [~] **WI-066** SDK transport contracts 13–15 (3 tests)
   - Tests: `conformance/transport/013-header-names-case-insensitive`, `conformance/transport/014-base64-sentinel-roundtrip`, `conformance/transport/015-omit-null-param-header`
   - Scope: `src/adapters/inbound/http.ts, src/client/http.ts`
   - Depends on: WI-065
