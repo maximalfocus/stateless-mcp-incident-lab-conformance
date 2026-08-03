@@ -14,7 +14,36 @@
     "id": 1,
     "result": {
       "resultType": "complete",
-      "tools": [],
+      "tools": [
+        {
+          "name": "create_incident",
+          "{{ALLOW_EXTRA}}": true
+        },
+        {
+          "name": "execute_remediation",
+          "{{ALLOW_EXTRA}}": true
+        },
+        {
+          "name": "get_incident",
+          "{{ALLOW_EXTRA}}": true
+        },
+        {
+          "name": "propose_remediation",
+          "{{ALLOW_EXTRA}}": true
+        },
+        {
+          "name": "query_telemetry",
+          "{{ALLOW_EXTRA}}": true
+        },
+        {
+          "name": "resolve_incident",
+          "{{ALLOW_EXTRA}}": true
+        },
+        {
+          "name": "run_diagnostic",
+          "{{ALLOW_EXTRA}}": true
+        }
+      ],
       "ttlMs": 60000,
       "cacheScope": "public",
       "_meta": {

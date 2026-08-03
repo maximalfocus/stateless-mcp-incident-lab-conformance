@@ -6,14 +6,14 @@
     "when": "the versioning contract is exercised",
     "then": "a supplied cookie, source address, prior request, or Mcp-Session-Id cannot affect protocol behavior"
   },
-  "boundary": "http",
+  "boundary": "http-contract",
   "normalisation": [
     "timestamp",
     "generated_id",
     "file_path",
     "unordered_collection"
   ],
-  "source": "sources/spec-2026-07-28/basic__versioning.md + PRD.md § Required request metadata",
+  "source": "sources/spec-2026-07-28/basic__versioning.md + PRD.md \u00a7 Required request metadata",
   "consumers": [
     "typescript-raw",
     "typescript-sdk"

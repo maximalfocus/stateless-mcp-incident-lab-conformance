@@ -8,5 +8,6 @@
     "--json",
     "{\"incident_id\":\"INCIDENT-OPEN\"}"
   ],
-  "stdin": ""
+  "stdin": "",
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB"
 }

@@ -18,13 +18,19 @@
     "header_values_case_sensitive": true,
     "required_accept": "application/json, text/event-stream",
     "success_content_types": ["application/json", "text/event-stream"],
-    "get_delete_status": 405
+    "get_delete_status": 405,
+    "invalid_origin_status": 403,
+    "oversized_body_status": 413,
+    "deadline_exceeded_status": 504
   },
   "errors": {
     "envelope": "json-rpc-2.0",
     "domain_failures_are_tool_results": true,
     "protocol_failures_are_jsonrpc_errors": true,
-    "missing_body_meta_precedes_header_mismatch": true
+    "missing_body_meta_precedes_header_mismatch": true,
+    "envelope_rejection_status": 400,
+    "dispatched_failure_status": 200,
+    "status_tier_rule": "A JSON-RPC error carries HTTP 400 when the request is rejected while validating the transport envelope (unparseable or non-object body, batch array, client-to-server response, missing or mismatched required MCP headers, missing params._meta, unsupported protocol version), and HTTP 200 once the envelope validated and the method dispatched (unknown method/tool/resource/prompt, missing or invalid params, invalid cursor, missing client capability, MRTR request-state faults)."
   },
   "normalisation": {
     "timestamps": "{{TIMESTAMP}}",

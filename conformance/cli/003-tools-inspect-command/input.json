@@ -6,5 +6,6 @@
     "http://lab/raw/mcp",
     "create_incident"
   ],
-  "stdin": ""
+  "stdin": "",
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB"
 }

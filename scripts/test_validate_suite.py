@@ -11,6 +11,10 @@ class ValidateSuiteMutationTests(unittest.TestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp()) / "suite"
         shutil.copytree(SOURCE, self.tmp, ignore=shutil.ignore_patterns(".git", "__pycache__"))
+        architecture = SOURCE.parent / "stateless-mcp-incident-lab-architecture"
+        if architecture.exists():
+            shutil.copytree(architecture, self.tmp.parent / architecture.name,
+                            ignore=shutil.ignore_patterns(".git", "__pycache__"))
 
     def tearDown(self):
         shutil.rmtree(self.tmp.parent)
@@ -199,9 +203,26 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("prohibited golden auto-update behavior", result.stdout)
 
+    def test_unknown_state_fault_goes_red(self):
+        path = self.tmp / "conformance/mrtr/012-tampered-state/input.json"
+        path.write_text(path.read_text().replace('"tampered"', '"invented"'))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("unknown state_fault", result.stdout)
+
+    def test_cli_fixture_reference_and_exit_agreement_go_red(self):
+        input_path = self.tmp / "conformance/cli/001-discover-command/input.json"
+        input_path.write_text(input_path.read_text().replace("SEEDED-DETERMINISTIC-INCIDENT-LAB", "UNKNOWN"))
+        exit_path = self.tmp / "conformance/cli/001-discover-command/expected-exit.txt"
+        exit_path.write_text("9\n")
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("CLI input must name deterministic fixture", result.stdout)
+        self.assertIn("expected-exit.txt disagrees", result.stdout)
+
     def test_stale_adr_citation_goes_red(self):
         adr = self.tmp.parent / "stateless-mcp-incident-lab-architecture/adr/0001-independent-raw-sdk-realizations.md"
-        adr.parent.mkdir(parents=True)
+        adr.parent.mkdir(parents=True, exist_ok=True)
         adr.write_text("# ADR-0001\n\nStatus: Proposed\n")
         result = self.run_validator()
         self.assertNotEqual(result.returncode, 0)

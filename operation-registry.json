@@ -1014,6 +1014,7 @@
         "input_allowed": [
           "artifact_glob",
           "checks",
+          "correlation_obligations",
           "subject"
         ],
         "expected_required": [

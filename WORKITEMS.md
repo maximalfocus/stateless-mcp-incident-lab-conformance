@@ -586,7 +586,7 @@ Target: explicit infrastructure invocation → `stateless-mcp-incident-lab-infra
 
 - [ ] **WI-113** infra contracts 7–10 (4 tests)
   - Tests: `conformance/infra/007-secret-manager-state-key`, `conformance/infra/008-access-log-redaction`, `conformance/infra/009-required-tags-retention`, `conformance/infra/010-deploy-verify-destroy`
-  - Scope: `../stateless-mcp-incident-lab-infrastructure/lib/stack.ts`
+  - Scope: `../stateless-mcp-incident-lab-infrastructure/lib/stack.ts, ../stateless-mcp-incident-lab-infrastructure/scripts/deploy-verify-destroy.*`
   - Depends on: WI-112
 
 ## Lane: cicd

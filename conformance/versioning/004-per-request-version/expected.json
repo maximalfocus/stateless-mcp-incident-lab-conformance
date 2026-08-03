@@ -1,59 +1,67 @@
 {
-  "assertions": [
+  "observations": [
     {
-      "type": "strict_http_shape"
-    }
-  ],
-  "status": 200,
-  "headers": {
-    "{{ALLOW_EXTRA}}": true,
-    "Content-Type": "application/json"
-  },
-  "body": {
-    "responses": [
-      {
-        "jsonrpc": "2.0",
-        "id": 1,
-        "result": {
-          "resultType": "complete",
-          "supportedVersions": [
-            "2026-07-28"
-          ],
-          "capabilities": {
-            "tools": {},
-            "resources": {},
-            "prompts": {}
-          },
-          "serverInfo": {
-            "name": "stateless-mcp-incident-lab",
-            "version": "2026-07-28"
-          },
-          "instructions": "Use discovery, catalogs, and explicit incident handles to investigate the synthetic incident lab.",
-          "ttlMs": 60000,
-          "cacheScope": "public",
-          "_meta": {
-            "io.modelcontextprotocol/serverInfo": {
+      "case": "version-2026-07-28",
+      "response": {
+        "status": 200,
+        "headers": {
+          "{{ALLOW_EXTRA}}": true,
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "result": {
+            "resultType": "complete",
+            "supportedVersions": [
+              "2026-07-28"
+            ],
+            "capabilities": {
+              "tools": {},
+              "resources": {},
+              "prompts": {}
+            },
+            "serverInfo": {
               "name": "stateless-mcp-incident-lab",
               "version": "2026-07-28"
             },
-            "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
-          }
-        }
-      },
-      {
-        "jsonrpc": "2.0",
-        "id": 2,
-        "error": {
-          "code": -32022,
-          "message": "Unsupported protocol version",
-          "data": {
-            "requested": "2025-11-25",
-            "supported": [
-              "2026-07-28"
-            ]
+            "instructions": "Use discovery, catalogs, and explicit incident handles to investigate the synthetic incident lab.",
+            "ttlMs": 60000,
+            "cacheScope": "public",
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "stateless-mcp-incident-lab",
+                "version": "2026-07-28"
+              },
+              "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
+            }
           }
         }
       }
-    ]
-  }
+    },
+    {
+      "case": "version-2025-11-25",
+      "response": {
+        "status": 400,
+        "headers": {
+          "{{ALLOW_EXTRA}}": true,
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "error": {
+            "code": -32022,
+            "message": "Unsupported protocol version",
+            "data": {
+              "requested": "2025-11-25",
+              "supported": [
+                "2026-07-28"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
 }

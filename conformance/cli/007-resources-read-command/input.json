@@ -6,5 +6,6 @@
     "http://lab/raw/mcp",
     "incident://topology/services"
   ],
-  "stdin": ""
+  "stdin": "",
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB"
 }

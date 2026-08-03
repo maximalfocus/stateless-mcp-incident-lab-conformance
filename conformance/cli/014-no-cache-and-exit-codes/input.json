@@ -68,5 +68,6 @@
         "code": "ECONNREFUSED"
       }
     }
-  ]
+  ],
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB"
 }

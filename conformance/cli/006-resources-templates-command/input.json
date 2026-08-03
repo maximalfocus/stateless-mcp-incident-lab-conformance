@@ -5,5 +5,6 @@
     "templates",
     "http://lab/raw/mcp"
   ],
-  "stdin": ""
+  "stdin": "",
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB"
 }

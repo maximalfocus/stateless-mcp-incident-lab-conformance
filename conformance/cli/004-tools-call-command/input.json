@@ -8,5 +8,6 @@
     "--json",
     "{\"title\":\"API latency\",\"severity\":\"high\",\"suspected_services\":[\"api\"]}"
   ],
-  "stdin": ""
+  "stdin": "",
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB"
 }

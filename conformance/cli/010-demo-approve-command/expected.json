@@ -2,6 +2,6 @@
   "exit_code": 0,
   "stdout": "{\"incident_id\":\"{{GENERATED_ID}}\",\"status\":\"MITIGATED\",\"remediation_effect_count\":1}\n",
   "stderr": "",
-  "network_calls": 5,
+  "network_calls": 6,
   "elicitation_action": "accept"
 }

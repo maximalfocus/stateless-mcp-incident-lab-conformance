@@ -34,5 +34,9 @@
         "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
       }
     }
+  },
+  "observations": {
+    "initial_request_id": 1,
+    "retry_request_id": 2
   }
 }

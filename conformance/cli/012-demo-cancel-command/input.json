@@ -5,5 +5,6 @@
     "http://lab/raw/mcp",
     "--cancel"
   ],
-  "stdin": ""
+  "stdin": "",
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB"
 }

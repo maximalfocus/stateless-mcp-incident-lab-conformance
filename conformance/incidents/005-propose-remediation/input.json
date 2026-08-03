@@ -4,6 +4,6 @@
   "actions": [
     "propose_remediation"
   ],
-  "incident_id": "INCIDENT-OPEN",
+  "incident_id": "INCIDENT-INVESTIGATING",
   "clock": "2026-08-02T00:00:00Z"
 }

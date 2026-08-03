@@ -30,7 +30,14 @@ for p in sorted(conf.rglob('test.json')):
   for f in p.parent.glob('*.json'):
     try: json.loads(f.read_text())
     except Exception as e: errors.append(f'{f.relative_to(root)} invalid JSON: {e}')
-  if not (p.parent/'expected.json').exists() and not (p.parent/'expected-exit.txt').exists(): errors.append(f'{sid}: no expected')
+  if not (p.parent/'expected.json').exists(): errors.append(f'{sid}: no expected.json')
+  if t.get('boundary')=='cli':
+    input_path=p.parent/'input.json'; exit_path=p.parent/'expected-exit.txt'; expected_path=p.parent/'expected.json'
+    if input_path.exists() and json.loads(input_path.read_text()).get('fixture')!='SEEDED-DETERMINISTIC-INCIDENT-LAB': errors.append(f'{sid}: CLI input must name deterministic fixture')
+    if exit_path.exists() and expected_path.exists():
+      try:
+        if int(exit_path.read_text().strip()) != json.loads(expected_path.read_text()).get('exit_code'): errors.append(f'{sid}: expected-exit.txt disagrees with expected.json')
+      except ValueError: errors.append(f'{sid}: expected-exit.txt is not an integer')
   if t.get('boundary') in ('http','tool-call','sse','trace-span'):
     for f in ('seed.json','request.json'):
       if not (p.parent/f).exists(): errors.append(f'{sid}: missing {f}')
@@ -60,6 +67,7 @@ for p in sorted(conf.rglob('test.json')):
   if input_path.exists():
     input_data=json.loads(input_path.read_text())
     if isinstance(input_data,dict) and set(input_data)<= {'scenario','contract','protocol_version','providers'}: errors.append(f'{sid}: input is descriptive metadata, not replayable fixture data')
+    if isinstance(input_data,dict) and 'state_fault' in input_data and input_data['state_fault'] not in {'tampered','expired','method_mismatch','arguments_mismatch'}: errors.append(f'{sid}: unknown state_fault')
     if t.get('boundary')=='cli' and 'argv' not in input_data: errors.append(f'{sid}: CLI fixture missing argv')
     expected_path=p.parent/'expected.json'
     expected_data=json.loads(expected_path.read_text()) if expected_path.exists() else {}
@@ -170,8 +178,7 @@ for lane,expected in lane_expected.items():
 if set().union(*lane_expected.values())!=all_paths: errors.append('WORKITEM lanes do not cover every golden')
 # Cited ADR must exist and remain Accepted when the sibling architecture repo is checked out.
 arch_adr=root.parent/'stateless-mcp-incident-lab-architecture'/'adr'/'0001-independent-raw-sdk-realizations.md'
-if arch_adr.parent.parent.exists():
-  if not arch_adr.exists() or not re.search(r'^Status:\s*Accepted\s*$',arch_adr.read_text(),re.M): errors.append('ADR-0001 citation is missing or stale')
+if not arch_adr.exists() or not re.search(r'^Status:\s*Accepted\s*$',arch_adr.read_text(),re.M): errors.append('ADR-0001 citation is missing or stale')
 # Golden auto-update code is forbidden outside mutation tests.
 for p in (root/'scripts').glob('*.py'):
   if p.name.startswith('test_'): continue

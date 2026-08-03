@@ -1,15 +1,63 @@
 {
   "requests": [
     {
-      "client_capabilities": {
-        "elicitation": {
-          "form": {}
+      "method": "POST",
+      "path": "/raw/mcp",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "MCP-Protocol-Version": "2026-07-28",
+        "Mcp-Method": "tools/call",
+        "Mcp-Name": "execute_remediation"
+      },
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "execute_remediation",
+          "arguments": {
+            "incident_id": "INCIDENT-OPEN",
+            "remediation_id": "REMEDIATION-001"
+          },
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+            "io.modelcontextprotocol/clientCapabilities": {
+              "elicitation": {
+                "form": {}
+              }
+            }
+          }
         }
-      }
+      },
+      "case": "elicitation-present"
     },
     {
-      "client_capabilities": {}
+      "method": "POST",
+      "path": "/raw/mcp",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "MCP-Protocol-Version": "2026-07-28",
+        "Mcp-Method": "tools/call",
+        "Mcp-Name": "execute_remediation"
+      },
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "tools/call",
+        "params": {
+          "name": "execute_remediation",
+          "arguments": {
+            "incident_id": "INCIDENT-OPEN",
+            "remediation_id": "REMEDIATION-001"
+          },
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+            "io.modelcontextprotocol/clientCapabilities": {}
+          }
+        }
+      },
+      "case": "elicitation-absent"
     }
   ],
-  "connection_reused": true
+  "compare": "complete_http_responses"
 }

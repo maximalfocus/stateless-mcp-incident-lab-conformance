@@ -1,16 +1,59 @@
 {
   "requests": [
     {
-      "cookie": null,
-      "source_ip": "127.0.0.1",
-      "replica": "A"
+      "method": "POST",
+      "path": "/raw/mcp",
+      "headers": {
+        "Accept": "application/json, text/event-stream",
+        "MCP-Protocol-Version": "2026-07-28",
+        "Mcp-Method": "server/discover",
+        "Cookie": "sid=attacker",
+        "Mcp-Session-Id": "invented"
+      },
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "server/discover",
+        "params": {
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+            "io.modelcontextprotocol/clientCapabilities": {}
+          }
+        }
+      },
+      "case": "replica-A",
+      "connection": {
+        "cookie": null,
+        "source_ip": "127.0.0.1",
+        "replica": "A"
+      }
     },
     {
-      "cookie": "sid=attacker",
-      "source_ip": "198.51.100.7",
-      "replica": "B",
+      "method": "POST",
+      "path": "/raw/mcp",
       "headers": {
+        "Accept": "application/json, text/event-stream",
+        "MCP-Protocol-Version": "2026-07-28",
+        "Mcp-Method": "server/discover",
+        "Cookie": "sid=attacker",
         "Mcp-Session-Id": "invented"
+      },
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "server/discover",
+        "params": {
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+            "io.modelcontextprotocol/clientCapabilities": {}
+          }
+        }
+      },
+      "case": "replica-B",
+      "connection": {
+        "cookie": "sid=attacker",
+        "source_ip": "198.51.100.7",
+        "replica": "B"
       }
     }
   ],

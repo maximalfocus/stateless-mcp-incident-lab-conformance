@@ -23,5 +23,6 @@
   "sensitive_values": [
     "INCIDENT-SECRET",
     "incident://incidents/INCIDENT-SECRET/timeline"
-  ]
+  ],
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB"
 }
