@@ -361,37 +361,37 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/application/discover.ts`
   - Depends on: WI-068
 
-- [~] **WI-070** SDK primitives contracts 1–3 (3 tests)
+- [x] **WI-070** SDK primitives contracts 1–3 (3 tests)
   - Tests: `conformance/primitives/001-tools-list-order`, `conformance/primitives/002-tools-list-schemas`, `conformance/primitives/003-tools-list-pagination`
   - Scope: `src/application/catalogs.ts, src/application/tools.ts`
   - Depends on: WI-069
 
-- [~] **WI-071** SDK primitives contracts 4–6 (3 tests)
+- [x] **WI-071** SDK primitives contracts 4–6 (3 tests)
   - Tests: `conformance/primitives/004-resources-list-safe-catalog`, `conformance/primitives/005-resource-templates-list`, `conformance/primitives/006-resources-list-order`
   - Scope: `src/application/catalogs.ts, src/application/tools.ts`
   - Depends on: WI-070
 
-- [~] **WI-072** SDK primitives contracts 7–9 (3 tests)
+- [x] **WI-072** SDK primitives contracts 7–9 (3 tests)
   - Tests: `conformance/primitives/007-topology-read`, `conformance/primitives/008-runbook-read`, `conformance/primitives/009-timeline-read`
   - Scope: `src/application/catalogs.ts, src/application/tools.ts`
   - Depends on: WI-071
 
-- [~] **WI-073** SDK primitives contracts 10–12 (3 tests)
+- [x] **WI-073** SDK primitives contracts 10–12 (3 tests)
   - Tests: `conformance/primitives/010-unknown-resource`, `conformance/primitives/011-prompts-list-order`, `conformance/primitives/012-triage-prompt-get`
   - Scope: `src/application/catalogs.ts, src/application/tools.ts`
   - Depends on: WI-072
 
-- [~] **WI-074** SDK primitives contracts 13–15 (3 tests)
+- [x] **WI-074** SDK primitives contracts 13–15 (3 tests)
   - Tests: `conformance/primitives/013-review-prompt-get`, `conformance/primitives/014-unknown-prompt`, `conformance/primitives/015-missing-prompt-argument`
   - Scope: `src/application/catalogs.ts, src/application/tools.ts`
   - Depends on: WI-073
 
-- [~] **WI-075** SDK primitives contracts 16–18 (3 tests)
+- [x] **WI-075** SDK primitives contracts 16–18 (3 tests)
   - Tests: `conformance/primitives/016-create-incident-output`, `conformance/primitives/017-query-telemetry-output`, `conformance/primitives/018-run-diagnostic-output`
   - Scope: `src/application/catalogs.ts, src/application/tools.ts`
   - Depends on: WI-074
 
-- [~] **WI-076** SDK primitives contracts 19–20 (2 tests)
+- [x] **WI-076** SDK primitives contracts 19–20 (2 tests)
   - Tests: `conformance/primitives/019-invalid-cursor`, `conformance/primitives/020-domain-error-split`
   - Scope: `src/application/catalogs.ts, src/application/tools.ts`
   - Depends on: WI-075
