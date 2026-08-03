@@ -528,7 +528,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
 
 - [ ] **WI-103** SDK dependency contracts (4 tests)
   - Tests: `conformance/dependencies/001-lockfile-reproducible`, `conformance/dependencies/002-approved-licenses`, `conformance/dependencies/003-audit-floor`, `conformance/dependencies/004-expiring-suppressions`
-  - Scope: `package.json, package-lock.json`
+  - Scope: `package.json, package-lock.json, dependency-exceptions.json`
   - Depends on: WI-102
 
 - [ ] **WI-104** SDK health readiness contracts (2 tests)
