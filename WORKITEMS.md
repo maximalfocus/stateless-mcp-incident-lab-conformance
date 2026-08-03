@@ -526,7 +526,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/validation.ts, src/adapters/inbound/security.ts`
   - Depends on: WI-101
 
-- [ ] **WI-103** SDK dependency contracts (4 tests)
+- [~] **WI-103** SDK dependency contracts (4 tests)
   - Tests: `conformance/dependencies/001-lockfile-reproducible`, `conformance/dependencies/002-approved-licenses`, `conformance/dependencies/003-audit-floor`, `conformance/dependencies/004-expiring-suppressions`
   - Scope: `package.json, package-lock.json, dependency-exceptions.json`
   - Depends on: WI-102
