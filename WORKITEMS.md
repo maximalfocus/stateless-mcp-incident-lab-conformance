@@ -501,7 +501,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/headers.ts, src/client/cache-key.ts`
   - Depends on: WI-096
 
-- [ ] **WI-098** SDK properties contracts 4–7 (4 tests)
+- [~] **WI-098** SDK properties contracts 4–7 (4 tests)
   - Tests: `conformance/properties/004-deterministic-catalog-order`, `conformance/properties/005-request-state-tamper-rejection`, `conformance/properties/006-replica-independence`, `conformance/properties/007-remediation-at-most-once`
   - Scope: `src/protocol/headers.ts, src/client/cache-key.ts`
   - Depends on: WI-097
