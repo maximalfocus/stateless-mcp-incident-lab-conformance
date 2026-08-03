@@ -356,7 +356,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/application/discover.ts`
   - Depends on: WI-067
 
-- [ ] **WI-069** SDK discovery contracts 4–6 (3 tests)
+- [~] **WI-069** SDK discovery contracts 4–6 (3 tests)
   - Tests: `conformance/discovery/004-no-subscribe-logging-completions`, `conformance/discovery/005-identity-and-guidance`, `conformance/discovery/006-public-cache-hints`
   - Scope: `src/application/discover.ts`
   - Depends on: WI-068
