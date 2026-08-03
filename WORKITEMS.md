@@ -396,7 +396,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/application/catalogs.ts, src/application/tools.ts`
   - Depends on: WI-075
 
-- [ ] **WI-077** SDK incidents contracts 1–3 (3 tests)
+- [~] **WI-077** SDK incidents contracts 1–3 (3 tests)
   - Tests: `conformance/incidents/001-create-open-incident`, `conformance/incidents/002-get-current-incident`, `conformance/incidents/003-open-to-investigating`
   - Scope: `src/domain/incident.ts, src/application/incidents.ts`
   - Depends on: WI-076
