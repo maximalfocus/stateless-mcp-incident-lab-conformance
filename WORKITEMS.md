@@ -545,12 +545,12 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
 
 Target: explicit family integration invocation in `stateless-mcp-incident-lab-prd` after both implementation lanes are complete; this lane owns the shared Compose matrix and performance harness.
 
-- [~] **WI-106** family interoperability contracts 1–3 (3 tests)
+- [x] **WI-106** family interoperability contracts 1–3 (3 tests)
   - Tests: `conformance/interoperability/001-raw-client-raw-server-discovery`, `conformance/interoperability/002-raw-client-sdk-server-discovery`, `conformance/interoperability/003-sdk-client-raw-server-discovery`
   - Scope: `demo/matrix.compose.yaml, demo/nginx.conf, demo/run-matrix.ts, package.json, tsconfig.json, ../stateless-mcp-incident-lab-typescript-{raw,sdk}/src/{protocol/version.ts,application/catalogs.ts,application/mrtr.ts,adapters/inbound/server.ts}`
   - Depends on: WI-053, WI-105
 
-- [ ] **WI-107** family interoperability contracts 4–6 (3 tests)
+- [~] **WI-107** family interoperability contracts 4–6 (3 tests)
   - Tests: `conformance/interoperability/004-sdk-client-sdk-server-discovery`, `conformance/interoperability/005-raw-client-raw-server-workflow`, `conformance/interoperability/006-raw-client-sdk-server-workflow`
   - Scope: `demo/matrix.compose.yaml, demo/run-matrix.ts`
   - Depends on: WI-106
