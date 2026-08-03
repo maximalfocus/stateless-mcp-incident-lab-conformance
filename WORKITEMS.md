@@ -531,7 +531,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `package.json, package-lock.json, dependency-exceptions.json`
   - Depends on: WI-102
 
-- [ ] **WI-104** SDK health readiness contracts (2 tests)
+- [~] **WI-104** SDK health readiness contracts (2 tests)
   - Tests: `conformance/observability/002-sdk-health-ready`, `conformance/observability/003-health-unavailable`
   - Scope: `src/adapters/outbound/telemetry.ts, src/adapters/inbound/health.ts`
   - Depends on: WI-103
