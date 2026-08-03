@@ -286,7 +286,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `scripts/verify-architecture.ts, src/**/index.ts`
   - Depends on: none
 
-- [ ] **WI-055** SDK protocol contracts 1–3 (3 tests)
+- [~] **WI-055** SDK protocol contracts 1–3 (3 tests)
   - Tests: `conformance/protocol/001-valid-request-shape`, `conformance/protocol/002-valid-notification-shape`, `conformance/protocol/003-reject-null-request-id`
   - Scope: `src/protocol/codec.ts, src/protocol/schema.ts`
   - Depends on: WI-054
