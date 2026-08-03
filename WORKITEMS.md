@@ -306,17 +306,17 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/codec.ts, src/protocol/schema.ts`
   - Depends on: WI-057
 
-- [~] **WI-059** SDK versioning contracts 1–3 (3 tests)
+- [x] **WI-059** SDK versioning contracts 1–3 (3 tests)
   - Tests: `conformance/versioning/001-metadata-in-params`, `conformance/versioning/002-reject-top-level-meta-only`, `conformance/versioning/003-client-info-optional`
   - Scope: `src/protocol/version.ts, src/client/version.ts`
   - Depends on: WI-058
 
-- [~] **WI-060** SDK versioning contracts 4–6 (3 tests)
+- [x] **WI-060** SDK versioning contracts 4–6 (3 tests)
   - Tests: `conformance/versioning/004-per-request-version`, `conformance/versioning/005-per-request-capabilities`, `conformance/versioning/006-unsupported-version`
   - Scope: `src/protocol/version.ts, src/client/version.ts`
   - Depends on: WI-059
 
-- [~] **WI-061** SDK versioning contracts 7–10 (4 tests)
+- [x] **WI-061** SDK versioning contracts 7–10 (4 tests)
   - Tests: `conformance/versioning/007-client-version-recovery`, `conformance/versioning/008-no-discovery-prerequisite`, `conformance/versioning/009-no-session-id-response`, `conformance/versioning/010-no-session-affinity`
   - Scope: `src/protocol/version.ts, src/client/version.ts`
   - Depends on: WI-060
