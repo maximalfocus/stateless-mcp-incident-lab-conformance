@@ -416,27 +416,27 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/domain/incident.ts, src/application/incidents.ts`
   - Depends on: WI-079
 
-- [~] **WI-081** SDK mrtr contracts 1–3 (3 tests)
+- [x] **WI-081** SDK mrtr contracts 1–3 (3 tests)
   - Tests: `conformance/mrtr/001-initial-input-required`, `conformance/mrtr/002-form-capability-required`, `conformance/mrtr/003-url-only-capability-rejected`
   - Scope: `src/application/mrtr.ts, src/adapters/outbound/request-state.ts`
   - Depends on: WI-080
 
-- [~] **WI-082** SDK mrtr contracts 4–6 (3 tests)
+- [x] **WI-082** SDK mrtr contracts 4–6 (3 tests)
   - Tests: `conformance/mrtr/004-bare-elicitation-supports-form`, `conformance/mrtr/005-flat-primitive-schema`, `conformance/mrtr/006-new-retry-id`
   - Scope: `src/application/mrtr.ts, src/adapters/outbound/request-state.ts`
   - Depends on: WI-081
 
-- [~] **WI-083** SDK mrtr contracts 7–9 (3 tests)
+- [x] **WI-083** SDK mrtr contracts 7–9 (3 tests)
   - Tests: `conformance/mrtr/007-exact-state-echo`, `conformance/mrtr/008-accept-executes-once`, `conformance/mrtr/009-decline-no-effect`
   - Scope: `src/application/mrtr.ts, src/adapters/outbound/request-state.ts`
   - Depends on: WI-082
 
-- [~] **WI-084** SDK mrtr contracts 10–12 (3 tests)
+- [x] **WI-084** SDK mrtr contracts 10–12 (3 tests)
   - Tests: `conformance/mrtr/010-cancel-no-effect`, `conformance/mrtr/011-incomplete-reelicits`, `conformance/mrtr/012-tampered-state`
   - Scope: `src/application/mrtr.ts, src/adapters/outbound/request-state.ts`
   - Depends on: WI-083
 
-- [~] **WI-085** SDK mrtr contracts 13–16 (4 tests)
+- [x] **WI-085** SDK mrtr contracts 13–16 (4 tests)
   - Tests: `conformance/mrtr/013-expired-state`, `conformance/mrtr/014-wrong-method-binding`, `conformance/mrtr/015-wrong-arguments-binding`, `conformance/mrtr/016-cross-replica-retry`
   - Scope: `src/application/mrtr.ts, src/adapters/outbound/request-state.ts`
   - Depends on: WI-084
