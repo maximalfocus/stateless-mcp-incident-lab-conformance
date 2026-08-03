@@ -456,17 +456,17 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/adapters/inbound/sse.ts, src/client/sse.ts`
   - Depends on: WI-087
 
-- [~] **WI-089** SDK cache contracts 1–3 (3 tests)
+- [x] **WI-089** SDK cache contracts 1–3 (3 tests)
   - Tests: `conformance/cache/001-exact-six-cacheable`, `conformance/cache/002-nonnegative-ttl`, `conformance/cache/003-scope-by-resource`
   - Scope: `src/client/cache.ts`
   - Depends on: WI-088
 
-- [~] **WI-090** SDK cache contracts 4–6 (3 tests)
+- [x] **WI-090** SDK cache contracts 4–6 (3 tests)
   - Tests: `conformance/cache/004-key-method-params-cursor`, `conformance/cache/005-fresh-hit`, `conformance/cache/006-ttl-not-polling`
   - Scope: `src/client/cache.ts`
   - Depends on: WI-089
 
-- [~] **WI-091** SDK cache contracts 7–10 (4 tests)
+- [x] **WI-091** SDK cache contracts 7–10 (4 tests)
   - Tests: `conformance/cache/007-no-hints-no-cache`, `conformance/cache/008-no-mrtr-cache`, `conformance/cache/009-stale-on-refresh-error`, `conformance/cache/010-full-list-rewalk`
   - Scope: `src/client/cache.ts`
   - Depends on: WI-090
