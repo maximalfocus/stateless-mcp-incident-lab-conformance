@@ -431,7 +431,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/application/mrtr.ts, src/adapters/outbound/request-state.ts`
   - Depends on: WI-082
 
-- [ ] **WI-084** SDK mrtr contracts 10–12 (3 tests)
+- [~] **WI-084** SDK mrtr contracts 10–12 (3 tests)
   - Tests: `conformance/mrtr/010-cancel-no-effect`, `conformance/mrtr/011-incomplete-reelicits`, `conformance/mrtr/012-tampered-state`
   - Scope: `src/application/mrtr.ts, src/adapters/outbound/request-state.ts`
   - Depends on: WI-083
