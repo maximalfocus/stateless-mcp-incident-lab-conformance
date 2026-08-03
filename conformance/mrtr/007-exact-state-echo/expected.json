@@ -21,7 +21,8 @@
         }
       ],
       "structuredContent": {
-        "request_state_echoed_exactly": true,
+        "remediation_id": "REMEDIATION-001",
+        "status": "EXECUTED",
         "effect_count": 1
       },
       "isError": false,
@@ -33,5 +34,8 @@
         "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
       }
     }
+  },
+  "observations": {
+    "request_state_echoed_exactly": true
   }
 }

@@ -22,7 +22,7 @@
       ],
       "structuredContent": {
         "remediation_id": "REMEDIATION-001",
-        "status": "CANCEL",
+        "status": "CANCELLED",
         "effect_count": 0
       },
       "isError": false,

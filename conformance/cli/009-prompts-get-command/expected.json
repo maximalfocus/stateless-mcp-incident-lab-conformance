@@ -1,6 +1,6 @@
 {
   "exit_code": 0,
-  "stdout": "{\"name\":\"triage_incident\",\"messages\":[{\"role\":\"user\",\"text\":\"Investigate incident INCIDENT-OPEN.\"}]}\n",
+  "stdout": "{\"name\":\"triage_incident\",\"messages\":[{\"role\":\"user\",\"text\":\"Investigate incident INCIDENT-OPEN using incident://incidents/INCIDENT-OPEN/timeline.\"}]}\n",
   "stderr": "",
   "network_calls": 1
 }

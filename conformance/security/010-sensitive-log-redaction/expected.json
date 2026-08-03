@@ -10,8 +10,10 @@
     ],
     "absent_values": [
       "INCIDENT-SECRET",
+      "REMEDIATION-SECRET",
       "SIGNED-STATE",
-      "approve=true"
+      "decision=accept",
+      "incident://incidents/INCIDENT-SECRET/timeline"
     ]
   }
 }

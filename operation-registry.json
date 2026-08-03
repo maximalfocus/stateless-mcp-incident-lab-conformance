@@ -1002,6 +1002,29 @@
           "violations"
         ]
       },
+      "deployment_lifecycle": {
+        "boundaries": [
+          "function"
+        ],
+        "input_required": [
+          "artifact_glob",
+          "checks",
+          "subject"
+        ],
+        "input_allowed": [
+          "artifact_glob",
+          "checks",
+          "subject"
+        ],
+        "expected_required": [
+          "evaluated_checks",
+          "violations"
+        ],
+        "expected_allowed": [
+          "evaluated_checks",
+          "violations"
+        ]
+      },
       "dependency_install": {
         "boundaries": [
           "function"

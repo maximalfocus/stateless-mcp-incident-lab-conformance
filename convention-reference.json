@@ -4,7 +4,7 @@
   "allow_extra_marker": "{{ALLOW_EXTRA}}",
   "error_envelope": {
     "jsonrpc": "2.0",
-    "id": "request id or null when unavailable",
+    "id": "request id when valid and available; omit for parse errors or an invalid/null request id",
     "error": {
       "code": "integer",
       "message": "string",

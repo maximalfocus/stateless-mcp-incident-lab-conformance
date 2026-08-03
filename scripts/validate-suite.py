@@ -102,6 +102,10 @@ for p in sorted(conf.rglob('test.json')):
       if prop.get('kind') not in registry[target]['kinds']: errors.append(f'{sid}: property target {target!r} does not allow kind {prop.get("kind")!r}')
   if sid and sid.startswith('ARCH-'):
     if t.get('adr')!='ADR-0001' or t.get('adr_repo')!='maximalfocus/stateless-mcp-incident-lab-architecture': errors.append(f'{sid}: bad architecture citation')
+    expected_arch=p.parent/'expected.json'
+    if expected_arch.exists():
+      for assertion in json.loads(expected_arch.read_text()).get('assertions',[]):
+        if assertion.get('type') in ('no_import','no_deep_import') and not str(assertion.get('from_glob','')).strip(): errors.append(f'{sid}: empty architecture glob')
   txt='\n'.join(x.read_text() for x in p.parent.glob('*.json'))
   if 'scenario/run' in txt: errors.append(f'{sid}: fixture targets harness pseudo-RPC rather than public boundary')
   if '"..."' in txt: errors.append(f'{sid}: invalid ellipsis placeholder')
@@ -164,6 +168,15 @@ for lane,expected in lane_expected.items():
   if len(assigned)!=len(set(assigned)) or set(assigned)!=expected:
     errors.append(f'WORKITEM lane {lane} assignment mismatch: missing={sorted(expected-set(assigned))}, extra={sorted(set(assigned)-expected)}')
 if set().union(*lane_expected.values())!=all_paths: errors.append('WORKITEM lanes do not cover every golden')
+# Cited ADR must exist and remain Accepted when the sibling architecture repo is checked out.
+arch_adr=root.parent/'stateless-mcp-incident-lab-architecture'/'adr'/'0001-independent-raw-sdk-realizations.md'
+if arch_adr.parent.parent.exists():
+  if not arch_adr.exists() or not re.search(r'^Status:\s*Accepted\s*$',arch_adr.read_text(),re.M): errors.append('ADR-0001 citation is missing or stale')
+# Golden auto-update code is forbidden outside mutation tests.
+for p in (root/'scripts').glob('*.py'):
+  if p.name.startswith('test_'): continue
+  text='\n'.join(line for line in p.read_text().splitlines() if 'prohibited golden auto-update behavior' not in line)
+  if re.search(r'^(?=.*expected(?:\.json)?)(?=.*(?:write_text|open\s*\()).*$',text,re.I|re.M): errors.append(f'{p.relative_to(root)} contains prohibited golden auto-update behavior')
 # Agent wrapper leakage in shipped artifacts.
 for p in root.rglob('*'):
   if '.git' in p.parts or not p.is_file() or p.suffix not in ('.md','.json','.yaml','.yml'): continue

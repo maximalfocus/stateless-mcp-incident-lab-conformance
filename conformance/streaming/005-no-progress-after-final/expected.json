@@ -39,11 +39,18 @@
           "content": [
             {
               "type": "text",
-              "text": "Diagnostic complete."
+              "text": "{\"diagnostic_id\":\"{{GENERATED_ID}}\",\"findings\":[{\"code\":\"DB_LATENCY\",\"service_id\":\"api\",\"summary\":\"Database dependency latency is elevated\"}]}"
             }
           ],
           "structuredContent": {
-            "diagnostic_id": "{{GENERATED_ID}}"
+            "diagnostic_id": "{{GENERATED_ID}}",
+            "findings": [
+              {
+                "code": "DB_LATENCY",
+                "service_id": "api",
+                "summary": "Database dependency latency is elevated"
+              }
+            ]
           },
           "isError": false,
           "_meta": {

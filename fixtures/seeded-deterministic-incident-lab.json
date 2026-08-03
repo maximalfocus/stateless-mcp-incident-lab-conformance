@@ -1,0 +1,26 @@
+{
+  "fixture": "SEEDED-DETERMINISTIC-INCIDENT-LAB",
+  "clock": "2026-08-02T00:00:00Z",
+  "incidents": [
+    {
+      "incident_id": "INCIDENT-OPEN",
+      "status": "OPEN",
+      "service_id": "api",
+      "expires_at": "2026-08-02T01:00:00Z"
+    },
+    {
+      "incident_id": "INCIDENT-INVESTIGATING",
+      "status": "INVESTIGATING",
+      "service_id": "api",
+      "expires_at": "2026-08-02T01:00:00Z"
+    }
+  ],
+  "remediations": [
+    {
+      "remediation_id": "REMEDIATION-001",
+      "incident_id": "INCIDENT-INVESTIGATING",
+      "status": "PROPOSED"
+    }
+  ],
+  "effect_claims": []
+}

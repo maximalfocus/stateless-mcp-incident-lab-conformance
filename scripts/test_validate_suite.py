@@ -157,6 +157,56 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("WORKITEM lane sdk assignment mismatch", result.stdout)
 
+    def test_duplicate_lane_assignment_goes_red(self):
+        path = self.tmp / "WORKITEMS.md"
+        path.write_text(path.read_text().replace(
+            "`conformance/protocol/001-valid-request-shape`,",
+            "`conformance/protocol/001-valid-request-shape`, `conformance/protocol/001-valid-request-shape`,",
+            1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("WORKITEM lane raw assignment mismatch", result.stdout)
+
+    def test_unknown_assertion_type_goes_red(self):
+        path = self.tmp / "conformance/protocol/001-valid-request-shape/expected.json"
+        data = __import__("json").loads(path.read_text())
+        data["assertions"] = [{"type": "invented_assertion"}]
+        path.write_text(__import__("json").dumps(data))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("unknown assertion types", result.stdout)
+
+    def test_empty_architecture_glob_goes_red(self):
+        path = self.tmp / "conformance/architecture/dependencies/001-raw-layer-dependencies/expected.json"
+        data = __import__("json").loads(path.read_text())
+        data["assertions"][0]["from_glob"] = ""
+        path.write_text(__import__("json").dumps(data))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("empty architecture glob", result.stdout)
+
+    def test_leaked_wrapper_tag_goes_red(self):
+        path = self.tmp / "coverage-tracking.md"
+        path.write_text(path.read_text() + "\n</content>\n")
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("leaked agent wrapper tag", result.stdout)
+
+    def test_golden_auto_update_code_goes_red(self):
+        path = self.tmp / "scripts/auto_update.py"
+        path.write_text("Path('expected.json').write_text('{}')\n")
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("prohibited golden auto-update behavior", result.stdout)
+
+    def test_stale_adr_citation_goes_red(self):
+        adr = self.tmp.parent / "stateless-mcp-incident-lab-architecture/adr/0001-independent-raw-sdk-realizations.md"
+        adr.parent.mkdir(parents=True)
+        adr.write_text("# ADR-0001\n\nStatus: Proposed\n")
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("ADR-0001 citation is missing or stale", result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

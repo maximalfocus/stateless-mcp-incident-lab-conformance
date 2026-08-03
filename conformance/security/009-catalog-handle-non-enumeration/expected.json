@@ -4,7 +4,7 @@
       "type": "strict_http_shape"
     }
   ],
-  "status": 400,
+  "status": 200,
   "headers": {
     "{{ALLOW_EXTRA}}": true,
     "Content-Type": "application/json"
@@ -17,15 +17,18 @@
       "resources": [
         {
           "uri": "incident://runbooks/api",
-          "name": "API runbook"
+          "name": "API runbook",
+          "mimeType": "text/markdown"
         },
         {
           "uri": "incident://runbooks/database",
-          "name": "Database runbook"
+          "name": "Database runbook",
+          "mimeType": "text/markdown"
         },
         {
           "uri": "incident://topology/services",
-          "name": "Service topology"
+          "name": "Service topology",
+          "mimeType": "application/json"
         }
       ],
       "ttlMs": 60000,
