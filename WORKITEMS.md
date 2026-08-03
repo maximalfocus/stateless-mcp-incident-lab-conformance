@@ -281,7 +281,7 @@ Target: implementation registry entry `raw` → `stateless-mcp-incident-lab-type
 
 Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-typescript-sdk`.
 
-- [~] **WI-054** SDK architecture contracts (3 tests)
+- [x] **WI-054** SDK architecture contracts (3 tests)
   - Tests: `conformance/architecture/boundaries/006-sdk-public-module-boundaries`, `conformance/architecture/dependencies/003-sdk-layer-dependencies`, `conformance/architecture/dependencies/004-sdk-adapter-independence`
   - Scope: `scripts/verify-architecture.ts, src/**/index.ts`
   - Depends on: none
