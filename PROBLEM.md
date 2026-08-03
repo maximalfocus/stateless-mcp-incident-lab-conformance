@@ -45,4 +45,4 @@ The reviewer also parses both sibling `rules/*.yaml` using Ruby's standard YAML 
 
 ## Residuals
 
-Executable provider runs and mutation scores are post-implementation residuals because neither implementation exists. They do not excuse an incomplete, prose-only, hidden-state, or non-discriminating golden contract now.
+Executable provider runs and mutation scores are evidenced and gated in the owning raw and SDK implementation repositories; both currently replay this suite's 159-contract implementation lane. This conformance review still judges the complete 197-contract language-neutral suite and does not treat provider green as evidence that a golden is faithful, replayable, or discriminating.
