@@ -550,12 +550,12 @@ Target: explicit family integration invocation in `stateless-mcp-incident-lab-pr
   - Scope: `demo/matrix.compose.yaml, demo/nginx.conf, demo/run-matrix.ts, package.json, tsconfig.json, ../stateless-mcp-incident-lab-typescript-{raw,sdk}/src/{protocol/version.ts,application/catalogs.ts,application/mrtr.ts,adapters/inbound/server.ts}`
   - Depends on: WI-053, WI-105
 
-- [~] **WI-107** family interoperability contracts 4–6 (3 tests)
+- [x] **WI-107** family interoperability contracts 4–6 (3 tests)
   - Tests: `conformance/interoperability/004-sdk-client-sdk-server-discovery`, `conformance/interoperability/005-raw-client-raw-server-workflow`, `conformance/interoperability/006-raw-client-sdk-server-workflow`
   - Scope: `demo/matrix.compose.yaml, demo/run-matrix.ts`
   - Depends on: WI-106
 
-- [ ] **WI-108** family interoperability contracts 7–9 (3 tests)
+- [~] **WI-108** family interoperability contracts 7–9 (3 tests)
   - Tests: `conformance/interoperability/007-sdk-client-raw-server-workflow`, `conformance/interoperability/008-sdk-client-sdk-server-workflow`, `conformance/interoperability/009-matrix-equivalent-observables`
   - Scope: `demo/matrix.compose.yaml, demo/run-matrix.ts`
   - Depends on: WI-107
