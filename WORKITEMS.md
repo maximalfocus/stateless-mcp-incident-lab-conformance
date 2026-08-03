@@ -506,7 +506,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/headers.ts, src/client/cache-key.ts`
   - Depends on: WI-097
 
-- [ ] **WI-099** SDK security contracts 1–3 (3 tests)
+- [~] **WI-099** SDK security contracts 1–3 (3 tests)
   - Tests: `conformance/security/001-origin-rebinding-defense`, `conformance/security/002-header-injection-rejected`, `conformance/security/003-bounded-schema-depth`
   - Scope: `src/protocol/validation.ts, src/adapters/inbound/security.ts`
   - Depends on: WI-098
