@@ -321,32 +321,32 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/version.ts, src/client/version.ts`
   - Depends on: WI-060
 
-- [~] **WI-062** SDK transport contracts 1–3 (3 tests)
+- [x] **WI-062** SDK transport contracts 1–3 (3 tests)
   - Tests: `conformance/transport/001-post-json-response`, `conformance/transport/002-notification-accepted`, `conformance/transport/003-reject-batch-array`
   - Scope: `src/adapters/inbound/http.ts, src/client/http.ts`
   - Depends on: WI-061
 
-- [~] **WI-063** SDK transport contracts 4–6 (3 tests)
+- [x] **WI-063** SDK transport contracts 4–6 (3 tests)
   - Tests: `conformance/transport/004-reject-client-response`, `conformance/transport/005-get-method-not-allowed`, `conformance/transport/006-delete-method-not-allowed`
   - Scope: `src/adapters/inbound/http.ts, src/client/http.ts`
   - Depends on: WI-062
 
-- [~] **WI-064** SDK transport contracts 7–9 (3 tests)
+- [x] **WI-064** SDK transport contracts 7–9 (3 tests)
   - Tests: `conformance/transport/007-invalid-origin-first`, `conformance/transport/008-ignore-last-event-id`, `conformance/transport/009-required-version-header`
   - Scope: `src/adapters/inbound/http.ts, src/client/http.ts`
   - Depends on: WI-063
 
-- [~] **WI-065** SDK transport contracts 10–12 (3 tests)
+- [x] **WI-065** SDK transport contracts 10–12 (3 tests)
   - Tests: `conformance/transport/010-required-method-header`, `conformance/transport/011-required-name-header`, `conformance/transport/012-header-body-value-match`
   - Scope: `src/adapters/inbound/http.ts, src/client/http.ts`
   - Depends on: WI-064
 
-- [~] **WI-066** SDK transport contracts 13–15 (3 tests)
+- [x] **WI-066** SDK transport contracts 13–15 (3 tests)
   - Tests: `conformance/transport/013-header-names-case-insensitive`, `conformance/transport/014-base64-sentinel-roundtrip`, `conformance/transport/015-omit-null-param-header`
   - Scope: `src/adapters/inbound/http.ts, src/client/http.ts`
   - Depends on: WI-065
 
-- [~] **WI-067** SDK transport contracts 16–18 (3 tests)
+- [x] **WI-067** SDK transport contracts 16–18 (3 tests)
   - Tests: `conformance/transport/016-invalid-header-annotation-hidden`, `conformance/transport/017-payload-too-large`, `conformance/transport/018-deadline-before-stream`
   - Scope: `src/adapters/inbound/http.ts, src/client/http.ts`
   - Depends on: WI-066
