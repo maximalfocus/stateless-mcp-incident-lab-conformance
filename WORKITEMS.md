@@ -441,7 +441,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/application/mrtr.ts, src/adapters/outbound/request-state.ts`
   - Depends on: WI-084
 
-- [ ] **WI-086** SDK streaming contracts 1–3 (3 tests)
+- [~] **WI-086** SDK streaming contracts 1–3 (3 tests)
   - Tests: `conformance/streaming/001-string-progress-token`, `conformance/streaming/002-integer-progress-token`, `conformance/streaming/003-monotonic-progress`
   - Scope: `src/adapters/inbound/sse.ts, src/client/sse.ts`
   - Depends on: WI-085
