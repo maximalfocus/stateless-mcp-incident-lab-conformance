@@ -476,7 +476,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/adapters/inbound/cli.ts`
   - Depends on: WI-091
 
-- [ ] **WI-093** SDK cli contracts 4–6 (3 tests)
+- [~] **WI-093** SDK cli contracts 4–6 (3 tests)
   - Tests: `conformance/cli/004-tools-call-command`, `conformance/cli/005-resources-list-command`, `conformance/cli/006-resources-templates-command`
   - Scope: `src/adapters/inbound/cli.ts`
   - Depends on: WI-092
