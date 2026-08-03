@@ -396,22 +396,22 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/application/catalogs.ts, src/application/tools.ts`
   - Depends on: WI-075
 
-- [~] **WI-077** SDK incidents contracts 1–3 (3 tests)
+- [x] **WI-077** SDK incidents contracts 1–3 (3 tests)
   - Tests: `conformance/incidents/001-create-open-incident`, `conformance/incidents/002-get-current-incident`, `conformance/incidents/003-open-to-investigating`
   - Scope: `src/domain/incident.ts, src/application/incidents.ts`
   - Depends on: WI-076
 
-- [~] **WI-078** SDK incidents contracts 4–6 (3 tests)
+- [x] **WI-078** SDK incidents contracts 4–6 (3 tests)
   - Tests: `conformance/incidents/004-investigating-diagnostic`, `conformance/incidents/005-propose-remediation`, `conformance/incidents/006-accepted-to-mitigated`
   - Scope: `src/domain/incident.ts, src/application/incidents.ts`
   - Depends on: WI-077
 
-- [~] **WI-079** SDK incidents contracts 7–9 (3 tests)
+- [x] **WI-079** SDK incidents contracts 7–9 (3 tests)
   - Tests: `conformance/incidents/007-open-to-resolved`, `conformance/incidents/008-investigating-to-resolved`, `conformance/incidents/009-mitigated-to-resolved`
   - Scope: `src/domain/incident.ts, src/application/incidents.ts`
   - Depends on: WI-078
 
-- [~] **WI-080** SDK incidents contracts 10–12 (3 tests)
+- [x] **WI-080** SDK incidents contracts 10–12 (3 tests)
   - Tests: `conformance/incidents/010-reject-resolved-transition`, `conformance/incidents/011-unknown-handle-recovery`, `conformance/incidents/012-expired-handle-recovery`
   - Scope: `src/domain/incident.ts, src/application/incidents.ts`
   - Depends on: WI-079
