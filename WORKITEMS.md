@@ -506,22 +506,22 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/headers.ts, src/client/cache-key.ts`
   - Depends on: WI-097
 
-- [~] **WI-099** SDK security contracts 1–3 (3 tests)
+- [x] **WI-099** SDK security contracts 1–3 (3 tests)
   - Tests: `conformance/security/001-origin-rebinding-defense`, `conformance/security/002-header-injection-rejected`, `conformance/security/003-bounded-schema-depth`
   - Scope: `src/protocol/validation.ts, src/adapters/inbound/security.ts`
   - Depends on: WI-098
 
-- [~] **WI-100** SDK security contracts 4–6 (3 tests)
+- [x] **WI-100** SDK security contracts 4–6 (3 tests)
   - Tests: `conformance/security/004-bounded-subschema-count`, `conformance/security/005-network-ref-refused`, `conformance/security/006-body-bound-no-effect`
   - Scope: `src/protocol/validation.ts, src/adapters/inbound/security.ts`
   - Depends on: WI-099
 
-- [~] **WI-101** SDK security contracts 7–9 (3 tests)
+- [x] **WI-101** SDK security contracts 7–9 (3 tests)
   - Tests: `conformance/security/007-deadline-no-partial-effect`, `conformance/security/008-handle-entropy-and-ttl`, `conformance/security/009-catalog-handle-non-enumeration`
   - Scope: `src/protocol/validation.ts, src/adapters/inbound/security.ts`
   - Depends on: WI-100
 
-- [~] **WI-102** SDK security contracts 10–12 (3 tests)
+- [x] **WI-102** SDK security contracts 10–12 (3 tests)
   - Tests: `conformance/security/010-sensitive-log-redaction`, `conformance/security/011-simulated-actions-only`, `conformance/security/012-dependency-severity-floor`
   - Scope: `src/protocol/validation.ts, src/adapters/inbound/security.ts`
   - Depends on: WI-101
