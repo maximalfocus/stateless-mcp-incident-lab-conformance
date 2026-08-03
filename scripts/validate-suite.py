@@ -68,6 +68,7 @@ for p in sorted(conf.rglob('test.json')):
     input_data=json.loads(input_path.read_text())
     if isinstance(input_data,dict) and set(input_data)<= {'scenario','contract','protocol_version','providers'}: errors.append(f'{sid}: input is descriptive metadata, not replayable fixture data')
     if isinstance(input_data,dict) and 'state_fault' in input_data and input_data['state_fault'] not in {'tampered','expired','method_mismatch','arguments_mismatch'}: errors.append(f'{sid}: unknown state_fault')
+    if isinstance(input_data,dict) and 'fixture' in input_data and input_data['fixture'] not in {'SEEDED-DETERMINISTIC-INCIDENT-LAB','fresh_process','accepted-remediation','adversarial-request'}: errors.append(f'{sid}: unknown fixture sentinel')
     if t.get('boundary')=='cli' and 'argv' not in input_data: errors.append(f'{sid}: CLI fixture missing argv')
     expected_path=p.parent/'expected.json'
     expected_data=json.loads(expected_path.read_text()) if expected_path.exists() else {}
@@ -179,11 +180,13 @@ if set().union(*lane_expected.values())!=all_paths: errors.append('WORKITEM lane
 # Cited ADR must exist and remain Accepted when the sibling architecture repo is checked out.
 arch_adr=root.parent/'stateless-mcp-incident-lab-architecture'/'adr'/'0001-independent-raw-sdk-realizations.md'
 if not arch_adr.exists() or not re.search(r'^Status:\s*Accepted\s*$',arch_adr.read_text(),re.M): errors.append('ADR-0001 citation is missing or stale')
-# Golden auto-update code is forbidden outside mutation tests.
-for p in (root/'scripts').glob('*.py'):
-  if p.name.startswith('test_'): continue
-  text='\n'.join(line for line in p.read_text().splitlines() if 'prohibited golden auto-update behavior' not in line)
-  if re.search(r'^(?=.*expected(?:\.json)?)(?=.*(?:write_text|open\s*\()).*$',text,re.I|re.M): errors.append(f'{p.relative_to(root)} contains prohibited golden auto-update behavior')
+# Golden auto-update code is forbidden across shipped scripts, including multiline writes.
+for p in root.rglob('*'):
+  if '.git' in p.parts or 'node_modules' in p.parts or not p.is_file() or p.suffix not in ('.py','.ts','.js','.mjs','.sh'): continue
+  if p.name.startswith('test_') or '.test.' in p.name: continue
+  text='\n'.join(line for line in p.read_text(errors='ignore').splitlines() if 'prohibited golden auto-update behavior' not in line)
+  writes=r'(?:write_text|writeFile(?:Sync)?|open\s*\()'
+  if re.search(rf'expected(?:\.json)?.{{0,300}}{writes}|{writes}.{{0,300}}expected(?:\.json)?',text,re.I|re.S): errors.append(f'{p.relative_to(root)} contains prohibited golden auto-update behavior')
 # Agent wrapper leakage in shipped artifacts.
 for p in root.rglob('*'):
   if '.git' in p.parts or not p.is_file() or p.suffix not in ('.md','.json','.yaml','.yml'): continue

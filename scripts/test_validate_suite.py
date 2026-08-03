@@ -198,7 +198,7 @@ class ValidateSuiteMutationTests(unittest.TestCase):
 
     def test_golden_auto_update_code_goes_red(self):
         path = self.tmp / "scripts/auto_update.py"
-        path.write_text("Path('expected.json').write_text('{}')\n")
+        path.write_text("target = Path('expected.json')\nvalue = '{}'\ntarget.write_text(value)\n")
         result = self.run_validator()
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("prohibited golden auto-update behavior", result.stdout)

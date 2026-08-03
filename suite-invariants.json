@@ -36,7 +36,7 @@
     "timestamps": "{{TIMESTAMP}}",
     "generated_ids": "{{GENERATED_ID}}",
     "paths": "forward-slash and fixture-root-relative",
-    "unordered_collections": "sort by declared deterministic key",
+    "unordered_collections": "sort by declared deterministic key; reordering applies only where a golden declares that key, and never to an array whose order a golden pins, including catalog arrays, SSE event streams, http-contract observation lists, and evaluated_checks, which all compare in document order",
     "floats": "round only when a test declares precision"
   },
   "security": {

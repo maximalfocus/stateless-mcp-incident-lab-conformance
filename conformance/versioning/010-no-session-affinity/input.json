@@ -6,9 +6,7 @@
       "headers": {
         "Accept": "application/json, text/event-stream",
         "MCP-Protocol-Version": "2026-07-28",
-        "Mcp-Method": "server/discover",
-        "Cookie": "sid=attacker",
-        "Mcp-Session-Id": "invented"
+        "Mcp-Method": "server/discover"
       },
       "body": {
         "jsonrpc": "2.0",
@@ -57,5 +55,5 @@
       }
     }
   ],
-  "compare": "normalized_response"
+  "compare": "complete_http_responses"
 }

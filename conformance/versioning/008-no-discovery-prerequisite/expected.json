@@ -1,58 +1,60 @@
 {
-  "assertions": [
+  "observations": [
     {
-      "type": "strict_http_shape"
-    }
-  ],
-  "status": 200,
-  "headers": {
-    "{{ALLOW_EXTRA}}": true,
-    "Content-Type": "application/json"
-  },
-  "body": {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
-      "resultType": "complete",
-      "tools": [
-        {
-          "name": "create_incident",
-          "{{ALLOW_EXTRA}}": true
+      "case": "direct-before-discovery",
+      "response": {
+        "status": 200,
+        "headers": {
+          "{{ALLOW_EXTRA}}": true,
+          "Content-Type": "application/json"
         },
-        {
-          "name": "execute_remediation",
-          "{{ALLOW_EXTRA}}": true
-        },
-        {
-          "name": "get_incident",
-          "{{ALLOW_EXTRA}}": true
-        },
-        {
-          "name": "propose_remediation",
-          "{{ALLOW_EXTRA}}": true
-        },
-        {
-          "name": "query_telemetry",
-          "{{ALLOW_EXTRA}}": true
-        },
-        {
-          "name": "resolve_incident",
-          "{{ALLOW_EXTRA}}": true
-        },
-        {
-          "name": "run_diagnostic",
-          "{{ALLOW_EXTRA}}": true
+        "body": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "result": {
+            "resultType": "complete",
+            "tools": [
+              {
+                "name": "create_incident",
+                "{{ALLOW_EXTRA}}": true
+              },
+              {
+                "name": "execute_remediation",
+                "{{ALLOW_EXTRA}}": true
+              },
+              {
+                "name": "get_incident",
+                "{{ALLOW_EXTRA}}": true
+              },
+              {
+                "name": "propose_remediation",
+                "{{ALLOW_EXTRA}}": true
+              },
+              {
+                "name": "query_telemetry",
+                "{{ALLOW_EXTRA}}": true
+              },
+              {
+                "name": "resolve_incident",
+                "{{ALLOW_EXTRA}}": true
+              },
+              {
+                "name": "run_diagnostic",
+                "{{ALLOW_EXTRA}}": true
+              }
+            ],
+            "ttlMs": 60000,
+            "cacheScope": "public",
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "stateless-mcp-incident-lab",
+                "version": "2026-07-28"
+              },
+              "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
+            }
+          }
         }
-      ],
-      "ttlMs": 60000,
-      "cacheScope": "public",
-      "_meta": {
-        "io.modelcontextprotocol/serverInfo": {
-          "name": "stateless-mcp-incident-lab",
-          "version": "2026-07-28"
-        },
-        "io.maximalfocus.stateless-incident-lab/replica": "{{ANY_STRING}}"
       }
     }
-  }
+  ]
 }

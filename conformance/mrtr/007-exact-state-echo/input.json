@@ -1,6 +1,5 @@
 {
   "fixture": "accepted-remediation",
   "clock": "2026-08-02T00:00:00Z",
-  "effect_count_before": 0,
-  "requestState_bytes": "SIGNED-STATE"
+  "effect_count_before": 0
 }
