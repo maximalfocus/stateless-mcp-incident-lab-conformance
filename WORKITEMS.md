@@ -286,22 +286,22 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `scripts/verify-architecture.ts, src/**/index.ts`
   - Depends on: none
 
-- [~] **WI-055** SDK protocol contracts 1–3 (3 tests)
+- [x] **WI-055** SDK protocol contracts 1–3 (3 tests)
   - Tests: `conformance/protocol/001-valid-request-shape`, `conformance/protocol/002-valid-notification-shape`, `conformance/protocol/003-reject-null-request-id`
   - Scope: `src/protocol/codec.ts, src/protocol/schema.ts`
   - Depends on: WI-054
 
-- [~] **WI-056** SDK protocol contracts 4–6 (3 tests)
+- [x] **WI-056** SDK protocol contracts 4–6 (3 tests)
   - Tests: `conformance/protocol/004-reject-nonscalar-request-id`, `conformance/protocol/005-complete-result-shape`, `conformance/protocol/006-input-required-result-shape`
   - Scope: `src/protocol/codec.ts, src/protocol/schema.ts`
   - Depends on: WI-055
 
-- [~] **WI-057** SDK protocol contracts 7–9 (3 tests)
+- [x] **WI-057** SDK protocol contracts 7–9 (3 tests)
   - Tests: `conformance/protocol/007-error-shape-no-result-meta`, `conformance/protocol/008-parse-error`, `conformance/protocol/009-invalid-request-shape`
   - Scope: `src/protocol/codec.ts, src/protocol/schema.ts`
   - Depends on: WI-056
 
-- [~] **WI-058** SDK protocol contracts 10–12 (3 tests)
+- [x] **WI-058** SDK protocol contracts 10–12 (3 tests)
   - Tests: `conformance/protocol/010-unknown-method-code`, `conformance/protocol/011-unknown-tool-is-invalid-params`, `conformance/protocol/012-schema-safety-bounds`
   - Scope: `src/protocol/codec.ts, src/protocol/schema.ts`
   - Depends on: WI-057
