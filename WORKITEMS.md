@@ -451,7 +451,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/adapters/inbound/sse.ts, src/client/sse.ts`
   - Depends on: WI-086
 
-- [ ] **WI-088** SDK streaming contracts 7–9 (3 tests)
+- [~] **WI-088** SDK streaming contracts 7–9 (3 tests)
   - Tests: `conformance/streaming/007-broken-stream-reissue`, `conformance/streaming/008-non-buffering-header`, `conformance/streaming/009-deadline-after-stream`
   - Scope: `src/adapters/inbound/sse.ts, src/client/sse.ts`
   - Depends on: WI-087
