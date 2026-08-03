@@ -511,7 +511,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/validation.ts, src/adapters/inbound/security.ts`
   - Depends on: WI-098
 
-- [ ] **WI-100** SDK security contracts 4–6 (3 tests)
+- [~] **WI-100** SDK security contracts 4–6 (3 tests)
   - Tests: `conformance/security/004-bounded-subschema-count`, `conformance/security/005-network-ref-refused`, `conformance/security/006-body-bound-no-effect`
   - Scope: `src/protocol/validation.ts, src/adapters/inbound/security.ts`
   - Depends on: WI-099
