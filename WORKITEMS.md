@@ -291,7 +291,7 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/protocol/codec.ts, src/protocol/schema.ts`
   - Depends on: WI-054
 
-- [ ] **WI-056** SDK protocol contracts 4–6 (3 tests)
+- [~] **WI-056** SDK protocol contracts 4–6 (3 tests)
   - Tests: `conformance/protocol/004-reject-nonscalar-request-id`, `conformance/protocol/005-complete-result-shape`, `conformance/protocol/006-input-required-result-shape`
   - Scope: `src/protocol/codec.ts, src/protocol/schema.ts`
   - Depends on: WI-055
