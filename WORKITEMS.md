@@ -471,27 +471,27 @@ Target: implementation registry entry `sdk` → `stateless-mcp-incident-lab-type
   - Scope: `src/client/cache.ts`
   - Depends on: WI-090
 
-- [~] **WI-092** SDK cli contracts 1–3 (3 tests)
+- [x] **WI-092** SDK cli contracts 1–3 (3 tests)
   - Tests: `conformance/cli/001-discover-command`, `conformance/cli/002-tools-list-command`, `conformance/cli/003-tools-inspect-command`
   - Scope: `src/adapters/inbound/cli.ts`
   - Depends on: WI-091
 
-- [~] **WI-093** SDK cli contracts 4–6 (3 tests)
+- [x] **WI-093** SDK cli contracts 4–6 (3 tests)
   - Tests: `conformance/cli/004-tools-call-command`, `conformance/cli/005-resources-list-command`, `conformance/cli/006-resources-templates-command`
   - Scope: `src/adapters/inbound/cli.ts`
   - Depends on: WI-092
 
-- [~] **WI-094** SDK cli contracts 7–9 (3 tests)
+- [x] **WI-094** SDK cli contracts 7–9 (3 tests)
   - Tests: `conformance/cli/007-resources-read-command`, `conformance/cli/008-prompts-list-command`, `conformance/cli/009-prompts-get-command`
   - Scope: `src/adapters/inbound/cli.ts`
   - Depends on: WI-093
 
-- [~] **WI-095** SDK cli contracts 10–12 (3 tests)
+- [x] **WI-095** SDK cli contracts 10–12 (3 tests)
   - Tests: `conformance/cli/010-demo-approve-command`, `conformance/cli/011-demo-decline-command`, `conformance/cli/012-demo-cancel-command`
   - Scope: `src/adapters/inbound/cli.ts`
   - Depends on: WI-094
 
-- [~] **WI-096** SDK cli contracts 13–14 (2 tests)
+- [x] **WI-096** SDK cli contracts 13–14 (2 tests)
   - Tests: `conformance/cli/013-wire-redaction`, `conformance/cli/014-no-cache-and-exit-codes`
   - Scope: `src/adapters/inbound/cli.ts`
   - Depends on: WI-095
