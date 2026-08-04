@@ -595,18 +595,18 @@ Target: explicit infrastructure invocation → `stateless-mcp-incident-lab-infra
 
 Target: explicit CI/CD invocation → `stateless-mcp-incident-lab-cicd`.
 
-- [ ] **WI-114** cicd contracts 1–3 (3 tests)
+- [x] **WI-114** cicd contracts 1–3 (3 tests)
   - Tests: `conformance/cicd/001-quality-gates`, `conformance/cicd/002-four-way-local-matrix`, `conformance/cicd/003-architecture-gate`
   - Scope: `../stateless-mcp-incident-lab-cicd/.github/workflows/quality.yml`
   - Depends on: WI-112
   - Notes: CI/CD authoring may proceed while WI-113 awaits its separately human-gated AWS lifecycle execution.
 
-- [ ] **WI-115** cicd contracts 4–6 (3 tests)
+- [x] **WI-115** cicd contracts 4–6 (3 tests)
   - Tests: `conformance/cicd/004-golden-integrity`, `conformance/cicd/005-immutable-build-output`, `conformance/cicd/006-secretless-oidc`
   - Scope: `../stateless-mcp-incident-lab-cicd/.github/workflows/quality.yml`
   - Depends on: WI-114
 
-- [ ] **WI-116** cicd contracts 7–8 (2 tests)
+- [x] **WI-116** cicd contracts 7–8 (2 tests)
   - Tests: `conformance/cicd/007-no-ci-cloud-deploy`, `conformance/cicd/008-teardown-on-acceptance`
   - Scope: `../stateless-mcp-incident-lab-cicd/.github/workflows/quality.yml`
   - Depends on: WI-115
