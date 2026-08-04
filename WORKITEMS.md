@@ -575,20 +575,21 @@ Target: explicit family integration invocation in `stateless-mcp-incident-lab-pr
 
 Target: explicit infrastructure invocation → `stateless-mcp-incident-lab-infrastructure`.
 
-- [ ] **WI-111** infra contracts 1–3 (3 tests)
+- [x] **WI-111** infra contracts 1–3 (3 tests)
   - Tests: `conformance/infra/001-dynamodb-policy`, `conformance/infra/002-immutable-images`, `conformance/infra/003-two-task-services`
   - Scope: `../stateless-mcp-incident-lab-infrastructure/lib/stack.ts`
   - Depends on: WI-109
 
-- [ ] **WI-112** infra contracts 4–6 (3 tests)
+- [x] **WI-112** infra contracts 4–6 (3 tests)
   - Tests: `conformance/infra/004-https-only-alb`, `conformance/infra/005-waf-rate-rule`, `conformance/infra/006-least-privilege-network-iam`
   - Scope: `../stateless-mcp-incident-lab-infrastructure/lib/stack.ts`
   - Depends on: WI-111
 
-- [ ] **WI-113** infra contracts 7–10 (4 tests)
+- [~] **WI-113** infra contracts 7–10 (4 tests)
   - Tests: `conformance/infra/007-secret-manager-state-key`, `conformance/infra/008-access-log-redaction`, `conformance/infra/009-required-tags-retention`, `conformance/infra/010-deploy-verify-destroy`
   - Scope: `../stateless-mcp-incident-lab-infrastructure/lib/stack.ts, ../stateless-mcp-incident-lab-infrastructure/scripts/deploy-verify-destroy.*`
   - Depends on: WI-112
+  - Notes: IaC and lifecycle artifact may be implemented before deployment, but WI-113 remains in progress until the deploy/verify/destroy inventory is executed against AWS.
 
 ## Lane: cicd
 
@@ -597,7 +598,8 @@ Target: explicit CI/CD invocation → `stateless-mcp-incident-lab-cicd`.
 - [ ] **WI-114** cicd contracts 1–3 (3 tests)
   - Tests: `conformance/cicd/001-quality-gates`, `conformance/cicd/002-four-way-local-matrix`, `conformance/cicd/003-architecture-gate`
   - Scope: `../stateless-mcp-incident-lab-cicd/.github/workflows/quality.yml`
-  - Depends on: WI-113
+  - Depends on: WI-112
+  - Notes: CI/CD authoring may proceed while WI-113 awaits its separately human-gated AWS lifecycle execution.
 
 - [ ] **WI-115** cicd contracts 4–6 (3 tests)
   - Tests: `conformance/cicd/004-golden-integrity`, `conformance/cicd/005-immutable-build-output`, `conformance/cicd/006-secretless-oidc`
