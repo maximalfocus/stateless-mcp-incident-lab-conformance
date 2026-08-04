@@ -568,8 +568,8 @@ Target: explicit family integration invocation in `stateless-mcp-incident-lab-pr
 - [~] **WI-110** family performance contracts 1–3 (3 tests)
   - Tests: `conformance/performance/001-catalog-latency`, `conformance/performance/002-replica-distribution`, `conformance/performance/003-concurrent-idempotency`
   - Scope: `test/performance/catalog.js, test/performance/mrtr.js, demo/matrix.compose.yaml`
-  - Depends on: WI-113
-  - Notes: The harness is authored before infrastructure, but PERF-001 remains in progress until it runs against both local and real AWS targets; localhost must not be relabeled as AWS evidence.
+  - Depends on: WI-109
+  - Notes: The harness is implemented after WI-109, but PERF-001 remains in progress until WI-113 supplies a real AWS target; localhost must not be relabeled as AWS evidence.
 
 ## Lane: infrastructure
 
