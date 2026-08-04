@@ -560,12 +560,12 @@ Target: explicit family integration invocation in `stateless-mcp-incident-lab-pr
   - Scope: `demo/matrix.compose.yaml, demo/run-matrix.ts`
   - Depends on: WI-107
 
-- [~] **WI-109** family interoperability contracts 10–12 (3 tests)
+- [x] **WI-109** family interoperability contracts 10–12 (3 tests)
   - Tests: `conformance/interoperability/010-allowed-metadata-difference`, `conformance/interoperability/011-local-public-distribution`, `conformance/interoperability/012-local-direct-cross-replica`
   - Scope: `demo/matrix.compose.yaml, demo/run-matrix.ts`
   - Depends on: WI-108
 
-- [ ] **WI-110** family performance contracts 1–3 (3 tests)
+- [~] **WI-110** family performance contracts 1–3 (3 tests)
   - Tests: `conformance/performance/001-catalog-latency`, `conformance/performance/002-replica-distribution`, `conformance/performance/003-concurrent-idempotency`
   - Scope: `test/performance/catalog.js, test/performance/mrtr.js, demo/matrix.compose.yaml`
   - Depends on: WI-109
