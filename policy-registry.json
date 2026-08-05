@@ -268,10 +268,10 @@
       "result": "violation-list",
       "mechanism_neutral": true
     },
-    "INFRA-006.02-iam-actions-subset-dynamodb-logs-cloudwatch-secretsmanager": {
+    "INFRA-006.02-iam-actions-subset-dynamodb-ecr-logs-cloudwatch-secretsmanager": {
       "category": "infra",
       "source_spec_id": "INFRA-006",
-      "requirement": "iam.actions_subset=dynamodb,logs,cloudwatch,secretsmanager",
+      "requirement": "iam.actions_subset=dynamodb,ecr,logs,cloudwatch,secretsmanager",
       "result": "violation-list",
       "mechanism_neutral": true
     },

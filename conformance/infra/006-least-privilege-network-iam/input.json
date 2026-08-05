@@ -3,7 +3,7 @@
   "template_glob": "cdk.out/*.template.json",
   "checks": [
     "INFRA-006.01-security-groups-least-privilege",
-    "INFRA-006.02-iam-actions-subset-dynamodb-logs-cloudwatch-secretsmanager"
+    "INFRA-006.02-iam-actions-subset-dynamodb-ecr-logs-cloudwatch-secretsmanager"
   ],
   "correlation_obligations": [
     "Ingress sources, IAM resources, and actions resolve to the intended service/table/log/secret resources rather than merely existing."

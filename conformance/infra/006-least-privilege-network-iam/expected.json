@@ -2,6 +2,6 @@
   "violations": [],
   "evaluated_checks": [
     "INFRA-006.01-security-groups-least-privilege",
-    "INFRA-006.02-iam-actions-subset-dynamodb-logs-cloudwatch-secretsmanager"
+    "INFRA-006.02-iam-actions-subset-dynamodb-ecr-logs-cloudwatch-secretsmanager"
   ]
 }

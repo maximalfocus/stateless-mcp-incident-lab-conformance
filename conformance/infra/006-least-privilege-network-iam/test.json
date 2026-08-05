@@ -1,10 +1,10 @@
 {
   "spec_id": "INFRA-006",
-  "description": "Security groups and IAM permit only required paths and DynamoDB, logs, metrics, and secret actions",
+  "description": "Security groups and IAM permit only required paths and DynamoDB, ECR image-pull, logs, metrics, and secret actions",
   "description_bdd": {
     "given": "the least privilege network iam scenario",
     "when": "the infra contract is exercised",
-    "then": "security groups and IAM permit only required paths and DynamoDB, logs, metrics, and secret actions"
+    "then": "security groups and IAM permit only required paths and DynamoDB, ECR image-pull, logs, metrics, and secret actions"
   },
   "boundary": "function",
   "normalisation": [
