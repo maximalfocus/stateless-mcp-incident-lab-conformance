@@ -1,10 +1,10 @@
 {
   "spec_id": "INFRA-010",
-  "description": "Automation orders deploy then verify then destroy and post-destroy inventory is empty",
+  "description": "Direct CloudFormation automation deploys, verifies, and tears down bootstrap-free stacks in dependency order with empty inventory",
   "description_bdd": {
-    "given": "the deploy verify destroy scenario",
-    "when": "the infra contract is exercised",
-    "then": "automation orders deploy then verify then destroy and post-destroy inventory is empty"
+    "given": "the accepted bootstrap-free AWS deployment topology",
+    "when": "the infrastructure contract is evaluated",
+    "then": "direct CloudFormation automation deploys, verifies, and tears down bootstrap-free stacks in dependency order with empty inventory"
   },
   "boundary": "function",
   "normalisation": [
@@ -13,7 +13,7 @@
     "file_path",
     "unordered_collection"
   ],
-  "source": "PRD.md § Deployment / AWS and Security posture",
+  "source": "ADR-0005 \u00a7 Decision and Consequences + PRD.md \u00a7 Deployment / AWS and Security posture",
   "consumers": [
     "typescript-raw",
     "typescript-sdk"
@@ -27,7 +27,11 @@
   "approved_at": null,
   "type_contract": "deploy_verify_destroy_contract",
   "source_deps": [
-    "infra/lib/stateless-mcp-stack.ts",
-    "demo/matrix.compose.yaml"
-  ]
+    "bin/app.ts",
+    "lib/edge-stack.ts",
+    "lib/workload-stack.ts",
+    "scripts/deploy-verify-destroy.ts"
+  ],
+  "adr": "ADR-0005",
+  "adr_repo": "maximalfocus/stateless-mcp-incident-lab-architecture"
 }

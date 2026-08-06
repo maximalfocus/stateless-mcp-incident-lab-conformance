@@ -1,7 +1,9 @@
 {
   "violations": [],
   "evaluated_checks": [
-    "INFRA-010.01-lifecycle-deploy-verify-destroy-inventory",
-    "INFRA-010.02-inventory-after-destroy"
+    "INFRA-010.01-direct-cloudformation-deploy-order",
+    "INFRA-010.02-lifecycle-deploy-verify-destroy-inventory",
+    "INFRA-010.03-inventory-after-destroy",
+    "INFRA-010.04-reviewed-split-order"
   ]
 }

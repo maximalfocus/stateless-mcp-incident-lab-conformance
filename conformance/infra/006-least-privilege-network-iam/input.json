@@ -3,9 +3,12 @@
   "template_glob": "cdk.out/*.template.json",
   "checks": [
     "INFRA-006.01-security-groups-least-privilege",
-    "INFRA-006.02-iam-actions-subset-dynamodb-ecr-logs-cloudwatch-secretsmanager"
+    "INFRA-006.02-iam-actions-subset-dynamodb-ecr-logs-cloudwatch-secretsmanager",
+    "INFRA-006.03-private-tasks-nat-egress"
   ],
   "correlation_obligations": [
-    "Ingress sources, IAM resources, and actions resolve to the intended service/table/log/secret resources rather than merely existing."
+    "Only the CloudFront origin-facing managed prefix list reaches the internal ALB, only the ALB reaches tasks, and task ENIs have no public IP.",
+    "Private tasks resolve VPC DNS and reach required AWS APIs over outbound TLS through the single ephemeral NAT gateway.",
+    "IAM resources and actions resolve to the intended table, repositories, logs, metrics, and secret rather than merely existing."
   ]
 }

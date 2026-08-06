@@ -1,10 +1,10 @@
 {
   "spec_id": "INFRA-005",
-  "description": "AWS WAF attaches a bounded rate-based protection rule",
+  "description": "Regional WAF protects the private ALB with bounded rate limiting keyed to CloudFront-appended viewer IP",
   "description_bdd": {
-    "given": "the waf rate rule scenario",
-    "when": "the infra contract is exercised",
-    "then": "aWS WAF attaches a bounded rate-based protection rule"
+    "given": "the accepted bootstrap-free AWS deployment topology",
+    "when": "the infrastructure contract is evaluated",
+    "then": "regional WAF protects the private ALB with bounded rate limiting keyed to CloudFront-appended viewer IP"
   },
   "boundary": "function",
   "normalisation": [
@@ -13,7 +13,7 @@
     "file_path",
     "unordered_collection"
   ],
-  "source": "PRD.md § Deployment / AWS and Security posture",
+  "source": "ADR-0005 \u00a7 Decision and Consequences + PRD.md \u00a7 Deployment / AWS and Security posture",
   "consumers": [
     "typescript-raw",
     "typescript-sdk"
@@ -27,7 +27,8 @@
   "approved_at": null,
   "type_contract": "waf_rate_rule_contract",
   "source_deps": [
-    "infra/lib/stateless-mcp-stack.ts",
-    "demo/matrix.compose.yaml"
-  ]
+    "lib/edge-stack.ts"
+  ],
+  "adr": "ADR-0005",
+  "adr_repo": "maximalfocus/stateless-mcp-incident-lab-architecture"
 }

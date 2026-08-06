@@ -1,10 +1,10 @@
 {
   "spec_id": "INFRA-004",
-  "description": "The internet-facing ALB has mandatory HTTPS and no public plaintext listener",
+  "description": "CloudFront provides generated-hostname HTTPS to a private ALB without ACM, custom DNS, bootstrap, assets, caching, or compression",
   "description_bdd": {
-    "given": "the https only alb scenario",
-    "when": "the infra contract is exercised",
-    "then": "the internet-facing ALB has mandatory HTTPS and no public plaintext listener"
+    "given": "the accepted bootstrap-free AWS deployment topology",
+    "when": "the infrastructure contract is evaluated",
+    "then": "CloudFront provides generated-hostname HTTPS to a private ALB without ACM, custom DNS, bootstrap, assets, caching, or compression"
   },
   "boundary": "function",
   "normalisation": [
@@ -13,7 +13,7 @@
     "file_path",
     "unordered_collection"
   ],
-  "source": "PRD.md § Deployment / AWS and Security posture",
+  "source": "ADR-0005 \u00a7 Decision and Consequences + PRD.md \u00a7 Deployment / AWS and Security posture",
   "consumers": [
     "typescript-raw",
     "typescript-sdk"
@@ -25,9 +25,13 @@
   "context": "delivery",
   "approved_by": null,
   "approved_at": null,
-  "type_contract": "https_only_alb_contract",
+  "type_contract": "cloudfront_private_origin_contract",
   "source_deps": [
-    "infra/lib/stateless-mcp-stack.ts",
-    "demo/matrix.compose.yaml"
-  ]
+    "bin/app.ts",
+    "lib/edge-stack.ts",
+    "lib/workload-stack.ts",
+    "scripts/deploy-verify-destroy.ts"
+  ],
+  "adr": "ADR-0005",
+  "adr_repo": "maximalfocus/stateless-mcp-incident-lab-architecture"
 }

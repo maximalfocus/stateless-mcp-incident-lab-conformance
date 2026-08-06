@@ -233,48 +233,6 @@
       "result": "violation-list",
       "mechanism_neutral": true
     },
-    "INFRA-004.01-alb-internet-facing-true": {
-      "category": "infra",
-      "source_spec_id": "INFRA-004",
-      "requirement": "alb.internet_facing=true",
-      "result": "violation-list",
-      "mechanism_neutral": true
-    },
-    "INFRA-004.02-listeners-https-443": {
-      "category": "infra",
-      "source_spec_id": "INFRA-004",
-      "requirement": "listeners=https:443",
-      "result": "violation-list",
-      "mechanism_neutral": false
-    },
-    "INFRA-004.03-listeners-not-http-80": {
-      "category": "infra",
-      "source_spec_id": "INFRA-004",
-      "requirement": "listeners_not=http:80",
-      "result": "violation-list",
-      "mechanism_neutral": true
-    },
-    "INFRA-005.01-waf-rate-rule-limit-0": {
-      "category": "infra",
-      "source_spec_id": "INFRA-005",
-      "requirement": "waf.rate_rule.limit>0",
-      "result": "violation-list",
-      "mechanism_neutral": true
-    },
-    "INFRA-006.01-security-groups-least-privilege": {
-      "category": "infra",
-      "source_spec_id": "INFRA-006",
-      "requirement": "security_groups=least_privilege",
-      "result": "violation-list",
-      "mechanism_neutral": true
-    },
-    "INFRA-006.02-iam-actions-subset-dynamodb-ecr-logs-cloudwatch-secretsmanager": {
-      "category": "infra",
-      "source_spec_id": "INFRA-006",
-      "requirement": "iam.actions_subset=dynamodb,ecr,logs,cloudwatch,secretsmanager",
-      "result": "violation-list",
-      "mechanism_neutral": true
-    },
     "INFRA-007.01-mrtr-secret-source-secretsmanager": {
       "category": "infra",
       "source_spec_id": "INFRA-007",
@@ -317,19 +275,124 @@
       "result": "violation-list",
       "mechanism_neutral": true
     },
-    "INFRA-010.01-lifecycle-deploy-verify-destroy-inventory": {
+    "INFRA-004.01-cloudfront-generated-hostname-default-certificate": {
+      "category": "infra",
+      "source_spec_id": "INFRA-004",
+      "requirement": "cloudfront.endpoint=generated_hostname_default_certificate",
+      "result": "violation-list",
+      "mechanism_neutral": false
+    },
+    "INFRA-004.02-viewer-protocol-https-only": {
+      "category": "infra",
+      "source_spec_id": "INFRA-004",
+      "requirement": "cloudfront.viewer_protocol=https_only",
+      "result": "violation-list",
+      "mechanism_neutral": false
+    },
+    "INFRA-004.03-alb-internal-http-vpc-origin": {
+      "category": "infra",
+      "source_spec_id": "INFRA-004",
+      "requirement": "alb.scheme=internal;vpc_origin.protocol=http",
+      "result": "violation-list",
+      "mechanism_neutral": false
+    },
+    "INFRA-004.04-vpc-origin-prefix-list-ingress": {
+      "category": "infra",
+      "source_spec_id": "INFRA-004",
+      "requirement": "alb.ingress_source=cloudfront_origin_facing_prefix_list",
+      "result": "violation-list",
+      "mechanism_neutral": false
+    },
+    "INFRA-004.05-path-routes-raw-sdk-default-404": {
+      "category": "infra",
+      "source_spec_id": "INFRA-004",
+      "requirement": "alb.routes=/raw/*:raw,/sdk/*:sdk,default:fixed_404",
+      "result": "violation-list",
+      "mechanism_neutral": false
+    },
+    "INFRA-004.06-cache-compression-disabled": {
+      "category": "infra",
+      "source_spec_id": "INFRA-004",
+      "requirement": "cloudfront.cache=false;compress=false",
+      "result": "violation-list",
+      "mechanism_neutral": false
+    },
+    "INFRA-004.07-streaming-timeouts-heartbeat-bounded": {
+      "category": "infra",
+      "source_spec_id": "INFRA-004",
+      "requirement": "timeouts.cloudfront=60;alb=60;heartbeat<=15",
+      "result": "violation-list",
+      "mechanism_neutral": false
+    },
+    "INFRA-004.08-bootstrapless-inline-asset-free": {
+      "category": "infra",
+      "source_spec_id": "INFRA-004",
+      "requirement": "synth=bootstrapless;assets=[];template_body<=51200",
+      "result": "violation-list",
+      "mechanism_neutral": false
+    },
+    "INFRA-005.01-waf-rate-rule-limit-positive": {
+      "category": "infra",
+      "source_spec_id": "INFRA-005",
+      "requirement": "waf.rate_rule.limit>0",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-005.02-forwarded-ip-last": {
+      "category": "infra",
+      "source_spec_id": "INFRA-005",
+      "requirement": "waf.forwarded_ip.position=LAST;fallback=MATCH",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-006.01-security-groups-least-privilege": {
+      "category": "infra",
+      "source_spec_id": "INFRA-006",
+      "requirement": "security_groups=cloudfront_prefix_to_alb_to_tasks",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-006.02-iam-actions-subset-dynamodb-ecr-logs-cloudwatch-secretsmanager": {
+      "category": "infra",
+      "source_spec_id": "INFRA-006",
+      "requirement": "iam.actions_subset=dynamodb,ecr,logs,cloudwatch,secretsmanager",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-006.03-private-tasks-nat-egress": {
+      "category": "infra",
+      "source_spec_id": "INFRA-006",
+      "requirement": "tasks.public_ip=false;egress=tls_via_nat;dns=vpc_resolver",
+      "result": "violation-list",
+      "mechanism_neutral": true
+    },
+    "INFRA-010.01-direct-cloudformation-deploy-order": {
+      "category": "infra",
+      "source_spec_id": "INFRA-010",
+      "requirement": "deploy=edge,workload_zero,push_digests,workload_two;mechanism=cloudformation_api",
+      "result": "violation-list",
+      "mechanism_neutral": false
+    },
+    "INFRA-010.02-lifecycle-deploy-verify-destroy-inventory": {
       "category": "infra",
       "source_spec_id": "INFRA-010",
       "requirement": "lifecycle=deploy,verify,destroy,inventory",
       "result": "violation-list",
-      "mechanism_neutral": true
+      "mechanism_neutral": false
     },
-    "INFRA-010.02-inventory-after-destroy": {
+    "INFRA-010.03-inventory-after-destroy": {
       "category": "infra",
       "source_spec_id": "INFRA-010",
       "requirement": "inventory_after_destroy=[]",
       "result": "violation-list",
-      "mechanism_neutral": true
+      "mechanism_neutral": false
+    },
+    "INFRA-010.04-reviewed-split-order": {
+      "category": "infra",
+      "source_spec_id": "INFRA-010",
+      "requirement": "oversize_fallback=network,distribution,workload;teardown=reverse",
+      "result": "violation-list",
+      "mechanism_neutral": false
     }
   },
   "correlation_obligations": {
@@ -337,10 +400,12 @@
       "ECS task definitions consume the exact immutable ECR digests reported by the build."
     ],
     "INFRA-005": [
-      "The WAF web ACL is associated with the internet-facing ALB."
+      "The regional WAF web ACL is associated with the internal ALB and its rate rule uses ForwardedIPConfig with fallback MATCH and position LAST."
     ],
     "INFRA-006": [
-      "Ingress sources, IAM resources, and actions resolve to the intended service/table/log/secret resources rather than merely existing."
+      "Only the CloudFront origin-facing managed prefix list reaches the internal ALB, only the ALB reaches tasks, and task ENIs have no public IP.",
+      "Private tasks resolve VPC DNS and reach required AWS APIs over outbound TLS through the single ephemeral NAT gateway.",
+      "IAM resources and actions resolve to the intended table, repositories, logs, metrics, and secret rather than merely existing."
     ],
     "INFRA-007": [
       "Each raw and SDK task definition references the Secrets Manager state-key ARN through its secrets binding."
@@ -356,6 +421,16 @@
     ],
     "CICD-008": [
       "Destroy and inventory reporting run under an unconditional failure path after any approved cloud apply."
+    ],
+    "INFRA-004": [
+      "The generated CloudFront hostname and default certificate are the only public application endpoint and the distribution reaches the internal ALB through its VPC origin.",
+      "ALB rules preserve /raw/mcp and /sdk/mcp for their respective target groups while every unmatched path returns a fixed 404 without forwarding.",
+      "Deployed SSE is neither compressed, buffered, nor cached and heartbeat cadence stays below both pinned 60-second hop timeouts."
+    ],
+    "INFRA-010": [
+      "Execute the lifecycle artifact against AWS and require post-destroy inventory to show no stack resources, distribution, VPC-origin ENI, image repository, or pending secret.",
+      "Each synthesized template is at most 51,200 bytes and contains no bootstrap reference, asset manifest, custom hostname, ACM certificate, or staging bucket.",
+      "The normal order is edge then zero-task workload then immutable image push then two-task workload; teardown reverses it. If the reviewed size fallback is activated, use network then distribution then workload and reverse that order."
     ]
   }
 }

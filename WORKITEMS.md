@@ -580,16 +580,17 @@ Target: explicit infrastructure invocation → `stateless-mcp-incident-lab-infra
   - Scope: `../stateless-mcp-incident-lab-infrastructure/lib/stack.ts`
   - Depends on: WI-109
 
-- [x] **WI-112** infra contracts 4–6 (3 tests)
+- [ ] **WI-112** infra contracts 4–6 (3 tests)
   - Tests: `conformance/infra/004-https-only-alb`, `conformance/infra/005-waf-rate-rule`, `conformance/infra/006-least-privilege-network-iam`
-  - Scope: `../stateless-mcp-incident-lab-infrastructure/lib/stack.ts`
+  - Scope: `../stateless-mcp-incident-lab-infrastructure/bin/app.ts, ../stateless-mcp-incident-lab-infrastructure/lib/edge-stack.ts, ../stateless-mcp-incident-lab-infrastructure/lib/workload-stack.ts`
   - Depends on: WI-111
+  - Notes: Evolved for accepted ADR-0005; replace the certificate/public-ALB implementation rather than adapting its oracle.
 
-- [~] **WI-113** infra contracts 7–10 (4 tests)
+- [ ] **WI-113** infra contracts 7–10 (4 tests)
   - Tests: `conformance/infra/007-secret-manager-state-key`, `conformance/infra/008-access-log-redaction`, `conformance/infra/009-required-tags-retention`, `conformance/infra/010-deploy-verify-destroy`
-  - Scope: `../stateless-mcp-incident-lab-infrastructure/lib/stack.ts, ../stateless-mcp-incident-lab-infrastructure/scripts/deploy-verify-destroy.*`
+  - Scope: `../stateless-mcp-incident-lab-infrastructure/bin/app.ts, ../stateless-mcp-incident-lab-infrastructure/lib/edge-stack.ts, ../stateless-mcp-incident-lab-infrastructure/lib/workload-stack.ts, ../stateless-mcp-incident-lab-infrastructure/scripts/deploy-verify-destroy.ts`
   - Depends on: WI-112
-  - Notes: IaC and lifecycle artifact may be implemented before deployment, but WI-113 remains in progress until the deploy/verify/destroy inventory is executed against AWS.
+  - Notes: IaC and lifecycle artifact may be implemented before deployment, but WI-113 remains in progress until the direct-CloudFormation deploy/verify/destroy inventory is executed against AWS.
 
 ## Lane: cicd
 

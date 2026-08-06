@@ -2,9 +2,10 @@
   "subject": "cdk_synth",
   "template_glob": "cdk.out/*.template.json",
   "checks": [
-    "INFRA-005.01-waf-rate-rule-limit-0"
+    "INFRA-005.01-waf-rate-rule-limit-positive",
+    "INFRA-005.02-forwarded-ip-last"
   ],
   "correlation_obligations": [
-    "The WAF web ACL is associated with the internet-facing ALB."
+    "The regional WAF web ACL is associated with the internal ALB and its rate rule uses ForwardedIPConfig with fallback MATCH and position LAST."
   ]
 }

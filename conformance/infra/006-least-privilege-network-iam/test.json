@@ -1,10 +1,10 @@
 {
   "spec_id": "INFRA-006",
-  "description": "Security groups and IAM permit only required paths and DynamoDB, ECR image-pull, logs, metrics, and secret actions",
+  "description": "Private Fargate tasks, security groups, NAT egress, and IAM permit only the required application and AWS-service paths",
   "description_bdd": {
-    "given": "the least privilege network iam scenario",
-    "when": "the infra contract is exercised",
-    "then": "security groups and IAM permit only required paths and DynamoDB, ECR image-pull, logs, metrics, and secret actions"
+    "given": "the accepted bootstrap-free AWS deployment topology",
+    "when": "the infrastructure contract is evaluated",
+    "then": "private Fargate tasks, security groups, NAT egress, and IAM permit only the required application and AWS-service paths"
   },
   "boundary": "function",
   "normalisation": [
@@ -13,7 +13,7 @@
     "file_path",
     "unordered_collection"
   ],
-  "source": "PRD.md § Deployment / AWS and Security posture",
+  "source": "ADR-0005 \u00a7 Decision and Consequences + PRD.md \u00a7 Deployment / AWS and Security posture",
   "consumers": [
     "typescript-raw",
     "typescript-sdk"
@@ -27,7 +27,9 @@
   "approved_at": null,
   "type_contract": "least_privilege_network_iam_contract",
   "source_deps": [
-    "infra/lib/stateless-mcp-stack.ts",
-    "demo/matrix.compose.yaml"
-  ]
+    "lib/edge-stack.ts",
+    "lib/workload-stack.ts"
+  ],
+  "adr": "ADR-0005",
+  "adr_repo": "maximalfocus/stateless-mcp-incident-lab-architecture"
 }

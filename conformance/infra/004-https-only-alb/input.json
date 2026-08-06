@@ -2,8 +2,18 @@
   "subject": "cdk_synth",
   "template_glob": "cdk.out/*.template.json",
   "checks": [
-    "INFRA-004.01-alb-internet-facing-true",
-    "INFRA-004.02-listeners-https-443",
-    "INFRA-004.03-listeners-not-http-80"
+    "INFRA-004.01-cloudfront-generated-hostname-default-certificate",
+    "INFRA-004.02-viewer-protocol-https-only",
+    "INFRA-004.03-alb-internal-http-vpc-origin",
+    "INFRA-004.04-vpc-origin-prefix-list-ingress",
+    "INFRA-004.05-path-routes-raw-sdk-default-404",
+    "INFRA-004.06-cache-compression-disabled",
+    "INFRA-004.07-streaming-timeouts-heartbeat-bounded",
+    "INFRA-004.08-bootstrapless-inline-asset-free"
+  ],
+  "correlation_obligations": [
+    "The generated CloudFront hostname and default certificate are the only public application endpoint and the distribution reaches the internal ALB through its VPC origin.",
+    "ALB rules preserve /raw/mcp and /sdk/mcp for their respective target groups while every unmatched path returns a fixed 404 without forwarding.",
+    "Deployed SSE is neither compressed, buffered, nor cached and heartbeat cadence stays below both pinned 60-second hop timeouts."
   ]
 }

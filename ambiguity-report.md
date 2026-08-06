@@ -39,3 +39,13 @@
 **Decision:** Work items are partitioned into five explicit lanes: `raw`, `sdk`, `integration`, `infrastructure`, and `cicd`. One `/cdd-implement` invocation selects exactly one lane and never mutates another. Shared goldens are replayed independently in both implementation lanes; family integration begins only after both implementation lanes complete.
 
 **Rationale:** Status now records the repository that actually proved the contract and cannot cause the second implementation to skip work completed only by the first.
+
+## AMB-005: HTTPS topology under restricted AWS account permissions
+
+**Affected:** INFRA-004–006, INFRA-010, WI-112–113.
+
+**Ambiguity:** The PRD requires public HTTPS, but the target account cannot create an ACM certificate, custom hostname, or CDK bootstrap stack. The earlier public-ALB certificate topology is therefore undeployable in the intended account.
+
+**Decision:** Follow accepted ADR-0005: CloudFront's generated hostname and default certificate are the sole public endpoint; a VPC origin reaches an internal ALB; synthesis is bootstrapless and asset-free; direct CloudFormation drives the reviewed multi-stack lifecycle.
+
+**Rationale:** This preserves HTTPS, private workloads, horizontal routing, streaming, WAF, and deterministic teardown without requiring unavailable account capabilities or weakening the public transport requirement.
