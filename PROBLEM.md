@@ -1,12 +1,12 @@
 # Problem
 
-Define the complete, implementation-independent behavioral contract for Stateless MCP Incident Lab before either TypeScript realization exists. The suite must faithfully encode selected MCP 2026-07-28 wire behavior, explicit incident state, MRTR, streaming, cache, CLI, security, observability, architecture, infrastructure, CI, and four-way raw/SDK interoperability.
+Define and evolve the complete, implementation-independent behavioral contract for Stateless MCP Incident Lab across both TypeScript realizations and the shared AWS delivery path. The suite must faithfully encode selected MCP 2026-07-28 wire behavior, explicit incident state, MRTR, streaming, cache, CLI, security, observability, architecture, bootstrap-free infrastructure, CI, and four-way raw/SDK interoperability.
 
 ## Source of truth
 
-1. `../stateless-mcp-incident-lab-prd/PRD.md` and active `PLAN-001-stateless-core.md` at `91cd6b984a27c29cca8e8505a7ec1f088251650f`.
+1. `../stateless-mcp-incident-lab-prd/PRD.md` and active `PLAN-001-stateless-core.md` at `891bb346f848e163fe1ce83753b323ffc9b18df7`.
 2. Captured MCP `2026-07-28` specification and authoritative `schema.ts` under the PRD repo's `sources/`; schema wins over captured prose on type shape.
-3. Accepted ADRs and boundary YAML in `../stateless-mcp-incident-lab-architecture/` at `182e756eb4bdbb6c27fd66d185aff90466c28697`.
+3. Five Accepted ADRs and boundary YAML in `../stateless-mcp-incident-lab-architecture/` at `6f20bd2e473d1c275a906eefa523a0737308fe11`; ADR-0005 is the local deployment-topology override where the earlier PRD/ADR-0003 ACM public-ALB shape is unavailable.
 
 ## Scope
 
@@ -35,7 +35,6 @@ Implementation code; graphical frontend; authentication/OAuth/identity; legacy M
 
 ```bash
 python3 scripts/validate-suite.py
-node ~/personal/cdd-skills/tools/golden-lint.ts conformance
 python3 ../stateless-mcp-incident-lab-prd/scripts/verify-prd.py
 python3 -m unittest discover -s scripts -p 'test_*.py'
 git diff --check
@@ -45,4 +44,4 @@ The reviewer also parses both sibling `rules/*.yaml` using Ruby's standard YAML 
 
 ## Residuals
 
-Executable provider runs and mutation scores are evidenced and gated in the owning raw and SDK implementation repositories; both currently replay this suite's 159-contract implementation lane. This conformance review still judges the complete 197-contract language-neutral suite and does not treat provider green as evidence that a golden is faithful, replayable, or discriminating.
+Executable provider runs and mutation scores are evidenced and gated in the owning raw and SDK implementation repositories; both replay the suite's implementation lanes, while the infrastructure implementation must be updated for accepted ADR-0005 before deployed acceptance. This conformance review still judges the complete 197-contract language-neutral suite and does not treat provider green as evidence that a golden is faithful, replayable, or discriminating.
