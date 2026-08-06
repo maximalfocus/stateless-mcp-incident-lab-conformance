@@ -7,5 +7,8 @@
   "evaluated_checks": [
     "CICD-005.01-build-once",
     "CICD-005.02-publish-digest"
+  ],
+  "proved_obligations": [
+    "Acceptance consumes the digest produced by the single image-build job, not a rebuilt tag."
   ]
 }

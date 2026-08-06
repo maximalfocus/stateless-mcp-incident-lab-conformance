@@ -26,7 +26,7 @@
       "name": "Stateless MCP Incident Lab PRD",
       "type": "greenfield-requirements",
       "url": "git@github.com:maximalfocus/stateless-mcp-incident-lab-prd.git",
-      "commit": "91cd6b984a27c29cca8e8505a7ec1f088251650f",
+      "commit": "891bb346f848e163fe1ce83753b323ffc9b18df7",
       "categories": [
         "protocol",
         "versioning",
@@ -52,6 +52,21 @@
         "PRD.md",
         "PLAN.md",
         "PLAN-001-stateless-core.md"
+      ]
+    },
+    {
+      "name": "Stateless MCP Incident Lab architecture decisions",
+      "type": "accepted-architecture-decisions",
+      "url": "git@github.com:maximalfocus/stateless-mcp-incident-lab-architecture.git",
+      "commit": "6f20bd2e473d1c275a906eefa523a0737308fe11",
+      "categories": [
+        "architecture",
+        "infra"
+      ],
+      "key_artifacts": [
+        "adr/0001-independent-raw-sdk-realizations.md",
+        "adr/0005-cloudfront-managed-https-origin-alb.md",
+        "rules/*.yaml"
       ]
     },
     {

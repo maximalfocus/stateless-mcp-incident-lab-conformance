@@ -3,5 +3,8 @@
   "evaluated_checks": [
     "INFRA-007.01-mrtr-secret-source-secretsmanager",
     "INFRA-007.02-task-plaintext-secret-false"
+  ],
+  "proved_obligations": [
+    "Each raw and SDK task definition references the Secrets Manager state-key ARN through its secrets binding."
   ]
 }

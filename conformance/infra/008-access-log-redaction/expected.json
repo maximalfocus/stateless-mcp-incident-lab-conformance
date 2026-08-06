@@ -3,5 +3,8 @@
   "evaluated_checks": [
     "INFRA-008.01-logs-exclude-headers-mcp-name",
     "INFRA-008.02-logs-capture-body-false"
+  ],
+  "proved_obligations": [
+    "The synthesized Nginx, ALB, and WAF logging paths actually use the redacting/omitting configurations."
   ]
 }

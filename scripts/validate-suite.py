@@ -8,7 +8,7 @@ declared_placeholders=set(json.loads((root/'suite-invariants.json').read_text())
 operation_registry=json.loads((root/'operation-registry.json').read_text())['registries']
 used_registry_names={k:set() for k in operation_registry}
 policy_registry=json.loads((root/'policy-registry.json').read_text())
-used_policy_checks=set()
+used_policy_checks=set(); cited_adrs={}; obligation_owners=set()
 allowed={'cli','http','http-html','function','property','component','interaction','metric-assertion','lint-assertion','http-contract','decision-record','workflow-assertion','state-machine','story','e2e','cross-browser-assertion','contract','structural-contract','documentation-contract','packaging-contract','cross-language-contract','transactional','signal-reactivity','reactive-form','graphql','grpc','message','websocket','sse','sql','accessibility','prompt-eval','tool-call','trace-span','webhook','visual-regression','i18n'}
 for p in sorted(conf.rglob('test.json')):
   tests.append(p); rel=p.parent.relative_to(root)
@@ -98,6 +98,12 @@ for p in sorted(conf.rglob('test.json')):
         if expected_data.get('evaluated_checks')!=checks: errors.append(f'{sid}: evaluated_checks must exactly equal input checks')
         for check in set(checks)-unknown_checks:
           if policy_registry['checks'][check]['source_spec_id']!=sid: errors.append(f'{sid}: policy check {check!r} belongs to another spec')
+        # Wiring obligations are the only proof that a resource is connected, so they may not drift or silently vanish.
+        registered_obligations=policy_registry['correlation_obligations'].get(sid,[])
+        obligations=input_data.get('correlation_obligations',[])
+        if obligations!=registered_obligations: errors.append(f'{sid}: correlation_obligations must exactly match policy-registry.json')
+        if expected_data.get('proved_obligations',[])!=obligations: errors.append(f'{sid}: proved_obligations must exactly receipt input correlation_obligations')
+        obligation_owners.add(sid)
   if t.get('boundary')=='property':
     prop=t.get('property',{})
     for k in ('kind','target','domain','iterations','examples'):
@@ -112,6 +118,11 @@ for p in sorted(conf.rglob('test.json')):
     else:
       used_registry_names['property_targets'].add(target)
       if prop.get('kind') not in registry[target]['kinds']: errors.append(f'{sid}: property target {target!r} does not allow kind {prop.get("kind")!r}')
+  adr_id=t.get('adr')
+  if adr_id is not None:
+    if not isinstance(adr_id,str) or not re.fullmatch(r'ADR-[0-9]{4}',adr_id): errors.append(f'{sid}: malformed ADR citation {adr_id!r}')
+    elif t.get('adr_repo')!='maximalfocus/stateless-mcp-incident-lab-architecture': errors.append(f'{sid}: ADR citation has no owning architecture repository')
+    else: cited_adrs.setdefault(adr_id,[]).append(sid)
   if sid and sid.startswith('ARCH-'):
     if t.get('adr')!='ADR-0001' or t.get('adr_repo')!='maximalfocus/stateless-mcp-incident-lab-architecture': errors.append(f'{sid}: bad architecture citation')
     expected_arch=p.parent/'expected.json'
@@ -128,6 +139,8 @@ for registry_name,registry in operation_registry.items():
   if unused: errors.append(f'operation-registry.json has unused {registry_name}: {sorted(unused)}')
 unused_policy_checks=set(policy_registry['checks'])-used_policy_checks
 if unused_policy_checks: errors.append(f'policy-registry.json has unused checks: {sorted(unused_policy_checks)}')
+orphan_obligations=set(policy_registry['correlation_obligations'])-obligation_owners
+if orphan_obligations: errors.append(f'policy-registry.json declares correlation obligations no golden carries: {sorted(orphan_obligations)}')
 if len(tests)!=197: errors.append(f'test count {len(tests)} != 197')
 expected_cats={'protocol','versioning','transport','discovery','primitives','incidents','mrtr','streaming','cache','cli','interoperability','properties','security','observability','performance','architecture','infra','cicd','dependencies'}
 cats={p.relative_to(conf).parts[0] for p in tests}
@@ -180,9 +193,12 @@ for lane,expected in lane_expected.items():
   if len(assigned)!=len(set(assigned)) or set(assigned)!=expected:
     errors.append(f'WORKITEM lane {lane} assignment mismatch: missing={sorted(expected-set(assigned))}, extra={sorted(set(assigned)-expected)}')
 if set().union(*lane_expected.values())!=all_paths: errors.append('WORKITEM lanes do not cover every golden')
-# Cited ADR must exist and remain Accepted when the sibling architecture repo is checked out.
-arch_adr=root.parent/'stateless-mcp-incident-lab-architecture'/'adr'/'0001-independent-raw-sdk-realizations.md'
-if not arch_adr.exists() or not re.search(r'^Status:\s*Accepted\s*$',arch_adr.read_text(),re.M): errors.append('ADR-0001 citation is missing or stale')
+# Every cited ADR — not only ADR-0001 — must exist and remain Accepted in the sibling architecture repo.
+adr_dir=root.parent/'stateless-mcp-incident-lab-architecture'/'adr'
+if 'ADR-0001' not in cited_adrs: errors.append('no golden cites ADR-0001; the architecture citation check would pass vacuously')
+for adr_id in sorted(cited_adrs):
+  records=sorted(adr_dir.glob(adr_id.split('-')[1]+'-*.md'))
+  if len(records)!=1 or not re.search(r'^Status:\s*Accepted\s*$',records[0].read_text(),re.M): errors.append(f'{adr_id} citation is missing or stale')
 # Golden auto-update code is forbidden across shipped scripts, including multiline writes.
 for p in root.rglob('*'):
   if '.git' in p.parts or 'node_modules' in p.parts or not p.is_file() or p.suffix not in ('.py','.ts','.js','.mjs','.sh'): continue

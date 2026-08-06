@@ -2,7 +2,7 @@
 
 ## AMB-001: Deterministic fictional fixture content
 
-**Affected:** PRIM-001–020, INC-001–012, CLI-001–014.
+**Affected:** PRIM-001, PRIM-002, PRIM-003, PRIM-004, PRIM-005, PRIM-006, PRIM-007, PRIM-008, PRIM-009, PRIM-010, PRIM-011, PRIM-012, PRIM-013, PRIM-014, PRIM-015, PRIM-016, PRIM-017, PRIM-018, PRIM-019, PRIM-020; INC-001, INC-002, INC-003, INC-004, INC-005, INC-006, INC-007, INC-008, INC-009, INC-010, INC-011, INC-012; CLI-001, CLI-002, CLI-003, CLI-004, CLI-005, CLI-006, CLI-007, CLI-008, CLI-009, CLI-010, CLI-011, CLI-012, CLI-013, CLI-014.
 
 **Ambiguity:** The PRD intentionally leaves service names, telemetry text, runbook prose, and seeded incident values to authoring.
 
@@ -12,7 +12,7 @@
 
 ## AMB-002: Concrete cache TTL and progress cadence
 
-**Affected:** DISC-006, CACHE-002/005/006/009, STREAM-003.
+**Affected:** DISC-006, CACHE-002, CACHE-005, CACHE-006, CACHE-009, STREAM-003.
 
 **Ambiguity:** Requirements constrain semantics but permit concrete TTL and cadence choices.
 
@@ -22,7 +22,7 @@
 
 ## AMB-003: SDK package version
 
-**Affected:** DEP-001–005 and the SDK implementation binding.
+**Affected:** DEP-001, DEP-002, DEP-003, DEP-004, DEP-005 and the SDK implementation binding.
 
 **Ambiguity:** PLAN-001 requires the first stable SDK release declaring 2026-07-28 support, but no version is normatively fixed in the protocol contract.
 
@@ -42,7 +42,7 @@
 
 ## AMB-005: HTTPS topology under restricted AWS account permissions
 
-**Affected:** INFRA-004–006, INFRA-010, WI-112–113.
+**Affected:** INFRA-004, INFRA-005, INFRA-006, INFRA-010, WI-112, WI-113.
 
 **Ambiguity:** The PRD requires public HTTPS, but the target account cannot create an ACM certificate, custom hostname, or CDK bootstrap stack. The earlier public-ALB certificate topology is therefore undeployable in the intended account.
 

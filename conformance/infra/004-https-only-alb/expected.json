@@ -9,5 +9,10 @@
     "INFRA-004.06-cache-compression-disabled",
     "INFRA-004.07-streaming-timeouts-heartbeat-bounded",
     "INFRA-004.08-bootstrapless-inline-asset-free"
+  ],
+  "proved_obligations": [
+    "The generated CloudFront hostname and default certificate are the only public application endpoint and the distribution reaches the internal ALB through its VPC origin.",
+    "ALB rules preserve /raw/mcp and /sdk/mcp for their respective target groups while every unmatched path returns a fixed 404 without forwarding.",
+    "Deployed SSE is neither compressed, buffered, nor cached and heartbeat cadence stays below both pinned 60-second hop timeouts."
   ]
 }

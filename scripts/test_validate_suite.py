@@ -1,3 +1,4 @@
+import json
 import shutil
 import subprocess
 import tempfile
@@ -234,6 +235,33 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         result = self.run_validator()
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("ADR-0001 citation is missing or stale", result.stdout)
+
+    def test_stale_deployment_topology_adr_citation_goes_red(self):
+        adr_dir = self.tmp.parent / "stateless-mcp-incident-lab-architecture/adr"
+        records = sorted(adr_dir.glob("0005-*.md"))
+        self.assertTrue(records, "INFRA-004/005/006/010 cite ADR-0005, so it must exist in the sibling checkout")
+        records[0].write_text("# ADR-0005\n\nStatus: Superseded\n")
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("ADR-0005 citation is missing or stale", result.stdout)
+
+    def test_dropped_correlation_obligation_goes_red(self):
+        path = self.tmp / "conformance/infra/006-least-privilege-network-iam/input.json"
+        path.write_text(path.read_text().replace(
+            "IAM resources and actions resolve to the intended table, repositories, logs, metrics, and secret rather than merely existing.",
+            "IAM policies exist.", 1))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("correlation_obligations must exactly match policy-registry.json", result.stdout)
+
+    def test_unreceipted_correlation_obligation_goes_red(self):
+        path = self.tmp / "conformance/infra/004-https-only-alb/expected.json"
+        data = json.loads(path.read_text())
+        data["proved_obligations"].pop()
+        path.write_text(json.dumps(data, indent=2) + "\n")
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("proved_obligations must exactly receipt input correlation_obligations", result.stdout)
 
 
 if __name__ == "__main__":

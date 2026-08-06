@@ -590,24 +590,24 @@ Target: explicit infrastructure invocation → `stateless-mcp-incident-lab-infra
   - Tests: `conformance/infra/007-secret-manager-state-key`, `conformance/infra/008-access-log-redaction`, `conformance/infra/009-required-tags-retention`, `conformance/infra/010-deploy-verify-destroy`
   - Scope: `../stateless-mcp-incident-lab-infrastructure/bin/app.ts, ../stateless-mcp-incident-lab-infrastructure/lib/edge-stack.ts, ../stateless-mcp-incident-lab-infrastructure/lib/workload-stack.ts, ../stateless-mcp-incident-lab-infrastructure/scripts/deploy-verify-destroy.ts`
   - Depends on: WI-112
-  - Notes: IaC and lifecycle artifact may be implemented before deployment, but WI-113 remains in progress until the direct-CloudFormation deploy/verify/destroy inventory is executed against AWS.
+  - Notes: IaC and lifecycle artifacts may be implemented before deployment, but WI-113 remains open until the direct-CloudFormation deploy/verify/destroy inventory is executed against AWS.
 
 ## Lane: cicd
 
 Target: explicit CI/CD invocation → `stateless-mcp-incident-lab-cicd`.
 
-- [x] **WI-114** cicd contracts 1–3 (3 tests)
+- [ ] **WI-114** cicd contracts 1–3 (3 tests)
   - Tests: `conformance/cicd/001-quality-gates`, `conformance/cicd/002-four-way-local-matrix`, `conformance/cicd/003-architecture-gate`
   - Scope: `../stateless-mcp-incident-lab-cicd/.github/workflows/quality.yml`
   - Depends on: WI-112
-  - Notes: CI/CD authoring may proceed while WI-113 awaits its separately human-gated AWS lifecycle execution.
+  - Notes: Reset by the ADR-0005 evolve; re-prove the workflow against the rebuilt bootstrap-free stacks.
 
-- [x] **WI-115** cicd contracts 4–6 (3 tests)
+- [ ] **WI-115** cicd contracts 4–6 (3 tests)
   - Tests: `conformance/cicd/004-golden-integrity`, `conformance/cicd/005-immutable-build-output`, `conformance/cicd/006-secretless-oidc`
   - Scope: `../stateless-mcp-incident-lab-cicd/.github/workflows/quality.yml`
   - Depends on: WI-114
 
-- [x] **WI-116** cicd contracts 7–8 (2 tests)
+- [ ] **WI-116** cicd contracts 7–8 (2 tests)
   - Tests: `conformance/cicd/007-no-ci-cloud-deploy`, `conformance/cicd/008-teardown-on-acceptance`
   - Scope: `../stateless-mcp-incident-lab-cicd/.github/workflows/quality.yml`
   - Depends on: WI-115

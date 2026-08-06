@@ -2,14 +2,12 @@
   "subject": "deployment_lifecycle",
   "artifact_glob": "scripts/deploy-verify-destroy.*",
   "checks": [
-    "INFRA-010.01-direct-cloudformation-deploy-order",
+    "INFRA-010.01-selected-layout-deploy-teardown-order",
     "INFRA-010.02-lifecycle-deploy-verify-destroy-inventory",
-    "INFRA-010.03-inventory-after-destroy",
-    "INFRA-010.04-reviewed-split-order"
+    "INFRA-010.03-inventory-after-destroy"
   ],
   "correlation_obligations": [
     "Execute the lifecycle artifact against AWS and require post-destroy inventory to show no stack resources, distribution, VPC-origin ENI, image repository, or pending secret.",
-    "Each synthesized template is at most 51,200 bytes and contains no bootstrap reference, asset manifest, custom hostname, ACM certificate, or staging bucket.",
     "The normal order is edge then zero-task workload then immutable image push then two-task workload; teardown reverses it. If the reviewed size fallback is activated, use network then distribution then workload and reverse that order."
   ]
 }

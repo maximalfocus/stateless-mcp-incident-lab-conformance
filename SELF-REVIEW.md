@@ -1,6 +1,6 @@
 # Author self-review
 
-Completed for the executable-golden evolution at PRD commit `91cd6b984a27c29cca8e8505a7ec1f088251650f`.
+Originally completed for the executable-golden evolution at PRD commit `91cd6b984a27c29cca8e8505a7ec1f088251650f`; the bootstrap-free infrastructure evolve below refreshes the affected surfaces at PRD commit `891bb346f848e163fe1ce83753b323ffc9b18df7`.
 
 - [x] **8a — Cross-file consistency.** All 197 `expected.json` files were parsed and audited for JSON-RPC envelopes, IDs, result metadata, placeholders, null use, collection order, cache fields, and HTTP header shape. Errors use one JSON-RPC 2.0 envelope; transport-level 403/405 bodies and notification bodies are `null` by contract.
 - [x] **8b — Structural validation and lint.** `python3 scripts/validate-suite.py conformance` passes 197 tests, 19 categories, and 197 unique IDs. `deno run --allow-read ~/personal/cdd-skills/tools/golden-lint.ts conformance` reports 0 errors and 0 warnings.
@@ -18,13 +18,20 @@ Completed for the executable-golden evolution at PRD commit `91cd6b984a27c29cca8
 - [x] Integration, infrastructure, and CI/CD goldens are assigned only to their owning family lane.
 - [x] The validator rejects missing/extra lane assignments and unknown/forward dependencies; both failure modes have mutation tests.
 
+## Bootstrap-free infrastructure evolve
+
+- [x] INFRA-004, INFRA-005, INFRA-006, and INFRA-010 trace accepted ADR-0005 and replace the unavailable ACM/public-ALB topology.
+- [x] Every closed policy check is mirrored in ordered `evaluated_checks`; every cross-resource/runtime obligation is mirrored in `proved_obligations`, so skipping wiring or deployed proof changes the exact observation.
+- [x] The normal and oversize stack layouts form one conditional deployment-order contract rather than contradictory unconditional checks.
+- [x] WI-112–WI-116 are reopened in dependency order for infrastructure and CI/CD reimplementation.
+
 ## Mechanical evidence
 
 - `python3 scripts/validate-suite.py conformance`
 - `python3 -m unittest scripts/test_validate_suite.py`
 - `deno run --allow-read ~/personal/cdd-skills/tools/golden-lint.ts conformance`
 - `python3 ../stateless-mcp-incident-lab-prd/scripts/verify-prd.py`
-- architecture sibling: `python3 scripts/verify-architecture.py` plus its 18-case mutation script in an isolated PyYAML environment
+- architecture sibling: `python3 scripts/verify-architecture.py` plus its 29-case mutation script in an isolated PyYAML environment
 
 ## Degraded peer-review hardening
 

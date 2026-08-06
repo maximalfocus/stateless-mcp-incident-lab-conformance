@@ -366,13 +366,6 @@
       "result": "violation-list",
       "mechanism_neutral": true
     },
-    "INFRA-010.01-direct-cloudformation-deploy-order": {
-      "category": "infra",
-      "source_spec_id": "INFRA-010",
-      "requirement": "deploy=edge,workload_zero,push_digests,workload_two;mechanism=cloudformation_api",
-      "result": "violation-list",
-      "mechanism_neutral": false
-    },
     "INFRA-010.02-lifecycle-deploy-verify-destroy-inventory": {
       "category": "infra",
       "source_spec_id": "INFRA-010",
@@ -387,10 +380,10 @@
       "result": "violation-list",
       "mechanism_neutral": false
     },
-    "INFRA-010.04-reviewed-split-order": {
+    "INFRA-010.01-selected-layout-deploy-teardown-order": {
       "category": "infra",
       "source_spec_id": "INFRA-010",
-      "requirement": "oversize_fallback=network,distribution,workload;teardown=reverse",
+      "requirement": "layout=edge_workload|network_distribution_workload;deploy_order=selected_layout_dependency_order;teardown=reverse;oversize_never_staged",
       "result": "violation-list",
       "mechanism_neutral": false
     }
@@ -429,7 +422,6 @@
     ],
     "INFRA-010": [
       "Execute the lifecycle artifact against AWS and require post-destroy inventory to show no stack resources, distribution, VPC-origin ENI, image repository, or pending secret.",
-      "Each synthesized template is at most 51,200 bytes and contains no bootstrap reference, asset manifest, custom hostname, ACM certificate, or staging bucket.",
       "The normal order is edge then zero-task workload then immutable image push then two-task workload; teardown reverses it. If the reviewed size fallback is activated, use network then distribution then workload and reverse that order."
     ]
   }
