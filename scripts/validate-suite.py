@@ -98,12 +98,13 @@ for p in sorted(conf.rglob('test.json')):
         if expected_data.get('evaluated_checks')!=checks: errors.append(f'{sid}: evaluated_checks must exactly equal input checks')
         for check in set(checks)-unknown_checks:
           if policy_registry['checks'][check]['source_spec_id']!=sid: errors.append(f'{sid}: policy check {check!r} belongs to another spec')
-        # Wiring obligations are the only proof that a resource is connected, so they may not drift or silently vanish.
-        registered_obligations=policy_registry['correlation_obligations'].get(sid,[])
-        obligations=input_data.get('correlation_obligations',[])
-        if obligations!=registered_obligations: errors.append(f'{sid}: correlation_obligations must exactly match policy-registry.json')
-        if expected_data.get('proved_obligations',[])!=obligations: errors.append(f'{sid}: proved_obligations must exactly receipt input correlation_obligations')
-        obligation_owners.add(sid)
+    # Wiring obligations are the only proof that a resource is connected, so they may not drift or silently vanish.
+    # Evaluated outside the checks guard so an empty check list cannot smuggle an unregistered or unreceipted obligation.
+    registered_obligations=policy_registry['correlation_obligations'].get(sid,[])
+    obligations=input_data.get('correlation_obligations',[]) if isinstance(input_data,dict) else []
+    if obligations!=registered_obligations: errors.append(f'{sid}: correlation_obligations must exactly match policy-registry.json')
+    if expected_data.get('proved_obligations',[])!=obligations: errors.append(f'{sid}: proved_obligations must exactly receipt input correlation_obligations')
+    if obligations: obligation_owners.add(sid)
   if t.get('boundary')=='property':
     prop=t.get('property',{})
     for k in ('kind','target','domain','iterations','examples'):

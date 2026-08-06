@@ -263,6 +263,19 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("proved_obligations must exactly receipt input correlation_obligations", result.stdout)
 
+    def test_empty_check_list_cannot_bypass_obligation_receipt(self):
+        directory = self.tmp / "conformance/infra/005-waf-rate-rule"
+        fixture = json.loads((directory / "input.json").read_text())
+        fixture["checks"] = []
+        (directory / "input.json").write_text(json.dumps(fixture, indent=2) + "\n")
+        receipt = json.loads((directory / "expected.json").read_text())
+        receipt["evaluated_checks"] = []
+        receipt.pop("proved_obligations")
+        (directory / "expected.json").write_text(json.dumps(receipt, indent=2) + "\n")
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("proved_obligations must exactly receipt input correlation_obligations", result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

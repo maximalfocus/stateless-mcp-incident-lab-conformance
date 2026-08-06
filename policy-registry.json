@@ -383,7 +383,7 @@
     "INFRA-010.01-selected-layout-deploy-teardown-order": {
       "category": "infra",
       "source_spec_id": "INFRA-010",
-      "requirement": "layout=edge_workload|network_distribution_workload;deploy_order=selected_layout_dependency_order;teardown=reverse;oversize_never_staged",
+      "requirement": "layout=edge_workload|network_distribution_workload;deploy_order=selected_layout_dependency_order;teardown=reverse;oversize_never_staged;mechanism=cloudformation_api",
       "result": "violation-list",
       "mechanism_neutral": false
     }
