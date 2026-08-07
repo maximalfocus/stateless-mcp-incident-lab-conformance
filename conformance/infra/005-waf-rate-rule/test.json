@@ -13,7 +13,7 @@
     "file_path",
     "unordered_collection"
   ],
-  "source": "ADR-0005 \u00a7 Decision and Consequences + PRD.md \u00a7 Deployment / AWS and Security posture",
+  "source": "ADR-0006 \u00a7 Decision and Consequences + PRD.md \u00a7 Deployment / AWS and Security posture",
   "consumers": [
     "typescript-raw",
     "typescript-sdk"
@@ -29,6 +29,6 @@
   "source_deps": [
     "lib/edge-stack.ts"
   ],
-  "adr": "ADR-0005",
+  "adr": "ADR-0006",
   "adr_repo": "maximalfocus/stateless-mcp-incident-lab-architecture"
 }
