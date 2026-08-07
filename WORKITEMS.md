@@ -580,7 +580,7 @@ Target: explicit infrastructure invocation → `stateless-mcp-incident-lab-infra
   - Scope: `../stateless-mcp-incident-lab-infrastructure/lib/stack.ts`
   - Depends on: WI-109
 
-- [ ] **WI-112** infra contracts 4–6 (3 tests)
+- [~] **WI-112** infra contracts 4–6 (3 tests)
   - Tests: `conformance/infra/004-https-only-alb`, `conformance/infra/005-waf-rate-rule`, `conformance/infra/006-least-privilege-network-iam`
   - Scope: `../stateless-mcp-incident-lab-infrastructure/bin/app.ts, ../stateless-mcp-incident-lab-infrastructure/lib/edge-stack.ts, ../stateless-mcp-incident-lab-infrastructure/lib/workload-stack.ts`
   - Depends on: WI-111
