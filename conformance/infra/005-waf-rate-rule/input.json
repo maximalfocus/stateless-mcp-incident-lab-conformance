@@ -3,9 +3,9 @@
   "template_glob": "cdk.out/*.template.json",
   "checks": [
     "INFRA-005.01-waf-rate-rule-limit-positive",
-    "INFRA-005.02-forwarded-ip-last"
+    "INFRA-005.02-trusted-viewer-ip-custom-key"
   ],
   "correlation_obligations": [
-    "The regional WAF web ACL is associated with the internal ALB and its rate rule uses ForwardedIPConfig with fallback MATCH and position LAST."
+    "The regional WAF web ACL is associated with the internal ALB and its positive-limit CUSTOM_KEYS rate rule aggregates the x-incident-viewer-ip header overwritten from event.viewer.ip by an associated CloudFront viewer-request function."
   ]
 }

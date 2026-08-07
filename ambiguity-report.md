@@ -49,3 +49,13 @@
 **Decision:** Follow accepted ADR-0005: CloudFront's generated hostname and default certificate are the sole public endpoint; a VPC origin reaches an internal ALB; synthesis is bootstrapless and asset-free; direct CloudFormation drives the reviewed multi-stack lifecycle.
 
 **Rationale:** This preserves HTTPS, private workloads, horizontal routing, streaming, WAF, and deterministic teardown without requiring unavailable account capabilities or weakening the public transport requirement.
+
+## AMB-006: Trusted viewer identity for regional WAF rate aggregation
+
+**Affected:** INFRA-005, WI-112, ADR-0005.
+
+**Ambiguity:** The intended regional rate limit must distinguish CloudFront viewers without trusting a spoofable client-supplied `X-Forwarded-For` value. The prior contract required `ForwardedIPConfig.Position=LAST`, but AWS WAF rate statements do not support that field; it is valid only for `IPSetForwardedIPConfig`.
+
+**Decision:** Associate a CloudFront viewer-request function that overwrites `x-incident-viewer-ip` with `event.viewer.ip`, and aggregate the regional WAF positive-limit rate rule using that header as a `CUSTOM_KEYS` key. Keep the ALB private and restrict ingress to the CloudFront origin-facing managed prefix list.
+
+**Rationale:** The viewer identity is established at the trusted edge, cannot be supplied directly to the private ALB, and uses fields accepted by the current CloudFormation schema.
