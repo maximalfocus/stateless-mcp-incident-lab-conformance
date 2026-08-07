@@ -6,7 +6,7 @@ Define and evolve the complete, implementation-independent behavioral contract f
 
 1. `../stateless-mcp-incident-lab-prd/PRD.md` and active `PLAN-001-stateless-core.md` at `891bb346f848e163fe1ce83753b323ffc9b18df7`.
 2. Captured MCP `2026-07-28` specification and authoritative `schema.ts` under the PRD repo's `sources/`; schema wins over captured prose on type shape.
-3. Five Accepted ADRs and boundary YAML in `../stateless-mcp-incident-lab-architecture/` at `6f20bd2e473d1c275a906eefa523a0737308fe11`; ADR-0005 is the local deployment-topology override where the earlier PRD/ADR-0003 ACM public-ALB shape is unavailable.
+3. Six Accepted ADRs and boundary YAML in `../stateless-mcp-incident-lab-architecture/` at `0a15ca9`; ADR-0005 is the local deployment-topology override where the earlier PRD/ADR-0003 ACM public-ALB shape is unavailable, and ADR-0006 supersedes only its invalid viewer-IP WAF mechanism.
 
 ## Scope
 
@@ -44,4 +44,4 @@ The reviewer also parses both sibling `rules/*.yaml` using Ruby's standard YAML 
 
 ## Residuals
 
-Executable provider runs and mutation scores are evidenced and gated in the owning raw and SDK implementation repositories; both replay the suite's implementation lanes, while the infrastructure implementation must be updated for accepted ADR-0005 before deployed acceptance. This conformance review still judges the complete 197-contract language-neutral suite and does not treat provider green as evidence that a golden is faithful, replayable, or discriminating.
+Executable provider runs and mutation scores are evidenced and gated in the owning raw and SDK implementation repositories; both replay the suite's implementation lanes, while the infrastructure implementation must satisfy accepted ADR-0005 and ADR-0006 before deployed acceptance. This conformance review still judges the complete 197-contract language-neutral suite and does not treat provider green as evidence that a golden is faithful, replayable, or discriminating.
