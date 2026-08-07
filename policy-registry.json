@@ -341,7 +341,7 @@
     "INFRA-005.02-trusted-viewer-ip-custom-key": {
       "category": "infra",
       "source_spec_id": "INFRA-005",
-      "requirement": "cloudfront.viewer_request.overwrite[x-incident-viewer-ip]=event.viewer.ip;waf.rate.custom_key=x-incident-viewer-ip",
+      "requirement": "cloudfront.viewer_request.overwrite[x-incident-viewer-ip]=event.viewer.ip;waf.rate_rule.custom_key=x-incident-viewer-ip",
       "result": "violation-list",
       "mechanism_neutral": false
     },
@@ -393,7 +393,7 @@
       "ECS task definitions consume the exact immutable ECR digests reported by the build."
     ],
     "INFRA-005": [
-      "The regional WAF web ACL is associated with the internal ALB and its positive-limit CUSTOM_KEYS rate rule aggregates the x-incident-viewer-ip header overwritten from event.viewer.ip by an associated CloudFront viewer-request function."
+      "The regional WAF web ACL is associated with the internal ALB and its positive-limit CUSTOM_KEYS rate rule aggregates the x-incident-viewer-ip header, which an associated CloudFront viewer-request function on every behavior that forwards to the ALB overwrites from event.viewer.ip, replacing any client-supplied value."
     ],
     "INFRA-006": [
       "Only the CloudFront origin-facing managed prefix list reaches the internal ALB, only the ALB reaches tasks, and task ENIs have no public IP.",

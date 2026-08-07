@@ -20,7 +20,7 @@ Originally completed for the executable-golden evolution at PRD commit `91cd6b98
 
 ## Bootstrap-free infrastructure evolve
 
-- [x] INFRA-004, INFRA-005, INFRA-006, and INFRA-010 trace accepted ADR-0005 and replace the unavailable ACM/public-ALB topology.
+- [x] INFRA-004, INFRA-006, and INFRA-010 trace accepted ADR-0005; INFRA-005 additionally traces superseding ADR-0006. Together they replace the unavailable ACM/public-ALB topology.
 - [x] Every closed policy check is mirrored in ordered `evaluated_checks`; every cross-resource/runtime obligation is mirrored in `proved_obligations`, so skipping wiring or deployed proof changes the exact observation.
 - [x] The normal and oversize stack layouts form one conditional deployment-order contract rather than contradictory unconditional checks.
 - [x] WI-112–WI-116 are reopened in dependency order for infrastructure and CI/CD reimplementation.
@@ -31,7 +31,7 @@ Originally completed for the executable-golden evolution at PRD commit `91cd6b98
 - `python3 -m unittest scripts/test_validate_suite.py`
 - `deno run --allow-read ~/personal/cdd-skills/tools/golden-lint.ts conformance`
 - `python3 ../stateless-mcp-incident-lab-prd/scripts/verify-prd.py`
-- architecture sibling: `python3 scripts/verify-architecture.py` plus its 29-case mutation script in an isolated PyYAML environment
+- architecture sibling: from `../stateless-mcp-incident-lab-architecture`, run `python3 scripts/verify-architecture.py` plus its 31-case mutation script in an isolated PyYAML environment
 
 ## Degraded peer-review hardening
 

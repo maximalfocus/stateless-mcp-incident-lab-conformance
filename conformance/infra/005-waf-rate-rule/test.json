@@ -4,7 +4,7 @@
   "description_bdd": {
     "given": "the accepted bootstrap-free AWS deployment topology",
     "when": "the infrastructure contract is evaluated",
-    "then": "CloudFront overwrites a dedicated header from event.viewer.ip and regional WAF aggregates its positive-limit rate rule on that trusted header"
+    "then": "CloudFront overwrites a dedicated header from event.viewer.ip on every ALB-forwarding behavior and regional WAF aggregates its positive-limit rate rule on that trusted header"
   },
   "boundary": "function",
   "normalisation": [

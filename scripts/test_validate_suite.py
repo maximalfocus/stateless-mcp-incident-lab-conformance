@@ -263,6 +263,13 @@ class ValidateSuiteMutationTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("proved_obligations must exactly receipt input correlation_obligations", result.stdout)
 
+    def test_missing_policy_dsl_semantics_goes_red(self):
+        path = self.tmp / "conformance/infra/README.md"
+        path.write_text(path.read_text().replace("`overwrite[...]` additionally requires replacement", "`overwrite[...]` is supported"))
+        result = self.run_validator()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("missing policy DSL contract", result.stdout)
+
     def test_empty_check_list_cannot_bypass_obligation_receipt(self):
         directory = self.tmp / "conformance/infra/005-waf-rate-rule"
         fixture = json.loads((directory / "input.json").read_text())

@@ -8,6 +8,9 @@ declared_placeholders=set(json.loads((root/'suite-invariants.json').read_text())
 operation_registry=json.loads((root/'operation-registry.json').read_text())['registries']
 used_registry_names={k:set() for k in operation_registry}
 policy_registry=json.loads((root/'policy-registry.json').read_text())
+policy_docs=(conf/'infra'/'README.md').read_text()
+for fragment in ('## Policy requirement notation','unknown IDs, selectors, operators, or unresolved paths fail closed','`;` joins predicates with logical AND','`overwrite[...]` additionally requires replacement','predicates sharing that prefix must be satisfied by the same rate rule','A `correlation_obligation` is not prose evidence'):
+  if fragment not in policy_docs: errors.append(f'conformance/infra/README.md missing policy DSL contract: {fragment}')
 used_policy_checks=set(); cited_adrs={}; obligation_owners=set()
 allowed={'cli','http','http-html','function','property','component','interaction','metric-assertion','lint-assertion','http-contract','decision-record','workflow-assertion','state-machine','story','e2e','cross-browser-assertion','contract','structural-contract','documentation-contract','packaging-contract','cross-language-contract','transactional','signal-reactivity','reactive-form','graphql','grpc','message','websocket','sse','sql','accessibility','prompt-eval','tool-call','trace-span','webhook','visual-regression','i18n'}
 for p in sorted(conf.rglob('test.json')):
