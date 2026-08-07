@@ -8,11 +8,12 @@ Every `policy-registry.json` check is dispatched by its complete check ID; unkno
 
 - `;` joins predicates with logical AND.
 - A dotted selector identifies one semantic value in the rendered artifact; selectors resolve wiring, not mere resource existence.
-- `=` requires exact scalar equality; comma-separated right-hand values denote an exact unordered set.
+- `=` requires exact scalar equality (`[]` is the empty-list literal); comma-separated right-hand values denote an exact unordered set, while a selector suffixed `_subset` instead requires the resolved set to be contained in the listed values.
 - `>`, `>=`, and `<=` compare numeric values.
 - `selector[index]=source` requires the named map or header entry to be assigned from that source. `overwrite[...]` additionally requires replacement of any input value, never append or preserve.
 - Compound selectors such as `waf.rate_rule.custom_key` refer to one resource instance; predicates sharing that prefix must be satisfied by the same rate rule.
 - `|` lists explicitly permitted alternatives. No unlisted mechanism is accepted.
+- A bare selector with no operator names a boolean artifact property that must hold, or a CI gate or matrix scenario that must have run and satisfied it.
 
 A `correlation_obligation` is not prose evidence: the runner must inspect the synthesized cross-resource graph or execute the lifecycle behavior, then copy the obligation exactly into `proved_obligations`. In particular, INFRA-005 requires the viewer-request overwrite association on every CloudFront behavior that forwards to the ALB.
 
