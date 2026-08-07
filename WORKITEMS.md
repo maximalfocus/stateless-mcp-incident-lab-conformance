@@ -586,9 +586,9 @@ Target: explicit infrastructure invocation → `stateless-mcp-incident-lab-infra
   - Depends on: WI-111
   - Notes: Evolved for accepted ADR-0005 and ADR-0006; replace the certificate/public-ALB implementation rather than adapting its oracle. The old stack is deleted and the implementation-owned structural harness is updated in the same WI.
 
-- [ ] **WI-113** infra contracts 7–10 (4 tests)
+- [~] **WI-113** infra contracts 7–10 (4 tests)
   - Tests: `conformance/infra/007-secret-manager-state-key`, `conformance/infra/008-access-log-redaction`, `conformance/infra/009-required-tags-retention`, `conformance/infra/010-deploy-verify-destroy`
-  - Scope: `../stateless-mcp-incident-lab-infrastructure/bin/app.ts, ../stateless-mcp-incident-lab-infrastructure/lib/edge-stack.ts, ../stateless-mcp-incident-lab-infrastructure/lib/workload-stack.ts, ../stateless-mcp-incident-lab-infrastructure/scripts/deploy-verify-destroy.ts`
+  - Scope: `../stateless-mcp-incident-lab-infrastructure/bin/app.ts, ../stateless-mcp-incident-lab-infrastructure/lib/edge-stack.ts, ../stateless-mcp-incident-lab-infrastructure/lib/workload-stack.ts, ../stateless-mcp-incident-lab-infrastructure/scripts/deploy-verify-destroy.ts, ../stateless-mcp-incident-lab-infrastructure/scripts/deploy-verify-destroy.sh, ../stateless-mcp-incident-lab-infrastructure/package.json, ../stateless-mcp-incident-lab-infrastructure/test/infra.test.ts, ../stateless-mcp-incident-lab-infrastructure/README.md, ../stateless-mcp-incident-lab-infrastructure/PROBLEM.md`
   - Depends on: WI-112
   - Notes: IaC and lifecycle artifacts may be implemented before deployment, but WI-113 remains open until the direct-CloudFormation deploy/verify/destroy inventory is executed against AWS.
 
